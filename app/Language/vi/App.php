@@ -219,7 +219,7 @@ return [
     'search_section_4'                  =>  'Luận',
     'search_section_5'                  =>  'Tham Khảo',
     'search_section_7'                  =>  'Lịch sử',
-    'seach_translation_unavailable'     =>  'Bản dịch sang {0} hiện chưa có.',
+    'search_translation_unavailable'    =>  'Bản dịch sang {0} hiện chưa có.',
 
     'search_msg_checks_required'        =>  'Phải chọn ít nhất một trong các trường Mã số, Nội dung, Tác giả hoặc Chú giải.',
     'search_msg_success'                =>  'Tìm thấy {0} kết quả tương đồng với từ khóa.',

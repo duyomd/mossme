@@ -1,4 +1,4 @@
-<?php $displayHeader = lang('Auth.account');
+<?php $displayHeader = lang('Auth.login');
       $path = dirname(dirname(__FILE__))  . '/'; ?>
 <?php include $path . 'templates/header.php';?>
 

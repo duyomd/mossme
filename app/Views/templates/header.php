@@ -164,7 +164,7 @@
               <li><a href="javascript:void(0)" onclick="changeLanguage('zh')"><?=lang('App.language_me', [], 'zh')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('cn')"><?=lang('App.language_me', [], 'cn')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('ja')"><?=lang('App.language_me', [], 'ja')?></a></li>
-              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('ko')"><?=lang('App.language_me', [], 'ko')?></a></li>
+              <li><a href="javascript:void(0)" onclick="changeLanguage('ko')"><?=lang('App.language_me', [], 'ko')?></a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('fr')"><?=lang('App.language_me', [], 'fr')?></a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('de')"><?=lang('App.language_me', [], 'de')?></a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('ru')"><?=lang('App.language_me', [], 'it')?></a></li>

@@ -219,7 +219,7 @@ return [
     'search_section_4'                  =>  '論藏',
     'search_section_5'                  =>  '参考',
     'search_section_7'                  =>  '歷史',
-    'seach_translation_unavailable'     =>  '目前沒有 {0} 的翻譯',
+    'search_translation_unavailable'    =>  '目前沒有 {0} 的翻譯',
 
     'search_msg_checks_required'        =>  '您必須至少選擇序號、內容、作者或注釋中的一項。',
     'search_msg_success'                =>  '找到 {0} 個可能匹配的結果。',

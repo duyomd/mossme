@@ -166,7 +166,7 @@ class SearchModel extends BaseModel
         $re->matched_at = lang('App.search_foundin_' . $re->found_in);
         $re->section = lang('App.search_section_' . $re->section_id);        
         if (!isset($re->title) || empty($re->title)) {
-          $re->title = lang('App.seach_translation_unavailable', [$re->language]);
+          $re->title = lang('App.search_translation_unavailable', [$re->language]);
         }
         // Title href
         $re->title_link = '/article/' . $re->entry_id . 

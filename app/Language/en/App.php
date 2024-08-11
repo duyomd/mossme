@@ -18,7 +18,7 @@ return [
         'bookmark'      =>  'Save this page',
         'bookmark_list' =>  'Bookmarks',
         'bookmarks'     =>  'Bookmarks',
-        'search'        =>  'Seach',
+        'search'        =>  'Search',
         'settings'      =>  'Settings',
         'admin'         =>  'Administration',
             'admin_messages'    =>  'Messages',
@@ -219,7 +219,7 @@ return [
     'search_section_4'                  =>  'Analysis',
     'search_section_5'                  =>  'Reference',
     'search_section_7'                  =>  'History',
-    'seach_translation_unavailable'     =>  '{0} translation currently not available.',
+    'search_translation_unavailable'    =>  '{0} translation currently not available.',
 
     'search_msg_checks_required'        =>  'You must select at least one from Serial, Content, Author or Commentary.',
     'search_msg_success'                =>  '{0} results with potential matches found.',

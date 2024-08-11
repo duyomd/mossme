@@ -219,7 +219,7 @@ return [
     'search_section_4'                  =>  '論蔵',
     'search_section_5'                  =>  '参考',
     'search_section_7'                  =>  '歴史',
-    'seach_translation_unavailable'     =>  '{0}の翻訳は現在ありません。',
+    'search_translation_unavailable'    =>  '{0}の翻訳は現在ありません。',
 
     'search_msg_checks_required'        =>  '「シリアル」「内容」「著者」「注釈」のいずれかを少なくとも1つ選択する必要があります。',
     'search_msg_success'                =>  '{0}件の一致する可能性のある結果が見つかりました。',

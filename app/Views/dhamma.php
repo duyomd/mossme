@@ -7,7 +7,7 @@
         <div class="col-lg-8">
           <h1>
             <?php $lc = App\Helpers\Utilities::getSessionLocale(); 
-              if ($lc != 'ja' && $lc != 'cn' && $lc != 'zh') : ?>
+              if ($lc != 'ja' && $lc != 'cn' && $lc != 'zh' && $lc != 'ko') : ?>
               <?=lang('App.hero_caption_start')?><span><?=lang('App.hero_caption_end')?></span>
             <?php else : ?>
               <span><?=lang('App.hero_caption_start')?></span><?=lang('App.hero_caption_end')?>
