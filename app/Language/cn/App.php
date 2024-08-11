@@ -5,13 +5,13 @@ return [
     /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
-    'login'         =>  'Login',
-    'logout'        =>  'Logout',
-    'contact'       =>  'Contact',
-    'back_to'       =>  'Back to',
-
-    'languages'     =>  'Languages',
-        'language_me'   =>  '简体中文',
+    'login'         => '登录',
+    'logout'        => '登出',
+    'contact'       => '联系',
+    'back_to'       => '返回',
+    'languages'     => '语言',
+    
+    'language_me'   =>  '简体中文',
 
     'tools'         =>  'Tools',
         'copy_link'     =>  'Copy link',
