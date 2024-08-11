@@ -25,25 +25,7 @@ class Email extends BaseConfig
      */
     public string $mailPath = '/usr/sbin/sendmail';
 
-    /**
-     * SMTP Server Address
-     */
-    public string $SMTPHost = 'smtp.zoho.com';
-
-    /**
-     * SMTP Username
-     */
-    public string $SMTPUser = 'tester@mossme.net';
-
-    /**
-     * SMTP Password
-     */
-    public string $SMTPPass = 'Qw3rtyu!';
-
-    /**
-     * SMTP Port
-     */
-    public int $SMTPPort = 465;
+    
 
     /**
      * SMTP Timeout (in seconds)
