@@ -71,7 +71,7 @@ class App extends BaseConfig
      * strings (like currency markers, numbers, etc), that your program
      * should run under for this request.
      */
-    public string $defaultLocale = 'vi';
+    public string $defaultLocale = 'en';
 
     /**
      * --------------------------------------------------------------------------
@@ -98,7 +98,8 @@ class App extends BaseConfig
      *
      * @var string[]
      */
-    public array $supportedLocales = ['en', 'fr', 'ja', 'ko', 'de', 'es', 'ru', 'hi', 'vi', 'cn', 'zh', 'pi'];
+    public array $supportedLocales = ['en', 'fr', 'de', 'it', 'es', 'ru', 
+        'vi', 'ja', 'ko', 'hi', 'my', 'cn', 'zh', 'pi'];
 
     /**
      * --------------------------------------------------------------------------
