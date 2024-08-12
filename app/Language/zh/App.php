@@ -11,7 +11,7 @@ return [
     'back_to'       =>  '回到',
 
     'languages'     =>  '語言',
-        'language_me'   =>  '繁體中文',
+        'language_me'   =>  '繁體字',
 
     'tools'         =>  '工具',
         'copy_link'     =>  '複製連結',
