@@ -170,7 +170,7 @@
               <li><a href="javascript:void(0)" onclick="changeLanguage('de')"><?=lang('App.language_me', [], 'de')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('it')"><?=lang('App.language_me', [], 'it')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('es')"><?=lang('App.language_me', [], 'es')?></a></li>    
-              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('pt')"><?=lang('App.language_me', [], 'pt')?></a></li>
+              <li><a href="javascript:void(0)" onclick="changeLanguage('pt')"><?=lang('App.language_me', [], 'pt')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('ru')"><?=lang('App.language_me', [], 'ru')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('nl')"><?=lang('App.language_me', [], 'nl')?></a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('nb')"><?=lang('App.language_me', [], 'nb')?></a></li>
