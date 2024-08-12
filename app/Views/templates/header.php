@@ -175,7 +175,7 @@
               <li><a href="javascript:void(0)" onclick="changeLanguage('nl')"><?=lang('App.language_me', [], 'nl')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('nb')"><?=lang('App.language_me', [], 'nb')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('hu')"><?=lang('App.language_me', [], 'hu')?></a></li>
-              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('sv')"><?=lang('App.language_me', [], 'sv')?></a></li>
+              <li><a href="javascript:void(0)" onclick="changeLanguage('sv')"><?=lang('App.language_me', [], 'sv')?></a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('sr')"><?=lang('App.language_me', [], 'sr')?></a></li>
 
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('hi')"><?=lang('App.language_me', [], 'hi')?></a></li>
