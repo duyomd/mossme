@@ -11,7 +11,7 @@ return [
     'back_to'       =>  'Back to',
 
     'languages'     =>  'Languages',
-        'language_me'   =>  'မြန်မာစာ',
+        'language_me'   =>  'မြန်မာဘာသာ',
 
     'tools'         =>  'Tools',
         'copy_link'     =>  'Copy link',

@@ -11,7 +11,7 @@ return [
     'back_to'       =>  'Back to',
 
     'languages'     =>  'Languages',
-        'language_me'   =>  'Pусский',
+        'language_me'   =>  'Nederlands',
 
     'tools'         =>  'Tools',
         'copy_link'     =>  'Copy link',
