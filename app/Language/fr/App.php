@@ -176,7 +176,7 @@ return [
         'credits_foundation_1'  =>  'Innombrables Bouddhas anciens dans le passé.',
         'credits_foundation_2'  =>  'Sakya Gotama (Siddhattha).',
         'credits_foundation_3'  =>  'Sāriputta (Upatissa), Moggallāna (Kolita).',
-        'credits_foundation_4'  =>  'Mahākassapa, Ānanda, les grands Sāvakas, la Sangha et les pratiquants laïcs il y a 2600 ans.',
+        'credits_foundation_4'  =>  'Mahākassapa, Ānanda, les grands Sāvakas, la Sangha et les pratiquants laïcs il y a 2,600 ans.',
     'credits_now'           =>  'Transmis à notre époque :',
         'credits_now_1'         =>  'Toutes les lignées du Dhamma, les moines et les pratiquants laïcs.',
         'credits_now_2'         =>  'Les enseignements, analyses et ressources des enseignants, amis sincères et compagnons sages.',
