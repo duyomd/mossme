@@ -8,6 +8,7 @@
           <h1>
             <?php $lc = App\Helpers\Utilities::getSessionLocale(); 
               if ($lc != 'ja' && $lc != 'cn' && $lc != 'zh' && $lc != 'ko' 
+                && $lc != 'hi'
                 && $lc != 'hu' && $lc != 'sv') : ?>
               <?=lang('App.hero_caption_start')?><span><?=lang('App.hero_caption_end')?></span>
             <?php else : ?>
