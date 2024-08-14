@@ -179,14 +179,16 @@
               <li><a href="javascript:void(0)" onclick="changeLanguage('sr')"><?=lang('App.language_me', [], 'sr')?></a></li>
 
               <li><a href="javascript:void(0)" onclick="changeLanguage('hi')"><?=lang('App.language_me', [], 'hi')?></a></li>
+              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('ne')"><?=lang('App.language_me', [], 'ne')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('vi')"><?=lang('App.language_me', [], 'vi')?></a></li>             
               <li><a href="javascript:void(0)" onclick="changeLanguage('id')"><?=lang('App.language_me', [], 'id')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('si')"><?=lang('App.language_me', [], 'si')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('my')"><?=lang('App.language_me', [], 'my')?></a></li>
-
-              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('th')"><?=lang('App.language_me', [], 'th')?></a></li>              
+              
+              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('bo')"><?=lang('App.language_me', [], 'bo')?></a></li>
+              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('th')"><?=lang('App.language_me', [], 'th')?></a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('lo')"><?=lang('App.language_me', [], 'lo')?></a></li>
-              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('km')"><?=lang('App.language_me', [], 'km')?></a></li>              
+              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('km')"><?=lang('App.language_me', [], 'km')?></a></li>
             </ul>
           </li>          
           
