@@ -7,15 +7,13 @@
         <div class="col-lg-8">
           <h1>
             <?php $lc = App\Helpers\Utilities::getSessionLocale(); 
-              if ($lc != 'ja' && $lc != 'cn' && $lc != 'zh' && $lc != 'ko' 
-                && $lc != 'hi' && $lc != 'si' && $lc != 'my'
-                && $lc != 'hu' && $lc != 'sv' && $lc != 'fi' && $lc != 'tr') : ?>
+              if (!App\Helpers\Utilities::isRevertibleTitle()) : ?>
               <?=lang('App.hero_caption_start')?><span><?=lang('App.hero_caption_end')?></span>
             <?php else : ?>
               <span><?=lang('App.hero_caption_start')?></span><?=lang('App.hero_caption_end')?>
             <?php endif ?>  
           </h1>
-          <h2 class="<?= $lc == 'my' ? 'mt-4' : ''; ?>"><?=lang('App.hero_text')?></h2>
+          <h2 class="<?= App\Helpers\Utilities::isTallTitle() ? 'mt-4' : ''; ?>"><?=lang('App.hero_text')?></h2>
           
           <div class="btns">
             <a href="#menu" class="btn-scroll animated fadeInUp scrollto"><?=lang('App.library')?></a>

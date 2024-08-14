@@ -32,7 +32,13 @@ class Utilities
 
     public const IMAGE_FOLDER_BACKGROUND    = 'background';
     public const IMAGE_FOLDER_MENU          = 'menu';
-    public const IMAGE_FOLDER_DISCUSSIONS   = 'discussions';                                           
+    public const IMAGE_FOLDER_DISCUSSIONS   = 'discussions'; 
+    
+    private const LANGUAGES_RTL                 = ["he"];
+    private const LANGUAGES_TITLE_REVERSE       = ["ja", "cn", "zh", "ko", 
+                                                    "hi", "si", "my",
+                                                    "hu", "sv", "fi", "tr"];  
+    private const LANGUAGES_TITLE_TALL          = ["my"];
     
     /**
      * encode some special characters
@@ -213,5 +219,17 @@ class Utilities
     public static function trimInput($src) {
         if (self::isNullOrBlank($src)) return null;
         return trim($src);
+    }
+
+    public static function isRightToLeft() {
+        return in_array(self::getSessionLocale(), self::LANGUAGES_RTL);
+    }
+
+    public static function isRevertibleTitle() {
+        return in_array(self::getSessionLocale(), self::LANGUAGES_TITLE_REVERSE);
+    }
+
+    public static function isTallTitle() {
+        return in_array(self::getSessionLocale(), self::LANGUAGES_TITLE_TALL);
     }
 }
