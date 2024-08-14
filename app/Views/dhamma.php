@@ -9,7 +9,7 @@
             <?php $lc = App\Helpers\Utilities::getSessionLocale(); 
               if ($lc != 'ja' && $lc != 'cn' && $lc != 'zh' && $lc != 'ko' 
                 && $lc != 'hi' && $lc != 'si' && $lc != 'my'
-                && $lc != 'hu' && $lc != 'sv' && $lc != 'fi') : ?>
+                && $lc != 'hu' && $lc != 'sv' && $lc != 'fi' && $lc != 'tr') : ?>
               <?=lang('App.hero_caption_start')?><span><?=lang('App.hero_caption_end')?></span>
             <?php else : ?>
               <span><?=lang('App.hero_caption_start')?></span><?=lang('App.hero_caption_end')?>
