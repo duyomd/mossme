@@ -170,7 +170,7 @@
               <li><a href="javascript:void(0)" onclick="changeLanguage('de')"><?=lang('App.language_me', [], 'de')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('it')"><?=lang('App.language_me', [], 'it')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('es')"><?=lang('App.language_me', [], 'es')?></a></li>
-              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('ca')"><?=lang('App.language_me', [], 'ca')?> todo</a></li>    
+              <li><a href="javascript:void(0)" onclick="changeLanguage('ca')"><?=lang('App.language_me', [], 'ca')?></a></li>    
               <li><a href="javascript:void(0)" onclick="changeLanguage('pt')"><?=lang('App.language_me', [], 'pt')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('ru')"><?=lang('App.language_me', [], 'ru')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('nl')"><?=lang('App.language_me', [], 'nl')?></a></li>
@@ -192,6 +192,8 @@
               <li><a href="javascript:void(0)" onclick="changeLanguage('hi')"><?=lang('App.language_me', [], 'hi')?></a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('gu')"><?=lang('App.language_me', [], 'gu')?> todo</a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('kn')"><?=lang('App.language_me', [], 'kn')?> todo</a></li>
+              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('mr')"><?=lang('App.language_me', [], 'mr')?> todo</a></li>
+              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('ta')"><?=lang('App.language_me', [], 'ta')?> todo</a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('bn')"><?=lang('App.language_me', [], 'bn')?> todo</a></li>
 
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('bo')"><?=lang('App.language_me', [], 'bo')?></a></li>

@@ -98,8 +98,16 @@ class App extends BaseConfig
      *
      * @var string[]
      */
-    public array $supportedLocales = ['en', 'fr', 'de', 'it', 'es', 'pt', 'ru', 'nl', 'nb', 'hu', 'sv', 'sr',
-        'vi', 'ja', 'ko', 'hi', 'id', 'si', 'th', 'lo', 'km', 'my', 'cn', 'zh', 'pi'];
+    public array $supportedLocales = ['en', 
+        'cn', 'zh', 'ja', 'ko',         
+        'fr', 'de', 'it', 'es', 'ca', 'pt', 'ru', 'nl', 'nb', 'hu', 
+        'sv', 'sr', 'cs', 'pl', 'ro', 'sl', 'fi', 'tr', 'lt',
+        'he',
+        'ne', 'hi', 'gu', 'kn', 'mr', 'ta', 'bn',
+        'bo', 'dz',
+        'vi', 'id', 'si', 'my', 'th', 'lo', 'km', 
+        'sa', 'pi'
+    ];
 
     /**
      * --------------------------------------------------------------------------
