@@ -180,7 +180,7 @@
               <li><a href="javascript:void(0)" onclick="changeLanguage('sr')"><?=lang('App.language_me', [], 'sr')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('cs')"><?=lang('App.language_me', [], 'cs')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('pl')"><?=lang('App.language_me', [], 'pl')?></a></li>
-              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('ro')"><?=lang('App.language_me', [], 'ro')?> todo</a></li>
+              <li><a href="javascript:void(0)" onclick="changeLanguage('ro')"><?=lang('App.language_me', [], 'ro')?></a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('sl')"><?=lang('App.language_me', [], 'sl')?> todo</a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('fi')"><?=lang('App.language_me', [], 'fi')?> todo</a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('tr')"><?=lang('App.language_me', [], 'tr')?> todo</a></li>
