@@ -8,14 +8,14 @@
           <h1>
             <?php $lc = App\Helpers\Utilities::getSessionLocale(); 
               if ($lc != 'ja' && $lc != 'cn' && $lc != 'zh' && $lc != 'ko' 
-                && $lc != 'hi' && $lc != 'si'
+                && $lc != 'hi' && $lc != 'si' && $lc != 'my'
                 && $lc != 'hu' && $lc != 'sv') : ?>
               <?=lang('App.hero_caption_start')?><span><?=lang('App.hero_caption_end')?></span>
             <?php else : ?>
               <span><?=lang('App.hero_caption_start')?></span><?=lang('App.hero_caption_end')?>
             <?php endif ?>  
           </h1>
-          <h2><?=lang('App.hero_text')?></h2>
+          <h2 class="<?= $lc == 'my' ? 'mt-4' : ''; ?>"><?=lang('App.hero_text')?></h2>
           
           <div class="btns">
             <a href="#menu" class="btn-scroll animated fadeInUp scrollto"><?=lang('App.library')?></a>
