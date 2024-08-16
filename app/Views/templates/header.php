@@ -198,7 +198,7 @@
               <li><a href="javascript:void(0)" onclick="changeLanguage('hi')"><?=lang('App.language_me', [], 'hi')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('gu')"><?=lang('App.language_me', [], 'gu')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('kn')"><?=lang('App.language_me', [], 'kn')?></a></li>
-              <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('mr')"><?=lang('App.language_me', [], 'mr')?> todo</a></li>
+              <li><a href="javascript:void(0)" onclick="changeLanguage('mr')"><?=lang('App.language_me', [], 'mr')?></a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('ta')"><?=lang('App.language_me', [], 'ta')?> todo</a></li>
               <li><a href="javascript:void(0)" class="disabled" onclick="changeLanguage('bn')"><?=lang('App.language_me', [], 'bn')?> todo</a></li>
 
