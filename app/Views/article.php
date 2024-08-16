@@ -29,27 +29,27 @@
           <div class="btns">
             <a href="/article/<?=$entry->previous_id?>" class="btn-scroll animated fadeInUp scrollto
               <?php if(!isset($entry->previous_id)) echo ' disabled'; ?>">
-              <i class="bi bi-chevron-double-left"></i>
+              <i class="bi bi-chevron-double-<?= App\Helpers\Utilities::isRightToLeft() ? 'right' : 'left' ?>"></i>
             </a>
 
             <?php if (!$entry->isFolder) : ?>      
 
-              <a id="btn-commentary" href="#commentary" class="btn-scroll animated fadeInUp ml-btns-navi inactive
+              <a id="btn-commentary" href="#commentary" class="btn-scroll animated fadeInUp ms-btns-navi inactive
                 <?php if(count($entry->commentaries) == 0) echo ' disabled'; ?>"
                 role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="commentary" 
                 onclick="commentary(this)">
                 <i class="bi bi-zoom-in"></i></a>
 
-              <a id="btn-bilingual" class="btn-scroll animated fadeInUp scrollto ml-btns-navi inactive"
+              <a id="btn-bilingual" class="btn-scroll animated fadeInUp scrollto ms-btns-navi inactive"
                 href="javascript:void(0)" role="button" 
                 onclick="bilingual(this)">
                 <i id="icon-bilingual" class="bi bi-book-half"></i></a>
 
             <?php endif ?>  
               
-            <a href="/article/<?=$entry->next_id?>" class="btn-scroll animated fadeInUp scrollto ml-btns-navi
+            <a href="/article/<?=$entry->next_id?>" class="btn-scroll animated fadeInUp scrollto ms-btns-navi
               <?php if(!isset($entry->next_id)) echo ' disabled'; ?>">
-              <i class="bi bi-chevron-double-right"></i>
+              <i class="bi bi-chevron-double-<?= App\Helpers\Utilities::isRightToLeft() ? 'left' : 'right' ?>"></i>
             </a>
           </div>
         </div>

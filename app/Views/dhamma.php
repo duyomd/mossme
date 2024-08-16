@@ -17,7 +17,7 @@
           
           <div class="btns">
             <a href="#menu" class="btn-scroll animated fadeInUp scrollto"><?=lang('App.library')?></a>
-            <a href="#events" class="btn-scroll animated fadeInUp scrollto ml-btns"><?=lang('App.card')?></a>
+            <a href="#events" class="btn-scroll animated fadeInUp scrollto ms-btns"><?=lang('App.card')?></a>
           </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" 
