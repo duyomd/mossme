@@ -69,9 +69,9 @@ return [
 
     'legacy_caption'    =>  'Tìm trong vô thường, có đôi dòng kinh.',
     'legacy_header'     =>  'Này Ananda, Ta nói với Ông: "Truyền thống tốt đẹp này do Ta thiết lập, các Ông hãy tiếp tục duy trì. Các Ông chớ có thành người tối hậu sau Ta".',
-    'legacy_content1'   =>  ' Kẻ thù lớn nhất là tự ngã. Mất mát lớn nhất là đánh mất bản thân.',
-    'legacy_content2'   =>  ' Thất bại lớn nhất là tự kiêu. Đáng thương lớn nhất là tự ty.',
-    'legacy_content3'   =>  ' Quà tặng lớn nhất thế gian là khởi tâm từ bi và tưởng vô thường.',
+    'legacy_content1'   =>  'Kẻ thù lớn nhất là tự ngã. Mất mát lớn nhất là đánh mất bản thân.',
+    'legacy_content2'   =>  'Thất bại lớn nhất là tự kiêu. Đáng thương lớn nhất là tự ty.',
+    'legacy_content3'   =>  'Quà tặng lớn nhất thế gian là khởi tâm từ bi và tưởng vô thường.',
     'legacy_footer1'    =>  'Vậy này Ananda, sau khi Ta diệt độ, hãy dùng Chánh pháp làm ngọn đèn, tự mình nương tựa chính mình, không nương tựa gì khác.',
     'legacy_footer2'    =>  'Cái gì không nương tựa, cái ấy không dao động. Không dao động thì có khinh an. Có khinh an thì không có thiên về. Không có thiên về thì không có đến và đi; không có đến và đi thì không có sanh và diệt; không có sanh và diệt thì không có đời này, không có đời sau, không có đời ở giữa.',
     'legacy_footer3'    =>  'Ðây là sự đoạn tận khổ đau.',

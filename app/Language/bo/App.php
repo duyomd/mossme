@@ -69,9 +69,9 @@ return [
 
     'legacy_caption'    =>  'Excellence is not an act, but a habit.',
     'legacy_header'     =>  'Therefore I say to all of you, Ānanda: "Keep up this good practice that I have founded. Do not be my final man."',
-    'legacy_content1'   =>  ' One\'s biggest enemy is his ego. One\'s biggest loss is to lose himself.',
-    'legacy_content2'   =>  ' Arrogance is the worst defeat. Self-deprecation is the most pitiable thing.',
-    'legacy_content3'   =>  ' Compassion and impermanence awareness arising within one\'s mind are the greatest gifts.',
+    'legacy_content1'   =>  'One\'s biggest enemy is his ego. One\'s biggest loss is to lose himself.',
+    'legacy_content2'   =>  'Arrogance is the worst defeat. Self-deprecation is the most pitiable thing.',
+    'legacy_content3'   =>  'Compassion and impermanence awareness arising within one\'s mind are the greatest gifts.',
     'legacy_footer1'    =>  'So Ānanda, after I have passed, let the teaching be your island, live as your own island, your own refuge, with no other refuge.',
     'legacy_footer2'    =>  'For the independent there\'s no agitation. When there\'s no agitation there is tranquility. When there is tranquility there\'s no inclination. When there\'s no inclination, there\'s no coming and going. When there\'s no coming and going, there\'s no passing away and reappearing. When there\'s no passing away and reappearing there\'s no this world or world beyond or between the two.',
     'legacy_footer3'    =>  'Just this is the end of suffering.',

@@ -69,9 +69,9 @@ return [
 
     'legacy_caption'    =>  'L’excel·lència no és un acte, sinó un hàbit.',
     'legacy_header'     =>  'Per això dic a tots vosaltres, Ānanda: "Mantingueu aquesta bona pràctica que he fundat. No sigueu el meu darrer home."',
-    'legacy_content1'   =>  ' El pitjor enemic d’un és el seu ego. La pèrdua més gran és perdre’s a si mateix.',
-    'legacy_content2'   =>  ' L’arrogància és la pitjor derrota. La subestimació pròpia és la cosa més lamentable.',
-    'legacy_content3'   =>  ' La compassió i la consciència de la impermanència que sorgeixen en la ment d’un són els majors regals.',
+    'legacy_content1'   =>  'El pitjor enemic d’un és el seu ego. La pèrdua més gran és perdre’s a si mateix.',
+    'legacy_content2'   =>  'L’arrogància és la pitjor derrota. La subestimació pròpia és la cosa més lamentable.',
+    'legacy_content3'   =>  'La compassió i la consciència de la impermanència que sorgeixen en la ment d’un són els majors regals.',
     'legacy_footer1'    =>  'Així que Ānanda, després de la meva partida, que l’ensenyament sigui la teva illa, viu com la teva pròpia illa, el teu propi refugi, sense cap altre refugi.',
     'legacy_footer2'    =>  'Per al que és independent no hi ha agitació. Quan no hi ha agitació, hi ha tranquil·litat. Quan hi ha tranquil·litat, no hi ha inclinació. Quan no hi ha inclinació, no hi ha anades i vingudes. Quan no hi ha anades i vingudes, no hi ha passar i tornar a aparèixer. Quan no hi ha passar i tornar a aparèixer, no hi ha aquest món, ni el món més enllà, ni entre tots dos.',
     'legacy_footer3'    =>  'Només això és la fi del patiment.',

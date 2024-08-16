@@ -1088,7 +1088,7 @@ section {
 
 .legacy .content ul i {
   font-size: 20px;
-  padding-inline-end: 4px;
+  padding-inline-end: 10px;
   color: var(--mm-color-link);
 }
 

@@ -69,9 +69,9 @@ return [
 
     'legacy_caption'    =>  'Exzellenz ist keine Handlung, sondern eine Gewohnheit.',
     'legacy_header'     =>  'Deshalb sage ich zu euch allen, Ānanda: "Haltet an dieser guten Praxis fest, die ich begründet habe. Seid nicht mein letzter Mann."',
-    'legacy_content1'   =>  ' Der größte Feind eines Menschen ist sein Ego. Der größte Verlust ist, sich selbst zu verlieren.',
-    'legacy_content2'   =>  ' Arroganz ist die schlimmste Niederlage. Selbstverachtung ist das Bedauernswerteste.',
-    'legacy_content3'   =>  ' Mitgefühl und das Bewusstsein der Vergänglichkeit, das im Geist eines Menschen entsteht, sind die größten Gaben.',
+    'legacy_content1'   =>  'Der größte Feind eines Menschen ist sein Ego. Der größte Verlust ist, sich selbst zu verlieren.',
+    'legacy_content2'   =>  'Arroganz ist die schlimmste Niederlage. Selbstverachtung ist das Bedauernswerteste.',
+    'legacy_content3'   =>  'Mitgefühl und das Bewusstsein der Vergänglichkeit, das im Geist eines Menschen entsteht, sind die größten Gaben.',
     'legacy_footer1'    =>  'Also, Ānanda, nach meinem Dahinscheiden, lasst die Lehre eure Insel sein, lebt als eure eigene Insel, eure eigene Zuflucht, ohne andere Zuflucht.',
     'legacy_footer2'    =>  'Für den Unabhängigen gibt es keine Erregung. Wenn es keine Erregung gibt, gibt es Ruhe. Wenn es Ruhe gibt, gibt es keine Neigung. Wenn es keine Neigung gibt, gibt es kein Kommen und Gehen. Wenn es kein Kommen und Gehen gibt, gibt es kein Vergehen und Wiedererscheinen. Wenn es kein Vergehen und Wiedererscheinen gibt, gibt es weder diese Welt noch eine Welt jenseits oder dazwischen.',
     'legacy_footer3'    =>  'Genau das ist das Ende des Leidens.',

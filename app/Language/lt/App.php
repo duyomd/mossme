@@ -69,9 +69,9 @@ return [
 
     'legacy_caption'    =>  'Tobulumas nėra veiksmas, o įprotis.',
     'legacy_header'     =>  'Todėl sakau jums visiems, Ānanda: "Išlaikykite šią gerą praktiką, kurią aš įkūriau. Nebūkite mano paskutinis mokinys."',
-    'legacy_content1'   =>  ' Didžiausias žmogaus priešas yra jo ego. Didžiausias praradimas yra prarasti save.',
-    'legacy_content2'   =>  ' Arogancija yra blogiausias pralaimėjimas. Savęs nuvertinimas yra gailiausias dalykas.',
-    'legacy_content3'   =>  ' Atjauta ir supratimas apie nepastovumą, kylantis žmogaus sąmonėje, yra didžiausios dovanos.',
+    'legacy_content1'   =>  'Didžiausias žmogaus priešas yra jo ego. Didžiausias praradimas yra prarasti save.',
+    'legacy_content2'   =>  'Arogancija yra blogiausias pralaimėjimas. Savęs nuvertinimas yra gailiausias dalykas.',
+    'legacy_content3'   =>  'Atjauta ir supratimas apie nepastovumą, kylantis žmogaus sąmonėje, yra didžiausios dovanos.',
     'legacy_footer1'    =>  'Taigi, Ānanda, po mano mirties, leiskite mokymui būti jūsų sala, gyvenkite kaip savo sala, savo prieglauda, be jokios kitos prieglaudos.',
     'legacy_footer2'    =>  'Nepriklausomam nėra nerimo. Kai nėra nerimo, yra ramybė. Kai yra ramybė, nėra polinkio. Kai nėra polinkio, nėra nei ateinančio, nei išeinančio. Kai nėra nei ateinančio, nei išeinančio, nėra nei šio pasaulio, nei ano pasaulio, nei tarp jų.',
     'legacy_footer3'    =>  'Tik tai yra kančios pabaiga.',

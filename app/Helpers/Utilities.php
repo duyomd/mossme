@@ -36,7 +36,8 @@ class Utilities
     
     private const LANGUAGES_RTL                 = ["he"];
     private const LANGUAGES_TITLE_REVERSE       = ["ja", "cn", "zh", "ko", 
-                                                    "hi", "gu", "kn", "mr", "si", "my",
+                                                    "hi", "gu", "kn", "mr", "ta",
+                                                    "si", "my",
                                                     "hu", "sv", "fi", "tr"];  
     private const LANGUAGES_TITLE_TALL          = ["my"];
     
