@@ -208,28 +208,46 @@ class TranslationModel extends BaseModel
 
         $this->db->transStart();
 
+        /** This SQL is better, but supported on SQL>=8.0 only */////////////////////////////////////////////
+        // $sql = 
+        //     'SELECT entry_id, author, author_note, title, status 
+        //     FROM (
+        //         SELECT translation.*
+        //             , ROW_NUMBER() OVER(PARTITION BY entry_id 
+        //                 ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
+        //                                    language.sequence DESC, author ASC) as rn
+        //         FROM translation 
+        //             LEFT JOIN entry ON translation.entry_id = entry.id
+        //             LEFT JOIN language ON language_code = code
+        //         WHERE parent_id = :entry_id: AND translation.status = :status: AND entry.status = :status:                    
+        //         GROUP BY entry_id, language_code, author
+        //         ORDER BY entry.sequence ASC
+        //         ) temp
+        //     WHERE temp.rn = 1';
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        /** Used for host with lower SQL version (T.T), 
+         * not 100% guaranteed it will always return the first row of each group,
+         * even when adding session variables like @:row_num */ 
         $sql = 
-            'SELECT entry_id, author, author_note, title, status 
+            'SELECT MIN(entry_id) AS entry_id, author, author_note, title, status
             FROM (
-                SELECT translation.*
-                    , ROW_NUMBER() OVER(PARTITION BY entry_id 
-                        ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                                           language.sequence DESC, author ASC) as rn
+                SELECT translation.*, entry.sequence AS entry_seq
                 FROM translation 
                     LEFT JOIN entry ON translation.entry_id = entry.id
                     LEFT JOIN language ON language_code = code
-                WHERE parent_id = :entry_id: AND translation.status = :status: AND entry.status = :status:
-                    #AND language_code IN :langs:
+                WHERE parent_id = :entry_id: AND translation.status = :status: AND entry.status = :status:                    
                 GROUP BY entry_id, language_code, author
-                ORDER BY entry.sequence ASC
+                ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
+                        language.sequence DESC, author ASC
                 ) temp
-            WHERE temp.rn = 1';
+            GROUP BY temp.entry_id
+            ORDER BY entry_seq ASC';
 
         $query = $this->db->query($sql, [
                                     'entry_id'  => $entry->id, 
                                     'status'    => Utilities::STATUS_ACTIVE,
                                     'user_lang' => $user_language_code,      
-                                    // 'langs'     => Utilities::createLanguageArray($user_language_code),
                                 ]);
         $children_trans = $query->getResult(Translation::class);
         $query->freeResult();
@@ -252,33 +270,57 @@ class TranslationModel extends BaseModel
         $sql = 'SET @r := :entry_id: COLLATE utf8_unicode_ci, @l := 0;';
         $this->db->query($sql, ['entry_id' => $entry->id]);
 
+        /** This SQL is better, but supported on SQL>=8.0 only */////////////////////////////////////////////
+        // $sql = 
+        //     'SELECT entry_id, author, author_note, title, status
+        //     FROM (
+        //         SELECT t.*
+        //             , ROW_NUMBER() OVER(PARTITION BY entry_id 
+        //                                 ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
+        //                                                    language.sequence DESC) as rn
+        //         FROM (
+        //             SELECT
+        //                 @r AS _id,
+        //                 (SELECT @r := parent_id FROM entry WHERE id = _id) AS parent_id,
+        //                 @l := @l + 1 AS lvl
+        //             FROM (SELECT @r, @l) vars JOIN entry
+        //             WHERE @r IS NOT NULL) e1
+        //         JOIN entry e2 ON e1._id = e2.id
+        //         JOIN translation t ON t.entry_id = e2.id
+        //         JOIN language ON language_code = code
+        //         WHERE t.status = :status: AND e2.status = :status: 
+        //         GROUP BY t.entry_id, t.language_code
+        //         ORDER BY e1.lvl DESC) temp
+        //     WHERE temp.rn = 1';
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        /** Used for host with lower SQL version (T.T), 
+         * not 100% guaranteed it will always return the first row of each group,
+         * even when adding session variables like @:row_num */ 
         $sql = 
-            'SELECT entry_id, author, author_note, title, status
+        'SELECT MIN(entry_id) AS entry_id, author, author_note, title, status
+        FROM (
+            SELECT t.*, e1.lvl AS lvl
             FROM (
-                SELECT t.*
-                    , ROW_NUMBER() OVER(PARTITION BY entry_id 
-                                        ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                                                           language.sequence DESC) as rn
-                FROM (
-                    SELECT
-                        @r AS _id,
-                        (SELECT @r := parent_id FROM entry WHERE id = _id) AS parent_id,
-                        @l := @l + 1 AS lvl
-                    FROM (SELECT @r, @l) vars JOIN entry
-                    WHERE @r IS NOT NULL) e1
-                JOIN entry e2 ON e1._id = e2.id
-                JOIN translation t ON t.entry_id = e2.id
-                JOIN language ON language_code = code
-                WHERE t.status = :status: AND e2.status = :status: 
-                    #AND language_code IN :langs:
-                GROUP BY t.entry_id, t.language_code
-                ORDER BY e1.lvl DESC) temp
-            WHERE temp.rn = 1';
+                SELECT
+                    @r AS _id,
+                    (SELECT @r := parent_id FROM entry WHERE id = _id) AS parent_id,
+                    @l := @l + 1 AS lvl
+                FROM (SELECT @r, @l) vars JOIN entry
+                WHERE @r IS NOT NULL) e1
+            JOIN entry e2 ON e1._id = e2.id
+            JOIN translation t ON t.entry_id = e2.id
+            JOIN language ON language_code = code
+            WHERE t.status = :status: AND e2.status = :status: 
+            GROUP BY t.entry_id, t.language_code
+            ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
+                    language.sequence DESC) temp
+        GROUP BY temp.entry_id
+        ORDER BY lvl DESC';    
 
         $query = $this->db->query($sql, [
                                     'status'    => Utilities::STATUS_ACTIVE,
                                     'user_lang' => $user_language_code,      
-                                    // 'langs'     => Utilities::createLanguageArray($user_language_code),
                                 ]);
                                 
         $parents_trans = $query->getResult(Translation::class);
@@ -298,40 +340,70 @@ class TranslationModel extends BaseModel
 
         $this->db->transStart();
 
+        /** This SQL is better, but supported on SQL>=8.0 only */////////////////////////////////////////////
+        // $sql = 
+        //     'SELECT *
+        //     FROM (
+        //         SELECT t.*, e.section_id AS section_id
+        //             , (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) 
+        //                 AS image_url_header
+    	//             , (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) 
+        //                 AS image_url_content
+        //             , (SELECT image_url FROM image_url WHERE image_id_commentary = image_url.id) 
+        //                 AS image_url_commentary
+        //             , (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) 
+        //                 AS image_url_footer
+        //             , ROW_NUMBER() OVER(PARTITION BY entry_id 
+        //                 ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
+        //                                    language.sequence DESC, author ASC) as rn
+        //         FROM translation t
+        //             LEFT JOIN entry e ON t.entry_id = e.id
+        //             LEFT JOIN language ON language_code = code
+        //             LEFT JOIN section s ON e.section_id = s.id
+        //         WHERE parent_id IS NULL AND s.id IN :section_ids:
+        //             AND t.status = :status: AND e.status = :status:
+        //         GROUP BY section_id, entry_id, language_code, author
+        //         ORDER BY CASE WHEN e.section_id = :section_id_history: THEN 2 ELSE 1 END ASC,
+    	//             e.sequence ASC, s.sequence ASC   
+        //         ) temp
+        //     WHERE temp.rn = 1';
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        /** Used for host with lower SQL version (T.T), 
+         * not 100% guaranteed it will always return the first row of each group,
+         * even when adding session variables like @:row_num */ 
         $sql = 
-            'SELECT *
-            FROM (
-                SELECT t.*, e.section_id AS section_id
-                    , (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) 
-                        AS image_url_header
-    	            , (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) 
-                        AS image_url_content
-                    , (SELECT image_url FROM image_url WHERE image_id_commentary = image_url.id) 
-                        AS image_url_commentary
-                    , (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) 
-                        AS image_url_footer
-                    , ROW_NUMBER() OVER(PARTITION BY entry_id 
-                        ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                                           language.sequence DESC, author ASC) as rn
-                FROM translation t
-                    LEFT JOIN entry e ON t.entry_id = e.id
-                    LEFT JOIN language ON language_code = code
-                    LEFT JOIN section s ON e.section_id = s.id
-                WHERE parent_id IS NULL AND s.id IN :section_ids:
-                    AND t.status = :status: AND e.status = :status:
-                    #AND language_code IN :langs:
-                GROUP BY section_id, entry_id, language_code, author
-                ORDER BY CASE WHEN e.section_id = :section_id_history: THEN 2 ELSE 1 END ASC,
-    	            e.sequence ASC, s.sequence ASC   
-                ) temp
-            WHERE temp.rn = 1';
+        'SELECT id, MIN(entry_id) AS entry_id, language_code, author, author_note, title, content, notation, status, section_id, 
+            image_url_header, image_url_content, image_url_commentary, image_url_footer
+        FROM (
+            SELECT t.*, e.section_id AS section_id, e.sequence AS entry_seq, s.sequence AS section_seq
+                , (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) 
+                    AS image_url_header
+                , (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) 
+                    AS image_url_content
+                , (SELECT image_url FROM image_url WHERE image_id_commentary = image_url.id) 
+                    AS image_url_commentary
+                , (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) 
+                    AS image_url_footer
+            FROM translation t
+                LEFT JOIN entry e ON t.entry_id = e.id
+                LEFT JOIN language ON language_code = code
+                LEFT JOIN section s ON e.section_id = s.id
+            WHERE parent_id IS NULL AND s.id IN :section_ids:
+                AND t.status = :status: AND e.status = :status:
+            GROUP BY section_id, entry_id, language_code, author
+            ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
+                     language.sequence DESC, author ASC   
+            ) temp
+        GROUP BY temp.entry_id
+        ORDER BY CASE WHEN section_id = :section_id_history: THEN 2 ELSE 1 END ASC,
+                entry_seq ASC, section_seq ASC';    
 
         $query = $this->db->query($sql, [
                                     'section_ids'           => Utilities::SECTION_IDS_MENU_SUTTA,
                                     'section_id_history'    => Utilities::SECTION_ID_HISTORY,
                                     'status'                => Utilities::STATUS_ACTIVE,
                                     'user_lang'             => $user_language_code,      
-                                    // 'langs'                 => Utilities::createLanguageArray($user_language_code),
                                 ]);
         $trans = $query->getResult(Translation::class);
         $query->freeResult();
@@ -350,10 +422,42 @@ class TranslationModel extends BaseModel
 
         $this->db->transStart();
 
+        /** This SQL is better, but supported on SQL>=8.0 only *//////////////////////////////////
+        // $sql = 
+        //     'SELECT *
+        //     FROM (
+        //         SELECT t.*, e.section_id AS section_id
+        //             , (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) 
+        //                 AS image_url_header
+    	//             , (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) 
+        //                 AS image_url_content
+        //             , (SELECT image_url FROM image_url WHERE image_id_commentary = image_url.id) 
+        //                 AS image_url_commentary
+        //             , (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) 
+        //                 AS image_url_footer
+        //             , ROW_NUMBER() OVER(PARTITION BY entry_id 
+        //                 ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
+        //                                    language.sequence DESC, author ASC) as rn
+        //         FROM translation t
+        //             LEFT JOIN entry e ON t.entry_id = e.id
+        //             LEFT JOIN language ON language_code = code
+        //             LEFT JOIN section s ON e.section_id = s.id
+        //         WHERE parent_id IS NULL AND s.id NOT IN :section_ids:
+        //             AND t.status = :status: AND e.status = :status:
+        //         GROUP BY section_id, entry_id, language_code, author
+        //         ORDER BY s.sequence ASC, e.sequence ASC
+        //         ) temp
+        //     WHERE temp.rn = 1';
+        //////////////////////////////////////////////////////////////////////////////////////////
+        
+        /** Used for host with lower SQL version (T.T), 
+         * not 100% guaranteed it will always return the first row of each group,
+         * even when adding session variables like @:row_num */
         $sql = 
-            'SELECT *
+            'SELECT id, MIN(entry_id) AS entry_id, language_code, author, author_note, title, content, notation, status, section_id, 
+            image_url_header, image_url_content, image_url_commentary, image_url_footer
             FROM (
-                SELECT t.*, e.section_id AS section_id
+                SELECT t.*, e.section_id AS section_id, s.sequence AS section_seq, e.sequence AS entry_seq
                     , (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) 
                         AS image_url_header
     	            , (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) 
@@ -362,26 +466,23 @@ class TranslationModel extends BaseModel
                         AS image_url_commentary
                     , (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) 
                         AS image_url_footer
-                    , ROW_NUMBER() OVER(PARTITION BY entry_id 
-                        ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                                           language.sequence DESC, author ASC) as rn
                 FROM translation t
                     LEFT JOIN entry e ON t.entry_id = e.id
                     LEFT JOIN language ON language_code = code
                     LEFT JOIN section s ON e.section_id = s.id
                 WHERE parent_id IS NULL AND s.id NOT IN :section_ids:
                     AND t.status = :status: AND e.status = :status:
-                    #AND language_code IN :langs:
                 GROUP BY section_id, entry_id, language_code, author
-                ORDER BY s.sequence ASC, e.sequence ASC
+                ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
+                        language.sequence DESC, author ASC
                 ) temp
-            WHERE temp.rn = 1';
+            GROUP BY temp.entry_id
+            ORDER BY section_seq ASC, entry_seq ASC';
 
         $query = $this->db->query($sql, [
                                     'section_ids'           => Utilities::SECTION_IDS_MENU_SUTTA,
                                     'status'                => Utilities::STATUS_ACTIVE,
                                     'user_lang'             => $user_language_code,      
-                                    // 'langs'                 => Utilities::createLanguageArray($user_language_code),
                                 ]);
         $trans = $query->getResult(Translation::class);
         $query->freeResult();

@@ -258,9 +258,11 @@ class EntryModel extends BaseModel
                         AS image_url_commentary,
                     (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) 
                         AS image_url_footer,
-                    (SELECT id FROM entry e2 WHERE e2.parent_id = e1.parent_id AND status = :status: AND e2.sequence = e1.sequence - 1) 
+                    (SELECT id FROM entry e2 WHERE e2.parent_id = e1.parent_id AND status = :status: AND e2.sequence = e1.sequence - 1
+                        AND EXISTS (SELECT t.id FROM translation t WHERE t.entry_id = e2.id)) 
                         AS previous_id,
-                    (SELECT id FROM entry e2 WHERE e2.parent_id = e1.parent_id AND status = :status: AND e2.sequence = e1.sequence + 1) 
+                    (SELECT id FROM entry e2 WHERE e2.parent_id = e1.parent_id AND status = :status: AND e2.sequence = e1.sequence + 1
+                        AND EXISTS (SELECT t.id FROM translation t WHERE t.entry_id = e2.id)) 
                         AS next_id    
                 FROM entry e1
                 WHERE e1.id = :id: AND e1.status = :status:';

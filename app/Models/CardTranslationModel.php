@@ -54,27 +54,46 @@ class CardTranslationModel extends BaseModel
 
         $this->db->transStart();
 
+        /** This SQL is better, but supported on SQL>=8.0 only *//////////////////////////////////
+        // $sql = 
+        //     'SELECT *
+        //     FROM (
+        //         SELECT t.*
+        //             , (SELECT image_url FROM image_url i WHERE c.image_id = i.id) AS image_url
+        //             , ROW_NUMBER() OVER(PARTITION BY card_id 
+        //                 ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
+        //                                    language.sequence DESC) as rn
+        //         FROM card_translation t
+        //             LEFT JOIN card c ON t.card_id = c.id
+        //             LEFT JOIN language ON language_code = code
+        //         WHERE c.sequence IN :sequences: AND t.status = :status: AND c.status = :status:
+        //             #AND language_code IN :langs:
+        //         ) temp
+        //     WHERE temp.rn = 1';
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+        /** Used for host with lower SQL version (T.T), 
+         * not 100% guaranteed it will always return the first row of each group,
+         * even when adding session variables like @:row_num */
         $sql = 
-            'SELECT *
-            FROM (
-                SELECT t.*
-                    , (SELECT image_url FROM image_url i WHERE c.image_id = i.id) AS image_url
-                    , ROW_NUMBER() OVER(PARTITION BY card_id 
-                        ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                                           language.sequence DESC) as rn
-                FROM card_translation t
-                    LEFT JOIN card c ON t.card_id = c.id
-                    LEFT JOIN language ON language_code = code
-                WHERE c.sequence IN :sequences: AND t.status = :status: AND c.status = :status:
-                    #AND language_code IN :langs:
-                ) temp
-            WHERE temp.rn = 1';
+        'SELECT id, MIN(card_id), language_code, author, header, content, footer, status, image_url
+        FROM (
+            SELECT t.*
+                , (SELECT image_url FROM image_url i WHERE c.image_id = i.id) AS image_url
+            FROM card_translation t
+                LEFT JOIN card c ON t.card_id = c.id
+                LEFT JOIN language ON language_code = code
+            WHERE c.sequence IN :sequences: AND t.status = :status: AND c.status = :status:
+            GROUP BY card_id, language_code
+            ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
+                    language.sequence DESC
+            ) temp
+        GROUP BY card_id';
 
         $query = $this->db->query($sql, [
                                     'sequences' => $sequences, 
                                     'status'    => Utilities::STATUS_ACTIVE,
                                     'user_lang' => $user_language_code,      
-                                    // 'langs'     => Utilities::createLanguageArray($user_language_code),
                                 ]);
         $trans = $query->getResult(CardTranslation::class);
         $query->freeResult();

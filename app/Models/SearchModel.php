@@ -35,39 +35,7 @@ class SearchModel extends BaseModel
 
   public function getSearchCount($user_language_code, $conditions) 
   {
-    $subSql = '';
-    if ($conditions->checks->serial) {  
-      $subSql =
-      "SELECT * FROM 
-        (SELECT 'serial' AS found_in, language_code, tra.id, entry_id, title, author, tra.status, 
-              ROW_NUMBER() OVER(PARTITION BY entry_id 
-                              ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                                                 la.sequence DESC, author ASC) as rn       
-           FROM translation tra 
-           JOIN entry en ON tra.entry_id = en.id
-           JOIN language la ON tra.language_code = la.code
-           WHERE serials LIKE '%" . $this->db->escapeLikeString($conditions->keyword) . "%' ESCAPE '!') temp
-      WHERE temp.rn = 1";
-    } else {
-      if ($conditions->checks->content) {
-        $subSql = 
-        "SELECT 'content' AS found_in, language_code, id, entry_id, title, author, status FROM translation WHERE MATCH(title, content, notation) AGAINST (:keyword: IN NATURAL LANGUAGE MODE)";
-      }
-      if ($conditions->checks->author) {
-        if (!empty($subSql)) {
-          $subSql = $subSql . " UNION ";
-        }
-        $subSql = $subSql . "SELECT 'author_content' AS found_in, language_code, id, entry_id, title, author, status FROM translation WHERE MATCH(author, author_note) AGAINST (:keyword: IN NATURAL LANGUAGE MODE)";
-        $subSql = $subSql . " UNION " . "SELECT 'author_commentary' AS found_in, language_code, id, entry_id, NULL, author, status FROM commentary WHERE MATCH(author, author_note) AGAINST (:keyword: IN NATURAL LANGUAGE MODE)";
-      }
-      if ($conditions->checks->commentary) {
-        if (!empty($subSql)) {
-          $subSql = $subSql . " UNION ";
-        }
-        $subSql = $subSql . "SELECT 'commentary' AS found_in, language_code, id, entry_id, NULL, author, status FROM commentary WHERE MATCH(content, notation) AGAINST (:keyword: IN NATURAL LANGUAGE MODE)";
-      }
-    }
-    
+    $subSql = $this->preSql($conditions);    
     $sql = 
       'SELECT COUNT(*) AS count
       FROM (' . 
@@ -94,39 +62,7 @@ class SearchModel extends BaseModel
 
   public function getSearchResults($user_language_code, $conditions, $sort)
   {
-    $subSql = '';
-    if ($conditions->checks->serial) {  
-      $subSql =
-      "SELECT * FROM 
-        (SELECT 'serial' AS found_in, language_code, tra.id, entry_id, title, author, tra.status, 
-              ROW_NUMBER() OVER(PARTITION BY entry_id 
-                              ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                                                 la.sequence DESC, author ASC) as rn       
-           FROM translation tra 
-           JOIN entry en ON tra.entry_id = en.id
-           JOIN language la ON tra.language_code = la.code
-           WHERE serials LIKE '%" . $this->db->escapeLikeString($conditions->keyword) . "%' ESCAPE '!') temp
-      WHERE temp.rn = 1";
-    } else {
-      if ($conditions->checks->content) {
-        $subSql = 
-        "SELECT 'content' AS found_in, language_code, id, entry_id, title, author, status FROM translation WHERE MATCH(title, content, notation) AGAINST (:keyword: IN NATURAL LANGUAGE MODE)";
-      }
-      if ($conditions->checks->author) {
-        if (!empty($subSql)) {
-          $subSql = $subSql . " UNION ";
-        }
-        $subSql = $subSql . "SELECT 'author_content' AS found_in, language_code, id, entry_id, title, author, status FROM translation WHERE MATCH(author, author_note) AGAINST (:keyword: IN NATURAL LANGUAGE MODE)";
-        $subSql = $subSql . " UNION " . "SELECT 'author_commentary' AS found_in, language_code, id, entry_id, NULL, author, status FROM commentary WHERE MATCH(author, author_note) AGAINST (:keyword: IN NATURAL LANGUAGE MODE)";
-      }
-      if ($conditions->checks->commentary) {
-        if (!empty($subSql)) {
-          $subSql = $subSql . " UNION ";
-        }
-        $subSql = $subSql . "SELECT 'commentary' AS found_in, language_code, id, entry_id, NULL, author, status FROM commentary WHERE MATCH(content, notation) AGAINST (:keyword: IN NATURAL LANGUAGE MODE)";
-      }
-    }
-    
+    $subSql = $this->preSql($conditions);    
     $sql = 
       'SELECT found_in, language, t.id, entry_id, author, section_id, 
         CASE WHEN t.title IS NOT NULL THEN t.title ELSE 
@@ -158,6 +94,61 @@ class SearchModel extends BaseModel
     $this->db->transComplete();
 
     return $this->encodeData($results);
+  }
+
+  private function preSql($conditions) {
+    $subSql = '';
+    if ($conditions->checks->serial) {
+      /** This SQL is better, but supported on SQL>=8.0 only *//////////////////////////////////  
+      // $subSql =
+      // "SELECT * FROM 
+      //   (SELECT 'serial' AS found_in, language_code, tra.id, entry_id, title, author, tra.status, 
+      //         ROW_NUMBER() OVER(PARTITION BY entry_id 
+      //                         ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
+      //                                            la.sequence DESC, author ASC) as rn       
+      //      FROM translation tra 
+      //      JOIN entry en ON tra.entry_id = en.id
+      //      JOIN language la ON tra.language_code = la.code
+      //      WHERE serials LIKE '%" . $this->db->escapeLikeString($conditions->keyword) . "%' ESCAPE '!') temp
+      // WHERE temp.rn = 1";
+      ///////////////////////////////////////////////////////////////////////////////////////////
+
+      /** Used for host with lower SQL version (T.T), 
+       * not 100% guaranteed it will always return the first row of each group,
+       * even when adding session variables like @:row_num */ 
+      $subSql =
+      "SELECT found_in, language_code, id, MIN(entry_id) AS entry_id, title, author, status 
+        FROM 
+        (SELECT 'serial' AS found_in, language_code, tra.id, entry_id, title, author, tra.status
+           FROM translation tra 
+           JOIN entry en ON tra.entry_id = en.id
+           JOIN language la ON tra.language_code = la.code
+           WHERE serials LIKE '%" . $this->db->escapeLikeString($conditions->keyword) . "%' ESCAPE '!' 
+           GROUP BY entry_id, language_code, author
+           ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
+                    la.sequence DESC, author ASC
+        ) temp
+      GROUP BY entry_id";
+    } else {
+      if ($conditions->checks->content) {
+        $subSql = 
+        "SELECT 'content' AS found_in, language_code, id, entry_id, title, author, status FROM translation WHERE MATCH(title, content, notation) AGAINST (:keyword: IN NATURAL LANGUAGE MODE)";
+      }
+      if ($conditions->checks->author) {
+        if (!empty($subSql)) {
+          $subSql = $subSql . " UNION ";
+        }
+        $subSql = $subSql . "SELECT 'author_content' AS found_in, language_code, id, entry_id, title, author, status FROM translation WHERE MATCH(author, author_note) AGAINST (:keyword: IN NATURAL LANGUAGE MODE)";
+        $subSql = $subSql . " UNION " . "SELECT 'author_commentary' AS found_in, language_code, id, entry_id, NULL AS title, author, status FROM commentary WHERE MATCH(author, author_note) AGAINST (:keyword: IN NATURAL LANGUAGE MODE)";
+      }
+      if ($conditions->checks->commentary) {
+        if (!empty($subSql)) {
+          $subSql = $subSql . " UNION ";
+        }
+        $subSql = $subSql . "SELECT 'commentary' AS found_in, language_code, id, entry_id, NULL AS title, author, status FROM commentary WHERE MATCH(content, notation) AGAINST (:keyword: IN NATURAL LANGUAGE MODE)";
+      }
+    }
+    return $subSql;
   }
 
   private function encodeData($results, $slash = true) {
