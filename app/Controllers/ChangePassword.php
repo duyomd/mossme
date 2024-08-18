@@ -18,7 +18,7 @@ use CodeIgniter\Shield\Entities\User;
 use CodeIgniter\Shield\Exceptions\ValidationException;
 use CodeIgniter\Shield\Models\UserModel;
 use CodeIgniter\Shield\Traits\Viewable;
-use CodeIgniter\Shield\Validation\ValidationRules;
+use Config\ValidationRules;
 use Psr\Log\LoggerInterface;
 
 class ChangePassword extends BaseController
@@ -78,7 +78,6 @@ class ChangePassword extends BaseController
         // Save the user
         $allowedPostFields = array_keys($rules);
         $user              = $this->getUserEntity();
-        var_dump($user);
         $user->fill($this->request->getPost($allowedPostFields));
 
         try {
