@@ -97,7 +97,7 @@
                 <label class="form-label title-label mb-3"><?=lang('App.setting_display_mode')?></label>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="lite_mode" id="radio-full" value="0" 
-                    <?php if (isset($userSettings) && $userSettings->lite_mode == 0) echo "checked";?>>
+                    <?php if (!isset($userSettings) || $userSettings->lite_mode == 0) echo "checked";?>>
                   <label class="form-check-label" for="radio-full"><?=lang('App.setting_dm_full')?></label>
                 </div>
                 <div class="form-check form-check-inline float-end me-0">
