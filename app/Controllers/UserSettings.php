@@ -59,8 +59,9 @@ class UserSettings extends BaseController
 
   private function getLanguages()
   {
-    $sort = Sort::create(LanguageModel::DEFAULT_ORDERBYS, LanguageModel::DEFAULT_SORTORDERS, 1, -1, 0);
-    return model(LanguageModel::class)->getLanguages($sort);
+    // $sort = Sort::create(LanguageModel::DEFAULT_ORDERBYS, LanguageModel::DEFAULT_SORTORDERS, 1, -1, 0);
+    // return model(LanguageModel::class)->getLanguages($sort);
+    return model(LanguageModel::class)->getLanguages();
   }
 
   private function getUserSettings() {

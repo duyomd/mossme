@@ -115,14 +115,14 @@ class LanguageModel extends BaseModel
 
     public function getLanguages($sort = null) 
     {
-        if (isset($sort)) {
-            for ($i = 0; $i < count($sort->getOrderBys()); $i++) {
-                $this->orderBy($sort->getOrderBys()[$i], $sort->getSortOrders()[$i]);
-            }
-            if ($sort->getRpp() < 0) return $this->findAll();
-            else return $this->findAll($sort->getRpp(), ($sort->getCurrentPage() - 1) * $sort->getRpp());
+        if (!isset($sort)) {
+            $sort = Sort::create(LanguageModel::DEFAULT_ORDERBYS, LanguageModel::DEFAULT_SORTORDERS, 1, -1, 0);    
+        }        
+        for ($i = 0; $i < count($sort->getOrderBys()); $i++) {
+            $this->orderBy($sort->getOrderBys()[$i], $sort->getSortOrders()[$i]);
         }
-        return $this->findAll();
+        if ($sort->getRpp() < 0) return $this->findAll();
+        else return $this->findAll($sort->getRpp(), ($sort->getCurrentPage() - 1) * $sort->getRpp());
     }
 
     public function getLanguage($code) 
