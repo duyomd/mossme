@@ -128,7 +128,7 @@
 
                 </div>
 
-                <p id="title-main" class="mt-4"><?=$entry->displayTitle?></p>
+                <p id="title-main" class="mt-4 text-center"><?=$entry->displayTitle?></p>
               </div>
 
               <div class="row">
@@ -192,7 +192,7 @@
                   </ul>
 
                 </div>
-                <p id="title-sub" class="mt-4"><?=$entry->displayTitle?></p>
+                <p id="title-sub" class="mt-4 text-center"><?=$entry->displayTitle?></p>
               </div>
 
               <div class="row">
