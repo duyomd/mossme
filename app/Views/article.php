@@ -79,7 +79,7 @@
                 <h2><?=lang('App.article_translation')?></h2>
 
 
-                <div class="dropdown pt-2">
+                <div id="dd-article" class="dropdown pt-2">
 
                   <button class="btn dropdown-toggle text-truncate" type="button" id="dropdown-main" 
                     data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true">
@@ -144,7 +144,7 @@
               <div class="section-title">
                 <h2><?=lang('App.article_translation')?></h2>
                 
-                <div class="dropdown pt-2">
+                <div id="dd-article" class="dropdown pt-2">
                   
                   <button class="btn dropdown-toggle text-truncate ref" type="button" id="dropdown-sub" 
                     data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true">
@@ -214,7 +214,7 @@
 
             <h2><?=lang('App.article_commentary')?></h2>
             
-            <div id="dd" class="dropdown pt-2">
+            <div id="dd-commentary" class="dropdown pt-2">
 
               <button class="btn dropdown-toggle text-truncate" type="button" id="dropdown-comm" 
                 data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true">
@@ -480,21 +480,41 @@
       }
 
       function dropdownOverflow() {
-        let dds = document.querySelectorAll('#dd');
-        if (!dds || dds.length <= 0) return;
-        for (var i = 0; i < dds.length; i++) {
-          let dd = dds[i];
-          dd.addEventListener('show.bs.dropdown', () => {            
-            var styleElem = document.head.appendChild(document.createElement("style"));
-            styleElem.innerHTML = ".commentary:before {position: fixed;}";
+        dropdownArticle();
+        dropdownCommentary()
+      }
+
+      function dropdownArticle() {
+        let das = document.querySelectorAll('#dd-article');
+        if (!das || das.length <= 0) return;
+        let ar = document.querySelector('#article');
+        for (var i = 0; i < das.length; i++) {
+          let da = das[i];
+          da.addEventListener('show.bs.dropdown', () => {
+            ar.style.overflow = 'auto';
           });
-          dd.addEventListener('hide.bs.dropdown', () => { 
-            var styleElems = document.getElementsByTagName("style");
-            for (let i = 0; i < styleElems.length; i++) {
-              styleElems[i].remove();
-            }
+          da.addEventListener('hide.bs.dropdown', () => { 
+            ar.style.overflow = 'hidden';
           });
         }
+      }
+
+      function dropdownCommentary() {
+        let dc = document.querySelector('#dd-commentary');
+        if (!dc) return;
+        let co = document.querySelector('#commentary');
+        dc.addEventListener('show.bs.dropdown', () => {            
+          var styleElem = document.head.appendChild(document.createElement("style"));
+          styleElem.innerHTML = ".commentary:before {position: fixed;}";
+          co.style.overflow = 'auto';
+        });
+        dc.addEventListener('hide.bs.dropdown', () => { 
+          var styleElems = document.getElementsByTagName("style");
+          for (let i = 0; i < styleElems.length; i++) {
+            styleElems[i].remove();
+          }
+          co.style.overflow = 'hidden';
+        });
       }
       
     </script>
