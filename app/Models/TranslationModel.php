@@ -13,8 +13,8 @@ class TranslationModel extends BaseModel
 
     private const SHORTENED_CONTENT_LENGTH      = -1; 
 
-    public const DEFAULT_ORDERBYS               = array('language_code', 'author');
-    public const DEFAULT_SORTORDERS             = array('DESC', 'ASC');
+    public const DEFAULT_ORDERBYS               = array('language', 'author');
+    public const DEFAULT_SORTORDERS             = array('ASC', 'ASC');
     
     public const HEADER_ENTRY_ID_ORDERBYS       = array('entry_id');
     public const HEADER_ENTRY_ID_SORTORDERS     = array('ASC');
