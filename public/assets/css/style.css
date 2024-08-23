@@ -1192,6 +1192,10 @@ section {
   max-width: 100%;
 }
 
+.article #title-main, .article #title-sub {
+  text-transform: capitalize;
+}
+
 @media (min-width: 1920px) {
   .article {
     background-attachment: fixed;
