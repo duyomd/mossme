@@ -329,6 +329,7 @@ return [
     'entry_label_root'              =>  'Root',
     'entry_label_parent'            =>  'Parent',
     'entry_label_serials'           =>  'Serials',
+    'entry_label_enumeration'       =>  'Enumeration',
     'entry_label_image_header'      =>  'Header image',
     'entry_label_image_content'     =>  'Content image',
     'entry_label_image_commentary'  =>  'Commentary image',

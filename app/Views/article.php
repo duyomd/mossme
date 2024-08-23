@@ -16,14 +16,14 @@
                 <?php $parent = $entry->translationsParents[$i];
                   echo '<li><h2><a href="/article/' . $parent->entry_id . '" title="' . $parent->title . '">|';
                   for ($j = 0; $j < $i; $j++) echo '_';
-                  echo '<span>' . $parent->title . '</span></a></h2></li>';
+                  echo '<span>' . $parent->enum_title . '</span></a></h2></li>';
                 ?>
               <?php endfor ?>
             </ul>
           <?php endif ?>
           
           <h2 class="article-name">
-            <?php if ($count > 1) echo $entry->displayTitle; else echo '&nbsp;'; ?>
+            <?php if ($count > 1) echo $entry->displayEnumTitle; else echo '&nbsp;'; ?>
           </h2>
           
           <div class="btns">
@@ -111,7 +111,7 @@
                         <?php endif ?>
                       <?php else : ?>
                         <script type="text/javascript">
-                          js_trans[<?=$i?>] = {title: encodeURIComponent("<?=$tran->encodedTitle?>"),
+                          js_trans[<?=$i?>] = {title: encodeURIComponent("<?=$tran->encodedEnumTitle?>"),
                                                content: encodeURIComponent("<?=$tran->encodedContent?>"),
                                                author: encodeURIComponent("<?=$tran->encodedAuthor?>")};
                         </script>
@@ -128,7 +128,7 @@
 
                 </div>
 
-                <p id="title-main" class="mt-4 text-center"><?=$entry->displayTitle?></p>
+                <p id="title-main" class="mt-4 text-center"><?=$entry->displayEnumTitle?></p>
               </div>
 
               <div class="row">
@@ -176,7 +176,7 @@
                         <?php endif ?>
                       <?php else : ?>
                         <script type="text/javascript">
-                          js_trans[<?=$i?>] = {title: encodeURIComponent("<?=$tran->encodedTitle?>"),
+                          js_trans[<?=$i?>] = {title: encodeURIComponent("<?=$tran->encodedEnumTitle?>"),
                                                content: encodeURIComponent("<?=$tran->encodedContent?>"),
                                                author: encodeURIComponent("<?=$tran->encodedAuthor?>")};
                         </script>
@@ -192,7 +192,7 @@
                   </ul>
 
                 </div>
-                <p id="title-sub" class="mt-4 text-center"><?=$entry->displayTitle?></p>
+                <p id="title-sub" class="mt-4 text-center"><?=$entry->displayEnumTitle?></p>
               </div>
 
               <div class="row">
@@ -271,7 +271,7 @@
         
           <div class="section-title">
               <h2><?=lang('App.article_content')?></h2>
-              <p class="mt-4"><?= $entry->displayTitle ?></p>
+              <p class="mt-4"><?= $entry->displayEnumTitle ?></p>
           </div>
           <?php if ($entry->isFolder && count($entry->translationsChildren) > 0) : ?>
             <div class="row justify-content-center">
@@ -279,7 +279,7 @@
                   <ul class="content-list">
                     <?php foreach ($entry->translationsChildren as $child) : ?>
                       <li><a href="/article/<?=$child->entry_id?>">
-                        <span><?= $child->title ?></span>
+                        <span><?= $child->enum_title ?></span>
                       </a></li>
                     <?php endforeach ?>
                   </ul>
@@ -447,7 +447,8 @@
         }
         $title = ''; $content = ''; $author = '';
         if (isset($defaultTran)) {
-          $title = $defaultTran->encodedTitle;
+          // $title = $defaultTran->encodedTitle;
+          $title = $defaultTran->encodedEnumTitle;
           $content = $defaultTran->encodedContent;
           $author = $defaultTran->encodedAuthor; 
         }

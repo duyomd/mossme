@@ -30,6 +30,9 @@ class EntryModel extends BaseModel
     public const HEADER_SERIALS_ORDERBYS            = array('serials');
     public const HEADER_SERIALS_SORTORDERS          = array('ASC');
 
+    public const HEADER_ENUMERATION_ORDERBYS        = array('enumeration');
+    public const HEADER_ENUMERATION_SORTORDERS      = array('ASC');
+
     public const HEADER_IMAGE_HEADER_ORDERBYS       = array('image_name_header');
     public const HEADER_IMAGE_HEADER_SORTORDERS     = array('ASC');
 
@@ -65,7 +68,7 @@ class EntryModel extends BaseModel
 
     protected $table = 'entry';
     protected $allowedFields = [
-        'id', 'parent_id', 'root_id', 'type', 'serials', 'section_id',
+        'id', 'parent_id', 'root_id', 'type', 'serials', 'enumeration', 'section_id',
         'image_id_header', 'image_id_content', 'image_id_commentary', 'image_id_footer',
         'reference_source', 'reference_url', 'sequence', 'status', 'video_url', 'tags',
         'previous_id', 'next_id',
@@ -89,9 +92,11 @@ class EntryModel extends BaseModel
         $parents = $entry->translationsParents;
         if (isset($parents) && count($parents) > 0) {
             $display_title = end($parents)->title;
+            $display_enum_title = end($parents)->enum_title;
         }
         // TODO encode for html
         $entry->displayTitle = $display_title;
+        $entry->displayEnumTitle = $display_enum_title;
         return $entry;
     }
 

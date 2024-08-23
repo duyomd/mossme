@@ -1250,9 +1250,9 @@ section {
 --------------------------------------------------------------*/
 .content-list {
   list-style-position: outside; 
-  /* list-style-type: disc; */
+  list-style-type: disc;
   /* list-style-type: disclosure-closed; */
-  list-style-type: decimal;
+  /* list-style-type: decimal; */
   text-align: start;
 }
 

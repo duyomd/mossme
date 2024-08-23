@@ -157,12 +157,18 @@
               <div class="row  mt-3">
 
                 <div class="col-md-2 form-group mt-3 mt-md-0">
+                  <label for="enumeration" class="form-label"><?=lang('App.entry_label_enumeration')?></label>
+                  <input type="text" class="form-control" name="enumeration" id="enumeration"
+                    value="<?= set_value('enumeration') ?>">
+                </div>
+
+                <div class="col-md-2 form-group mt-3 mt-md-0">
                   <label for="tags" class="form-label"><?=lang('App.entry_label_tags')?></label>
                   <input type="text" class="form-control" name="tags" id="tags"
                     value="<?= set_value('tags') ?>">
                 </div>
 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <div class="col-md-2 form-group mt-3 mt-md-0">
                   <label for="video_url" class="form-label"><?=lang('App.entry_label_video_url')?></label>
                   <input type="text" class="form-control" name="video_url" id="video_url"
                     value="<?= set_value('video_url') ?>">
@@ -223,7 +229,7 @@
   <script type="text/javascript">
     window.onload = function() {
       var option = {
-        FIELDS_FETCH:               new Array('id', 'parent_id', 'root_id', 'section_id', 'section_name', 'type', 'serials', 
+        FIELDS_FETCH:               new Array('id', 'parent_id', 'root_id', 'section_id', 'section_name', 'type', 'serials', 'enumeration',
                                       'image_id_header', 'image_id_content', 'image_id_commentary', 'image_id_footer', 
                                       'image_url_header', 'image_url_content', 'image_url_commentary', 'image_url_footer', 
                                       'image_name_header', 'image_name_content', 'image_name_commentary', 'image_name_footer', 
@@ -233,7 +239,7 @@
                                         CONTENT_FIELD_EXTRA: getFolderUrl('item.id')},  
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'section_name'}, 
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'root_id'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'parent_id'},
+                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'parent_id'},                                      
                                       
                                       {CONTENT_TYPE: CONTENT_TYPES.BOX, CONTENT_FIELD: 'item.id',
                                         CONTENT_FIELD_BOX_LABELS: ['"<?=lang("App.entry_label_translations")?>"', 
@@ -243,7 +249,8 @@
                                       },
 
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'serials',
-                                        CONTENT_FIELD_STICKY: 'true'},                                    
+                                        CONTENT_FIELD_STICKY: 'true'},
+                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'enumeration'},
 
                                       {CONTENT_TYPE: CONTENT_TYPES.LINK, CONTENT_FIELD: 'item.image_name_header',
                                         CONTENT_FIELD_EXTRA_HASH: '"content-modal"',
@@ -278,6 +285,7 @@
                                       '<?=lang('App.entry_label_parent')?>',
                                       '<?=lang('App.entry_label_id')?>',                                      
                                       '<?=lang('App.entry_label_serials')?>',
+                                      '<?=lang('App.entry_label_enumeration')?>',
                                       '<?=lang('App.entry_label_image_header')?>',
                                       '<?=lang('App.entry_label_image_content')?>',
                                       '<?=lang('App.entry_label_image_commentary')?>',
@@ -295,6 +303,7 @@
                                         '<?=implode(",", EntryModel::HEADER_PARENT_ORDERBYS)?>',
                                         '<?=implode(",", EntryModel::HEADER_ID_ORDERBYS)?>',                                        
                                         '<?=implode(",", EntryModel::HEADER_SERIALS_ORDERBYS)?>',
+                                        '<?=implode(",", EntryModel::HEADER_ENUMERATION_ORDERBYS)?>',
                                         '<?=implode(",", EntryModel::HEADER_IMAGE_HEADER_ORDERBYS)?>',
                                         '<?=implode(",", EntryModel::HEADER_IMAGE_CONTENT_ORDERBYS)?>',
                                         '<?=implode(",", EntryModel::HEADER_IMAGE_COMMENTARY_ORDERBYS)?>',

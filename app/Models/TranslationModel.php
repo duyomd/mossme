@@ -179,11 +179,14 @@ class TranslationModel extends BaseModel
 
         $this->db->transStart();
 
-        $sql = 'SELECT * FROM translation LEFT JOIN language
-                ON translation.language_code = language.code
-                WHERE entry_id = ? AND status = ?
-                ORDER BY sequence DESC, author ASC';
-        $query = $this->db->query($sql, [$entry_id, Utilities::STATUS_ACTIVE]);
+        $sql = 'SELECT *, 
+                    CONCAT(IF(entry.enumeration IS NULL, "", CONCAT(entry.enumeration, SPACE(1))), translation.title) AS enum_title
+                FROM translation 
+                LEFT JOIN language ON translation.language_code = language.code
+                LEFT JOIN entry ON entry.id = translation.entry_id
+                WHERE entry_id = ? AND translation.status = ? AND entry.status = ?
+                ORDER BY language.sequence DESC, author ASC';
+        $query = $this->db->query($sql, [$entry_id, Utilities::STATUS_ACTIVE, Utilities::STATUS_ACTIVE]);
         $translations = $query->getResult(Translation::class);
         $query->freeResult();
 
@@ -210,9 +213,10 @@ class TranslationModel extends BaseModel
 
         /** This SQL is better, but supported on SQL>=8.0 only */////////////////////////////////////////////
         // $sql = 
-        //     'SELECT entry_id, author, author_note, title, status 
+        //     'SELECT entry_id, author, author_note, title, status, enum_title
         //     FROM (
-        //         SELECT translation.*
+        //         SELECT translation.*,
+        //             CONCAT(IF(entry.enumeration IS NULL, "", CONCAT(entry.enumeration, SPACE(1))), translation.title) AS enum_title
         //             , ROW_NUMBER() OVER(PARTITION BY entry_id 
         //                 ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
         //                                    language.sequence DESC, author ASC) as rn
@@ -230,9 +234,10 @@ class TranslationModel extends BaseModel
          * not 100% guaranteed it will always return the first row of each group,
          * even when adding session variables like @:row_num */ 
         $sql = 
-            'SELECT MIN(entry_id) AS entry_id, author, author_note, title, status
+            'SELECT MIN(entry_id) AS entry_id, author, author_note, title, status, enum_title                
             FROM (
-                SELECT translation.*, entry.sequence AS entry_seq
+                SELECT translation.*, entry.sequence AS entry_seq,
+                    CONCAT(IF(entry.enumeration IS NULL, "", CONCAT(entry.enumeration, SPACE(1))), translation.title) AS enum_title
                 FROM translation 
                     LEFT JOIN entry ON translation.entry_id = entry.id
                     LEFT JOIN language ON language_code = code
@@ -272,9 +277,10 @@ class TranslationModel extends BaseModel
 
         /** This SQL is better, but supported on SQL>=8.0 only */////////////////////////////////////////////
         // $sql = 
-        //     'SELECT entry_id, author, author_note, title, status
+        //     'SELECT entry_id, author, author_note, title, status, enum_title
         //     FROM (
-        //         SELECT t.*
+        //         SELECT t.*,
+        //             CONCAT(IF(e2.enumeration IS NULL, "", CONCAT(e2.enumeration, SPACE(1))), t.title) AS enum_title
         //             , ROW_NUMBER() OVER(PARTITION BY entry_id 
         //                                 ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
         //                                                    language.sequence DESC) as rn
@@ -298,9 +304,10 @@ class TranslationModel extends BaseModel
          * not 100% guaranteed it will always return the first row of each group,
          * even when adding session variables like @:row_num */ 
         $sql = 
-        'SELECT MIN(entry_id) AS entry_id, author, author_note, title, status
+        'SELECT MIN(entry_id) AS entry_id, author, author_note, title, status, enum_title
         FROM (
-            SELECT t.*, e1.lvl AS lvl
+            SELECT t.*, e1.lvl AS lvl,
+                CONCAT(IF(e2.enumeration IS NULL, "", CONCAT(e2.enumeration, SPACE(1))), t.title) AS enum_title
             FROM (
                 SELECT
                     @r AS _id,
@@ -578,6 +585,7 @@ class TranslationModel extends BaseModel
         if (isset($translations)) {
             foreach ($translations as $tran) {
                 $tran->encodedTitle = Utilities::encodeDataHtml($tran->title, $slash);
+                $tran->encodedEnumTitle = isset($tran->enum_title) ? Utilities::encodeDataHtml($tran->enum_title, $slash) : $tran->encodedTitle;
                 $tran->encodedContent = Utilities::encodeDataHtml($tran->content, $slash);
                 $tran->encodedAuthor = Utilities::encodeDataHtml($tran->author, $slash);
                 $tran->encodedAuthorNote = Utilities::encodeDataHtml($tran->author_note, $slash);

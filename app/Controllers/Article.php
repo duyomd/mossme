@@ -42,7 +42,7 @@ class Article extends BaseController
                                 ->getCommentaries($entry, $user_language_code, $forward == 'commentary' ? $f_id : null);
 
         $data = [
-            'displayHeader' => $entry->displayTitle,
+            'displayHeader' => $entry->displayEnumTitle,
             'entry'         =>  $entry,
             'forward'       => $forward,
         ];

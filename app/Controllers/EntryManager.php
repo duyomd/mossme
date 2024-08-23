@@ -73,6 +73,7 @@ class EntryManager extends BaseController
                 'parent_id'             => ['label' => lang('App.entry_label_parent'),              'rules' => 'max_length[32]'],
                 'root_id'               => ['label' => lang('App.entry_label_root'),                'rules' => 'max_length[32]'],
                 'serials'               => ['label' => lang('App.entry_label_serials'),             'rules' => 'required|max_length[32]'],
+                'enumeration'           => ['label' => lang('App.entry_label_enumeration'),         'rules' => 'max_length[8]'],
                 'image_id_header'       => ['label' => lang('App.entry_label_image_header'),        'rules' => 'max_length[10]'],
                 'image_id_content'      => ['label' => lang('App.entry_label_image_content'),       'rules' => 'max_length[10]'],
                 'image_id_commentary'   => ['label' => lang('App.entry_label_image_commentary'),    'rules' => 'max_length[10]'],
@@ -95,6 +96,7 @@ class EntryManager extends BaseController
                     'id'                    => Utilities::trimInput($this->request->getVar('id')),
                     'parent_id'             => Utilities::trimInput($this->request->getVar('parent_id')),
                     'serials'               => Utilities::trimInput($this->request->getVar('serials')),
+                    'enumeration'           => Utilities::trimInput($this->request->getVar('enumeration')),
 
                     'image_id_header'       => Utilities::trimInput($this->request->getVar('image_id_header')),
                     'image_id_content'      => Utilities::trimInput($this->request->getVar('image_id_content')),
@@ -172,6 +174,7 @@ class EntryManager extends BaseController
             $jsonEntry->section_name = $entry->section_name;
             $jsonEntry->type = $entry->type;
             $jsonEntry->serials = $entry->serials;
+            $jsonEntry->enumeration = $entry->enumeration;
 
             $jsonEntry->image_id_header = $entry->image_id_header;
             $jsonEntry->image_id_content = $entry->image_id_content;
