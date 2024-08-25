@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="<?= App\Helpers\Utilities::getSessionLocale()?>" 
+<html 
+      
       data-bs-theme="<?= App\Helpers\Utilities::getSessionTheme() ?? 'dark'; ?>"
       dir="<?= App\Helpers\Utilities::isRightToLeft() ? 'rtl' : 'auto'?>">
+      <!-- lang="<?= App\Helpers\Utilities::getSessionLocale()?>"  -->
 
 <head>
   <meta charset="utf-8">
