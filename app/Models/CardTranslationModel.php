@@ -72,23 +72,26 @@ class CardTranslationModel extends BaseModel
         //     WHERE temp.rn = 1';
         /////////////////////////////////////////////////////////////////////////////////////////
 
-        /** Used for host with lower SQL version (T.T), 
-         * not 100% guaranteed it will always return the first row of each group,
-         * even when adding session variables like @:row_num */
+        /** Used for host with lower SQL version (T.T) */
         $sql = 
-        'SELECT id, MIN(card_id), language_code, author, header, content, footer, status, image_url
+        'SELECT id, card_id, language_code, author, header, content, footer, status, image_url
         FROM (
             SELECT t.*
                 , (SELECT image_url FROM image_url i WHERE c.image_id = i.id) AS image_url
+                , CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - language.sequence, 3, "0"), IF(author IS NULL, "", author)) AS sort_value
             FROM card_translation t
                 LEFT JOIN card c ON t.card_id = c.id
                 LEFT JOIN language ON language_code = code
             WHERE c.sequence IN :sequences: AND t.status = :status: AND c.status = :status:
-            GROUP BY card_id, language_code
-            ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                    language.sequence DESC
-            ) temp
-        GROUP BY card_id';
+        ) tmain
+        WHERE sort_value = (
+            SELECT MIN(CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - language.sequence, 3, "0"), IF(author IS NULL, "", author))) 
+            FROM card_translation t
+                LEFT JOIN card c ON t.card_id = c.id
+                LEFT JOIN language ON language_code = code
+            WHERE t.card_id = tmain.card_id AND c.sequence IN :sequences: AND t.status = :status: AND c.status = :status:
+        )'
+        ;
 
         $query = $this->db->query($sql, [
                                     'sequences' => $sequences, 

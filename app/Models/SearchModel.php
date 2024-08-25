@@ -113,22 +113,24 @@ class SearchModel extends BaseModel
       // WHERE temp.rn = 1";
       ///////////////////////////////////////////////////////////////////////////////////////////
 
-      /** Used for host with lower SQL version (T.T), 
-       * not 100% guaranteed it will always return the first row of each group,
-       * even when adding session variables like @:row_num */ 
+      /** Used for host with lower SQL version (T.T) */ 
       $subSql =
-      "SELECT found_in, language_code, id, MIN(entry_id) AS entry_id, title, author, status 
-        FROM 
-        (SELECT 'serial' AS found_in, language_code, tra.id, entry_id, title, author, tra.status
-           FROM translation tra 
-           JOIN entry en ON tra.entry_id = en.id
-           JOIN language la ON tra.language_code = la.code
-           WHERE serials LIKE '%" . $this->db->escapeLikeString($conditions->keyword) . "%' ESCAPE '!' 
-           GROUP BY entry_id, language_code, author
-           ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                    la.sequence DESC, author ASC
-        ) temp
-      GROUP BY entry_id";
+      "SELECT found_in, language_code, id, entry_id, title, author, status 
+        FROM (
+          SELECT 'serial' AS found_in, language_code, tra.id, entry_id, title, author, tra.status,
+              CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - la.sequence, 3, '0'), IF(author IS NULL, '', author)) AS sort_value
+          FROM translation tra 
+            JOIN entry en ON tra.entry_id = en.id
+            JOIN language la ON tra.language_code = la.code
+          WHERE serials LIKE '%" . $this->db->escapeLikeString($conditions->keyword) . "%' ESCAPE '!' 
+      ) tmain
+      WHERE sort_value = (
+        SELECT MIN(CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - la.sequence, 3, '0'), IF(author IS NULL, '', author)))
+        FROM translation tra 
+    	    JOIN entry en ON tra.entry_id = en.id
+          JOIN language la ON tra.language_code = la.code
+        WHERE tra.entry_id = tmain.entry_id AND serials LIKE '%" . $this->db->escapeLikeString($conditions->keyword) . "%' ESCAPE '!' 
+      )";
     } else {
       if ($conditions->checks->content) {
         $subSql = 

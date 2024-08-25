@@ -230,23 +230,26 @@ class TranslationModel extends BaseModel
         //     WHERE temp.rn = 1';
         //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        /** Used for host with lower SQL version (T.T), 
-         * not 100% guaranteed it will always return the first row of each group,
-         * even when adding session variables like @:row_num */ 
+        /** Used for host with lower SQL version (T.T) */ 
         $sql = 
-            'SELECT MIN(entry_id) AS entry_id, author, author_note, title, status, enum_title                
+            'SELECT entry_id, author, author_note, title, status, enum_title
             FROM (
                 SELECT translation.*, entry.sequence AS entry_seq,
-                    CONCAT(IF(entry.enumeration IS NULL, "", CONCAT(entry.enumeration, SPACE(1))), translation.title) AS enum_title
+                    CONCAT(IF(entry.enumeration IS NULL, "", CONCAT(entry.enumeration, SPACE(1))), translation.title) AS enum_title,
+                    CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - language.sequence, 3, "0"), IF(author IS NULL, "", author)) AS sort_value
                 FROM translation 
                     LEFT JOIN entry ON translation.entry_id = entry.id
                     LEFT JOIN language ON language_code = code
-                WHERE parent_id = :entry_id: AND translation.status = :status: AND entry.status = :status:                    
-                GROUP BY entry_id, language_code, author
-                ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                        language.sequence DESC, author ASC
-                ) temp
-            GROUP BY temp.entry_id
+                WHERE parent_id = :entry_id: AND translation.status = :status: AND entry.status = :status:
+            ) t1
+            WHERE sort_value = (
+                SELECT MIN(CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - l2.sequence, 3, "0"), IF(author IS NULL, "", author))) 
+                FROM translation t2
+                    LEFT JOIN entry e2 ON t2.entry_id = e2.id
+                    LEFT JOIN language l2 ON t2.language_code = l2.code
+                WHERE t1.entry_id = t2.entry_id 
+                AND e2.parent_id = :entry_id: AND t2.status = :status: AND e2.status = :status:
+            )
             ORDER BY entry_seq ASC';
 
         $query = $this->db->query($sql, [
@@ -271,9 +274,9 @@ class TranslationModel extends BaseModel
 
         $this->db->transStart();
 
-        // must set or error, since the default collation is utf8_general_ci
-        $sql = 'SET @r := :entry_id: COLLATE utf8_unicode_ci, @l := 0;';
-        $this->db->query($sql, ['entry_id' => $entry->id]);
+        /** Must set or error, since the default collation is utf8_general_ci */
+        // $sql = 'SET @r := :entry_id: COLLATE utf8_unicode_ci, @l := 0;';
+        // $this->db->query($sql, ['entry_id' => $entry->id]);
 
         /** This SQL is better, but supported on SQL>=8.0 only */////////////////////////////////////////////
         // $sql = 
@@ -289,7 +292,7 @@ class TranslationModel extends BaseModel
         //                 @r AS _id,
         //                 (SELECT @r := parent_id FROM entry WHERE id = _id) AS parent_id,
         //                 @l := @l + 1 AS lvl
-        //             FROM (SELECT @r, @l) vars JOIN entry
+        //             FROM (SELECT @r := :entry_id: COLLATE utf8_unicode_ci, @l := 0) vars JOIN entry
         //             WHERE @r IS NOT NULL) e1
         //         JOIN entry e2 ON e1._id = e2.id
         //         JOIN translation t ON t.entry_id = e2.id
@@ -301,31 +304,43 @@ class TranslationModel extends BaseModel
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /** Used for host with lower SQL version (T.T), 
-         * not 100% guaranteed it will always return the first row of each group,
-         * even when adding session variables like @:row_num */ 
+         * (Will this 100% guaranteedly return suitable result all the time in all environment?) */ 
         $sql = 
-        'SELECT MIN(entry_id) AS entry_id, author, author_note, title, status, enum_title
+        'SELECT entry_id, author, author_note, title, status, enum_title
         FROM (
-            SELECT t.*, e1.lvl AS lvl,
-                CONCAT(IF(e2.enumeration IS NULL, "", CONCAT(e2.enumeration, SPACE(1))), t.title) AS enum_title
+            SELECT t.*, el.lvl AS lvl,
+                CONCAT(IF(e.enumeration IS NULL, "", CONCAT(e.enumeration, SPACE(1))), t.title) AS enum_title,
+                CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - language.sequence, 3, "0"), IF(author IS NULL, "", author)) AS sort_value
             FROM (
                 SELECT
-                    @r AS _id,
-                    (SELECT @r := parent_id FROM entry WHERE id = _id) AS parent_id,
-                    @l := @l + 1 AS lvl
-                FROM (SELECT @r, @l) vars JOIN entry
-                WHERE @r IS NOT NULL) e1
-            JOIN entry e2 ON e1._id = e2.id
-            JOIN translation t ON t.entry_id = e2.id
-            JOIN language ON language_code = code
-            WHERE t.status = :status: AND e2.status = :status: 
-            GROUP BY t.entry_id, t.language_code
-            ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                    language.sequence DESC) temp
-        GROUP BY temp.entry_id
+                    @r1 AS _id,
+                    (SELECT @r1 := parent_id FROM entry WHERE id = _id) AS parent_id,
+                    @l1 := @l1 + 1 AS lvl
+                FROM (SELECT @r1 := :entry_id: COLLATE utf8_unicode_ci, @l1 := 0) vars JOIN entry
+                WHERE @r1 IS NOT NULL
+            ) el
+                JOIN entry e ON el._id = e.id
+                JOIN translation t ON t.entry_id = e.id
+                JOIN language ON language_code = code
+            WHERE t.status = :status: AND e.status = :status: 
+        ) tmain
+        WHERE sort_value = (
+            SELECT MIN(CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - language.sequence, 3, "0"), IF(author IS NULL, "", author))) 
+            FROM (
+                SELECT
+                    @r2 AS _id,
+                    (SELECT @r2 := parent_id FROM entry WHERE id = _id) AS parent_id,
+                    @l2 := @l2 + 1 AS lvl
+                FROM (SELECT @r2 := :entry_id: COLLATE utf8_unicode_ci, @l2 := 0) AS vars JOIN entry WHERE @r2 IS NOT NULL) el
+                    JOIN entry e ON el._id = e.id
+                    JOIN translation t ON t.entry_id = e.id
+                    JOIN language ON language_code = code
+                WHERE t.entry_id = tmain.entry_id AND t.status = :status: AND e.status = :status:
+	        )
         ORDER BY lvl DESC';    
 
         $query = $this->db->query($sql, [
+                                    'entry_id'  => $entry->id,
                                     'status'    => Utilities::STATUS_ACTIVE,
                                     'user_lang' => $user_language_code,      
                                 ]);
@@ -376,35 +391,32 @@ class TranslationModel extends BaseModel
         //     WHERE temp.rn = 1';
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        /** Used for host with lower SQL version (T.T), 
-         * not 100% guaranteed it will always return the first row of each group,
-         * even when adding session variables like @:row_num */ 
+        /** Used for host with lower SQL version (T.T) */ 
         $sql = 
-        'SELECT id, MIN(entry_id) AS entry_id, language_code, author, author_note, title, content, notation, status, section_id, 
-            image_url_header, image_url_content, image_url_commentary, image_url_footer
+        'SELECT id, entry_id, language_code, author, author_note, title, content, notation, status, section_id, 
+	            image_url_header, image_url_content, image_url_commentary, image_url_footer
         FROM (
             SELECT t.*, e.section_id AS section_id, e.sequence AS entry_seq, s.sequence AS section_seq
-                , (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) 
-                    AS image_url_header
-                , (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) 
-                    AS image_url_content
-                , (SELECT image_url FROM image_url WHERE image_id_commentary = image_url.id) 
-                    AS image_url_commentary
-                , (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) 
-                    AS image_url_footer
+                , (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) AS image_url_header
+                , (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) AS image_url_content
+                , (SELECT image_url FROM image_url WHERE image_id_commentary = image_url.id) AS image_url_commentary
+                , (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) AS image_url_footer
+                , CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - language.sequence, 3, "0"), IF(author IS NULL, "", author)) AS sort_value
             FROM translation t
                 LEFT JOIN entry e ON t.entry_id = e.id
                 LEFT JOIN language ON language_code = code
                 LEFT JOIN section s ON e.section_id = s.id
-            WHERE parent_id IS NULL AND s.id IN :section_ids:
-                AND t.status = :status: AND e.status = :status:
-            GROUP BY section_id, entry_id, language_code, author
-            ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                     language.sequence DESC, author ASC   
-            ) temp
-        GROUP BY temp.entry_id
-        ORDER BY CASE WHEN section_id = :section_id_history: THEN 2 ELSE 1 END ASC,
-                entry_seq ASC, section_seq ASC';    
+            WHERE parent_id IS NULL AND s.id IN :section_ids: AND t.status = :status: AND e.status = :status:
+        ) tmain
+        WHERE sort_value = (
+            SELECT MIN(CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - language.sequence, 3, "0"), IF(author IS NULL, "", author))) 
+            FROM translation t
+                LEFT JOIN entry e ON t.entry_id = e.id
+                LEFT JOIN language ON language_code = code
+                LEFT JOIN section s ON e.section_id = s.id
+            WHERE t.entry_id = tmain.entry_id AND parent_id IS NULL AND s.id IN :section_ids: AND t.status = :status: AND e.status = :status:
+        ) 
+        ORDER BY CASE WHEN section_id = :section_id_history: THEN 2 ELSE 1 END ASC, entry_seq ASC, section_seq ASC';    
 
         $query = $this->db->query($sql, [
                                     'section_ids'           => Utilities::SECTION_IDS_MENU_SUTTA,
@@ -422,6 +434,7 @@ class TranslationModel extends BaseModel
 
     /**
      * get neither [nikaya, agama, history]
+     * ORDER BY is different from getSuttaTranslations()
      */
     private function getNonSuttaTranslations(string $user_language_code) 
     {
@@ -457,33 +470,31 @@ class TranslationModel extends BaseModel
         //     WHERE temp.rn = 1';
         //////////////////////////////////////////////////////////////////////////////////////////
         
-        /** Used for host with lower SQL version (T.T), 
-         * not 100% guaranteed it will always return the first row of each group,
-         * even when adding session variables like @:row_num */
+        /** Used for host with lower SQL version (T.T) */
         $sql = 
-            'SELECT id, MIN(entry_id) AS entry_id, language_code, author, author_note, title, content, notation, status, section_id, 
-            image_url_header, image_url_content, image_url_commentary, image_url_footer
+            'SELECT id, entry_id, language_code, author, author_note, title, content, notation, status, section_id, 
+                    image_url_header, image_url_content, image_url_commentary, image_url_footer
             FROM (
                 SELECT t.*, e.section_id AS section_id, s.sequence AS section_seq, e.sequence AS entry_seq
-                    , (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) 
-                        AS image_url_header
-    	            , (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) 
-                        AS image_url_content
-                    , (SELECT image_url FROM image_url WHERE image_id_commentary = image_url.id) 
-                        AS image_url_commentary
-                    , (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) 
-                        AS image_url_footer
+                    , (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) AS image_url_header
+    	            , (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) AS image_url_content
+                    , (SELECT image_url FROM image_url WHERE image_id_commentary = image_url.id) AS image_url_commentary
+                    , (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) AS image_url_footer
+                    , CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - language.sequence, 3, "0"), IF(author IS NULL, "", author)) AS sort_value
                 FROM translation t
                     LEFT JOIN entry e ON t.entry_id = e.id
                     LEFT JOIN language ON language_code = code
                     LEFT JOIN section s ON e.section_id = s.id
-                WHERE parent_id IS NULL AND s.id NOT IN :section_ids:
-                    AND t.status = :status: AND e.status = :status:
-                GROUP BY section_id, entry_id, language_code, author
-                ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
-                        language.sequence DESC, author ASC
-                ) temp
-            GROUP BY temp.entry_id
+                WHERE parent_id IS NULL AND s.id NOT IN :section_ids: AND t.status = :status: AND e.status = :status:
+            ) tmain
+            WHERE sort_value = (
+                SELECT MIN(CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - language.sequence, 3, "0"), IF(author IS NULL, "", author))) 
+                FROM translation t
+                    LEFT JOIN entry e ON t.entry_id = e.id
+                    LEFT JOIN language ON language_code = code
+                    LEFT JOIN section s ON e.section_id = s.id
+                WHERE t.entry_id = tmain.entry_id AND parent_id IS NULL AND s.id NOT IN :section_ids: AND t.status = :status: AND e.status = :status:
+            )
             ORDER BY section_seq ASC, entry_seq ASC';
 
         $query = $this->db->query($sql, [
