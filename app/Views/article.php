@@ -79,7 +79,7 @@
                 <h2><?=lang('App.article_translation')?></h2>
 
 
-                <div id="dd-article" class="dropdown pt-2">
+                <div id="dd-article" class="dropdown pt-2" lang="auto">
 
                   <button class="btn dropdown-toggle text-truncate" type="button" id="dropdown-main" 
                     data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true">
@@ -113,7 +113,8 @@
                         <script type="text/javascript">
                           js_trans[<?=$i?>] = {title: encodeURIComponent("<?=$tran->encodedEnumTitle?>"),
                                                content: encodeURIComponent("<?=$tran->encodedContent?>"),
-                                               author: encodeURIComponent("<?=$tran->encodedAuthor?>")};
+                                               author: encodeURIComponent("<?=$tran->encodedAuthor?>"),
+                                               lang: "<?=$tran->language_code?>"};
                         </script>
                         <li><a class="dropdown-item text-truncate link-main
                               <?php if ($tran->default) echo ' active'; ?>" href="javascript:void(0)"
@@ -144,7 +145,7 @@
               <div class="section-title">
                 <h2><?=lang('App.article_translation')?></h2>
                 
-                <div id="dd-article" class="dropdown pt-2">
+                <div id="dd-article" class="dropdown pt-2" lang="auto">
                   
                   <button class="btn dropdown-toggle text-truncate ref" type="button" id="dropdown-sub" 
                     data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true">
@@ -178,7 +179,8 @@
                         <script type="text/javascript">
                           js_trans[<?=$i?>] = {title: encodeURIComponent("<?=$tran->encodedEnumTitle?>"),
                                                content: encodeURIComponent("<?=$tran->encodedContent?>"),
-                                               author: encodeURIComponent("<?=$tran->encodedAuthor?>")};
+                                               author: encodeURIComponent("<?=$tran->encodedAuthor?>"),
+                                               lang: "<?=$tran->language_code?>"};
                         </script>
                         <li><a class="dropdown-item text-truncate link-sub
                               <?php if ($tran->default) echo ' active'; ?>" href="javascript:void(0)"
@@ -214,7 +216,7 @@
 
             <h2><?=lang('App.article_commentary')?></h2>
             
-            <div id="dd-commentary" class="dropdown pt-2">
+            <div id="dd-commentary" class="dropdown pt-2" lang="auto">
 
               <button class="btn dropdown-toggle text-truncate" type="button" id="dropdown-comm" 
                 data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true">
@@ -239,7 +241,8 @@
                   <?php else : ?>
                     <script type="text/javascript">
                       js_comms[<?=$i?>] = {content: encodeURIComponent("<?=$comm->encodedContent?>"),
-                                           author: encodeURIComponent("<?=$comm->encodedAuthor?>")};
+                                           author: encodeURIComponent("<?=$comm->encodedAuthor?>"),
+                                           lang: "<?=$comm->language_code?>"};
                     </script>
                     <li><a class="dropdown-item text-truncate link-comm
                           <?php if ($comm->default) echo ' active'; ?>" href="javascript:void(0)"
@@ -405,14 +408,19 @@
         } else {
           return;
         }
-        if (ti) ti.innerHTML = decodeURIComponent(item.title);
+        if (ti) {
+          ti.innerHTML = decodeURIComponent(item.title);
+          ti.setAttribute("lang", item.lang);
+        }
         co.innerHTML = decodeURIComponent(item.content);
+        co.setAttribute("lang", item.lang);
         au.innerHTML = decodeURIComponent(item.author);
+        au.setAttribute("lang", item.lang);
       }
 
-      function initContent(_title, _content, _author, _title_comm, _content_comm, _author_comm) {
-        var tran = {title: _title, content: _content, author: _author};
-        var comm = {content: _content_comm, author: _author_comm};
+      function initContent(_title, _content, _author, _al, _title_comm, _content_comm, _author_comm, _cl) {
+        var tran = {title: _title, content: _content, author: _author, lang: _al};
+        var comm = {content: _content_comm, author: _author_comm, lang: _cl};
         if (_author) {
           reloadContent(1, tran);
           reloadContent(2, tran);
@@ -445,12 +453,13 @@
             break;
           }
         }
-        $title = ''; $content = ''; $author = '';
+        $title = ''; $content = ''; $author = ''; $lang = 'auto';
         if (isset($defaultTran)) {
           // $title = $defaultTran->encodedTitle;
           $title = $defaultTran->encodedEnumTitle;
           $content = $defaultTran->encodedContent;
-          $author = $defaultTran->encodedAuthor; 
+          $author = $defaultTran->encodedAuthor;
+          $lang = $defaultTran->language_code;
         }
 
         // commentaries
@@ -461,10 +470,11 @@
             break;
           }
         }
-        $content_comm = ''; $author_comm = '';
+        $content_comm = ''; $author_comm = ''; $lang_comm = 'auto';
         if (isset($defaultComm)) {
           $content_comm = $defaultComm->encodedContent;
           $author_comm = $defaultComm->encodedAuthor; 
+          $lang_comm = $defaultComm->language_code;
         }
       ?>
 
@@ -473,9 +483,11 @@
         initContent(encodeURIComponent('<?=$title?>'),
                   encodeURIComponent('<?=$content?>'),
                   encodeURIComponent('<?=$author?>'),
+                  '<?=$lang?>',
                   '',
                   encodeURIComponent('<?=$content_comm?>'),
-                  encodeURIComponent('<?=$author_comm?>'));
+                  encodeURIComponent('<?=$author_comm?>'),
+                  '<?=$lang_comm?>');
         initDefaultState();        
         dropdownOverflow();
       }
