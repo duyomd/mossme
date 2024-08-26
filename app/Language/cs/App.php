@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Překlady',
     'article_commentary'        =>  'Komentáře',
     'article_content'           =>  'Obsah',
+    'aritcle_reference'         =>  'Reference',
     'article_footer1'           =>  'Nic není nezbytné.',
     'article_footer2'           =>  'Všechno je volba.',
     'article_msg_monolingual'   =>  'Zobrazuje se monolingvní režim.',

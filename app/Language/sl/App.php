@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Prevodi',
     'article_commentary'        =>  'Komentarji',
     'article_content'           =>  'Vsebina',
+    'aritcle_reference'         =>  'Sklic',
     'article_footer1'           =>  'Nič ni nujno.',
     'article_footer2'           =>  'Vse je izbira.',
     'article_msg_monolingual'   =>  'Prikazan je enojni jezikovni način.',

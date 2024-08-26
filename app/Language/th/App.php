@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'การแปล',
     'article_commentary'        =>  'คำอธิบาย',
     'article_content'           =>  'เนื้อหา',
+    'aritcle_reference'         =>  'การอ้างอิง',
     'article_footer1'           =>  'ไม่มีสิ่งใดที่จำเป็น',
     'article_footer2'           =>  'ทุกอย่างเป็นทางเลือก',
     'article_msg_monolingual'   =>  'โหมดเดียวภาษาแสดงอยู่',

@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Переводы',
     'article_commentary'        =>  'Комментарии',
     'article_content'           =>  'Содержание',
+    'aritcle_reference'         =>  'Ссылка',
     'article_footer1'           =>  'Ничто не обязательно.',
     'article_footer2'           =>  'Всё — это выбор.',
     'article_msg_monolingual'   =>  'Отображается моноязычный режим.',

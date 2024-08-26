@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Käännökset',
     'article_commentary'        =>  'Kommentaarit',
     'article_content'           =>  'Sisältö',
+    'aritcle_reference'         =>  'Viite',
     'article_footer1'           =>  'Mikään ei ole välttämätöntä.',
     'article_footer2'           =>  'Kaikki on valinta.',
     'article_msg_monolingual'   =>  'Näytetään yksikielinen tila.',

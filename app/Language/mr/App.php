@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'भाषांतरे',
     'article_commentary'        =>  'विवेचन',
     'article_content'           =>  'सामग्री',
+    'aritcle_reference'         =>  'संदर्भ',
     'article_footer1'           =>  'काहीही आवश्यक नाही.',
     'article_footer2'           =>  'सर्व काही निवडीवर अवलंबून आहे.',
     'article_msg_monolingual'   =>  'एकभाषिक मोड प्रदर्शित केला जात आहे.',

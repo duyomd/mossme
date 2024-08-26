@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'અનુવાદો',
     'article_commentary'        =>  'ટિપ્પણીઓ',
     'article_content'           =>  'સામગ્રી',
+    'aritcle_reference'         =>  'રેફરન્સ',
     'article_footer1'           =>  'કોઈTHING જરૂરી નથી.',
     'article_footer2'           =>  'બધું એક પસંદગી છે.',
     'article_msg_monolingual'   =>  'એકમાત્ર ભાષા સ્થિતિ બતાવવામાં આવી રહી છે.',

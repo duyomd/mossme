@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Traduccions',
     'article_commentary'        =>  'Comentaris',
     'article_content'           =>  'Contingut',
+    'aritcle_reference'         =>  'Referència',
     'article_footer1'           =>  'Res no és necessari.',
     'article_footer2'           =>  'Tot és una elecció.',
     'article_msg_monolingual'   =>  'S’està mostrant el mode monolingüe.',

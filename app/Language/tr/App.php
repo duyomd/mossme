@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Çeviriler',
     'article_commentary'        =>  'Açıklamalar',
     'article_content'           =>  'İçerik',
+    'aritcle_reference'         =>  'Referans',
     'article_footer1'           =>  'Hiçbir şey gerekli değildir.',
     'article_footer2'           =>  'Her şey bir seçimdir.',
     'article_msg_monolingual'   =>  'Tek dilli mod görüntüleniyor.',

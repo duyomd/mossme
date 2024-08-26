@@ -537,7 +537,7 @@ class TranslationModel extends BaseModel
         if (isset($entry) && isset($entry->reference_url) && !empty($entry->reference_url)) {
             // header
             array_push($dropdown, 
-                (new Translation())->makePseudo(true, 'Chi Tiết', ''));
+                (new Translation())->makePseudo(true, lang('App.aritcle_reference'), ''));
             // name & link    
             array_push($dropdown, 
                 (new Translation())->makePseudo(true, $entry->reference_source, $entry->reference_url));

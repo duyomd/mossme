@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  '翻訳',
     'article_commentary'        =>  '注釈',
     'article_content'           =>  '内容',
+    'aritcle_reference'         =>  '参照',
     'article_footer1'           =>  '何も必要ではない。',
     'article_footer2'           =>  'すべては選択だ。',
     'article_msg_monolingual'   =>  '単語モードが表示されています。',

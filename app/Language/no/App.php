@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Oversettelser',
     'article_commentary'        =>  'Kommentarer',
     'article_content'           =>  'Innhold',
+    'aritcle_reference'         =>  'Referanse',
     'article_footer1'           =>  'Ingenting er nødvendig.',
     'article_footer2'           =>  'Alt er et valg.',
     'article_msg_monolingual'   =>  'Ettspråklig modus vises.',

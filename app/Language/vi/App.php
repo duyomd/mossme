@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Bản Dịch',
     'article_commentary'        =>  'Chú Giải',
     'article_content'           =>  'Nội Dung',
+    'aritcle_reference'         =>  'Tham Khảo',
     'article_footer1'           =>  'Tiền bất kiến cổ nhân. Hậu bất kiến lai giả.',
     'article_footer2'           =>  'Niệm thiên địa chi du du.',
     'article_msg_monolingual'   => 'Chế độ đơn ngữ đang được hiển thị.',

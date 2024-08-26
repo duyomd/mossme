@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Vertalingen',
     'article_commentary'        =>  'Commentaren',
     'article_content'           =>  'Inhoud',
+    'aritcle_reference'         =>  'Referentie',
     'article_footer1'           =>  'Niets is noodzakelijk.',
     'article_footer2'           =>  'Alles is een keuze.',
     'article_msg_monolingual'   =>  'Monolinguale modus wordt weergegeven.',

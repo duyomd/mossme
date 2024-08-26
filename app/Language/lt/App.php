@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Vertimai',
     'article_commentary'        =>  'Komentarai',
     'article_content'           =>  'Turinys',
+    'aritcle_reference'         =>  'Nuoroda',
     'article_footer1'           =>  'Niekas nėra būtina.',
     'article_footer2'           =>  'Viskas yra pasirinkimas.',
     'article_msg_monolingual'   =>  'Rodo vienakalbį režimą.',

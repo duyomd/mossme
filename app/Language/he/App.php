@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'תרגומים',
     'article_commentary'        =>  'פרשנויות',
     'article_content'           =>  'תוכן',
+    'aritcle_reference'         =>  'התייחסות',
     'article_footer1'           =>  'אין צורך בדבר.',
     'article_footer2'           =>  'הכול הוא בחירה.',
     'article_msg_monolingual'   =>  'מצב חד-לשוני מוצג.',

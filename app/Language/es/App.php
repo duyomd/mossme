@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Traducciones',
     'article_commentary'        =>  'Comentarios',
     'article_content'           =>  'Contenido',
+    'aritcle_reference'         =>  'Referencia',
     'article_footer1'           =>  'Nada es necesario.',
     'article_footer2'           =>  'Todo es una elección.',
     'article_msg_monolingual'   =>  'Se está mostrando el modo monolingüe.',

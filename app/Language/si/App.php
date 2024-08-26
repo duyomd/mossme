@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'පරිවර්තන',
     'article_commentary'        =>  'විවරණ',
     'article_content'           =>  'අන්තර්ගතය',
+    'aritcle_reference'         =>  'උපුටාදක්වීම',
     'article_footer1'           =>  'වහාම අවශ්‍ය නැත.',
     'article_footer2'           =>  'සියල්ල තේරීමක් ය.',
     'article_msg_monolingual'   =>  'එක් භාෂා මෝඩ් පෙන්වයි.',

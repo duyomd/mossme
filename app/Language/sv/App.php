@@ -138,6 +138,7 @@ return [
     'article_translation'       =>  'Översättningar',
     'article_commentary'        =>  'Kommentarer',
     'article_content'           =>  'Innehåll',
+    'aritcle_reference'         =>  'Referens',
     'article_footer1'           =>  'Inget är nödvändigt.',
     'article_footer2'           =>  'Allt är ett val.',
     'article_msg_monolingual'   =>  'Monolingualt läge visas.',

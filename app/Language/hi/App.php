@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'अनुवाद',
     'article_commentary'        =>  'टीकाएँ',
     'article_content'           =>  'सामग्री',
+    'aritcle_reference'         =>  'संदर्भ',
     'article_footer1'           =>  'कुछ भी आवश्यक नहीं है।',
     'article_footer2'           =>  'सब कुछ एक विकल्प है।',
     'article_msg_monolingual'   =>  'एकभाषी मोड प्रदर्शित किया जा रहा है।',

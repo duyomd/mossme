@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Fordítások',
     'article_commentary'        =>  'Kommentárok',
     'article_content'           =>  'Tartalom',
+    'aritcle_reference'         =>  'Hivatkozás',
     'article_footer1'           =>  'Semmi sem szükséges.',
     'article_footer2'           =>  'Minden választás kérdése.',
     'article_msg_monolingual'   =>  'Egynyelvű mód van megjelenítve.',

@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  '번역',
     'article_commentary'        =>  '주석',
     'article_content'           =>  '내용',
+    'aritcle_reference'         =>  '참고',
     'article_footer1'           =>  '필요한 것은 없다.',
     'article_footer2'           =>  '모든 것은 선택이다.',
     'article_msg_monolingual'   =>  '단일 언어 모드가 표시되고 있습니다.',

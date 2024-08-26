@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Traduceri',
     'article_commentary'        =>  'Comentarii',
     'article_content'           =>  'Conținut',
+    'aritcle_reference'         =>  'Referință',
     'article_footer1'           =>  'Nimic nu este necesar.',
     'article_footer2'           =>  'Totul este o alegere.',
     'article_msg_monolingual'   =>  'Modul monolingv este afișat.',

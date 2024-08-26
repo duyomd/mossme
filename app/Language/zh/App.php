@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  '各種翻譯',
     'article_commentary'        =>  '註釋',
     'article_content'           =>  '內容',
+    'aritcle_reference'         =>  '參考',
     'article_footer1'           =>  '前不見古人，後不見來者',
     'article_footer2'           =>  '念天地之悠悠。',
     'article_msg_monolingual'   =>  '顯示單語模式。',

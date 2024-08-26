@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'অনুবাদসমূহ',
     'article_commentary'        =>  'ব্যাখ্যা',
     'article_content'           =>  'বিষয়বস্তু',
+    'aritcle_reference'         =>  'রেফারেন্স',
     'article_footer1'           =>  'কোনো কিছুই প্রয়োজনীয় নয়।',
     'article_footer2'           =>  'সবকিছুই একটি পছন্দ।',
     'article_msg_monolingual'   =>  'এক ভাষিক মোড প্রদর্শিত হচ্ছে।',

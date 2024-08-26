@@ -138,6 +138,7 @@ return [
     'article_translation'       =>  'ဘာသာပြန်ချက်များ',
     'article_commentary'        =>  'အကြောင်းအရာများ',
     'article_content'           =>  'အကြောင်းအရာ',
+    'aritcle_reference'         =>  'ကိုးကားချက်',
     'article_footer1'           =>  'အရေးကြီးသောအရာမရှိပါ။',
     'article_footer2'           =>  'အရာအားလုံးသည် ရွေးချယ်မှုဖြစ်သည်။',
     'article_msg_monolingual'   =>  'တစ်ဘာသာစကားသာ ပြသထားသည်။',

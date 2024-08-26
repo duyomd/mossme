@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'ಅನುವಾದಗಳು',
     'article_commentary'        =>  'ಟಿಪ್ಪಣಿಗಳು',
     'article_content'           =>  'ವಿಷಯ',
+    'aritcle_reference'         =>  'ಉಲ್ಲೇಖ',
     'article_footer1'           =>  'ಏನೂ ಅಗತ್ಯವಿಲ್ಲ.',
     'article_footer2'           =>  'ಎಲ್ಲವೂ ಆಯ್ಕೆಮಟ್ಟದ ವಿಷಯ.',
     'article_msg_monolingual'   =>  'ಏಕಭಾಷಾ ಮೋಡ್ ತೋರಿಸುತ್ತಿದೆ.',

@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Prevod',
     'article_commentary'        =>  'Komentari',
     'article_content'           =>  'Sadržaj',
+    'aritcle_reference'         =>  'Referenca',
     'article_footer1'           =>  'Ništa nije neophodno.',
     'article_footer2'           =>  'Sve je izbor.',
     'article_msg_monolingual'   =>  'Prikazan je jednojezični režim.',

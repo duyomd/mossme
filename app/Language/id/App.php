@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'Terjemahan',
     'article_commentary'        =>  'Komentar',
     'article_content'           =>  'Konten',
+    'aritcle_reference'         =>  'Referensi',
     'article_footer1'           =>  'Tidak ada yang diperlukan.',
     'article_footer2'           =>  'Semua adalah pilihan.',
     'article_msg_monolingual'   =>  'Mode monolingual sedang ditampilkan.',

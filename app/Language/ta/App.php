@@ -137,6 +137,7 @@ return [
     'article_translation'       =>  'மொழிபெயர்ப்புகள்',
     'article_commentary'        =>  'விமர்சனங்கள்',
     'article_content'           =>  'உள்ளடக்கம்',
+    'aritcle_reference'         =>  'குறிப்பு',
     'article_footer1'           =>  'எதுவும் தேவையில்லை.',
     'article_footer2'           =>  'எல்லாம் தேர்வாகும்.',
     'article_msg_monolingual'   =>  'ஒற்றை மொழி முறை காட்டப்படுகிறது.',
