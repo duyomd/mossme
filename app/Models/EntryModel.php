@@ -136,6 +136,32 @@ class EntryModel extends BaseModel
         return $this->where('id', $id)->first();
     }
 
+    public function findParentWithRoot($parentId, $rootId)
+    {
+        if (!isset($parentId)) return null;
+
+        $this->db->transStart();
+
+        $sql = 'SELECT * 
+        FROM entry 
+        WHERE id = :parentId:
+        AND (
+            (parent_id IS NULL AND :rootId: = :parentId:) 
+            OR (parent_id IS NOT NULL AND root_id = :rootId:)
+        )';
+        
+        $query = $this->db->query($sql, [
+                                    'parentId'  => $parentId, 
+                                    'rootId'   => $rootId,
+                                ]);
+        $entry = $query->getRow(0, Entry::class);
+        $query->freeResult();
+
+        $this->db->transComplete();
+        
+        return $entry;
+    }
+
     public function insertEntry($entry)
     {
         $err = lang('App.msg_insert_fail', [lang('App.entry_label_id'), $entry->id]);

@@ -116,6 +116,10 @@ class EntryManager extends BaseController
                     || ($entry->parent_id != null && $entry->root_id == null)) {
                 return json_encode($this->showResult(false, lang('App.entry_msg_parent_root_relation')));
             }
+            // check if parent_id exists
+            if ($entry->parent_id != null && $this->findParentWithRoot($entry->parent_id, $entry->root_id) == null) {
+                return json_encode($this->showResult(false, lang('App.entry_msg_parent_root_relation')));
+            }
 
             if ($mode == 'insert') {
                 $result = $this->insertEntry($entry);
@@ -214,6 +218,10 @@ class EntryManager extends BaseController
     private function deleteEntry($id)
     {
         return model(EntryModel::class)->deleteEntry($id);
+    }
+
+    private function findParentWithRoot($parentId, $rootId) {
+        return model(EntryModel::class)->findParentWithRoot($parentId, $rootId);
     }
 
     private function insertEntry($entry)
