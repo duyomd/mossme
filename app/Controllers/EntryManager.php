@@ -27,9 +27,7 @@ class EntryManager extends BaseController
         $data['parentId']           = $parentId;
         $data['grandpParentId']     = isset($parentId) ? 
                                         model(EntryModel::class)->getEntryOnly($parentId)->parent_id : null;
-
-        $imageSort = new Sort(); $imageSort->setRpp(-1);
-        $data['images']             = model(ImageUrlModel::class)->getImageUrls($imageSort);
+        $data['images']             = model(ImageUrlModel::class)->getImageUrls();
 
         helper('form');
         

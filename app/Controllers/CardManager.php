@@ -19,8 +19,7 @@ class CardManager extends BaseController
 
         $data = $this->loadList();
         $data['responseJsonList'] = $this->responseJsonList($data);
-        $imageSort = new Sort(); $imageSort->setRpp(-1);
-        $data['images'] = model(ImageUrlModel::class)->getImageUrls($imageSort);
+        $data['images'] = model(ImageUrlModel::class)->getImageUrls();
 
         helper('form');        
         return view('admin/cardManager', $data);

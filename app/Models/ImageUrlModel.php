@@ -123,8 +123,11 @@ class ImageUrlModel extends BaseModel
         return $this->db->table('image_url')->countAll();
     }
 
-    public function getImageUrls($sort) 
+    public function getImageUrls($sort = null) 
     {
+        if (!isset($sort)) {
+            $sort = Sort::create(ImageUrlModel::DEFAULT_ORDERBYS, ImageUrlModel::DEFAULT_SORTORDERS, 1, -1, 0);    
+        }  
         for ($i = 0; $i < count($sort->getOrderBys()); $i++) {
             $this->orderBy($sort->getOrderBys()[$i], $sort->getSortOrders()[$i]);
         }
