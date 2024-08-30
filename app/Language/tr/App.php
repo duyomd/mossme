@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'Çeviriler',
-    'article_commentary'        =>  'Açıklamalar',
+    'article_translation'       =>  'Çeviriler [{0, number}]',
+    'article_commentary'        =>  'Açıklamalar [{0, number}]',
     'article_content'           =>  'İçerik',
     'aritcle_reference'         =>  'Referans',
     'article_footer1'           =>  'Hiçbir şey gerekli değildir.',

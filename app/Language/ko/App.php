@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  '번역',
-    'article_commentary'        =>  '주석',
+    'article_translation'       =>  '번역【{0, number}】',
+    'article_commentary'        =>  '주석【{0, number}】',
     'article_content'           =>  '내용',
     'aritcle_reference'         =>  '참고',
     'article_footer1'           =>  '필요한 것은 없다.',

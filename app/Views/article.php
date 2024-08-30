@@ -76,7 +76,7 @@
             <div id="col-main" class="">
 
               <div class="section-title">
-                <h2><?=lang('App.article_translation')?></h2>
+                <h2><?=lang('App.article_translation', [$entry->translationCount])?></h2>
 
 
                 <div id="dd-article" class="dropdown pt-2" lang="auto">
@@ -143,7 +143,7 @@
             <div id="col-sub" class="hidden">
               
               <div class="section-title">
-                <h2><?=lang('App.article_translation')?></h2>
+                <h2><?=lang('App.article_translation', [$entry->translationCount])?></h2>
                 
                 <div id="dd-article" class="dropdown pt-2" lang="auto">
                   
@@ -214,7 +214,7 @@
 
           <div class="section-title">
 
-            <h2><?=lang('App.article_commentary')?></h2>
+            <h2><?=lang('App.article_commentary', [$entry->commentaryCount])?></h2>
             
             <div id="dd-commentary" class="dropdown pt-2" lang="auto">
 

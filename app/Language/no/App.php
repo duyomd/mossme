@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'Oversettelser',
-    'article_commentary'        =>  'Kommentarer',
+    'article_translation'       =>  'Oversettelser [{0, number}]',
+    'article_commentary'        =>  'Kommentarer [{0, number}]',
     'article_content'           =>  'Innhold',
     'aritcle_reference'         =>  'Referanse',
     'article_footer1'           =>  'Ingenting er nødvendig.',

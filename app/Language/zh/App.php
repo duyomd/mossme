@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  '各種翻譯',
-    'article_commentary'        =>  '註釋',
+    'article_translation'       =>  '各種翻譯【{0, number}】',
+    'article_commentary'        =>  '註釋【{0, number}】',
     'article_content'           =>  '內容',
     'aritcle_reference'         =>  '參考',
     'article_footer1'           =>  '前不見古人，後不見來者',

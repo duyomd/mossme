@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'অনুবাদসমূহ',
-    'article_commentary'        =>  'ব্যাখ্যা',
+    'article_translation'       =>  'অনুবাদসমূহ [{0, number}]',
+    'article_commentary'        =>  'ব্যাখ্যা [{0, number}]',
     'article_content'           =>  'বিষয়বস্তু',
     'aritcle_reference'         =>  'রেফারেন্স',
     'article_footer1'           =>  'কোনো কিছুই প্রয়োজনীয় নয়।',

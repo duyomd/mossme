@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'અનુવાદો',
-    'article_commentary'        =>  'ટિપ્પણીઓ',
+    'article_translation'       =>  'અનુવાદો [{0, number}]',
+    'article_commentary'        =>  'ટિપ્પણીઓ [{0, number}]',
     'article_content'           =>  'સામગ્રી',
     'aritcle_reference'         =>  'રેફરન્સ',
     'article_footer1'           =>  'કોઈTHING જરૂરી નથી.',

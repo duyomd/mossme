@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'अनुवाद',
-    'article_commentary'        =>  'टीकाएँ',
+    'article_translation'       =>  'अनुवाद [{0, number}]',
+    'article_commentary'        =>  'टीकाएँ [{0, number}]',
     'article_content'           =>  'सामग्री',
     'aritcle_reference'         =>  'संदर्भ',
     'article_footer1'           =>  'कुछ भी आवश्यक नहीं है।',

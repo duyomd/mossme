@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'भाषांतरे',
-    'article_commentary'        =>  'विवेचन',
+    'article_translation'       =>  'भाषांतरे [{0, number}]',
+    'article_commentary'        =>  'विवेचन [{0, number}]',
     'article_content'           =>  'सामग्री',
     'aritcle_reference'         =>  'संदर्भ',
     'article_footer1'           =>  'काहीही आवश्यक नाही.',

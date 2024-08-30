@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  '翻訳',
-    'article_commentary'        =>  '注釈',
+    'article_translation'       =>  '翻訳【{0, number}】',
+    'article_commentary'        =>  '注釈【{0, number}】',
     'article_content'           =>  '内容',
     'aritcle_reference'         =>  '参照',
     'article_footer1'           =>  '何も必要ではない。',

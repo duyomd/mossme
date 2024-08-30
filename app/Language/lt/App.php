@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'Vertimai',
-    'article_commentary'        =>  'Komentarai',
+    'article_translation'       =>  'Vertimai [{0, number}]',
+    'article_commentary'        =>  'Komentarai [{0, number}]',
     'article_content'           =>  'Turinys',
     'aritcle_reference'         =>  'Nuoroda',
     'article_footer1'           =>  'Niekas nėra būtina.',

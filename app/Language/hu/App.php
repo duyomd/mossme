@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'Fordítások',
-    'article_commentary'        =>  'Kommentárok',
+    'article_translation'       =>  'Fordítások [{0, number}]',
+    'article_commentary'        =>  'Kommentárok [{0, number}]',
     'article_content'           =>  'Tartalom',
     'aritcle_reference'         =>  'Hivatkozás',
     'article_footer1'           =>  'Semmi sem szükséges.',

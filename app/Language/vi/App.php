@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'Bản Dịch',
-    'article_commentary'        =>  'Chú Giải',
+    'article_translation'       =>  'Bản Dịch [{0, number}]',
+    'article_commentary'        =>  'Chú Giải [{0, number}]',
     'article_content'           =>  'Nội Dung',
     'aritcle_reference'         =>  'Tham Khảo',
     'article_footer1'           =>  'Tiền bất kiến cổ nhân. Hậu bất kiến lai giả.',

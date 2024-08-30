@@ -135,8 +135,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'Översättningar',
-    'article_commentary'        =>  'Kommentarer',
+    'article_translation'       =>  'Översättningar [{0, number}]',
+    'article_commentary'        =>  'Kommentarer [{0, number}]',
     'article_content'           =>  'Innehåll',
     'aritcle_reference'         =>  'Referens',
     'article_footer1'           =>  'Inget är nödvändigt.',

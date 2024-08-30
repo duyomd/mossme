@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'Traductions',
-    'article_commentary'        =>  'Commentaires',
+    'article_translation'       =>  'Traductions [{0, number}]',
+    'article_commentary'        =>  'Commentaires [{0, number}]',
     'article_content'           =>  'Contenu',
     'aritcle_reference'         =>  'Référence',
     'article_footer1'           =>  'Rien n’est nécessaire.',

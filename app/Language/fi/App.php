@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'Käännökset',
-    'article_commentary'        =>  'Kommentaarit',
+    'article_translation'       =>  'Käännökset [{0, number}]',
+    'article_commentary'        =>  'Kommentaarit [{0, number}]',
     'article_content'           =>  'Sisältö',
     'aritcle_reference'         =>  'Viite',
     'article_footer1'           =>  'Mikään ei ole välttämätöntä.',

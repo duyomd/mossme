@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'Terjemahan',
-    'article_commentary'        =>  'Komentar',
+    'article_translation'       =>  'Terjemahan [{0, number}]',
+    'article_commentary'        =>  'Komentar [{0, number}]',
     'article_content'           =>  'Konten',
     'aritcle_reference'         =>  'Referensi',
     'article_footer1'           =>  'Tidak ada yang diperlukan.',

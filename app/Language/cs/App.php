@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'Překlady',
-    'article_commentary'        =>  'Komentáře',
+    'article_translation'       =>  'Překlady [{0, number}]',
+    'article_commentary'        =>  'Komentáře [{0, number}]',
     'article_content'           =>  'Obsah',
     'aritcle_reference'         =>  'Reference',
     'article_footer1'           =>  'Nic není nezbytné.',

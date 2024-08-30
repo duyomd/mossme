@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'Prevodi',
-    'article_commentary'        =>  'Komentarji',
+    'article_translation'       =>  'Prevodi [{0, number}]',
+    'article_commentary'        =>  'Komentarji [{0, number}]',
     'article_content'           =>  'Vsebina',
     'aritcle_reference'         =>  'Sklic',
     'article_footer1'           =>  'Nič ni nujno.',

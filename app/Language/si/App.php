@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'පරිවර්තන',
-    'article_commentary'        =>  'විවරණ',
+    'article_translation'       =>  'පරිවර්තන [{0, number}]',
+    'article_commentary'        =>  'විවරණ [{0, number}]',
     'article_content'           =>  'අන්තර්ගතය',
     'aritcle_reference'         =>  'උපුටාදක්වීම',
     'article_footer1'           =>  'වහාම අවශ්‍ය නැත.',

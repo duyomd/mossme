@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'การแปล',
-    'article_commentary'        =>  'คำอธิบาย',
+    'article_translation'       =>  'การแปล [{0, number}]',
+    'article_commentary'        =>  'คำอธิบาย [{0, number}]',
     'article_content'           =>  'เนื้อหา',
     'aritcle_reference'         =>  'การอ้างอิง',
     'article_footer1'           =>  'ไม่มีสิ่งใดที่จำเป็น',

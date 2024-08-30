@@ -14,8 +14,10 @@ class Entry extends Entity
     protected array $translations           = array();
     protected array $translationsChildren   = array();
     protected array $translationsParents    = array();
+    protected array $commentaries           = array();
 
-    protected array $commentaries = array();
+    protected $translationCount;
+    protected $commentaryCount;
 
     public function getDisplayTitle()
     {
@@ -80,4 +82,32 @@ class Entry extends Entity
         $this->commentaries = $commentaries;
         return $this;
     }
+
+    public function getTranslationCount() {
+        if (isset($this->translationCount)) return $this->translationCount; 
+        $count = 0;
+        if (isset($this->translations)) {
+            foreach($this->translations as $tran) {
+                if (!$tran->getPseudo()) {
+                    $count++;
+                }
+            }
+        }
+        $this->translationCount = $count;
+        return $this->translationCount;
+    }
+
+    public function getCommentaryCount() {
+        if (isset($this->commentaryCount)) return $this->commentaryCount; 
+        $count = 0;
+        if (isset($this->commentaries)) {
+            foreach($this->commentaries as $comm) {
+                if (!$comm->getPseudo()) {
+                    $count++;
+                }
+            }
+        }
+        $this->commentaryCount = $count;
+        return $this->commentaryCount;
+    }    
 }

@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'ಅನುವಾದಗಳು',
-    'article_commentary'        =>  'ಟಿಪ್ಪಣಿಗಳು',
+    'article_translation'       =>  'ಅನುವಾದಗಳು [{0, number}]',
+    'article_commentary'        =>  'ಟಿಪ್ಪಣಿಗಳು [{0, number}]',
     'article_content'           =>  'ವಿಷಯ',
     'aritcle_reference'         =>  'ಉಲ್ಲೇಖ',
     'article_footer1'           =>  'ಏನೂ ಅಗತ್ಯವಿಲ್ಲ.',

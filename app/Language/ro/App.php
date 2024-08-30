@@ -134,8 +134,8 @@ return [
     /*--------------------------------------------------------------
     # Article
     --------------------------------------------------------------*/
-    'article_translation'       =>  'Traduceri',
-    'article_commentary'        =>  'Comentarii',
+    'article_translation'       =>  'Traduceri [{0, number}]',
+    'article_commentary'        =>  'Comentarii [{0, number}]',
     'article_content'           =>  'Conținut',
     'aritcle_reference'         =>  'Referință',
     'article_footer1'           =>  'Nimic nu este necesar.',
