@@ -169,9 +169,19 @@ body.lite {
     height: max-content;
     padding: 50px 0;
   }
-
   #hero.hero-article .play-btn {
     display: none !important;
+  }
+
+  .article {
+    --bg-article: none !important;    
+  }
+
+  .commentary {
+    --bg-cmt: none !important;
+  }
+  .commentary::before {
+    background: none;
   }
 }
 
