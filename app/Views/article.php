@@ -274,11 +274,18 @@
         
           <div class="section-title">
               <h2><?=lang('App.article_content')?></h2>
+              <div class="text-center">
               <p class="mt-4"><?= $entry->displayEnumTitle ?></p>
+              </div>
           </div>
+          <?php if (!App\Helpers\Utilities::isNullOrBlank($entry->displayContent)) : ?>
+            <div class="mb-4 row justify-content-center">
+              <div><?= $entry->displayContent ?></div>
+            </div>
+          <?php endif ?>
           <?php if ($entry->isFolder && count($entry->translationsChildren) > 0) : ?>
             <div class="row justify-content-center">
-              <div class="col-10">
+              <div class="col-lg-10">
                   <ul class="content-list">
                     <?php foreach ($entry->translationsChildren as $child) : ?>
                       <li><a href="/article/<?=$child->entry_id?>">

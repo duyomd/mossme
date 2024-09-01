@@ -89,14 +89,18 @@ class EntryModel extends BaseModel
     public function displayTitle($entry, $user_language_code)
     {
         $display_title = '';
+        $display_enum_title = '';
+        $display_content = '';
         $parents = $entry->translationsParents;
         if (isset($parents) && count($parents) > 0) {
             $display_title = end($parents)->title;
             $display_enum_title = end($parents)->enum_title;
+            $display_content = end($parents)->content;
         }
         // TODO encode for html
         $entry->displayTitle = $display_title;
         $entry->displayEnumTitle = $display_enum_title;
+        $entry->displayContent = $display_content;
         return $entry;
     }
 

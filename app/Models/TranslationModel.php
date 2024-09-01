@@ -280,7 +280,7 @@ class TranslationModel extends BaseModel
 
         /** This SQL is better, but supported on SQL>=8.0 only */////////////////////////////////////////////
         // $sql = 
-        //     'SELECT entry_id, author, author_note, title, status, enum_title
+        //     'SELECT entry_id, author, author_note, title, status, enum_title, content
         //     FROM (
         //         SELECT t.*,
         //             CONCAT(IF(e2.enumeration IS NULL, "", CONCAT(e2.enumeration, SPACE(1))), t.title) AS enum_title
@@ -306,7 +306,7 @@ class TranslationModel extends BaseModel
         /** Used for host with lower SQL version (T.T), 
          * (Will this 100% guaranteedly return suitable result all the time in all environment?) */ 
         $sql = 
-        'SELECT entry_id, author, author_note, title, status, enum_title
+        'SELECT entry_id, author, author_note, title, status, enum_title, content
         FROM (
             SELECT t.*, el.lvl AS lvl,
                 CONCAT(IF(e.enumeration IS NULL, "", CONCAT(e.enumeration, SPACE(1))), t.title) AS enum_title,
