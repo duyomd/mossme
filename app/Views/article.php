@@ -275,7 +275,7 @@
           <div class="section-title">
               <h2><?=lang('App.article_content')?></h2>
               <div class="text-center">
-              <p class="mt-4"><?= $entry->displayEnumTitle ?></p>
+                <p id="title-main" class="mt-4"><?= $entry->displayEnumTitle ?></p>
               </div>
           </div>
           <?php if (!App\Helpers\Utilities::isNullOrBlank($entry->displayContent)) : ?>
