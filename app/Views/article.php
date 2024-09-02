@@ -11,7 +11,7 @@
             <span><a href="/article/<?= $entry->translationsParents[0]->entry_id ?>">
             <?= $entry->translationsParents[0]->title ?></a></span></h1>
           <?php if ($count > 2) : ?>
-            <ul class="content-list content-list-parents pt-3">
+            <ul class="content-list content-list-parents pt-3 ps-2 ps-lg-4">
               <?php for ($i = 1; $i < $count - 1; $i++) : ?>
                 <?php $parent = $entry->translationsParents[$i];
                   echo '<li><h2><a href="/article/' . $parent->entry_id . '" title="' . $parent->title . '">|';
