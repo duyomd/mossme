@@ -111,7 +111,7 @@
                         <?php endif ?>
                       <?php else : ?>
                         <script type="text/javascript">
-                          js_trans[<?=$i?>] = {title: encodeURIComponent("<?=$tran->encodedEnumTitle?>"),
+                          js_trans[<?=$i?>] = {title: encodeURIComponent("<?=$tran->encodedTitle?>"),
                                                content: encodeURIComponent("<?=$tran->encodedContent?>"),
                                                author: encodeURIComponent("<?=$tran->encodedAuthor?>"),
                                                lang: "<?=$tran->language_code?>"};
@@ -129,7 +129,7 @@
 
                 </div>
 
-                <p id="title-main" class="mt-4 text-center"><?=$entry->displayEnumTitle?></p>
+                <p id="title-main" class="mt-4 text-center"><?=$entry->displayTitle?></p>
               </div>
 
               <div class="row">
@@ -177,7 +177,7 @@
                         <?php endif ?>
                       <?php else : ?>
                         <script type="text/javascript">
-                          js_trans[<?=$i?>] = {title: encodeURIComponent("<?=$tran->encodedEnumTitle?>"),
+                          js_trans[<?=$i?>] = {title: encodeURIComponent("<?=$tran->encodedTitle?>"),
                                                content: encodeURIComponent("<?=$tran->encodedContent?>"),
                                                author: encodeURIComponent("<?=$tran->encodedAuthor?>"),
                                                lang: "<?=$tran->language_code?>"};
@@ -194,7 +194,7 @@
                   </ul>
 
                 </div>
-                <p id="title-sub" class="mt-4 text-center"><?=$entry->displayEnumTitle?></p>
+                <p id="title-sub" class="mt-4 text-center"><?=$entry->displayTitle?></p>
               </div>
 
               <div class="row">
@@ -462,8 +462,8 @@
         }
         $title = ''; $content = ''; $author = ''; $lang = 'auto';
         if (isset($defaultTran)) {
-          // $title = $defaultTran->encodedTitle;
-          $title = $defaultTran->encodedEnumTitle;
+           $title = $defaultTran->encodedTitle;
+          // $title = $defaultTran->encodedEnumTitle;
           $content = $defaultTran->encodedContent;
           $author = $defaultTran->encodedAuthor;
           $lang = $defaultTran->language_code;
