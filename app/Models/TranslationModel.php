@@ -250,6 +250,7 @@ class TranslationModel extends BaseModel
                 WHERE t1.entry_id = t2.entry_id 
                 AND e2.parent_id = :entry_id: AND t2.status = :status: AND e2.status = :status:
             )
+            GROUP BY entry_id
             ORDER BY entry_seq ASC';
 
         $query = $this->db->query($sql, [
