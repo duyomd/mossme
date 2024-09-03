@@ -317,4 +317,158 @@ return [
 
     'imageUrl_msg_duplicated'       =>  'Trùng dữ liệu tại {0} = "{1}".',
 
+    /*--------------------------------------------------------------
+    # Entry Manager
+    --------------------------------------------------------------*/
+    'entry_management'              =>  'Entry Management',
+    'entry_label_id'                =>  'Id',
+    'entry_label_translations'      =>  'Translations',
+    'entry_label_commentaries'      =>  'Commentaries',
+    'entry_label_sequence'          =>  'Sequence',
+    'entry_label_type'              =>  'Type',
+        'entry_label_type_article'      =>  'Article',
+        'entry_label_type_folder'       =>  'Folder',
+    'entry_label_section'           =>  'Section',
+    'entry_label_root'              =>  'Root',
+    'entry_label_parent'            =>  'Parent',
+    'entry_label_serials'           =>  'Serials',
+    'entry_label_enumeration'       =>  'Enumeration',
+    'entry_label_image_header'      =>  'Header image',
+    'entry_label_image_content'     =>  'Content image',
+    'entry_label_image_commentary'  =>  'Commentary image',
+    'entry_label_image_footer'      =>  'Footer image',
+    'entry_label_status'            =>  'Status',
+        'entry_label_status_inactive'   =>  'Inactive',
+        'entry_label_status_active'     =>  'Active',
+    'entry_label_tags'              =>  'Tags',
+    'entry_label_video_url'         =>  'Video url',
+    'entry_label_reference_source'  =>  'Reference source',
+    'entry_label_reference_url'     =>  'Reference url',
+    'entry_label_created_by'        =>  'Created by',
+    
+    'entry_msg_parent_root_relation'    =>  'Root and Parent fields are not appropriated.',
+
+    /*--------------------------------------------------------------
+    # Translation Manager
+    --------------------------------------------------------------*/
+    'translation_management'            =>  'Translation Management',
+    'translation_label_entry_id'        =>  'Entry id',
+    'translation_label_id'              =>  'Id',
+    'translation_label_language'        =>  'Language',
+    'translation_label_title'           =>  'Title',
+    'translation_label_status'          =>  'Status',
+        'translation_label_status_inactive'     =>  'Inactive',
+        'translation_label_status_active'       =>  'Active',
+    'translation_label_author'          =>  'Author',
+    'translation_label_author_note'     =>  'Author&apos;s note',
+    'translation_label_notation'        =>  'Notation',
+    'translation_label_content'         =>  'Content',
+
+    /*--------------------------------------------------------------
+    # Commentary Manager
+    --------------------------------------------------------------*/
+    'commentary_management'             =>  'Commentary Management',
+    'commentary_label_entry_id'         =>  'Entry id',
+    'commentary_label_id'               =>  'Id',
+    'commentary_label_language'         =>  'Language',
+    'commentary_label_status'           =>  'Status',
+        'commentary_label_status_inactive'      =>  'Inactive',
+        'commentary_label_status_active'        =>  'Active',
+    'commentary_label_author'           =>  'Author',
+    'commentary_label_author_note'      =>  'Author&apos;s note',
+    'commentary_label_notation'         =>  'Notation',
+    'commentary_label_content'          =>  'Content',
+
+    /*--------------------------------------------------------------
+    # Card Manager
+    --------------------------------------------------------------*/
+    'card_management'               =>  'Card Management',
+    'card_label_id'                 =>  'Id',
+    'card_label_memo'               =>  'Memo',
+    'card_label_image'              =>  'Image',
+    'card_label_status'             =>  'Status',
+        'card_label_status_inactive'        =>  'Inactive',
+        'card_label_status_active'          =>  'Active',
+    'card_label_sequence'           =>  'Sequence',
+
+    'card_msg_duplicated'           =>  'Duplicate data where {0} = "{1}".',
+
+    /*--------------------------------------------------------------
+    # Card Translation Manager
+    --------------------------------------------------------------*/
+    'card_translation_management'       =>  'Card Translation Management',
+    'card_translation_label_card_id'    =>  'Card id',
+    'card_translation_label_id'         =>  'Id',
+    'card_translation_label_language'   =>  'Language',
+    'card_translation_label_status'     =>  'Status',
+        'card_translation_label_status_inactive'    =>  'Inactive',
+        'card_translation_label_status_active'      =>  'Active',
+    'card_translation_label_author'          =>  'Author',
+    'card_translation_label_header'          =>  'Header',
+    'card_translation_label_footer'          =>  'Footer',
+    'card_translation_label_content'         =>  'Content',
+
+    /*--------------------------------------------------------------
+    # Message Manager
+    --------------------------------------------------------------*/
+    'message_management'        =>  'Message Management',
+    'message_label_id'          =>  'Id',
+    'message_label_sender'      =>  'Sender',
+    'message_label_ip'          =>  'IP',
+    'message_label_ulc'         =>  'Language',
+    'message_label_name'        =>  'Name',
+    'message_label_email'       =>  'Email',
+    'message_label_subject'     =>  'Subject',
+    'message_subject_blank'     =>  '(no subject)',
+    'message_label_content'     =>  'Content',
+    'message_label_status'      =>  'Status',
+        'message_status_active'     =>  'Normal',
+        'message_status_spam'       =>  'Spam',
+    'message_label_sent_at'     =>  'Sent at',
+    'message_label_state'       =>  'Read state',
+        'message_state_read'        =>  'Read',
+        'message_state_unread'      =>  'Unread',
+
+    /*--------------------------------------------------------------
+    # User Manager
+    --------------------------------------------------------------*/
+    'user_management'               =>  'Users Management',
+    'users_label_id'                =>  'Id',
+    'users_label_username'          =>  'Username',
+    'users_label_email'             =>  'Email',
+    'users_label_active_status'     =>  'Active',
+        'users_inactive'                =>  'Inactive',
+        'users_active'                  =>  'Active',
+    'users_label_ban_status'        =>  'Status',
+        'users_normal'                  =>  'Normal',
+        'users_banned'                  =>  'Banned',
+    'users_label_ban_message'       =>  'Status message',
+    'users_label_groups'            =>  'Groups',
+        'users_group_superadmin'        =>  'Super admin',
+        'users_group_admin'             =>  'Admin',
+        'users_group_developer'         =>  'Developer',
+        'users_group_dataoperator'      =>  'Data entry',
+        'users_group_beta'              =>  'Beta',
+        'users_group_user'              =>  'User',
+    'users_label_last_login'        =>  'Last login',
+    'users_label_created_at'        =>  'Created at',
+
+    /*--------------------------------------------------------------
+    # Common
+    --------------------------------------------------------------*/
+    'project_name'      =>  'Mossme',
+    'title_browser'     =>  'Dhamma',
+    'vertical_slash'    =>  '|',
+    'forward_slash'     =>  '/',
+    'underscore'        =>  '_',
+    'sequence'          =>  '#{0, number}',
+    'ellipsis'          =>  '...',
+    
+    'video_url_home'    =>  'https://youtu.be/wbDNlTXatp4',
+    'copyright_start'   =>  '&copy; Copyright ',
+    'copyright_end'     =>  '. All Rights Reserved',
+    'design'            =>  'Designed by ',
+    'design_url'        =>  'https://bootstrapmade.com/',
+    'design_name'       =>  'BootstrapMade',
+
 ];

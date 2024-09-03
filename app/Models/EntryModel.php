@@ -60,6 +60,9 @@ class EntryModel extends BaseModel
     public const HEADER_REFERENCE_URL_ORDERBYS      = array('reference_url');
     public const HEADER_REFERENCE_URL_SORTORDERS    = array('ASC');
 
+    public const HEADER_CREATED_BY_ORDERBYS      = array('created_by');
+    public const HEADER_CREATED_BY_SORTORDERS    = array('ASC');
+
     public const HEADER_SEQUENCE_ORDERBYS           = array('sequence');
     public const HEADER_SEQUENCE_SORTORDERS         = array('ASC');
 
@@ -71,7 +74,7 @@ class EntryModel extends BaseModel
         'id', 'parent_id', 'root_id', 'type', 'serials', 'enumeration', 'section_id',
         'image_id_header', 'image_id_content', 'image_id_commentary', 'image_id_footer',
         'reference_source', 'reference_url', 'sequence', 'status', 'video_url', 'tags',
-        'previous_id', 'next_id',
+        'previous_id', 'next_id', 'created_by',
     ];
     protected $primaryKey = 'id';
     protected $returnType = Entry::class;

@@ -120,6 +120,7 @@ class EntryManager extends BaseController
             }
 
             if ($mode == 'insert') {
+                $entry->created_by = auth()->user()->username;
                 $result = $this->insertEntry($entry);
                 if ($result == null) {
                     $msg = lang('App.msg_inserted');
@@ -197,6 +198,7 @@ class EntryManager extends BaseController
             $jsonEntry->tags = $entry->tags;
             $jsonEntry->status = $entry->status;
             $jsonEntry->status_name = $entry->status_name;
+            $jsonEntry->created_by = $entry->created_by;
             $jsonEntry->sequence = $entry->sequence;
             array_push($jsonEntries, $jsonEntry);
         }

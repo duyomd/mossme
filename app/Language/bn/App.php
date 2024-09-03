@@ -340,7 +340,8 @@ return [
     'entry_label_tags'              =>  'Tags',
     'entry_label_video_url'         =>  'Video url',
     'entry_label_reference_source'  =>  'Reference source',
-    'entry_label_reference_url'     =>  'Reference url',   
+    'entry_label_reference_url'     =>  'Reference url',
+    'entry_label_created_by'        =>  'Created by',   
     
     'entry_msg_parent_root_relation'    =>  'Root and Parent fields are not appropriated.',
 
