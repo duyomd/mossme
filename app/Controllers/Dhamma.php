@@ -12,11 +12,15 @@ class Dhamma extends BaseController
     public function index(): string
     {
         $user_lang_code = Utilities::getSessionLocale();
+        $numOfFeeds = Utilities::getSessionNof();
 
         // menu items
         $translationModel = model(TranslationModel::class);
         $suttaMenuTranslations = $translationModel->getSuttaMenu($user_lang_code);
         $nonSuttaMenuTranslations = $translationModel->getNonSuttaMenu($user_lang_code);
+
+        // new feed items
+        $newFeedTranslations = $translationModel->getNewFeeds($user_lang_code, $numOfFeeds);
 
         // event cards
         $card_seqs = $this->shuffleDeck(model(CardModel::class)->getActiveCardCount());
@@ -28,6 +32,7 @@ class Dhamma extends BaseController
             'suttaMenuTranslations'     => $suttaMenuTranslations,
             'nonSuttaMenuTranslations'  => $nonSuttaMenuTranslations,
             'cardTranslations'          => $cardTranslations,
+            'newFeedTranslations'       => $newFeedTranslations,
         ];
         return view('templates/header', $data).view('dhamma');
     }

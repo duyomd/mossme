@@ -261,6 +261,8 @@ return [
     'setting_rpp_detail'            =>  'Antal rader som visas per listningssida.',
     'setting_num_of_cards'          =>  'Max antal kort',
     'setting_noc_detail'            =>  'Antal kort som visas på startsidan.',
+    'setting_num_of_feeds'          =>  'Max antal nya flöden',
+    'setting_nof_detail'            =>  'Antal nya flöden som visas på startsidan.',
     'setting_theme'                 =>  'Tema',
     'setting_theme_detail'          =>  'Användardefinierat tema.',
     'theme_dark'                    =>  'Mörk',

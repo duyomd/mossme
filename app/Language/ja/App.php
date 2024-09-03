@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  '一覧画面ごとに表示される行数。',
     'setting_num_of_cards'          =>  '最大カード数',
     'setting_noc_detail'            =>  'ホームページに表示されるおみくじの枚数',
+    'setting_num_of_feeds'          =>  '新しいフィードの最大数',
+    'setting_nof_detail'            =>  'ホームページに表示される新しいフィードの数。',
     'setting_theme'                 =>  'テーマ',    
     'setting_theme_detail'          =>  'ユーザーが指定したテーマ。',
     'theme_dark'                    =>  'ダーク',

@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Số dòng dữ liệu tối đa hiển thị trên một trang.',
     'setting_num_of_cards'          =>  'Số thẻ bài',
     'setting_noc_detail'            =>  'Số quẻ xăm tối đa hiển thị ở mục Gieo Quẻ.',
+    'setting_num_of_feeds'          =>  'Số bài mới',
+    'setting_nof_detail'            =>  'Số gợi ý bài mới tối đa hiển thị trên trang chủ.',
     'setting_theme'                 =>  'Giao diện',    
     'setting_theme_detail'          =>  'Tùy chọn tông màu chủ đạo cho giao diện.',
     'theme_dark'                    =>  'Tối',

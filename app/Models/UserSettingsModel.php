@@ -12,7 +12,7 @@ class UserSettingsModel extends BaseModel
     protected $table = 'user_settings';
     protected $primaryKey = 'user_id';
     protected $allowedFields = [
-        'user_id', 'language_code', 'rows_per_page', 'num_of_cards',
+        'user_id', 'language_code', 'rows_per_page', 'num_of_cards', 'num_of_feeds',
         'theme_code', 'lite_mode', 
     ];
     protected $returnType = UserSettings::class;

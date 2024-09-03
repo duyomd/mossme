@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Número de files que es mostren per pàgina de la llista.',
     'setting_num_of_cards'          =>  'Número màxim de targetes',
     'setting_noc_detail'            =>  'Número de targetes mostrades a la pàgina d’inici.',
+    'setting_num_of_feeds'          =>  'Número màxim de nous feeds',
+    'setting_nof_detail'            =>  'Número de nous feeds mostrats a la pàgina principal.',    
     'setting_theme'                 =>  'Tema',
     'setting_theme_detail'          =>  'Tema especificat per l’usuari.',
     'theme_dark'                    =>  'Fosc',

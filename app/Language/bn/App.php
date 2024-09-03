@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'প্রতি তালিকা পৃষ্ঠায় প্রদর্শিত সারির সংখ্যা।',
     'setting_num_of_cards'          =>  'সর্বাধিক কার্ডের সংখ্যা',
     'setting_noc_detail'            =>  'হোম পৃষ্ঠায় প্রদর্শিত কার্ডের সংখ্যা।',
+    'setting_num_of_feeds'          =>  'নতুন ফিডের সর্বাধিক সংখ্যা',
+    'setting_nof_detail'            =>  'হোম পেজে প্রদর্শিত নতুন ফিডের সংখ্যা।',
     'setting_theme'                 =>  'থিম',
     'setting_theme_detail'          =>  'ব্যবহারকারী নির্দিষ্ট থিম।',
     'theme_dark'                    =>  'ডার্ক',

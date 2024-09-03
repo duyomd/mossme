@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'सूची पृष्ठ में प्रदर्शित पंक्तियों की संख्या।',
     'setting_num_of_cards'          =>  'अधिकतम कार्ड की संख्या',
     'setting_noc_detail'            =>  'मुख्य पृष्ठ पर प्रदर्शित कार्ड की संख्या।',
+    'setting_num_of_feeds'          =>  'नए फ़ीड्स की अधिकतम संख्या',
+    'setting_nof_detail'            =>  'होम पेज पर प्रदर्शित किए जाने वाले नए फ़ीड्स की संख्या।',
     'setting_theme'                 =>  'थीम',
     'setting_theme_detail'          =>  'उपयोगकर्ता निर्दिष्ट थीम।',
     'theme_dark'                    =>  'डार्क',

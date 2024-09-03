@@ -37,6 +37,7 @@ class UserSettings extends BaseController
       'language_code' => ['label' => lang('App.setting_language'),          'rules' => 'max_length[5]'],
       'rows_per_page' => ['label' => lang('App.setting_num_rows_per_page'), 'rules' => 'integer|greater_than[0]'],
       'num_of_cards'  => ['label' => lang('App.setting_num_of_cards'),      'rules' => 'integer|less_than[10]'],
+      'num_of_feeds'  => ['label' => lang('App.setting_num_of_feeds'),      'rules' => 'integer|less_than[10]'],
       'theme_code'    => ['label' => lang('App.setting_theme'),             'rules' => 'max_length[32]'],
       'lite_mode'     => ['label' => lang('App.setting_display_mode'),      'rules' => 'required|max_length[1]'],
     ];

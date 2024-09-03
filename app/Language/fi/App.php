@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Näytettävien rivien määrä listan sivulla.',
     'setting_num_of_cards'          =>  'Maksimimäärä kortteja',
     'setting_noc_detail'            =>  'Kotisivulla näytettävien korttien määrä.',
+    'setting_num_of_feeds'          =>  'Uusien syötteiden enimmäismäärä',
+    'setting_nof_detail'            =>  'Etusivulla näytettävien uusien syötteiden määrä.',
     'setting_theme'                 =>  'Teema',
     'setting_theme_detail'          =>  'Käyttäjän määrittämä teema.',
     'theme_dark'                    =>  'Tumma',

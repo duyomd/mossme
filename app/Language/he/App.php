@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'מספר השורות המוצגות בעמוד רשימה.',
     'setting_num_of_cards'          =>  'מספר מקסימלי של כרטיסים',
     'setting_noc_detail'            =>  'מספר הכרטיסים המוצגים בעמוד הבית.',
+    'setting_num_of_feeds'          =>  'מספר מקסימלי של פידים חדשים',
+    'setting_nof_detail'            =>  'מספר הפידים החדשים המוצגים בדף הבית.',
     'setting_theme'                 =>  'נושא',
     'setting_theme_detail'          =>  'הנושא שנבחר על ידי המשתמש.',
     'theme_dark'                    =>  'כהה',

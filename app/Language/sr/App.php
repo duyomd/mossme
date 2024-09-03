@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Broj redova prikazanih po stranici liste.',
     'setting_num_of_cards'          =>  'Maksimalan broj kartica',
     'setting_noc_detail'            =>  'Broj kartica prikazanih na početnoj stranici.',
+    'setting_num_of_feeds'          =>  'Maksimalan broj novih feed-ova',
+    'setting_nof_detail'            =>  'Broj novih feed-ova prikazanih na početnoj stranici.',
     'setting_theme'                 =>  'Tema',
     'setting_theme_detail'          =>  'Izabrana tema korisnika.',
     'theme_dark'                    =>  'Tamna',

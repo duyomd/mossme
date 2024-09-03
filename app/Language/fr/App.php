@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Nombre de lignes affichées par page de liste.',
     'setting_num_of_cards'          =>  'Nombre max de cartes',
     'setting_noc_detail'            =>  'Nombre de cartes affichées sur la page d’accueil.',
+    'setting_num_of_feeds'          =>  'Nombre maximal de nouveaux flux',
+    'setting_nof_detail'            =>  'Nombre de nouveaux flux affichés sur la page d’accueil.',
     'setting_theme'                 =>  'Thème',    
     'setting_theme_detail'          =>  'Thème spécifié par l’utilisateur.',
     'theme_dark'                    =>  'Sombre',

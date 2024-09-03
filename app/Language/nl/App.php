@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Aantal rijen weergegeven per lijstpagina.',
     'setting_num_of_cards'          =>  'Maximaal aantal kaarten',
     'setting_noc_detail'            =>  'Aantal kaarten weergegeven op de startpagina.',
+    'setting_num_of_feeds'          =>  'Maximaal aantal nieuwe feeds',
+    'setting_nof_detail'            =>  'Aantal nieuwe feeds dat op de startpagina wordt weergegeven.',
     'setting_theme'                 =>  'Thema',    
     'setting_theme_detail'          =>  'Thema opgegeven door de gebruiker.',
     'theme_dark'                    =>  'Donker',

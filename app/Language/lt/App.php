@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Eilučių skaičius, rodomas sąrašo puslapyje.',
     'setting_num_of_cards'          =>  'Maks. kortelių skaičius',
     'setting_noc_detail'            =>  'Kortelių skaičius, rodomas pagrindiniame puslapyje.',
+    'setting_num_of_feeds'          =>  'Maksimalus naujų įrašų skaičius',
+    'setting_nof_detail'            =>  'Naujų įrašų skaičius, rodomas pagrindiniame puslapyje.',
     'setting_theme'                 =>  'Tema',
     'setting_theme_detail'          =>  'Naudotojo nustatyta tema.',
     'theme_dark'                    =>  'Tamsi',

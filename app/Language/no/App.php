@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Antall rader vist per liste-side.',
     'setting_num_of_cards'          =>  'Maks antall kort',
     'setting_noc_detail'            =>  'Antall kort vist på hjemmesiden.',
+    'setting_num_of_feeds'          =>  'Maksimalt antall nye feeds',
+    'setting_nof_detail'            =>  'Antall nye feeds som vises på startsiden.',
     'setting_theme'                 =>  'Tema',
     'setting_theme_detail'          =>  'Bruker spesifisert tema.',
     'theme_dark'                    =>  'Mørk',

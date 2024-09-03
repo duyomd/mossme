@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  '목록 페이지당 표시되는 행 수.',
     'setting_num_of_cards'          =>  '최대 카드 수',
     'setting_noc_detail'            =>  '홈 페이지에 표시되는 카드 수.',
+    'setting_num_of_feeds'          =>  '새 피드의 최대 수',
+    'setting_nof_detail'            =>  '홈페이지에 표시되는 새 피드의 수.',
     'setting_theme'                 =>  '테마',    
     'setting_theme_detail'          =>  '사용자가 지정한 테마.',
     'theme_dark'                    =>  '어두운 테마',

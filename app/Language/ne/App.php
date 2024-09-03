@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Number of rows displayed per list page.',
     'setting_num_of_cards'          =>  'Max number of cards',
     'setting_noc_detail'            =>  'Number of cards displayed in home page.',
+    'setting_num_of_feeds'          =>  'Max number of new feeds',
+    'setting_nof_detail'            =>  'Number of new feeds displayed in home page.',
     'setting_theme'                 =>  'Theme',    
     'setting_theme_detail'          =>  'User specified theme.',
     'theme_dark'                    =>  'Dark',

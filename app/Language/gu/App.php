@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'યાદી પેજ પર પ્રદર્શિત પંક્તિઓની સંખ્યા.',
     'setting_num_of_cards'          =>  'કાર્ડોની શ્રેષ્ઠ સંખ્યા',
     'setting_noc_detail'            =>  'હોમ પેજ પર પ્રદર્શિત કાર્ડોની સંખ્યા.',
+    'setting_num_of_feeds'          =>  'નવા ફીડ્સની મહત્તમ સંખ્યા',
+    'setting_nof_detail'            =>  'હોમ પેજ પર દર્શાવાતા નવા ફીડ્સની સંખ્યા.',
     'setting_theme'                 =>  'થેમ',
     'setting_theme_detail'          =>  'વપરાશકર્તા દ્વારા નિર્ધારિત થીમ.',
     'theme_dark'                    =>  'ડાર્ક',

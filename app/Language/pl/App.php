@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Liczba wierszy wyświetlanych na stronie listy.',
     'setting_num_of_cards'          =>  'Maks. liczba kart',
     'setting_noc_detail'            =>  'Liczba kart wyświetlanych na stronie głównej.',
+    'setting_num_of_feeds'          =>  'Maksymalna liczba nowych kanałów',
+    'setting_nof_detail'            =>  'Liczba nowych kanałów wyświetlanych na stronie głównej.',
     'setting_theme'                 =>  'Motyw',
     'setting_theme_detail'          =>  'Motyw określony przez użytkownika.',
     'theme_dark'                    =>  'Ciemny',

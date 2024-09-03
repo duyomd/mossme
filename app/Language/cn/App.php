@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  '每个列表页显示的行数。',
     'setting_num_of_cards'          =>  '最大卡片数量',
     'setting_noc_detail'            =>  '首页显示的卡片数量。',
+    'setting_num_of_feeds'          =>  '最大新订阅数',
+    'setting_nof_detail'            =>  '主页显示的新订阅数。',
     'setting_theme'                 =>  '色彩主题',    
     'setting_theme_detail'          =>  '用户指定的色彩主题。',
     'theme_dark'                    =>  '黑暗',

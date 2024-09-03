@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Numero di righe visualizzate per pagina della lista.',
     'setting_num_of_cards'          =>  'Max numero di schede',
     'setting_noc_detail'            =>  'Numero di schede visualizzate nella pagina principale.',
+    'setting_num_of_feeds'          =>  'Numero massimo di nuovi feed',
+    'setting_nof_detail'            =>  'Numero di nuovi feed visualizzati nella pagina principale.',
     'setting_theme'                 =>  'Tema',    
     'setting_theme_detail'          =>  'Tema specificato dall’utente.',
     'theme_dark'                    =>  'Scuro',

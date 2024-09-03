@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Liste sayfasında görüntülenen satır sayısı.',
     'setting_num_of_cards'          =>  'Maksimum kart sayısı',
     'setting_noc_detail'            =>  'Ana sayfada görüntülenen kart sayısı.',
+    'setting_num_of_feeds'          =>  'Maksimum yeni besleme sayısı',
+    'setting_nof_detail'            =>  'Ana sayfada gösterilen yeni besleme sayısı.',
     'setting_theme'                 =>  'Tema',
     'setting_theme_detail'          =>  'Kullanıcı tarafından belirtilen tema.',
     'theme_dark'                    =>  'Koyu',

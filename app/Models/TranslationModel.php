@@ -112,6 +112,12 @@ class TranslationModel extends BaseModel
         return $this->encodeData($results);
     }
 
+    public function getNewFeeds($user_language_code = null, $numOfFeeds = Utilities::NEWFEED_DEFAULT_NUM)
+    {
+        return $this->changeImagePath(
+            $this->getNewFeedTranslations($user_language_code, $numOfFeeds), Utilities::IMAGE_FOLDER_MENU);
+    }
+
     public function findTranslation($id) 
     {
         return $this->where('id', $id)->first();
@@ -502,6 +508,57 @@ class TranslationModel extends BaseModel
                                     'section_ids'           => Utilities::SECTION_IDS_MENU_SUTTA,
                                     'status'                => Utilities::STATUS_ACTIVE,
                                     'user_lang'             => $user_language_code,      
+                                ]);
+        $trans = $query->getResult(Translation::class);
+        $query->freeResult();
+
+        $this->db->transComplete();
+
+        return $trans;
+    }
+
+    private function getNewFeedTranslations(string $user_language_code, $numOfFeeds) 
+    {
+        $user_language_code = $this->userLanguageCode($user_language_code);
+
+        $this->db->transStart();
+
+        /** Used for host with lower SQL version (T.T) */
+        $sql = 
+            'SELECT entry_id, title, image_url AS image_url_header
+            FROM (
+                SELECT t.*, e.created_at, e.root_id,
+                    CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - l.sequence, 3, "0"), IF(author IS NULL, "", author)) AS sort_value
+                FROM translation t 
+                    JOIN language l ON language_code = code
+                    JOIN (SELECT id, created_at, root_id
+                        FROM entry
+                        WHERE status = :status: AND type = :type:
+                        ORDER BY created_at DESC 
+                        LIMIT :nof:) AS e ON t.entry_id = e.id
+                WHERE t.status = :status:
+            ) t1
+                JOIN entry en ON en.id = t1.root_id
+                JOIN image_url i ON i.id = en.image_id_header
+            WHERE sort_value = (
+                SELECT MIN(CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - l2.sequence, 3, "0"), IF(author IS NULL, "", author))) 
+                FROM translation t2
+                    JOIN language l2 ON t2.language_code = l2.code
+                    JOIN (SELECT id, created_at
+                        FROM entry
+                        WHERE status = :status: AND type = :type:
+                        ORDER BY created_at DESC 
+                        LIMIT :nof:) AS e2 ON t2.entry_id = e2.id
+                WHERE t1.entry_id = t2.entry_id 
+                    AND t2.status = :status:
+            )
+            ORDER BY t1.created_at DESC';
+
+        $query = $this->db->query($sql, [
+                                    'nof'       => $numOfFeeds,
+                                    'type'      => Utilities::TYPE_FILE,
+                                    'status'    => Utilities::STATUS_ACTIVE,
+                                    'user_lang' => $user_language_code,      
                                 ]);
         $trans = $query->getResult(Translation::class);
         $query->freeResult();

@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  '每個列表頁顯示的行數。',
     'setting_num_of_cards'          =>  '最大籤卡數量',
     'setting_noc_detail'            =>  '首頁顯示的籤卡數量。',
+    'setting_num_of_feeds'          =>  '最大新订阅数',
+    'setting_nof_detail'            =>  '主页上显示的新订阅数。',
     'setting_theme'                 =>  '色彩主題',    
     'setting_theme_detail'          =>  '用戶指定的色彩主題。',
     'theme_dark'                    =>  '黑暗',

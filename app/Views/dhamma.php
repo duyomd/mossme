@@ -1,33 +1,65 @@
 <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
-      <div class="row">
-        <div class="col-lg-8">
-          <h1>
-            <?php $lc = App\Helpers\Utilities::getSessionLocale(); 
-              if (!App\Helpers\Utilities::isRevertibleTitle()) : ?>
-              <?=lang('App.hero_caption_start')?><span><?=lang('App.hero_caption_end')?></span>
-            <?php else : ?>
-              <span><?=lang('App.hero_caption_start')?></span><?=lang('App.hero_caption_end')?>
-            <?php endif ?>  
-          </h1>
-          <h2 class="<?= App\Helpers\Utilities::isTallTitle() ? 'mt-4' : ''; ?>"><?=lang('App.hero_text')?></h2>
-          
-          <div class="btns">
-            <a href="#menu" class="btn-scroll animated fadeInUp scrollto"><?=lang('App.library')?></a>
-            <a href="#events" class="btn-scroll animated fadeInUp scrollto ms-btns"><?=lang('App.card')?></a>
+  <section id="hero">
+    <div class="dhamma d-flex align-items-center">
+      
+      <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-8">
+            <h1>
+              <?php $lc = App\Helpers\Utilities::getSessionLocale(); 
+                if (!App\Helpers\Utilities::isRevertibleTitle()) : ?>
+                <?=lang('App.hero_caption_start')?><span><?=lang('App.hero_caption_end')?></span>
+              <?php else : ?>
+                <span><?=lang('App.hero_caption_start')?></span><?=lang('App.hero_caption_end')?>
+              <?php endif ?>  
+            </h1>
+            <h2 class="<?= App\Helpers\Utilities::isTallTitle() ? 'mt-4' : ''; ?>"><?=lang('App.hero_text')?></h2>
+            
+            <div class="btns">
+              <a href="#menu" class="btn-scroll animated fadeInUp scrollto"><?=lang('App.library')?></a>
+              <a href="#events" class="btn-scroll animated fadeInUp scrollto ms-btns"><?=lang('App.card')?></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" 
+              data-aos="zoom-in" data-aos-delay="200">
+            <a href="<?=lang('App.video_url_home')?>" class="glightbox play-btn"></a> 
           </div>
         </div>
-        <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" 
-            data-aos="zoom-in" data-aos-delay="200">
-          <a href="<?=lang('App.video_url_home')?>" class="glightbox play-btn"></a> 
-        </div>
-
       </div>
     </div>
+
+    <!-- New Feeds -->
+    <div>
+      <?php $nof = count($newFeedTranslations); if ($nof > 0) : ?>
+        <section class="feeds">
+            <div class="feeds-slider swiper-container">
+              <div class="swiper-wrapper">
+
+                <?php foreach ($newFeedTranslations as $feed) :?>
+                  <div class="swiper-slide">
+                    <div class="feeds-item d-flex align-items-center justify-content-center">
+                      <a href="/article/<?=$feed->entry_id?>">
+                        <img src="<?=$feed->image_url_header?>" class="d-lg-inline d-none feeds-img">
+                        <img src="<?=$feed->image_url_header?>" class="d-lg-none feeds-img feeds-img-sm">
+                      </a>  
+                      <a href="/article/<?=$feed->entry_id?>"><?=$feed->title?></a>
+                    </div>
+                  </div>  
+                <?php endforeach ?>  
+
+              </div>
+              <div class="swiper-pagination d-lg-block d-none mt-4"></div>
+              <div class="swiper-pagination swiper-pagination-sm d-lg-none mt-3"></div>
+            </div>
+        </section>
+      <?php endif ?><!-- End Feeds -->
+
+    </div>
   </section><!-- End Hero -->
+
 
   <main id="main">
 

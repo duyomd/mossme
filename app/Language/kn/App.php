@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'ಪಟ್ಟಿ ಪುಟದಲ್ಲಿ ತೋರಿಸುವ ಸಾಲುಗಳ ಸಂಖ್ಯೆ.',
     'setting_num_of_cards'          =>  'ಗರಿಷ್ಟ ಕಾರ್ಡ್ ಸಂಖ್ಯೆ',
     'setting_noc_detail'            =>  'ಹೋಮ್ ಪುಟದಲ್ಲಿ ತೋರಿಸುವ ಕಾರ್ಡ್‌ಗಳ ಸಂಖ್ಯೆ.',
+    'setting_num_of_feeds'          =>  'ಹೊಸ ಫೀಡ್ಸ್‌ಗಳ ಗರಿಷ್ಠ ಸಂಖ್ಯೆ',
+    'setting_nof_detail'            =>  'ಮೋಘಪುಟದಲ್ಲಿ ತೋರಿಸಲಾಗುವ ಹೊಸ ಫೀಡ್ಸ್‌ಗಳ ಸಂಖ್ಯೆ.',
     'setting_theme'                 =>  'ಥೀಮ್',    
     'setting_theme_detail'          =>  'ಬಳಕೆದಾರನ ನಿರ್ದಿಷ್ಟ ಥೀಮ್.',
     'theme_dark'                    =>  'ಕಪ್ಪು',

@@ -760,6 +760,11 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
 }
 
+#hero .dhamma {
+  /* for new feeds */
+  height: 88vh;
+}
+
 #hero .container {
   padding-top: 110px;
 }
@@ -1647,6 +1652,56 @@ section {
 }
 
 .events .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--mm-color-link);
+}
+
+/*--------------------------------------------------------------
+# New Feeds
+--------------------------------------------------------------*/
+.feeds {
+  padding: 0;
+  height: 12vh;
+}
+
+.feeds .feeds-item .feeds-img {
+  width: 70px;
+  border-radius: 10%;
+  z-index: 2;
+  border: 5px solid var(--mm-color-border-subtle);
+}
+
+.feeds .feeds-item .feeds-img-sm {
+  width: 45px;
+  border: 3px solid var(--mm-color-border-subtle);
+}
+
+.feeds .feeds-item a {
+  padding-inline-start: 1em;
+  z-index: 1;
+  font-family: "serif";
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  max-width: 300px
+}
+
+.feeds .swiper-pagination {
+  position: relative;
+}
+
+.feeds .swiper-pagination .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background-color: var(--mm-color-pagination-bullet-bg);
+  opacity: 1;
+}
+
+.feeds .swiper-pagination-sm .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+}
+
+.feeds .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--mm-color-link);
 }
 

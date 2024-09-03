@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'පිටු ලැයිස්තු සදහා පෙන්වන පේළි ගණන.',
     'setting_num_of_cards'          =>  'පිටුවකට උපරිම කාඩ්පත්',
     'setting_noc_detail'            =>  'ගෙවතු පෘෂ්ඨයේ පෙන්වන කාඩ්පත් ගණන.',
+    'setting_num_of_feeds'          =>  'අලුත්ම ෆීඩ් ගණන',
+    'setting_nof_detail'            =>  'මුල් පිටුවේ පෙන්වන අලුත් ෆීඩ් ගණන.',
     'setting_theme'                 =>  'විෂය',
     'setting_theme_detail'          =>  'පරිශීලක නියමිත විෂය.',
     'theme_dark'                    =>  'අඳුරු',

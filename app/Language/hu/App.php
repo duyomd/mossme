@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'A listanézet oldalanként megjelenített sorainak száma.',
     'setting_num_of_cards'          =>  'Max. kártyák száma',
     'setting_noc_detail'            =>  'A kezdőlapra megjelenített kártyák száma.',
+    'setting_num_of_feeds'          =>  'Új hírcsatornák maximális száma',
+    'setting_nof_detail'            =>  'A kezdőlapra megjelenített új hírcsatornák száma.',
     'setting_theme'                 =>  'Téma',
     'setting_theme_detail'          =>  'Felhasználó által megadott téma.',
     'theme_dark'                    =>  'Sötét',

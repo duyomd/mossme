@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Numărul de rânduri afișate pe pagina listei.',
     'setting_num_of_cards'          =>  'Număr maxim de carduri',
     'setting_noc_detail'            =>  'Numărul de carduri afișate pe pagina principală.',
+    'setting_num_of_feeds'          =>  'Număr maxim de feed-uri noi',
+    'setting_nof_detail'            =>  'Numărul de feed-uri noi afișate pe pagina de start.',
     'setting_theme'                 =>  'Temă',
     'setting_theme_detail'          =>  'Tema specificată de utilizator.',
     'theme_dark'                    =>  'Întunecată',

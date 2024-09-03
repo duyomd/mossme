@@ -259,6 +259,8 @@ return [
     'setting_rpp_detail'            =>  'Anzahl der Zeilen, die pro Listen-Seite angezeigt werden.',
     'setting_num_of_cards'          =>  'Maximale Anzahl von Karten',
     'setting_noc_detail'            =>  'Anzahl der Karten, die auf der Startseite angezeigt werden.',
+    'setting_num_of_feeds'          =>  'Maximale Anzahl neuer Feeds',
+    'setting_nof_detail'            =>  'Anzahl der neuen Feeds, die auf der Startseite angezeigt werden.',
     'setting_theme'                 =>  'Design',
     'setting_theme_detail'          =>  'Vom Benutzer festgelegtes Design.',
     'theme_dark'                    =>  'Dunkel',

@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Jumlah baris yang ditampilkan per halaman daftar.',
     'setting_num_of_cards'          =>  'Jumlah kartu maksimum',
     'setting_noc_detail'            =>  'Jumlah kartu yang ditampilkan di halaman utama.',
+    'setting_num_of_feeds'          =>  'Jumlah maksimum umpan baru',
+    'setting_nof_detail'            =>  'Jumlah umpan baru yang ditampilkan di halaman utama.',
     'setting_theme'                 =>  'Tema',
     'setting_theme_detail'          =>  'Tema yang ditentukan pengguna.',
     'theme_dark'                    =>  'Gelap',

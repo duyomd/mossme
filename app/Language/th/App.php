@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'จำนวนแถวที่แสดงในแต่ละหน้ารายการ',
     'setting_num_of_cards'          =>  'จำนวนการ์ดสูงสุด',
     'setting_noc_detail'            =>  'จำนวนการ์ดที่แสดงในหน้าแรก',
+    'setting_num_of_feeds'          =>  'จำนวนสูงสุดของฟีดใหม่',
+    'setting_nof_detail'            =>  'จำนวนฟีดใหม่ที่แสดงบนหน้าแรก.',
     'setting_theme'                 =>  'ธีม',
     'setting_theme_detail'          =>  'ธีมที่ผู้ใช้ระบุ',
     'theme_dark'                    =>  'มืด',

@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Število vrstic prikazanih na strani seznama.',
     'setting_num_of_cards'          =>  'Največje število kartic',
     'setting_noc_detail'            =>  'Število kartic prikazanih na domači strani.',
+    'setting_num_of_feeds'          =>  'Največje število novih virov',
+    'setting_nof_detail'            =>  'Število novih virov, prikazanih na začetni strani.',
     'setting_theme'                 =>  'Teme',
     'setting_theme_detail'          =>  'Teme, ki jih določi uporabnik.',
     'theme_dark'                    =>  'Temna',

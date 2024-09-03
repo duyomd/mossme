@@ -76,6 +76,23 @@
               </div>
 
               <div class="col-md-6 form-group mt-4 mt-md-0 ps-lg-5">
+                <label for="num_of_feeds" class="form-label title-label"><?=lang('App.setting_num_of_feeds')?></label>
+                <select class="form-select" name="num_of_feeds" id="num_of_feeds">
+                  <?php foreach (Utilities::NEWFEED_NUMS as $num) : ?>
+                    <option value="<?=$num?>"
+                      <?php if (isset($userSettings) && $userSettings->num_of_feeds == $num) echo "selected";?>>
+                      <?=$num?>
+                    </option>
+                  <?php endforeach ?>
+                </select>
+                <p class="fst-italic mt-3 ps-2"><?=lang('App.setting_nof_detail')?></p>
+              </div>
+
+            </div>
+
+            <div class="row mt-4 px-2 px-md-0 mb-4">
+
+              <div class="col-md-6 form-group mt-4 mt-md-0 pe-lg-5">
                 <label for="theme_code" class="form-label title-label"><?=lang('App.setting_theme')?></label>
                 <select class="form-select" name="theme_code" id="theme_code">
                   <option value="dark"
@@ -89,11 +106,7 @@
                 <p class="fst-italic mt-3 ps-2"><?=lang('App.setting_theme_detail')?></p>
               </div>
 
-            </div>
-
-            <div class="row mt-4 px-2 px-md-0 mb-4">
-
-              <div class="col-md-6 pe-lg-5">
+              <div class="col-md-6 ps-lg-5">
                 <label class="form-label title-label mb-3"><?=lang('App.setting_display_mode')?></label>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="lite_mode" id="radio-full" value="0" 
@@ -106,7 +119,7 @@
                   <label class="form-check-label" for="radio-lite"><?=lang('App.setting_dm_lite')?></label>
                 </div>
                 <p class="fst-italic mt-3 ps-2"><?=lang('App.setting_dm_detail')?></p>
-              </div>
+              </div>              
 
             </div>
 

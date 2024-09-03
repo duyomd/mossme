@@ -263,6 +263,40 @@
   });
 
   /**
+   * New feeds slider
+   */
+  new Swiper('.feeds-slider', {
+    speed: 3000,
+    loop: true,
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+
+      800: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      }
+    }
+  });
+
+  /**
    * Initiate gallery lightbox 
    */
   const galleryLightbox = GLightbox({

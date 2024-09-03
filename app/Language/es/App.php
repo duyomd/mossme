@@ -260,6 +260,8 @@ return [
     'setting_rpp_detail'            =>  'Número de filas mostradas por página de lista.',
     'setting_num_of_cards'          =>  'Máx. número de tarjetas',
     'setting_noc_detail'            =>  'Número de tarjetas mostradas en la página de inicio.',
+    'setting_num_of_feeds'          =>  'Máx. número de nuevos feeds',
+    'setting_nof_detail'            =>  'Número de nuevos feeds mostrados en la página de inicio.',
     'setting_theme'                 =>  'Tema',
     'setting_theme_detail'          =>  'Tema especificado por el usuario.',
     'theme_dark'                    =>  'Oscuro',

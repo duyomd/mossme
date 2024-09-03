@@ -12,6 +12,9 @@ class Utilities
     public const EVENT_DEFAULT_NUM  = 3;
     public const EVENT_NUMS         = [0, 1, 3];
 
+    public const NEWFEED_DEFAULT_NUM    = 5;
+    public const NEWFEED_NUMS           = [0, 3, 5, 7, 9];
+
     public const DEFAULT_LANGUAGES = ["en", "vi", "zh", "pi"];
     public const DEFAULT_LANGUAGE  = "en";
 
@@ -120,6 +123,20 @@ class Utilities
         $session->set('noc', $noc);
     }
 
+    public static function getSessionNof(): int
+    {
+        $session = session();
+        if (!isset($session) || !isset($session->nof)) return self::NEWFEED_DEFAULT_NUM;
+        return $session->nof;
+    }
+
+    public static function setSessionNof($nof = null)
+    {
+        $session = session();
+        if (!isset($session)) return;
+        $session->set('nof', $nof);
+    }
+
     public static function getSessionTheme(): string
     {
         $session = session();
@@ -153,6 +170,7 @@ class Utilities
         self::setSessionLocale($userSettings->language_code);
         self::setSessionRpp($userSettings->rows_per_page);
         self::setSessionNoc($userSettings->num_of_cards);
+        self::setSessionNof($userSettings->num_of_feeds);
         self::setSessionTheme($userSettings->theme_code);
         self::setSessionLiteMode($userSettings->lite_mode);
     }
