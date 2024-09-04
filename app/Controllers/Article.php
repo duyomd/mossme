@@ -21,11 +21,11 @@ class Article extends BaseController
 
         // entry data
         $entry = $entryModel->getEntry($id);
-        if ($entry == null) return $this->index();
+        if ($entry == null) return $this->notFound();
         
         // translation data by entry_id (for dropdown display also)        
         $translations = $translationModel->getTranslations($entry, $user_language_code, $forward == 'translation' ? $f_id : null);
-        if ($translations == null) return $this->index();
+        if ($translations == null) return $this->notFound();
         $entry->translations = $translations;
 
         // child list (for folder type)
@@ -52,12 +52,9 @@ class Article extends BaseController
         return view('templates/header', $data).view('article');
     }
 
-    /**
-     * TODO
-     */
-    // public function index(): string
-    // {
-    //     return "Wrong URL. Please go back: <a href=\"/\">Home</a>";
-    // }
+    public function notFound()
+    {
+        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(); 
+    }
 
 }
