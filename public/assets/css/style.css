@@ -155,34 +155,36 @@
 }
 
 /*--- Lite mode ---*/
-body.lite {
-  #hero, section.legacy, section.sati, section.events, section.gallery, section.testimonials {
-    display: none !important;
-  }
+body.lite #hero, 
+body.lite section.legacy, body.lite section.sati, body.lite section.events,
+body.lite section.gallery, body.lite section.testimonials {
+  display: none !important;
+}
 
-  section.menu {
-    padding-top: 150px;  
-  }
+body.lite section.menu {
+  padding-top: 150px;
+}
 
-  #hero.hero-article {
-    display: flex !important;
-    height: max-content;
-    padding: 50px 0;
-  }
-  #hero.hero-article .play-btn {
-    display: none !important;
-  }
+body.lite #hero.hero-article {
+  display: flex !important;
+  height: max-content;
+  padding: 50px 0;
+}
 
-  .article {
-    --bg-article: none !important;    
-  }
+body.lite #hero.hero-article .play-btn {
+  display: none !important;
+}
 
-  .commentary {
-    --bg-cmt: none !important;
-  }
-  .commentary::before {
-    background: none;
-  }
+body.lite .article {
+  --bg-article: none !important;    
+}
+
+body.lite .commentary {
+  --bg-cmt: none !important;
+}
+
+body.lite .commentary::before {
+  background: none;
 }
 
 /*--------------------------------------------------------------
