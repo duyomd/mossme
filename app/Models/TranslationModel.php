@@ -523,6 +523,19 @@ class TranslationModel extends BaseModel
 
         $this->db->transStart();
 
+        // if only 1 new article each root/section displayed, use this 
+        // select *
+        // from entry 
+        // where created_at IN (
+        //     select max(created_at)
+        //     from entry
+        //     where status = 1 AND type = 1
+        //     group by root_id
+        // )
+        // ...
+        // order by created_at desc
+        // limit 5
+
         /** Used for host with lower SQL version (T.T) */
         $sql = 
             'SELECT entry_id, title, image_url AS image_url_header
