@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'Monolingual mode is being displayed.',
     'article_msg_bilingual'     =>  'Bilingual mode is being displayed.',
     'article_msg_comm_shown'    =>  'Commentary is being displayed.',
-    'article_msg_comm_hidden'   =>  'Commentary is being hidden.',                    
+    'article_msg_comm_hidden'   =>  'Commentary is being hidden.',
+    'article_parallels_search'  =>  'Search for parallels',
+    'article_parallels_loading' =>  'Searching for data...',
+    'article_parallels_patient' =>  'This might take a few moments, please be patient.',
+    'article_parallels_found'   =>  '{0, number} parallel(s) found ▼',
+    'article_parallels_failed'  =>  'Parallels search failed...',
+    'article_parallels_error'   =>  'Something was wrong, please try again later.',
 
     /*--------------------------------------------------------------
     # Contact

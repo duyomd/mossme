@@ -144,7 +144,13 @@ return [
     'article_msg_monolingual'   =>  'တစ်ဘာသာစကားသာ ပြသထားသည်။',
     'article_msg_bilingual'     =>  'နှစ်ဘာသာစကားပြသထားသည်။',
     'article_msg_comm_shown'    =>  'အကြောင်းအရာပြသထားသည်။',
-    'article_msg_comm_hidden'   =>  'အကြောင်းအရာမပြသပါ။',                  
+    'article_msg_comm_hidden'   =>  'အကြောင်းအရာမပြသပါ။', 
+    'article_parallels_search'  =>  'နှိုင်းယှဉ်မှုများကို ရှာပါ',
+    'article_parallels_loading' =>  'ဒေတာကို ရှာနေပါသည်...',
+    'article_parallels_patient' =>  'ဤသည်အချိန်မရွေး တစ်ခါတစ်ရံ သတိထားပါ။',
+    'article_parallels_found'   =>  '{0, number} နှိုင်းယှဉ်မှုတွေ ရှာဖွေတွေ့ရှိခဲ့သည် ▼',
+    'article_parallels_failed'  =>  'နှိုင်းယှဉ်မှုရှာဖွေရန် မအောင်မြင်ပါ...',
+    'article_parallels_error'   =>  'အချို့သော ပြဿနာ ဖြစ်ပွားခဲ့သည်၊ ကျေးဇူးပြုပြီး နောက်မှ ထပ်၍ ကြိုးစားပါ။',
 
     /*--------------------------------------------------------------
     # Contact

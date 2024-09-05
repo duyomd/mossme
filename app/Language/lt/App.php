@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'Rodo vienakalbį režimą.',
     'article_msg_bilingual'     =>  'Rodo dvikalbį režimą.',
     'article_msg_comm_shown'    =>  'Komentaras rodomas.',
-    'article_msg_comm_hidden'   =>  'Komentaras paslėptas.',                     
+    'article_msg_comm_hidden'   =>  'Komentaras paslėptas.',
+    'article_parallels_search'  =>  'Ieškoti paralelių',
+    'article_parallels_loading' =>  'Ieškoma duomenų...',
+    'article_parallels_patient' =>  'Tai gali užtrukti kelias minutes, prašome būti kantriems.',
+    'article_parallels_found'   =>  'Rasta {0, number} paralelių ▼',
+    'article_parallels_failed'  =>  'Paralelių paieška nepavyko...',
+    'article_parallels_error'   =>  'Įvyko klaida, prašome bandyti vėliau.',
 
     /*--------------------------------------------------------------
     # Contact

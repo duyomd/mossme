@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'ඔබ සාර්ථකව පිටව ගොස් ඇත.',
     'backToLogin'        => 'ප්‍රවේශයට ආපසු',
 
+    // Change password
+    'changePassword'            => 'පසුබැසීමේ සංකේතය වෙනස් කරන්න',
+    'newPassword'               => 'නව පසුබැසීමේ සංකේතය',
+    'newPasswordConfirm'        => 'නව පසුබැසීමේ සංකේතය (අවසානයට)',
+    'changePasswordBtn'         => 'යාවත්කාලීන කරන්න',
+    'changePasswordTime'        => 'ඔබට අවශ්‍යනම්, නව පසුබැසීමේ සංකේතය සඳහා වෙනස් කළ හැක.',
+    'changePasswordSuccess'     => 'නව පසුබැසීමේ සංකේතය සාර්ථකව වෙනස් කරන ලදි.',
+
     // Passwords
     'errorPasswordLength'       => 'මුරපද {0, number} අකුරු දිගින් අඩු විය යුතුය.',
     'suggestPasswordLength'     => 'මුරපද කීප 255 අකුරු දිගක් වන පද ප්‍රකාශන සොයා ගත හැකි මුරපද සුරක්ෂිත වේ.',

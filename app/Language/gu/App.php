@@ -144,6 +144,12 @@ return [
     'article_msg_bilingual'     =>  'બાહ્ય ભાષા સ્થિતિ બતાવવામાં આવી રહી છે.',
     'article_msg_comm_shown'    =>  'ટિપ્પણી બતાવવામાં આવી રહી છે.',
     'article_msg_comm_hidden'   =>  'ટિપ્પણી છુપાવવામાં આવી રહી છે.',
+    'article_parallels_search'  =>  'પેરાલલ્સ શોધો',
+    'article_parallels_loading' =>  'આંકડા શોધી રહ્યાં છે...',
+    'article_parallels_patient' =>  'આમાં થોડો સમય લાગી શકે છે, કૃપા કરીને રાહ જુઓ.',
+    'article_parallels_found'   =>  '{0, number} પેરાલલ્સ મળી આવ્યા ▼',
+    'article_parallels_failed'  =>  'પેરાલલ્સ શોધમાં નિષ્ફળ...',
+    'article_parallels_error'   =>  'કંઈક ગડબડ થઈ ગઈ છે, કૃપા કરીને પછી ફરી પ્રયાસ કરો.',
 
     /*--------------------------------------------------------------
     # Contact

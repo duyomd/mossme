@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'S’està mostrant el mode monolingüe.',
     'article_msg_bilingual'     =>  'S’està mostrant el mode bilingüe.',
     'article_msg_comm_shown'    =>  'S’està mostrant el comentari.',
-    'article_msg_comm_hidden'   =>  'S’està ocultant el comentari.',               
+    'article_msg_comm_hidden'   =>  'S’està ocultant el comentari.',
+    'article_parallels_search'  =>  'Cerca de paral·lels',
+    'article_parallels_loading' =>  'Cercant dades...',
+    'article_parallels_patient' =>  'Això pot trigar uns moments, si us plau, tingueu paciència.',
+    'article_parallels_found'   =>  'S’han trobat {0, number} paral·lels ▼',
+    'article_parallels_failed'  =>  'La cerca de paral·lels ha fallat...',
+    'article_parallels_error'   =>  'Alguna cosa ha fallat, torneu-ho a intentar més tard.',
 
     /*--------------------------------------------------------------
     # Contact

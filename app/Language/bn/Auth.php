@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'আপনি সফলভাবে লগ আউট করেছেন।',
     'backToLogin'        => 'লগইনে ফিরে যান',
 
+    // Change password
+    'changePassword'            => 'পাসওয়ার্ড পরিবর্তন করুন',
+    'newPassword'               => 'নতুন পাসওয়ার্ড',
+    'newPasswordConfirm'        => 'নতুন পাসওয়ার্ড (আবার)',
+    'changePasswordBtn'         => 'আপডেট করুন',
+    'changePasswordTime'        => 'আপনি চাইলে নতুন পাসওয়ার্ডে পরিবর্তন করতে পারেন।',
+    'changePasswordSuccess'     => 'নতুন পাসওয়ার্ড সফলভাবে পরিবর্তিত হয়েছে।',
+
     // Passwords
     'errorPasswordLength'       => 'পাসওয়ার্ডের দৈর্ঘ্য কমপক্ষে {0, number} অক্ষর হতে হবে।',
     'suggestPasswordLength'     => 'পাস ফ্রেজ - 255 অক্ষরের মধ্যে - বেশি নিরাপদ পাসওয়ার্ড তৈরি করে যা মনে রাখা সহজ।',

@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'Jūs sėkmingai atsijungėte.',
     'backToLogin'        => 'Grįžti į prisijungimą',
 
+    // Change password
+    'changePassword'            => 'Pakeisti slaptažodį',
+    'newPassword'               => 'Naujas slaptažodis',
+    'newPasswordConfirm'        => 'Naujas slaptažodis (dar kartą)',
+    'changePasswordBtn'         => 'Atnaujinti',
+    'changePasswordTime'        => 'Pagal pageidavimą galite pakeisti slaptažodį.',
+    'changePasswordSuccess'     => 'Naujas slaptažodis sėkmingai pakeistas.',
+
     // Passwords
     'errorPasswordLength'       => 'Slaptažodis turi būti bent {0, number} ženklų ilgio.',
     'suggestPasswordLength'     => 'Prisijungimo frazės - iki 255 ženklų ilgio - yra kur kas saugesni slaptažodžiai kuriuos lengva įsiminti.',

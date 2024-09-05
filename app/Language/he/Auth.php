@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'התנתקת בהצלחה.',
     'backToLogin'        => 'חזור להתחברות',
 
+    // Change password
+    'changePassword'            => 'שנה סיסמה',
+    'newPassword'               => 'סיסמה חדשה',
+    'newPasswordConfirm'        => 'סיסמה חדשה (שוב)',
+    'changePasswordBtn'         => 'עדכן',
+    'changePasswordTime'        => 'תוכל לשנות לסיסמה חדשה אם תרצה.',
+    'changePasswordSuccess'     => 'הסיסמה החדשה שונתה בהצלחה.',
+
     // Passwords
     'errorPasswordLength'       => 'הסיסמאות חייבות להיות באורך מינימלי של {0, number} תווים.',
     'suggestPasswordLength'     => 'מחרוזות סיסמה - עד 255 תווים - יוצרות סיסמאות מאובטחות שקל לזכור.',

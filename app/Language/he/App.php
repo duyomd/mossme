@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'מצב חד-לשוני מוצג.',
     'article_msg_bilingual'     =>  'מצב דו-לשוני מוצג.',
     'article_msg_comm_shown'    =>  'הפרשנות מוצגת.',
-    'article_msg_comm_hidden'   =>  'הפרשנות מוסתרת.',                
+    'article_msg_comm_hidden'   =>  'הפרשנות מוסתרת.',
+    'article_parallels_search'  =>  'חיפוש מקבילים',
+    'article_parallels_loading' =>  'מחפש נתונים...',
+    'article_parallels_patient' =>  'זה עלול לקחת כמה רגעים, אנא היה סבלני.',
+    'article_parallels_found'   =>  'נמצאו {0, number} מקבילים ▼',
+    'article_parallels_failed'  =>  'חיפוש המקבילים נכשל...',
+    'article_parallels_error'   =>  'משהו השתבש, אנא נסה שוב מאוחר יותר.',
 
     /*--------------------------------------------------------------
     # Contact

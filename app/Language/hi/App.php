@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'एकभाषी मोड प्रदर्शित किया जा रहा है।',
     'article_msg_bilingual'     =>  'द्विभाषी मोड प्रदर्शित किया जा रहा है।',
     'article_msg_comm_shown'    =>  'टीका प्रदर्शित किया जा रहा है।',
-    'article_msg_comm_hidden'   =>  'टीका छिपाया जा रहा है।',                 
+    'article_msg_comm_hidden'   =>  'टीका छिपाया जा रहा है।',
+    'article_parallels_search'  =>  'समानांतर खोजें',
+    'article_parallels_loading' =>  'डेटा खोजा जा रहा है...',
+    'article_parallels_patient' =>  'इसमें कुछ समय लग सकता है, कृपया धैर्य रखें।',
+    'article_parallels_found'   =>  '{0, number} समानांतर पाए गए ▼',
+    'article_parallels_failed'  =>  'समानांतर खोज विफल हो गई...',
+    'article_parallels_error'   =>  'कुछ गलत हो गया है, कृपया बाद में पुनः प्रयास करें।',
 
     /*--------------------------------------------------------------
     # Contact

@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'Du har blitt logget ut.',
     'backToLogin'        => 'Tilbake til innlogging',
 
+    // Change password
+    'changePassword'            => 'Endre passord',
+    'newPassword'               => 'Nytt passord',
+    'newPasswordConfirm'        => 'Nytt passord (igjen)',
+    'changePasswordBtn'         => 'Oppdater',
+    'changePasswordTime'        => 'Du kan endre til et nytt passord hvis du ønsker.',
+    'changePasswordSuccess'     => 'Det nye passordet ble endret vellykket.',
+
     // Passwords
     'errorPasswordLength'       => 'Passord må være minst {0, number} tegn langt.',
     'suggestPasswordLength'     => 'Passordfraser - opptil 255 tegn lange - gir sikrere passord som er lett å huske.',

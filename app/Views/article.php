@@ -1,5 +1,7 @@
 <!-- End Header -->
 
+  <div class="ajax-loading"><div><?=lang('App.loading')?></div></div>  
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center hero-article" style="--bg-hero: url(<?=$entry->image_url_header?>);">
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
@@ -72,7 +74,7 @@
       <section id="article" class="article" style="--bg-article: url(<?=$entry->image_url_content?>);">
         <div class="container" data-aos="fade-up">
         
-          <div class=row>
+          <div class="row">
             <div id="col-main" class="">
 
               <div class="section-title">
@@ -207,6 +209,20 @@
           </div>
 
         </div>
+
+        <!-- Parallel articles -->
+        <?php $parallelsCount = App\Helpers\Utilities::isNullOrBlank($entry->parallels) ? 0 : count(explode(",", $entry->parallels));
+          if ($parallelsCount > 0) :?>
+          <div class="parallels row mt-5 text-center">
+            <div>
+              <a href="javascript:void(0)" onclick="loadParallels('<?=$entry->parallels?>')">
+                <i class="bi bi-search"></i><span class="parallels-title"><?=lang('App.article_parallels_search')?></span>
+              </a>
+            </div>
+            <div class="parallels-content mt-3 fst-italic d-none"></div>
+          </div>
+        <?php endif ?><!-- End Parallels -->
+
       </section><!-- End Article Section -->
       
       <section id="commentary" class="commentary collapse" style="--bg-cmt: url(<?=$entry->image_url_commentary?>);">
@@ -326,6 +342,67 @@
 
       var _dropindex_main, _dropindex_sub, _dropindex_comm;
       var _bilingual = false;
+
+      var _parallelsOn = false;
+
+      function loadParallels(pars) {
+        if (_parallelsOn) return;        
+        loading(true);
+        var titleEle = document.querySelector('.parallels-title');
+        var contentEle = document.querySelector('.parallels-content');
+        parallelsSearching(titleEle, contentEle);
+        var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+            try {
+              if (this.readyState == 4) {
+                if (this.status == 200) {                  
+                  parallelsResult(titleEle, contentEle, this.responseText);                  
+                  _parallelsOn = true;
+                } else {                  
+                  parallelsError(titleEle, contentEle);
+                }
+                loading(false);
+              }
+            } catch(e) {
+              parallelsError(titleEle, contentEle)
+              loading(false);
+            }
+          };          
+          xmlhttp.open("GET", "/parallels=" + pars, true);
+          xmlhttp.send();
+      }
+
+      function parallelsSearching(titleEle, contentEle) {
+        titleEle.innerHTML = "<?=lang('App.article_parallels_loading')?>";
+        contentEle.innerHTML = "<?=lang('App.article_parallels_patient')?>";
+        contentEle.classList.remove('d-none');        
+      }
+
+      function parallelsResult(titleEle, contentEle, responseText) {
+        var result = JSON.parse(responseText);
+        var content = '';
+        for (var i = 0; i < result.length; i++) {
+          par = result[i];
+          if (content.length > 0) {
+            content += ", ";
+          }
+          if (par.url) {
+            content += '<a href="' + par.url + '">' + par.entry_id + '</a>';
+          } else {
+            content += '<span>' + par.entry_id + '</span>';
+          }
+        }
+        contentEle.classList.add("text-uppercase");
+        contentEle.innerHTML = content;
+        titleEle.innerHTML = "<?=lang('App.article_parallels_found', [$parallelsCount])?>";  
+      }
+
+      function parallelsError(titleEle, contentEle) {
+        contentEle.innerHTML = "<?=lang('App.article_parallels_error')?>";
+        titleEle.innerHTML = "<?=lang('App.article_parallels_failed')?>"
+        titleEle.parentElement.removeAttribute("href");
+        titleEle.parentElement.removeAttribute("onclick");
+      }
 
       function gotoCmt() {
         var cmt = document.getElementById('commentary');
@@ -450,6 +527,44 @@
           }, DELAY_PERIOD);                   
         }
       }
+
+      function dropdownOverflow() {
+        dropdownArticle();
+        dropdownCommentary()
+      }
+
+      function dropdownArticle() {
+        let das = document.querySelectorAll('#dd-article');
+        if (!das || das.length <= 0) return;
+        let ar = document.querySelector('#article');
+        for (var i = 0; i < das.length; i++) {
+          let da = das[i];
+          da.addEventListener('show.bs.dropdown', () => {
+            ar.style.overflow = 'auto';
+          });
+          da.addEventListener('hide.bs.dropdown', () => { 
+            ar.style.overflow = 'hidden';
+          });
+        }
+      }
+
+      function dropdownCommentary() {
+        let dc = document.querySelector('#dd-commentary');
+        if (!dc) return;
+        let co = document.querySelector('#commentary');
+        dc.addEventListener('show.bs.dropdown', () => {            
+          var styleElem = document.head.appendChild(document.createElement("style"));
+          styleElem.innerHTML = ".commentary:before {position: fixed;}";
+          co.style.overflow = 'auto';
+        });
+        dc.addEventListener('hide.bs.dropdown', () => { 
+          var styleElems = document.getElementsByTagName("style");
+          for (let i = 0; i < styleElems.length; i++) {
+            styleElems[i].remove();
+          }
+          co.style.overflow = 'hidden';
+        });
+      }
       
       <?php
         // translations
@@ -497,44 +612,6 @@
                   '<?=$lang_comm?>');
         initDefaultState();        
         dropdownOverflow();
-      }
-
-      function dropdownOverflow() {
-        dropdownArticle();
-        dropdownCommentary()
-      }
-
-      function dropdownArticle() {
-        let das = document.querySelectorAll('#dd-article');
-        if (!das || das.length <= 0) return;
-        let ar = document.querySelector('#article');
-        for (var i = 0; i < das.length; i++) {
-          let da = das[i];
-          da.addEventListener('show.bs.dropdown', () => {
-            ar.style.overflow = 'auto';
-          });
-          da.addEventListener('hide.bs.dropdown', () => { 
-            ar.style.overflow = 'hidden';
-          });
-        }
-      }
-
-      function dropdownCommentary() {
-        let dc = document.querySelector('#dd-commentary');
-        if (!dc) return;
-        let co = document.querySelector('#commentary');
-        dc.addEventListener('show.bs.dropdown', () => {            
-          var styleElem = document.head.appendChild(document.createElement("style"));
-          styleElem.innerHTML = ".commentary:before {position: fixed;}";
-          co.style.overflow = 'auto';
-        });
-        dc.addEventListener('hide.bs.dropdown', () => { 
-          var styleElems = document.getElementsByTagName("style");
-          for (let i = 0; i < styleElems.length; i++) {
-            styleElems[i].remove();
-          }
-          co.style.overflow = 'hidden';
-        });
       }
       
     </script>

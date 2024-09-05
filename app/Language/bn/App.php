@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'এক ভাষিক মোড প্রদর্শিত হচ্ছে।',
     'article_msg_bilingual'     =>  'দ্বিভাষিক মোড প্রদর্শিত হচ্ছে।',
     'article_msg_comm_shown'    =>  'ব্যাখ্যা প্রদর্শিত হচ্ছে।',
-    'article_msg_comm_hidden'   =>  'ব্যাখ্যা গোপন করা হয়েছে।',                   
+    'article_msg_comm_hidden'   =>  'ব্যাখ্যা গোপন করা হয়েছে।',
+    'article_parallels_search'  =>  'সামঞ্জস্যগুলি খুঁজুন',
+    'article_parallels_loading' =>  'তথ্য অনুসন্ধান করা হচ্ছে...',
+    'article_parallels_patient' =>  'এটি কিছু সময় নিতে পারে, অনুগ্রহ করে অপেক্ষা করুন।',
+    'article_parallels_found'   =>  '{0, number}টি সামঞ্জস্য পাওয়া গেছে ▼',
+    'article_parallels_failed'  =>  'সামঞ্জস্য অনুসন্ধানে ব্যর্থ...',
+    'article_parallels_error'   =>  'কিছু সমস্যা হয়েছে, অনুগ্রহ করে পরে আবার চেষ্টা করুন।',
 
     /*--------------------------------------------------------------
     # Contact

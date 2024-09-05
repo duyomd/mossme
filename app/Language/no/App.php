@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'Ettspråklig modus vises.',
     'article_msg_bilingual'     =>  'Tospråklig modus vises.',
     'article_msg_comm_shown'    =>  'Kommentar vises.',
-    'article_msg_comm_hidden'   =>  'Kommentar skjules.',                
+    'article_msg_comm_hidden'   =>  'Kommentar skjules.',
+    'article_parallels_search'  =>  'Søk etter paralleller',
+    'article_parallels_loading' =>  'Laster inn data...',
+    'article_parallels_patient' =>  'Dette kan ta noen øyeblikk, vær tålmodig.',
+    'article_parallels_found'   =>  '{0, number} paralleller funnet ▼',
+    'article_parallels_failed'  =>  'Søket etter paralleller mislyktes...',
+    'article_parallels_error'   =>  'Noe gikk galt, vennligst prøv igjen senere.',
 
     /*--------------------------------------------------------------
     # Contact

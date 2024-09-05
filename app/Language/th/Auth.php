@@ -64,6 +64,14 @@ return [
     'magicLinkDisabled'  => 'การใช้ MagicLink ไม่สามารถใช้งานได้ในขณะนี้.',
     'successLogout'      => 'คุณออกจากระบบสำเร็จ.',
     'backToLogin'        => 'กลับไปที่หน้าเข้าสู่ระบบ',
+
+    // Change password
+    'changePassword'            => 'เปลี่ยนรหัสผ่าน',
+    'newPassword'               => 'รหัสผ่านใหม่',
+    'newPasswordConfirm'        => 'รหัสผ่านใหม่ (อีกครั้ง)',
+    'changePasswordBtn'         => 'อัปเดต',
+    'changePasswordTime'        => 'คุณสามารถเปลี่ยนเป็นรหัสผ่านใหม่ได้หากต้องการ',
+    'changePasswordSuccess'     => 'รหัสผ่านใหม่ถูกเปลี่ยนสำเร็จ',
     
     // Passwords
     'errorPasswordLength'       => 'รหัสผ่านต้องยาวอย่างน้อย {0, number} ตัวอักษร.',

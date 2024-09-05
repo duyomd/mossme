@@ -144,6 +144,12 @@ return [
     'article_msg_bilingual'     =>  'Näytetään kaksikielinen tila.',
     'article_msg_comm_shown'    =>  'Kommentaari on näkyvissä.',
     'article_msg_comm_hidden'   =>  'Kommentaari on piilotettu.',
+    'article_parallels_search'  =>  'Etsi vastineita',
+    'article_parallels_loading' =>  'Tietoja etsitään...',
+    'article_parallels_patient' =>  'Tämä voi kestää hetken, ole hyvä ja ole kärsivällinen.',
+    'article_parallels_found'   =>  '{0, number} vastinetta löydetty ▼',
+    'article_parallels_failed'  =>  'Vastineiden haku epäonnistui...',
+    'article_parallels_error'   =>  'Jokin meni pieleen, yritä uudelleen myöhemmin.',
 
     /*--------------------------------------------------------------
     # Contact

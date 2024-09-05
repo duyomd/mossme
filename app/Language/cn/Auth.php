@@ -58,7 +58,6 @@ return [
     'rememberMe'         => '记住我？',
     'forgotPassword'     => '忘记密码？',
     'useMagicLink'       => '使用登录链接',
-    'useMagicLinkShort'  => '登录链接',
     'magicLinkSubject'   => '您的登录链接',
     'magicTokenNotFound' => '无法验证链接。',
     'magicLinkExpired'   => '抱歉，链接已过期。',
@@ -70,7 +69,6 @@ return [
 
     // Change password
     'changePassword'            => '更改密码',
-    'currentPassword'           => '当前密码',
     'newPassword'               => '新密码',
     'newPasswordConfirm'        => '再次输入新密码',
     'changePasswordBtn'         => '更新',

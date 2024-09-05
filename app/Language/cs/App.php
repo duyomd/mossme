@@ -144,6 +144,12 @@ return [
     'article_msg_bilingual'     =>  'Zobrazuje se bilingvní režim.',
     'article_msg_comm_shown'    =>  'Komentář je zobrazen.',
     'article_msg_comm_hidden'   =>  'Komentář je skryt.',
+    'article_parallels_search'  =>  'Hledat paralely',
+    'article_parallels_loading' =>  'Vyhledávají se data...',
+    'article_parallels_patient' =>  'To může chvíli trvat, buďte prosím trpěliví.',
+    'article_parallels_found'   =>  'Nalezeno {0, number} paralel ▼',
+    'article_parallels_failed'  =>  'Vyhledávání paralel selhalo...',
+    'article_parallels_error'   =>  'Něco se pokazilo, zkuste to prosím později.',
 
     /*--------------------------------------------------------------
     # Contact

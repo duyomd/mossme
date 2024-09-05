@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'Du har loggats ut.',
     'backToLogin'        => 'Tillbaka till inloggning',
 
+    // Change password
+    'changePassword'            => 'Ändra lösenord',
+    'newPassword'               => 'Nytt lösenord',
+    'newPasswordConfirm'        => 'Nytt lösenord (igen)',
+    'changePasswordBtn'         => 'Uppdatera',
+    'changePasswordTime'        => 'Du kan byta till ett nytt lösenord om du vill.',
+    'changePasswordSuccess'     => 'Det nya lösenordet har ändrats framgångsrikt.',
+
     // Passwords
     'errorPasswordLength'       => 'Lösenordet måste vara minst {0, number} tecken långt.',
     'suggestPasswordLength'     => 'Lösenfraser - upp till 255 tecken långa - ger säkrare lösenord som är lättare att komma ihåg.',

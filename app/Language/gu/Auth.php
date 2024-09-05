@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'તમે સફળતાપૂર્વક લોગ આઉટ થઈ ગયા છો.',
     'backToLogin'        => 'લોગિન પર પાછા જાઓ',
 
+    // Change password
+    'changePassword'            => 'પાસવર્ડ બદલો',
+    'newPassword'               => 'નવો પાસવર્ડ',
+    'newPasswordConfirm'        => 'નવો પાસવર્ડ (ફરીથી)',
+    'changePasswordBtn'         => 'અપડેટ કરો',
+    'changePasswordTime'        => 'જો તમે ઇચ્છતા હોવ તો તમે નવા પાસવર્ડમાં બદલી શકો છો.',
+    'changePasswordSuccess'     => 'નવો પાસવર્ડ સફળતાપૂર્વક બદલાઈ ગયો છે.',
+
     // Passwords
     'errorPasswordLength'       => 'પાસવર્ડમાં ઓછામાં ઓછી {0, number} અક્ષરો હોવી જોઈએ.',
     'suggestPasswordLength'     => 'પાસવર્ડ માટે 255 અક્ષરો સુધી, સરળતાથી યાદ રાખી શકાય એવા પાસવર્ડ્સ બનાવશે.',

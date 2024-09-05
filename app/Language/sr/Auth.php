@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'Uspešno ste se odjavili sa sistema.',
     'backToLogin'        => 'Nazad na prijavljivanje',
 
+    // Change password
+    'changePassword'            => 'Promeni lozinku',
+    'newPassword'               => 'Nova lozinka',
+    'newPasswordConfirm'        => 'Nova lozinka (ponovo)',
+    'changePasswordBtn'         => 'Ažuriraj',
+    'changePasswordTime'        => 'Možete promeniti na novu lozinku ako želite.',
+    'changePasswordSuccess'     => 'Nova lozinka je uspešno promenjena.',
+
     // Passwords
     'errorPasswordLength'       => 'Lozinka mora biti najmanje {0, number} znakova dužine.',
     'suggestPasswordLength'     => 'Fraza lozinke - čak do 255 znakova dužine - napravite sigurniju lozinku koja se lako pamti.',

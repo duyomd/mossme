@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   => 'Modo monolíngue está sendo exibido.',
     'article_msg_bilingual'     => 'Modo bilíngue está sendo exibido.',
     'article_msg_comm_shown'    => 'Comentário está sendo exibido.',
-    'article_msg_comm_hidden'   => 'Comentário está sendo ocultado.',                  
+    'article_msg_comm_hidden'   => 'Comentário está sendo ocultado.',
+    'article_parallels_search'  => 'Buscar paralelos',
+    'article_parallels_loading' => 'Buscando dados...',
+    'article_parallels_patient' => 'Isso pode levar alguns momentos, por favor, seja paciente.',
+    'article_parallels_found'   => '{0, number} paralelos encontrados ▼',
+    'article_parallels_failed'  => 'Busca de paralelos falhou...',
+    'article_parallels_error'   => 'Algo deu errado, por favor tente novamente mais tarde.',
 
     /*--------------------------------------------------------------
     # Contact

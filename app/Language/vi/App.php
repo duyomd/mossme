@@ -140,10 +140,16 @@ return [
     'aritcle_reference'         =>  'Tham Khảo',
     'article_footer1'           =>  'Tiền bất kiến cổ nhân. Hậu bất kiến lai giả.',
     'article_footer2'           =>  'Niệm thiên địa chi du du.',
-    'article_msg_monolingual'   => 'Chế độ đơn ngữ đang được hiển thị.',
-    'article_msg_bilingual'     => 'Chế độ song ngữ đang được hiển thị.',
-    'article_msg_comm_shown'    => 'Phần chú giải đang được hiển thị.',
-    'article_msg_comm_hidden'   => 'Phần chú giải đã được ẩn đi.',
+    'article_msg_monolingual'   =>  'Chế độ đơn ngữ đang được hiển thị.',
+    'article_msg_bilingual'     =>  'Chế độ song ngữ đang được hiển thị.',
+    'article_msg_comm_shown'    =>  'Phần chú giải đang được hiển thị.',
+    'article_msg_comm_hidden'   =>  'Phần chú giải đã được ẩn đi.',
+    'article_parallels_search'  =>  'Tìm các văn bản tương đồng',
+    'article_parallels_loading' =>  'Đang tìm kiếm dữ liệu...',
+    'article_parallels_patient' =>  'Xin vui lòng chờ trong giây lát.',
+    'article_parallels_found'   =>  'Có {0, number} văn bản tương đồng ▼',
+    'article_parallels_failed'  =>  'Không tìm được dữ liệu...',
+    'article_parallels_error'   =>  'Có vấn đề xảy ra, xin vui lòng thử lại sau.',
 
     /*--------------------------------------------------------------
     # Contact

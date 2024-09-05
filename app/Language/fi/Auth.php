@@ -66,6 +66,14 @@ return [
     'successLogout'      => 'Olet kirjautunut ulos onnistuneesti.',
     'backToLogin'        => 'Takaisin kirjautumiseen',
 
+    // Change password
+    'changePassword'            => 'Vaihda salasana',
+    'newPassword'               => 'Uusi salasana',
+    'newPasswordConfirm'        => 'Uusi salasana (uudelleen)',
+    'changePasswordBtn'         => 'Päivitä',
+    'changePasswordTime'        => 'Voit vaihtaa uuteen salasanaan, jos haluat.',
+    'changePasswordSuccess'     => 'Uusi salasana vaihdettu onnistuneesti.',
+
     // Passwords
     'errorPasswordLength'       => 'Salasanojen täytyy olla vähintään {0, number} merkkiä pitkiä.',
     'suggestPasswordLength'     => 'Salasana- lauseet - jopa 255 merkkiä pitkät - tekevät turvallisempia salasanoja, jotka ovat helppo muistaa.',

@@ -144,6 +144,12 @@ return [
     'article_msg_bilingual'     =>  'Prikazan je dvojezični način.',
     'article_msg_comm_shown'    =>  'Komentar je prikazan.',
     'article_msg_comm_hidden'   =>  'Komentar je skrit.',
+    'article_parallels_search'  =>  'Iskanje paralel',
+    'article_parallels_loading' =>  'Iščem podatke...',
+    'article_parallels_patient' =>  'To lahko traja nekaj trenutkov, prosimo, bodite potrpežljivi.',
+    'article_parallels_found'   =>  'Najdenih {0, number} paralel ▼',
+    'article_parallels_failed'  =>  'Iskanje paralel ni uspelo...',
+    'article_parallels_error'   =>  'Prišlo je do težave, prosimo, poskusite znova kasneje.',
 
     /*--------------------------------------------------------------
     # Kontakt

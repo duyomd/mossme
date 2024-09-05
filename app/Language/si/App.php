@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'එක් භාෂා මෝඩ් පෙන්වයි.',
     'article_msg_bilingual'     =>  'දෙකම භාෂා මෝඩ් පෙන්වයි.',
     'article_msg_comm_shown'    =>  'විවරණය පෙන්වයි.',
-    'article_msg_comm_hidden'   =>  'විවරණය සඟවයි.',                   
+    'article_msg_comm_hidden'   =>  'විවරණය සඟවයි.',
+    'article_parallels_search'  =>  'සමාන පරාස සොයන්න',
+    'article_parallels_loading' =>  'දත්ත සොයමින්...',
+    'article_parallels_patient' =>  'මෙයට තත්පර කිහිපයක් ගත විය හැක, කරුණාකර ඉවසන්න.',
+    'article_parallels_found'   =>  '{0, number} සමාන පරාස හමු විය ▼',
+    'article_parallels_failed'  =>  'සමාන පරාස සොයා ගැනීම අසාර්ථක විය...',
+    'article_parallels_error'   =>  'කිසියම් දෝෂයක් ඇතිවිය, කරුණාකර පසුව නැවත උත්සාහ කරන්න.',
 
     /*--------------------------------------------------------------
     # Contact

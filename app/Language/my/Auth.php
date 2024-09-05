@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'သင့်အကောင့်မှ အောင်မြင်စွာ လော့ဂ်အောက်ပြုလုပ်ထားပါသည်။',
     'backToLogin'        => 'လော့ဂ်အင်သို့ ပြန်သွားပါ',
 
+    // Change password
+    'changePassword'            => 'စကားဝှက်ပြောင်းရန်',
+    'newPassword'               => 'အသားပေးစကားဝှက်',
+    'newPasswordConfirm'        => 'အသားပေးစကားဝှက် (ထပ်မံ)',
+    'changePasswordBtn'         => 'အသစ်ပြန်လုပ်ပါ',
+    'changePasswordTime'        => 'သင်လိုလျှင် အသစ်သော စကားဝှက်ကို အစားထိုးနိုင်သည်။',
+    'changePasswordSuccess'     => 'အသစ်သော စကားဝှက် အောင်မြင်စွာ ပြောင်းလဲပြီးပါပြီ။',
+
     // Passwords
     'errorPasswordLength'       => 'စကားဝှက်များသည် {0, number} အနည်းဆုံး လျှောက်ထားရပါသည်။',
     'suggestPasswordLength'     => 'စကားဝှက်များကို သတိထားရန် အဆင်ပြေသော ပေါ်တည်မှုပုံစံများကို 255 စာလုံးအထိ အသုံးပြုပါ။',

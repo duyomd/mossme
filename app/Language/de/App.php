@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   => 'Monolingualer Modus wird angezeigt.',
     'article_msg_bilingual'     => 'Zweisprachiger Modus wird angezeigt.',
     'article_msg_comm_shown'    => 'Kommentar wird angezeigt.',
-    'article_msg_comm_hidden'   => 'Kommentar wird ausgeblendet.',                  
+    'article_msg_comm_hidden'   => 'Kommentar wird ausgeblendet.',
+    'article_parallels_search'  =>  'Parallelen suchen',
+    'article_parallels_loading' =>  'Daten werden durchsucht...',
+    'article_parallels_patient' =>  'Das könnte einen Moment dauern, bitte haben Sie Geduld.',
+    'article_parallels_found'   =>  '{0, number} Parallelen gefunden ▼',
+    'article_parallels_failed'  =>  'Parallelen-Suche fehlgeschlagen...',
+    'article_parallels_error'   =>  'Etwas ist schiefgelaufen, bitte versuchen Sie es später erneut.',
 
     /*--------------------------------------------------------------
     # Contact

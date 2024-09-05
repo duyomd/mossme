@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'ನೀವು ಯಶಸ್ವಿಯಾಗಿ ಲಾಗ್‌ಔಟ್ ಆಗಿದ್ದೀರಿ.',
     'backToLogin'        => 'ಲಾಗಿನ್‌ಗೆ ಹಿಂದಿರುಗಿ',
 
+    // Change password
+    'changePassword'            => 'ಪಾಸ್ವರ್ಡ್ ಬದಲಾಯಿಸಿ',
+    'newPassword'               => 'ಹೊಸ ಪಾಸ್ವರ್ಡ್',
+    'newPasswordConfirm'        => 'ಹೊಸ ಪಾಸ್ವರ್ಡ್ (ಮರು)',
+    'changePasswordBtn'         => 'ನವೀಕರಿಸಿ',
+    'changePasswordTime'        => 'ಇಚ್ಛಿಸಿದರೆ ಹೊಸ ಪಾಸ್ವರ್ಡ್‌ಗೆ ಬದಲಾಯಿಸಬಹುದು.',
+    'changePasswordSuccess'     => 'ಹೊಸ ಪಾಸ್ವರ್ಡ್ ಯಶಸ್ವಿಯಾಗಿ ಬದಲಾಯಿಸಲಾಗಿದೆ.',
+
     // Passwords
     'errorPasswordLength'       => 'ಪಾಸ್ವರ್ಡು ಕನಿಷ್ಠ {0, number} ಅಕ್ಷರಗಳು երկարಿಯಬೇಕು.',
     'suggestPasswordLength'     => 'ಪಾಸ್‌ಫ್ರೆಜ್‌ಗಳು - 255 ಅಕ್ಷರಗಳಿಗೆ ಉದ್ದ - ಹೆಚ್ಚು ಸುರಕ್ಷಿತ ಪಾಸ್ವರ್ಡ್‌ಗಳನ್ನು ತಯಾರಿಸುತ್ತವೆ ಮತ್ತು ನೆನಪಿಡಲು ಸುಲಭ.',

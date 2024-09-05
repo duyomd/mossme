@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'Başarıyla çıkış yaptınız.',
     'backToLogin'        => 'Girişe Geri Dön',
 
+    // Change password
+    'changePassword'            => 'Şifre değiştir',
+    'newPassword'               => 'Yeni şifre',
+    'newPasswordConfirm'        => 'Yeni şifre (tekrar)',
+    'changePasswordBtn'         => 'Güncelle',
+    'changePasswordTime'        => 'İsterseniz yeni bir şifreye geçebilirsiniz.',
+    'changePasswordSuccess'     => 'Yeni şifre başarıyla değiştirildi.',
+
     // Passwords
     'errorPasswordLength'       => 'Şifre en az {0, number} karakter uzunluğunda olmalıdır.',
     'suggestPasswordLength'     => 'En fazla 255 karakter uzunluğundaki geçiş ifadeleri, hatırlaması kolay, daha güvenli şifreler oluşturur.',

@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'Modul monolingv este afișat.',
     'article_msg_bilingual'     =>  'Modul bilingv este afișat.',
     'article_msg_comm_shown'    =>  'Comentariul este afișat.',
-    'article_msg_comm_hidden'   =>  'Comentariul este ascuns.',       
+    'article_msg_comm_hidden'   =>  'Comentariul este ascuns.',
+    'article_parallels_search'  =>  'Căutare paralele',
+    'article_parallels_loading' =>  'Se caută date...',
+    'article_parallels_patient' =>  'Aceasta poate dura câteva momente, vă rugăm să fiți răbdător.',
+    'article_parallels_found'   =>  '{0, number} paralele găsite ▼',
+    'article_parallels_failed'  =>  'Căutarea paralelilor a eșuat...',
+    'article_parallels_error'   =>  'A apărut o problemă, vă rugăm să încercați din nou mai târziu.',
 
     /*--------------------------------------------------------------
     # Contact

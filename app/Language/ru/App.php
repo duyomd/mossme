@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'Отображается моноязычный режим.',
     'article_msg_bilingual'     =>  'Отображается двухъязычный режим.',
     'article_msg_comm_shown'    =>  'Отображается комментарий.',
-    'article_msg_comm_hidden'   =>  'Комментарий скрыт.',                 
+    'article_msg_comm_hidden'   =>  'Комментарий скрыт.',
+    'article_parallels_search'  =>  'Поиск параллелей',
+    'article_parallels_loading' =>  'Идет поиск данных...',
+    'article_parallels_patient' =>  'Это может занять некоторое время, пожалуйста, подождите.',
+    'article_parallels_found'   =>  'Найдено {0, number} параллелей ▼',
+    'article_parallels_failed'  =>  'Поиск параллелей не удался...',
+    'article_parallels_error'   =>  'Что-то пошло не так, пожалуйста, попробуйте позже.',
 
     /*--------------------------------------------------------------
     # Contact

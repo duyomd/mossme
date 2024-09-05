@@ -12,7 +12,7 @@
       <div>
         <div>
           <div id="title" class="section-title">
-          <h2><?=lang('Auth.useMagicLinkShort')?></h2>
+          <h2><?=lang('Auth.useMagicLink')?></h2>
         </div>
 
         <?php if (session('error') !== null) : ?>

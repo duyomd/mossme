@@ -64,6 +64,14 @@ return [
     'magicLinkDisabled'  => 'MagicLink இன் பயன்பாடு தற்போது அனுமதிக்கப்படவில்லை.',
     'successLogout'      => 'நீங்கள் வெற்றிகரமாக வெளியேறியுள்ளீர்கள்.',
     'backToLogin'        => 'உள்நுழைய திரும்பவும்',
+
+    // Change password
+    'changePassword'            => 'கடவுச்சொல் மாற்றம்',
+    'newPassword'               => 'புதிய கடவுச்சொல்',
+    'newPasswordConfirm'        => 'புதிய கடவுச்சொல் (மீண்டும்)',
+    'changePasswordBtn'         => 'புதுப்பிக்கவும்',
+    'changePasswordTime'        => 'நீங்கள் விரும்பினால் புதிய கடவுச்சொல்லுக்கு மாற்றலாம்.',
+    'changePasswordSuccess'     => 'புதிய கடவுச்சொல் வெற்றிகரமாக மாற்றப்பட்டுள்ளது.',
     
     // Passwords
     'errorPasswordLength'       => 'கடவுச்சொல் குறைந்தது {0, number} எழுத்துக்களாக இருக்க வேண்டும்.',

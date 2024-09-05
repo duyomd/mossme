@@ -9,6 +9,9 @@ class Utilities
 
     public const STATUS_ACTIVE     = 1;
 
+    public const SERIALS_DELIMETER  = " ";
+    public const URL_ARTICLE        = "/article/";
+
     public const EVENT_DEFAULT_NUM  = 3;
     public const EVENT_NUMS         = [0, 1, 3];
 
@@ -251,4 +254,15 @@ class Utilities
     public static function isTallTitle() {
         return in_array(self::getSessionLocale(), self::LANGUAGES_TITLE_TALL);
     }
+
+    /*
+    public static function urlExists($fullUrl) {
+        $file_headers = @get_headers($fullUrl);
+        if($file_headers && !strpos($file_headers[0], '404')) {
+            return true;
+        }
+        return false;
+    }
+    */
+    
 }

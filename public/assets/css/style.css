@@ -1213,6 +1213,14 @@ section {
   text-transform: capitalize;
 }
 
+.article .parallels i {
+  margin-inline-end: 5px;
+}
+
+.article .parallels .parallels-content {
+  font-family: "serif";
+}
+
 @media (min-width: 1920px) {
   .article {
     background-attachment: fixed;

@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'Uspešno ste se odjavili.',
     'backToLogin'        => 'Nazaj na prijavo',
 
+    // Change password
+    'changePassword'            => 'Spremeni geslo',
+    'newPassword'               => 'Novo geslo',
+    'newPasswordConfirm'        => 'Novo geslo (znova)',
+    'changePasswordBtn'         => 'Posodobi',
+    'changePasswordTime'        => 'Geslo lahko spremenite na novo, če želite.',
+    'changePasswordSuccess'     => 'Novo geslo je bilo uspešno spremenjeno.',
+
     // Gesla
     'errorPasswordLength'       => 'Gesla morajo biti dolga vsaj {0, number} znakov.',
     'suggestPasswordLength'     => 'Geselne fraze - do 255 znakov dolge - so bolj varna gesla, ki so enostavna za zapomniti.',

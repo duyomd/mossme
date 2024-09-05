@@ -57,7 +57,6 @@ return [
     'rememberMe'         => '記住我？',
     'forgotPassword'     => '忘記密碼？',
     'useMagicLink'       => '使用登入鏈接',
-    'useMagicLinkShort'  => '登入鏈接',
     'magicLinkSubject'   => '您的登入鏈接',
     'magicTokenNotFound' => '無法驗證鏈接。',
     'magicLinkExpired'   => '抱歉，鏈接已過期。',
@@ -69,7 +68,6 @@ return [
 
     // Change password
     'changePassword'            => '更改密碼',
-    'currentPassword'           => '當前密碼',
     'newPassword'               => '新密碼',
     'newPasswordConfirm'        => '再次輸入新密碼',
     'changePasswordBtn'         => '更新',

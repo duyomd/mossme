@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'Te-ai deconectat cu succes.',
     'backToLogin'        => 'Înapoi la autentificare',
 
+    // Change password
+    'changePassword'            => 'Schimbă parola',
+    'newPassword'               => 'Parolă nouă',
+    'newPasswordConfirm'        => 'Parolă nouă (din nou)',
+    'changePasswordBtn'         => 'Actualizează',
+    'changePasswordTime'        => 'Poți schimba la o parolă nouă dacă dorești.',
+    'changePasswordSuccess'     => 'Parola nouă a fost schimbată cu succes.',
+
     // Passwords
     'errorPasswordLength'       => 'Parolele trebuie să aibă cel puțin {0, number} caractere.',
     'suggestPasswordLength'     => 'Frazele de parolă - până la 255 de caractere - fac parolele mai sigure și ușor de reținut.',

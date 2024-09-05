@@ -57,7 +57,6 @@ return [
     'rememberMe'         => 'Duy trì đăng nhập?',
     'forgotPassword'     => 'Quên mật khẩu?',
     'useMagicLink'       => 'Dùng liên kết đăng nhập',
-    'useMagicLinkShort'  => 'Liên kết đăng nhập',
     'magicLinkSubject'   => 'Liên kết đăng nhập của bạn',
     'magicTokenNotFound' => 'Không thể xác thực liên kết.',
     'magicLinkExpired'   => 'Xin lỗi, liên kết đã hết hạn.',
@@ -69,7 +68,6 @@ return [
 
     // Change password
     'changePassword'            => 'Đổi Mật Khẩu',
-    'currentPassword'           => 'Mật khẩu hiện tại',
     'newPassword'               => 'Mật khẩu mới',
     'newPasswordConfirm'        => 'Mật khẩu mới (nhập lại)',
     'changePasswordBtn'         => 'Cập Nhật',

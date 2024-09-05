@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'ಏಕಭಾಷಾ ಮೋಡ್ ತೋರಿಸುತ್ತಿದೆ.',
     'article_msg_bilingual'     =>  'ದ್ವಿಭಾಷಾ ಮೋಡ್ ತೋರಿಸುತ್ತಿದೆ.',
     'article_msg_comm_shown'    =>  'ಟಿಪ್ಪಣಿ ತೋರಿಸಲಾಗುತ್ತಿದೆ.',
-    'article_msg_comm_hidden'   =>  'ಟಿಪ್ಪಣಿ लೋಡುಬರುವಣು.',                   
+    'article_msg_comm_hidden'   =>  'ಟಿಪ್ಪಣಿ लೋಡುಬರುವಣು.',
+    'article_parallels_search'  =>  'ಪ್ಯಾರಲೆಲ್ಸ್ ಹುಡುಕಿ',
+    'article_parallels_loading' =>  'ಡೇಟಾ ಹುಡುಕಲಾಗುತ್ತಿದೆ...',
+    'article_parallels_patient' =>  'ಇದರಲ್ಲೇ ಕೆಲವು ಕ್ಷಣಗಳ ಕಾಲ ತಾಳ್ಮೆ ಇಡಿ.',
+    'article_parallels_found'   =>  '{0, number} ಪ್ಯಾರಲೆಲ್ಸ್ ಸಿಕ್ಕಿವೆ ▼',
+    'article_parallels_failed'  =>  'ಪ್ಯಾರಲೆಲ್ಸ್ ಹುಡುಕುವುದು ವಿಫಲವಾಗಿದೆ...',
+    'article_parallels_error'   =>  'ಊಹಿತ ಸಮಸ್ಯೆ ಉಂಟಾಗಿದೆ, ದಯವಿಟ್ಟು ನಂತರ ಪುನಃ ಪ್ರಯತ್ನಿಸಿ.',
 
     /*--------------------------------------------------------------
     # Contact

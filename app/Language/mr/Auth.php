@@ -66,6 +66,14 @@ return [
     'magicLinkDisabled'  => 'MagicLink वापर सध्या परवानगी देण्यात आलेली नाही.',
     'successLogout'      => 'तुम्ही यशस्वीपणे लॉग आउट झाले आहात.',
     'backToLogin'        => 'लॉगिनकडे परत जा',
+
+    // Change password
+    'changePassword'            => 'पासवर्ड बदलावे',
+    'newPassword'               => 'नवा पासवर्ड',
+    'newPasswordConfirm'        => 'नवा पासवर्ड (पुन्हा)',
+    'changePasswordBtn'         => 'अद्यतन करा',
+    'changePasswordTime'        => 'आपल्याला हवे असल्यास नवीन पासवर्डमध्ये बदलू शकता.',
+    'changePasswordSuccess'     => 'नवा पासवर्ड यशस्वीपणे बदलला गेला आहे.',
     
     // Passwords
     'errorPasswordLength'       => 'पासवर्ड किमान {0, number} वर्णांचा असावा लागतो.',

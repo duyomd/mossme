@@ -22,7 +22,8 @@ class Article extends BaseController
         // entry data
         $entry = $entryModel->getEntry($id);
         if ($entry == null) return $this->notFound();
-        
+        $this->parallels($entry);
+
         // translation data by entry_id (for dropdown display also)        
         $translations = $translationModel->getTranslations($entry, $user_language_code, $forward == 'translation' ? $f_id : null);
         if ($translations == null) return $this->notFound();
@@ -43,7 +44,7 @@ class Article extends BaseController
 
         $data = [
             'displayHeader' => $entry->displayEnumTitle,
-            'entry'         =>  $entry,
+            'entry'         => $entry,
             'forward'       => $forward,
         ];
 
@@ -52,9 +53,19 @@ class Article extends BaseController
         return view('templates/header', $data).view('article');
     }
 
-    public function notFound()
+    private function notFound()
     {
         throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(); 
+    }
+
+    private function parallels($entry = null)
+    {
+        if ($entry == null) return null;
+        $parArr = explode(Utilities::SERIALS_DELIMETER, $entry->serials);
+        $parArr = array_diff($parArr, [$entry->id]);
+        // request from js somehow messed up with url contains ":" ??
+        $entry->parallels = implode(",", str_replace(":", "_", $parArr));
+        return $entry;
     }
 
 }

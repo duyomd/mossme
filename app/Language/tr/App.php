@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'Tek dilli mod görüntüleniyor.',
     'article_msg_bilingual'     =>  'Çift dilli mod görüntüleniyor.',
     'article_msg_comm_shown'    =>  'Açıklama görüntüleniyor.',
-    'article_msg_comm_hidden'   =>  'Açıklama gizleniyor.',                    
+    'article_msg_comm_hidden'   =>  'Açıklama gizleniyor.',
+    'article_parallels_search'  =>  'Paralel arama',
+    'article_parallels_loading' =>  'Veriler aranıyor...',
+    'article_parallels_patient' =>  'Bu birkaç dakika sürebilir, lütfen sabırlı olun.',
+    'article_parallels_found'   =>  '{0, number} paralel bulundu ▼',
+    'article_parallels_failed'  =>  'Paralel araması başarısız oldu...',
+    'article_parallels_error'   =>  'Bir şeyler ters gitti, lütfen daha sonra tekrar deneyin.',
 
     /*--------------------------------------------------------------
     # Contact

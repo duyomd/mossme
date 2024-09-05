@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  '単語モードが表示されています。',
     'article_msg_bilingual'     =>  '双語モードが表示されています。',
     'article_msg_comm_shown'    =>  '注釈が表示されています。',
-    'article_msg_comm_hidden'   =>  '注釈が非表示になっています。',                    
+    'article_msg_comm_hidden'   =>  '注釈が非表示になっています。',
+    'article_parallels_search'  =>  '類似を検索',
+    'article_parallels_loading' =>  'データを検索中...',
+    'article_parallels_patient' =>  '少々お待ちください。',
+    'article_parallels_found'   =>  '{0, number} 件の類似が見つかりました ▼',
+    'article_parallels_failed'  =>  '類似の検索に失敗しました...',
+    'article_parallels_error'   =>  '何か問題が発生しました。後でもう一度お試しください。',
 
     /*--------------------------------------------------------------
     # Contact

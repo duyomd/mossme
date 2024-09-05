@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'You have successfully logged out.',
     'backToLogin'        => 'Back to Login',
 
+    // Change password
+    'changePassword'            => 'Change Password',
+    'newPassword'               => 'New password',
+    'newPasswordConfirm'        => 'New password (again)',
+    'changePasswordBtn'         => 'Update',
+    'changePasswordTime'        => 'You can change to a new password if you want.',
+    'changePasswordSuccess'     => 'New password successfully changed.',
+
     // Passwords
     'errorPasswordLength'       => 'Passwords must be at least {0, number} characters long.',
     'suggestPasswordLength'     => 'Pass phrases - up to 255 characters long - make more secure passwords that are easy to remember.',

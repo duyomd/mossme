@@ -144,6 +144,12 @@ return [
     'article_msg_bilingual'     =>  'दुभाषिक मोड प्रदर्शित केला जात आहे.',
     'article_msg_comm_shown'    =>  'विवेचन प्रदर्शित केले जात आहे.',
     'article_msg_comm_hidden'   =>  'विवेचन लपवले जात आहे.',
+    'article_parallels_search'  =>  'समानांतर शोधा',
+    'article_parallels_loading' =>  'डेटा शोधत आहे...',
+    'article_parallels_patient' =>  'यात काही क्षण लागू शकतात, कृपया थोडे धैर्य ठेवा.',
+    'article_parallels_found'   =>  '{0, number} समानांतर सापडले ▼',
+    'article_parallels_failed'  =>  'समानांतर शोधण्यात अयशस्वी...',
+    'article_parallels_error'   =>  'काहीतरी चूक झाली आहे, कृपया नंतर पुन्हा प्रयत्न करा.',
     
     /*--------------------------------------------------------------
     # Contact

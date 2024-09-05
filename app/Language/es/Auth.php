@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'Has cerrado sesión correctamente.',
     'backToLogin'        => 'Volver al inicio de sesión',
 
+    // Change password
+    'changePassword'            => 'Cambiar contraseña',
+    'newPassword'               => 'Nueva contraseña',
+    'newPasswordConfirm'        => 'Nueva contraseña (de nuevo)',
+    'changePasswordBtn'         => 'Actualizar',
+    'changePasswordTime'        => 'Puedes cambiar a una nueva contraseña si lo deseas.',
+    'changePasswordSuccess'     => 'La nueva contraseña se ha cambiado correctamente.',
+
     // Contraseñas
     'errorPasswordLength'       => 'Las contraseñas deben tener al menos {0, number} caracteres.',
     'suggestPasswordLength'     => 'Las frases de contraseña, de hasta 255 caracteres de longitud, hacen que las contraseñas sean más seguras y fáciles de recordar.',

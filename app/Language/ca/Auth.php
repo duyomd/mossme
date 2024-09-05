@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'Has tancat la sessió amb èxit.',
     'backToLogin'        => 'Tornar a iniciar sessió',
 
+    // Change password
+    'changePassword'            => 'Canvia la contrasenya',
+    'newPassword'               => 'Nova contrasenya',
+    'newPasswordConfirm'        => 'Nova contrasenya (de nou)',
+    'changePasswordBtn'         => 'Actualitza',
+    'changePasswordTime'        => 'Pots canviar a una nova contrasenya si vols.',
+    'changePasswordSuccess'     => 'Nova contrasenya canviada correctament.',
+
     // Passwords
     'errorPasswordLength'       => 'Les contrasenyes han de tenir almenys {0, number} caràcters.',
     'suggestPasswordLength'     => 'Les frases de contrasenya - fins a 255 caràcters de longitud - fan que les contrasenyes siguin més segures i fàcils de recordar.',

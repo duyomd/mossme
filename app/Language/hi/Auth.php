@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'आप सफलतापूर्वक लॉग आउट हो चुके हैं।',
     'backToLogin'        => 'लॉगिन पर वापस जाएं',
 
+    // Change password
+    'changePassword'            => 'पासवर्ड बदलें',
+    'newPassword'               => 'नया पासवर्ड',
+    'newPasswordConfirm'        => 'नया पासवर्ड (फिर से)',
+    'changePasswordBtn'         => 'अपडेट करें',
+    'changePasswordTime'        => 'यदि आप चाहें तो आप नए पासवर्ड में बदल सकते हैं।',
+    'changePasswordSuccess'     => 'नया पासवर्ड सफलतापूर्वक बदल दिया गया है।',
+
     // Passwords
     'errorPasswordLength'       => 'पासवर्ड कम से कम {0, number} वर्णों का होना चाहिए।',
     'suggestPasswordLength'     => 'पास वाक्यांश - 255 वर्णों तक - अधिक सुरक्षित पासवर्ड बनाते हैं जो याद रखना आसान होते हैं।',

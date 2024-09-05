@@ -66,6 +66,14 @@ return [
     'successLogout'      => '로그아웃되었습니다.',
     'backToLogin'        => '로그인으로 돌아가기',
 
+    // Change password
+    'changePassword'            => '비밀번호 변경',
+    'newPassword'               => '새 비밀번호',
+    'newPasswordConfirm'        => '새 비밀번호 (다시 입력)',
+    'changePasswordBtn'         => '업데이트',
+    'changePasswordTime'        => '원하는 경우 새 비밀번호로 변경할 수 있습니다.',
+    'changePasswordSuccess'     => '새 비밀번호가 성공적으로 변경되었습니다.',
+
     // Passwords
     'errorPasswordLength'       => '비밀번호는 최소 {0, number}자 이상이어야 합니다.',
     'suggestPasswordLength'     => '암호 구문은 최대 255자까지 가능하며, 기억하기 쉬운 보안 암호를 만드세요.',

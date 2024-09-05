@@ -143,7 +143,13 @@ return [
     'article_msg_monolingual'   =>  'Mode monolingual sedang ditampilkan.',
     'article_msg_bilingual'     =>  'Mode bilingual sedang ditampilkan.',
     'article_msg_comm_shown'    =>  'Komentar sedang ditampilkan.',
-    'article_msg_comm_hidden'   =>  'Komentar sedang disembunyikan.',                   
+    'article_msg_comm_hidden'   =>  'Komentar sedang disembunyikan.',
+    'article_parallels_search'  =>  'Cari paralel',
+    'article_parallels_loading' =>  'Mencari data...',
+    'article_parallels_patient' =>  'Ini mungkin memerlukan beberapa saat, mohon bersabar.',
+    'article_parallels_found'   =>  '{0, number} paralel ditemukan ▼',
+    'article_parallels_failed'  =>  'Pencarian paralel gagal...',
+    'article_parallels_error'   =>  'Terjadi kesalahan, mohon coba lagi nanti.',
 
     /*--------------------------------------------------------------
     # Contact

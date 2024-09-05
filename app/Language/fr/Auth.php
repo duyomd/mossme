@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'Vous avez été déconnecté avec succès.',
     'backToLogin'        => 'Retour à la connexion',
 
+    // Change password
+    'changePassword'            => 'Changer le mot de passe',
+    'newPassword'               => 'Nouveau mot de passe',
+    'newPasswordConfirm'        => 'Nouveau mot de passe (à nouveau)',
+    'changePasswordBtn'         => 'Mettre à jour',
+    'changePasswordTime'        => 'Vous pouvez changer pour un nouveau mot de passe si vous le souhaitez.',
+    'changePasswordSuccess'     => 'Le nouveau mot de passe a été changé avec succès.',
+
     // Passwords
     'errorPasswordLength'       => 'Le mot de passe doit contenir au moins {0, number} caractères.',
     'suggestPasswordLength'     => 'Phrases secrètes - d\'une longueur maximale de 255 caractères - permettent de créer des mots de passe plus sécurisés et faciles à retenir.',

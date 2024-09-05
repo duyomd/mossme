@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'Sikeresen kijelentkezett.',
     'backToLogin'        => 'Vissza a bejelentkezéshez',
 
+    // Change password
+    'changePassword'            => 'Jelszó módosítása',
+    'newPassword'               => 'Új jelszó',
+    'newPasswordConfirm'        => 'Új jelszó (újra)',
+    'changePasswordBtn'         => 'Frissítés',
+    'changePasswordTime'        => 'Szükség esetén új jelszóra is válthatsz.',
+    'changePasswordSuccess'     => 'Az új jelszó sikeresen megváltozott.',
+
     // Passwords
     'errorPasswordLength'       => 'A jelszónak legalább {0, number} karakter hosszúnak kell lennie.',
     'suggestPasswordLength'     => 'A jelszófrázisok - akár 255 karakter hosszúak - biztonságosabb jelszavakat nyújtanak, amelyeket könnyebb megjegyezni.',

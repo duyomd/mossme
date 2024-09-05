@@ -65,6 +65,14 @@ return [
     'successLogout'      => 'Úspěšně jste se odhlásili.',
     'backToLogin'        => 'Zpět na přihlášení',
 
+    // Change password
+    'changePassword'            => 'Změnit heslo',
+    'newPassword'               => 'Nové heslo',
+    'newPasswordConfirm'        => 'Nové heslo (znovu)',
+    'changePasswordBtn'         => 'Aktualizovat',
+    'changePasswordTime'        => 'Pokud chcete, můžete si změnit heslo na nové.',
+    'changePasswordSuccess'     => 'Nové heslo bylo úspěšně změněno.',
+
     // Passwords
     'errorPasswordLength'       => 'Hesla musí mít alespoň {0, number} znaků.',
     'suggestPasswordLength'     => 'Heslové fráze - až 255 znaků dlouhé - vytvářejí bezpečnější hesla, která jsou snadno zapamatovatelná.',
