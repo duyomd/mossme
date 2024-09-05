@@ -70,7 +70,7 @@ class EntryManager extends BaseController
                 'id'                    => ['label' => lang('App.entry_label_id'),                  'rules' => 'required|max_length[32]'],
                 'parent_id'             => ['label' => lang('App.entry_label_parent'),              'rules' => 'max_length[32]'],
                 'root_id'               => ['label' => lang('App.entry_label_root'),                'rules' => 'max_length[32]'],
-                'serials'               => ['label' => lang('App.entry_label_serials'),             'rules' => 'required|max_length[128]'],
+                'serials'               => ['label' => lang('App.entry_label_serials'),             'rules' => 'required|max_length[256]'],
                 'enumeration'           => ['label' => lang('App.entry_label_enumeration'),         'rules' => 'max_length[16]'],
                 'image_id_header'       => ['label' => lang('App.entry_label_image_header'),        'rules' => 'max_length[10]'],
                 'image_id_content'      => ['label' => lang('App.entry_label_image_content'),       'rules' => 'max_length[10]'],
