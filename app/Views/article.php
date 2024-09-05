@@ -208,21 +208,20 @@
 
           </div>
 
-        </div>
-
-        <!-- Parallel articles -->
-        <?php $parallelsCount = App\Helpers\Utilities::isNullOrBlank($entry->parallels) ? 0 : count(explode(",", $entry->parallels));
-          if ($parallelsCount > 0) :?>
-          <div class="parallels row mt-5 text-center">
-            <div>
-              <a href="javascript:void(0)" onclick="loadParallels('<?=$entry->parallels?>')">
-                <i class="bi bi-search"></i><span class="parallels-title"><?=lang('App.article_parallels_search')?></span>
-              </a>
+          <!-- Parallel articles -->
+          <?php $parallelsCount = App\Helpers\Utilities::isNullOrBlank($entry->parallels) ? 0 : count(explode(",", $entry->parallels));
+            if ($parallelsCount > 0) :?>
+            <div class="parallels row mt-5 text-center">
+              <div>
+                <a href="javascript:void(0)" onclick="loadParallels('<?=$entry->parallels?>')">
+                  <i class="bi bi-search"></i><span class="parallels-title"><?=lang('App.article_parallels_search')?></span>
+                </a>
+              </div>
+              <div class="parallels-content mt-3 fst-italic d-none"></div>
             </div>
-            <div class="parallels-content mt-3 fst-italic d-none"></div>
-          </div>
-        <?php endif ?><!-- End Parallels -->
+          <?php endif ?><!-- End Parallels -->
 
+        </div>
       </section><!-- End Article Section -->
       
       <section id="commentary" class="commentary collapse" style="--bg-cmt: url(<?=$entry->image_url_commentary?>);">
