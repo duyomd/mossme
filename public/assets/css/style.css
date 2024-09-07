@@ -1221,6 +1221,13 @@ section {
   font-family: "serif";
 }
 
+/* ckeditor blockquote */
+.article .ck-content blockquote {
+  border-left: none;
+  font-style: normal;
+  padding-inline: 0 !important;
+}
+
 @media (min-width: 1920px) {
   .article {
     background-attachment: fixed;

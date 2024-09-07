@@ -92,23 +92,7 @@
               </div>
 
               <div class="row mt-3">
-
-                <script src="/assets/js/ckeditor.js"></script>
-                <div>
-                  <label for="content" class="form-label"><?=lang('App.card_translation_label_content')?></label>
-                  <div class="document-editor">
-                    <div class="document-editor__toolbar"></div>
-                    <div class="document-editor__editable-container">
-                      <div class="document-editor__editable"></div>
-                    </div>
-                  </div>
-                  <textarea class="hidden" name='content' id='content' value="<?= set_value('content') ?>"></textarea>
-                </div>
-                  
-                <script>
-                  
-                </script>
-
+                <?php include $path . 'templates/ckeditor.php';?>
               </div>
 
               <input type="hidden" id="cardId" name="cardId" value="<?=$cardId?>">
@@ -187,32 +171,6 @@
         noMove: true,                                      
       };
       initTable(option);
-    }
-
-    DecoupledEditor
-      .create( document.querySelector( '.document-editor__editable' ), {
-          cloudServices: {
-              // A configuration of CKEditor Cloud Services.
-              // ...
-          }
-      } )
-      .then( editor => {
-          const toolbarContainer = document.querySelector( '.document-editor__toolbar' );
-          toolbarContainer.appendChild( editor.ui.view.toolbar.element );
-
-          window.editor = editor;
-      } )
-      .catch( err => {
-          console.error( err );
-    } );
-
-    function onsubmitContent() {
-      document.querySelector('#content').value = window.editor.getData();
-    }
-    
-    function extraCallback(isLoadData) {
-      let content = isLoadData ? document.querySelector('#content').value : '';
-      window.editor.setData(content);
     }
 
     function backToCard(parentId) {

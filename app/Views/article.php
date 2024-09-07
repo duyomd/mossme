@@ -1,6 +1,8 @@
 <!-- End Header -->
 
   <div class="ajax-loading"><div><?=lang('App.loading')?></div></div>  
+  
+  
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center hero-article" style="--bg-hero: url(<?=$entry->image_url_header?>);">
@@ -135,7 +137,7 @@
               </div>
 
               <div class="row">
-                <div id="content-main" class="content"></div>
+                <div id="content-main" class="content ck-content"></div>
               </div>
 
             </div> 
@@ -200,7 +202,7 @@
               </div>
 
               <div class="row">
-                <div id="content-sub" class="content"></div>
+                <div id="content-sub" class="content ck-content"></div>
               </div>
 
             </div>
@@ -275,7 +277,7 @@
           </div>
 
           <div class="row">
-            <div id="content-comm" class="content"></div>
+            <div id="content-comm" class="content ck-content"></div>
           </div>
 
         </div>
@@ -295,7 +297,7 @@
           </div>
           <?php if (!App\Helpers\Utilities::isNullOrBlank($entry->displayContent)) : ?>
             <div class="mb-4 row justify-content-center">
-              <div><?= $entry->displayContent ?></div>
+              <div class="ck-content"><?= $entry->displayContent ?></div>
             </div>
           <?php endif ?>
           <?php if ($entry->isFolder && count($entry->translationsChildren) > 0) : ?>
@@ -615,3 +617,4 @@
       
     </script>
   <?php endif ?>
+  <link rel="stylesheet" href="/assets/js/ckeditor5-43.1.0/ckeditor5.css">

@@ -323,7 +323,7 @@ class TranslationModel extends BaseModel
                     @r1 AS _id,
                     (SELECT @r1 := parent_id FROM entry WHERE id = _id) AS parent_id,
                     @l1 := @l1 + 1 AS lvl
-                FROM (SELECT @r1 := :entry_id:, @l1 := 0) vars JOIN entry
+                FROM (SELECT @r1 := :entry_id: COLLATE utf8mb4_unicode_ci, @l1 := 0) vars JOIN entry
                 WHERE @r1 IS NOT NULL
             ) el
                 JOIN entry e ON el._id = e.id
@@ -338,7 +338,7 @@ class TranslationModel extends BaseModel
                     @r2 AS _id,
                     (SELECT @r2 := parent_id FROM entry WHERE id = _id) AS parent_id,
                     @l2 := @l2 + 1 AS lvl
-                FROM (SELECT @r2 := :entry_id:, @l2 := 0) AS vars JOIN entry WHERE @r2 IS NOT NULL) el
+                FROM (SELECT @r2 := :entry_id: COLLATE utf8mb4_unicode_ci, @l2 := 0) AS vars JOIN entry WHERE @r2 IS NOT NULL) el
                     JOIN entry e ON el._id = e.id
                     JOIN translation t ON t.entry_id = e.id
                     JOIN language ON language_code = code
