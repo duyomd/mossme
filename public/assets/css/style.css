@@ -2253,7 +2253,7 @@ section {
   }
 }
 
-.pagination {
+.table .pagination {
   --bs-pagination-bg: var(--bs-table-striped-bg);
   --bs-pagination-color: var(--bs-table-striped-color);
   --bs-pagination-border-color: var(--bs-table-border-color);
@@ -2275,9 +2275,10 @@ section {
   --bs-pagination-disabled-border-color: var(--bs-pagination-border-color);
 }
 
-.pagination {
+.table .pagination {
   margin-top: .25rem;
   margin-bottom: .25rem !important;
+  list-style: none;
 }
 
 /*--------------------------------------------------------------
