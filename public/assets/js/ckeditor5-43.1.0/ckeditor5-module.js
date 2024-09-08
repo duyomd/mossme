@@ -356,26 +356,10 @@ DecoupledEditor
         items: [
             // 'sourceEditing',            
             // '|',
-            // --- Document-wide tools ----------------------------------------------------------------------
+
             'undo',
             'redo',
             '|',
-            'findAndReplace',
-            'selectAll',
-            '|',
-
-            // --- "Insertables" ----------------------------------------------------------------------------
-
-            'link',
-            'insertImage',
-            'insertTable',
-            'blockQuote',
-            'codeBlock',
-            'mediaEmbed',
-            // 'pageBreak',
-            'horizontalLine',
-            'specialCharacters',
-            '-',
 
             // --- Block-level formatting -------------------------------------------------------------------
             'heading',
@@ -406,15 +390,39 @@ DecoupledEditor
 
             // --- Text alignment ---------------------------------------------------------------------------
             'alignment',
+
+            // --- Indentation --------------------------------------------------------------------
+            'outdent',
+            'indent',
             '|',
 
+            // --- Quote --------------------------------------------------------------------
+            'codeBlock',
+            'blockQuote',            
+            // '-',
+            '|',
+
+            // --- "Insertables" ----------------------------------------------------------------------------
+            
+            'link',
+            'insertImage',            
+            'mediaEmbed',
+            // 'pageBreak',            
+            'specialCharacters',
+            'horizontalLine',
+            'insertTable',            
+            '|',
+            
             // --- Lists and indentation --------------------------------------------------------------------
             'bulletedList',
             'numberedList',
             'todoList',
             '|',
-            'outdent',
-            'indent',
+
+            // --- Document-wide tools ----------------------------------------------------------------------            
+            'findAndReplace',
+            'selectAll',
+            
         ],
     },
     heading: {
