@@ -160,6 +160,20 @@
 
   function selectRow(row, index) {
     if (!row || _noRadio) return;
+
+    // if dropdown or image link or ... 
+    var e = this.event;
+    if (typeof e == "undefined") {
+      e = window.event;
+    }
+    if (e && e.srcElement && 
+          (e.srcElement.classList.contains("cancel-row-selected")
+            ||e.srcElement.classList.contains("folder")
+          // || e.srcElement.tagName == "A"
+          )) {      
+      return;
+    }
+
     loading(true);
     try {
       row.children[0].children[0].checked = true;
@@ -445,10 +459,10 @@
           case CONTENT_TYPES.BOX:
             var box = 
             '<div class="dropdown entry-box">' +
-              '<a class="d-flex align-items-center dropdown-toggle" ' +
+              '<a class="d-flex align-items-center dropdown-toggle cancel-row-selected" ' +
                 'href="javascript:void(0)" role="button" ' +
                 'data-bs-toggle="dropdown" data-bs-auto-close="true">' +
-                '<i><span>' + eval(unescapeSlashes(FIELDS_TABLE[j].CONTENT_FIELD)) + '</span></i>' +
+                '<i><span class="cancel-row-selected">' + eval(unescapeSlashes(FIELDS_TABLE[j].CONTENT_FIELD)) + '</span></i>' +
               '</a>' +
               '<ul class="dropdown-menu">';
             for (var t = 0; t < FIELDS_TABLE[j].CONTENT_FIELD_BOX_LABELS.length; t++) {
