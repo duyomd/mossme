@@ -161,7 +161,7 @@ return [
     'fullname'  =>  'Fullständigt namn',
     'your_mail' =>  'Din e-post',
     'subject'   =>  'Ämne',
-    'send'      =>  'Skicka meddelande',
+    'send'      =>  'Skicka',
     'loading'   =>  'Laddar',
 
     'label_name'    =>  '*namn*',
@@ -175,6 +175,13 @@ return [
     'msg_sent'      =>  'Ditt meddelande har skickats. Tack!',
     'msg_footer1'   =>  'Jag har ett möte',
     'msg_footer2'   =>  'bortom min älskade horisont.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Captcha-text',
+    'captcha_msg_input'     =>  'Vänligen ange Captcha-texten för att verifiera.',
+    'captcha_msg_incorrect' =>  'Du har angett ett felaktigt Captcha. Vänligen försök igen.',
 
     /*--------------------------------------------------------------
     # Credits

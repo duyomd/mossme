@@ -53,8 +53,8 @@
 
               <?php $success = session()->getFlashdata('success'); if (isset($error) || $success) : ?>  
                 <div class="mb-3">
-                  <?php if ($error == true) : ?>
-                    <div class="error-message d-block"><?= validation_list_errors() ?></div>
+                  <?php if (isset($error)) : ?>
+                    <div class="error-message d-block"><?= validation_list_errors() != null ? validation_list_errors() : $error ?></div>
                   <?php endif ?>
                   <?php if ($success) : ?>
                     <div class="success-message d-block"><?=lang('App.msg_sent')?></div>
@@ -94,13 +94,22 @@
                 <?= form_textarea($ta) ?>
               </div>
 
-              <!-- <div class="my-3">
-                <div class="loading"><?=lang('App.loading')?></div>
-                <div class="error-message"></div>
-                <div class="sent-message"><?=lang('App.msg_sent')?></div>
-              </div> -->
-
-              <div class="mt-3 text-center"><button type="submit"><?=lang('App.send')?></button></div>
+              <div class="form-group mt-3">
+                <div class="row">
+                  <div class="col-xl-4 col-md-5 text-md-start text-center" >
+                    <img src="/captcha" alt="CAPTCHA" class="captcha-image">
+                    <a href="javascript:void(0)" class="bi bi-bootstrap-reboot d-inline-block ps-3 ps-md-2 refresh-captcha"></a>
+                  </div>
+                  <div class="col-xl-3 col-md-4 mt-md-0 mt-3">
+                    <input type="text" class="form-control" id="captcha" name="captcha_challenge" pattern="[A-Z]{6}" 
+                      placeholder="<?=lang('App.captcha_text')?>" value="<?= set_value('captcha_challenge') ?>">
+                  </div>
+                  <div class="col-xl-5 col-md-3 mt-md-0 mt-3 text-md-end text-center">
+                    <button type="submit"><?=lang('App.send')?></button>
+                  </div>
+                </div>
+              </div>
+         
             </form>
 
           </div>
@@ -152,4 +161,9 @@
 
       loopToggleCss(new Array(hiddens[0]), "", CLASSNAME_HIDDEN);
 		}
+
+    var refreshBtn = document.querySelector(".refresh-captcha");
+    refreshBtn.addEventListener('click', () => {
+      document.querySelector(".captcha-image").src = '/captcha?' + Date.now();
+    });
   </script>

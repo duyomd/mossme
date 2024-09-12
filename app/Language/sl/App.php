@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Polno ime',
     'your_mail' =>  'Vaš email',
     'subject'   =>  'Zadeva',
-    'send'      =>  'Pošlji sporočilo',
+    'send'      =>  'Pošlji',
     'loading'   =>  'Nalaganje',
 
     'label_name'    =>  '*ime*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'Vaše sporočilo je bilo poslano. Hvala!',
     'msg_footer1'   =>  'Imam sestanek',
     'msg_footer2'   =>  'onkraj mojega ljubljenega obzorja.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Captcha besedilo',
+    'captcha_msg_input'     =>  'Vnesite Captcha besedilo za preverjanje.',
+    'captcha_msg_incorrect' =>  'Vnesli ste napačen Captcha. Poskusite znova.',
 
     /*--------------------------------------------------------------
     # Credits

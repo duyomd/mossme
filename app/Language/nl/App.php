@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Volledige naam',
     'your_mail' =>  'Jouw e-mail',
     'subject'   =>  'Onderwerp',
-    'send'      =>  'Verstuur bericht',
+    'send'      =>  'Verstuur',
     'loading'   =>  'Laden',
 
     'label_name'    =>  '*naam*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'Je bericht is verzonden. Bedankt!',
     'msg_footer1'   =>  'Ik heb een afspraak',
     'msg_footer2'   =>  'achter mijn geliefde horizon.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Captcha-tekst',
+    'captcha_msg_input'     =>  'Voer de Captcha-tekst in ter verificatie.',
+    'captcha_msg_incorrect' =>  'U heeft een onjuiste Captcha ingevoerd. Probeer het opnieuw.',
 
     /*--------------------------------------------------------------
     # Credits

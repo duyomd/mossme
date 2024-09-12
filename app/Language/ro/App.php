@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Nume complet',
     'your_mail' =>  'Emailul tău',
     'subject'   =>  'Subiect',
-    'send'      =>  'Trimite mesajul',
+    'send'      =>  'Trimite',
     'loading'   =>  'Se încarcă',
 
     'label_name'    =>  '*nume*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'Mesajul tău a fost trimis. Mulțumim!',
     'msg_footer1'   =>  'Am o întâlnire',
     'msg_footer2'   =>  'dincolo de orizontul meu iubit.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Text Captcha',
+    'captcha_msg_input'     =>  'Vă rugăm să introduceți textul Captcha pentru a verifica.',
+    'captcha_msg_incorrect' =>  'Ați introdus un Captcha incorect. Vă rugăm să încercați din nou.',
 
     /*--------------------------------------------------------------
     # Credits

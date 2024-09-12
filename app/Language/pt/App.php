@@ -160,7 +160,7 @@ return [
     'fullname'  => 'Nome completo',
     'your_mail' => 'Seu email',
     'subject'   => 'Assunto',
-    'send'      => 'Enviar mensagem',
+    'send'      => 'Enviar',
     'loading'   => 'Carregando',
 
     'label_name'    => '*nome*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      => 'Sua mensagem foi enviada. Obrigado!',
     'msg_footer1'   => 'Tenho um encontro',
     'msg_footer2'   => 'além do meu horizonte amado.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Texto do Captcha',
+    'captcha_msg_input'     =>  'Por favor, insira o texto do Captcha para verificar.',
+    'captcha_msg_incorrect' =>  'Você inseriu um Captcha incorreto. Por favor, tente novamente.',
 
     /*--------------------------------------------------------------
     # Credits

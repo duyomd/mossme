@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Fullt navn',
     'your_mail' =>  'Din e-post',
     'subject'   =>  'Emne',
-    'send'      =>  'Send melding',
+    'send'      =>  'Send',
     'loading'   =>  'Laster',
 
     'label_name'    =>  '*navn*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'Din melding har blitt sendt. Takk!',
     'msg_footer1'   =>  'Jeg har en avtale',
     'msg_footer2'   =>  'bortenfor min elskede horisont.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Captcha-tekst',
+    'captcha_msg_input'     =>  'Vennligst skriv inn Captcha-teksten for å verifisere.',
+    'captcha_msg_incorrect' =>  'Du har skrevet inn en feil Captcha. Vennligst prøv igjen.',
 
     /*--------------------------------------------------------------
     # Credits

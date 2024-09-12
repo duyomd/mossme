@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Pilnas vardas',
     'your_mail' =>  'Jūsų el. paštas',
     'subject'   =>  'Tema',
-    'send'      =>  'Siųsti žinutę',
+    'send'      =>  'Siųsti',
     'loading'   =>  'Kraunama',
 
     'label_name'    =>  '*vardas*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'Jūsų žinutė buvo išsiųsta. Ačiū!',
     'msg_footer1'   =>  'Turiu susitikimą',
     'msg_footer2'   =>  'už savo mylimojo horizonto.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Captcha tekstas',
+    'captcha_msg_input'     =>  'Įveskite Captcha tekstą patvirtinimui.',
+    'captcha_msg_incorrect' =>  'Įvedėte neteisingą Captcha. Bandykite dar kartą.',
 
     /*--------------------------------------------------------------
     # Credits

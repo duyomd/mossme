@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Nom complet',
     'your_mail' =>  'El teu correu electrònic',
     'subject'   =>  'Assumpte',
-    'send'      =>  'Envia missatge',
+    'send'      =>  'Envia',
     'loading'   =>  'Carregant',
 
     'label_name'    =>  '*nom*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'El teu missatge ha estat enviat. Gràcies!',
     'msg_footer1'   =>  'Tinc una cita',
     'msg_footer2'   =>  'més enllà del meu horizon estimat.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Text del Captcha',
+    'captcha_msg_input'     =>  'Introduïu el text del Captcha per verificar.',
+    'captcha_msg_incorrect' =>  'Heu introduït un Captcha incorrecte. Torneu-ho a intentar.',
 
     /*--------------------------------------------------------------
     # Credits

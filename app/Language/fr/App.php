@@ -176,6 +176,13 @@ return [
     'msg_footer2'   =>  'au-delà de mon horizon bien-aimé.',
 
     /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Texte du Captcha',
+    'captcha_msg_input'     =>  'Veuillez entrer le texte du Captcha pour vérifier.',
+    'captcha_msg_incorrect' =>  'Vous avez entré un Captcha incorrect. Veuillez réessayer.',
+
+    /*--------------------------------------------------------------
     # Credits
     --------------------------------------------------------------*/
     'credits_gratitude'     =>  'Profonde gratitude.',

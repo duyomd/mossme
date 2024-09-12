@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Tam ad',
     'your_mail' =>  'E-posta adresiniz',
     'subject'   =>  'Konu',
-    'send'      =>  'Mesaj Gönder',
+    'send'      =>  'Gönder',
     'loading'   =>  'Yükleniyor',
 
     'label_name'    =>  '*isim*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'Mesajınız gönderildi. Teşekkür ederiz!',
     'msg_footer1'   =>  'Bir buluşmam var',
     'msg_footer2'   =>  'sevgili ufkumun ötesinde.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Captcha metni',
+    'captcha_msg_input'     =>  'Doğrulama için Captcha metnini giriniz.',
+    'captcha_msg_incorrect' =>  'Yanlış Captcha girdiniz. Lütfen tekrar deneyin.',
 
     /*--------------------------------------------------------------
     # Credits

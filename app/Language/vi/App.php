@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Họ tên',
     'your_mail' =>  'Email của bạn',
     'subject'   =>  'Chủ đề',
-    'send'      =>  'Gửi Thư',
+    'send'      =>  'Gửi',
     'loading'   =>  'Đang tải',
 
     'label_name'    =>  '*họ tên*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'Thư của bạn đã được gửi đi. Xin cảm ơn!',
     'msg_footer1'   =>  'Ngày mai mở mắt ngó Trời',
     'msg_footer2'   =>  'Còn nghe Trái Đất suốt đời loay hoay.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Mã xác thực',
+    'captcha_msg_input'     =>  'Vui lòng nhập mã xác thực để xác minh.',
+    'captcha_msg_incorrect' =>  'Bạn đã nhập không chính xác mã xác thực. Vui lòng thử lại.',
 
     /*--------------------------------------------------------------
     # Credits

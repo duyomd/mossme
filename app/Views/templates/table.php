@@ -583,59 +583,74 @@
       '<nav aria-label="Page navigation">' +
         '<div class="d-none d-md-block">' +
           '<ul class="pagination justify-content-end mb-0">' +
-            '<li class="page-item ' + (!sort.hasPrevious ? 'disabled' : '') + '">' +
-              '<a class="page-link" aria-label="Previous" href="javascript:void(0)" ' + 
-                'onclick="changePage(' + (sort.currentPage - 1) +
-                              ', \'' + sort.orderBys.toString() + '\'' +
-                              ', \'' + sort.sortOrders.toString() + '\')">' +
-                '<span aria-hidden="true">&laquo;</span></a>' +
-            '</li>';
-            for (var i = 1; i <= sort.pageTotal; i++) {
-              html +=
-              '<li class="page-item">' +
-                '<a class="page-link ' + (sort.currentPage == i ? 'active' : '') + '" ' + 
-                  'href="javascript:void(0)"' +
-                  'onclick="changePage(' + i + 
-                              ', \'' + sort.orderBys.toString() + '\'' +
-                              ', \'' + sort.sortOrders.toString() + '\')">' + i + '</a>' +
-              '</li>';
+            htmlTableFooterPaginationPrevious(sort);
+            if (sort.pageTotal <= <?=App\Helpers\Utilities::PAGINATION_MAX_NUM?>) {
+              html +=htmlTableFooterPaginationLong(sort);
+            } else {
+              html +=htmlTableFooterPaginationShort(sort);
             }
-            html +=
-            '<li class="page-item ' + (!sort.hasNext ? 'disabled' : '') + '">' +
-              '<a class="page-link" aria-label="Next" href="javascript:void(0)" ' +
-                'onclick="changePage(' + (sort.currentPage + 1) +
-                              ', \'' + sort.orderBys.toString() + '\'' +
-                              ', \'' + sort.sortOrders.toString() + '\')">' +
-                '<span aria-hidden="true">&raquo;</span></a>' +
-            '</li>' +
+            html += htmlTableFooterPaginationNext(sort) +
           '</ul>' +
         '</div>' +
         '<div class="d-sm-block d-md-none">' +
           '<ul class="pagination justify-content-end mb-0">' +
-            '<li class="page-item ' + (!sort.hasPrevious ? 'disabled' : '') + '">' +
-              '<a class="page-link" aria-label="Previous" href="javascript:void(0)" ' + 
-                'onclick="changePage(' + (sort.currentPage - 1) +
-                              ', \'' + sort.orderBys.toString() + '\'' +
-                              ', \'' + sort.sortOrders.toString() + '\')">' +
-                '<span aria-hidden="true">&laquo;</span></a>' +
-            '</li>' +
-            '<li class="page-item">' +
-              '<span class="page-link">' + (sort.pageTotal <= 0 ? 0 : sort.currentPage) 
-                                         + '<?=lang('App.forward_slash')?>' 
-                                         + sort.pageTotal + '</span>' +
-            '</li>' +
-            '<li class="page-item ' + (!sort.hasNext ? 'disabled' : '') + '">' +
-              '<a class="page-link" aria-label="Next" href="javascript:void(0)" ' +
-                'onclick="changePage(' + (sort.currentPage + 1) +
-                              ', \'' + sort.orderBys.toString() + '\'' +
-                              ', \'' + sort.sortOrders.toString() + '\')">' +
-                '<span aria-hidden="true">&raquo;</span></a>' +
-            '</li>' +
+            htmlTableFooterPaginationPrevious(sort) +
+            htmlTableFooterPaginationShort(sort) +
+            htmlTableFooterPaginationNext(sort) +
           '</ul>' +
         '</div>' +
       '</nav>' +
     '</div>';
     return html;
+  }
+
+  function htmlTableFooterPaginationPrevious(sort) {
+    return (
+      '<li class="page-item ' + (!sort.hasPrevious ? 'disabled' : '') + '">' +
+        '<a class="page-link" aria-label="Previous" href="javascript:void(0)" ' + 
+          'onclick="changePage(' + (sort.currentPage - 1) +
+                        ', \'' + sort.orderBys.toString() + '\'' +
+                        ', \'' + sort.sortOrders.toString() + '\')">' +
+          '<span aria-hidden="true">&laquo;</span></a>' +
+      '</li>'
+    );
+  }
+
+  function htmlTableFooterPaginationNext(sort) {
+    return (
+      '<li class="page-item ' + (!sort.hasNext ? 'disabled' : '') + '">' +
+        '<a class="page-link" aria-label="Next" href="javascript:void(0)" ' +
+          'onclick="changePage(' + (sort.currentPage + 1) +
+                        ', \'' + sort.orderBys.toString() + '\'' +
+                        ', \'' + sort.sortOrders.toString() + '\')">' +
+          '<span aria-hidden="true">&raquo;</span></a>' +
+      '</li>'
+    );
+  }
+
+  function htmlTableFooterPaginationLong(sort) {
+    var html = '';
+    for (var i = 1; i <= sort.pageTotal; i++) {
+      html +=
+      '<li class="page-item">' +
+        '<a class="page-link ' + (sort.currentPage == i ? 'active' : '') + '" ' + 
+          'href="javascript:void(0)"' +
+          'onclick="changePage(' + i + 
+                      ', \'' + sort.orderBys.toString() + '\'' +
+                      ', \'' + sort.sortOrders.toString() + '\')">' + i + '</a>' +
+      '</li>';
+    }
+    return html;
+  }
+
+  function htmlTableFooterPaginationShort(sort) {
+    return (
+    '<li class="page-item">' +
+      '<span class="page-link">' + (sort.pageTotal <= 0 ? 0 : sort.currentPage) 
+                                 + '<?=lang('App.forward_slash')?>' 
+                                 + sort.pageTotal + '</span>' +
+    '</li>'
+    );
   }
   
   function initTable(option) {

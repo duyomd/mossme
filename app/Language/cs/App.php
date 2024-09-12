@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Celé jméno',
     'your_mail' =>  'Váš email',
     'subject'   =>  'Předmět',
-    'send'      =>  'Odeslat zprávu',
+    'send'      =>  'Odeslat',
     'loading'   =>  'Načítání',
 
     'label_name'    =>  '*jméno*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'Vaše zpráva byla odeslána. Děkujeme!',
     'msg_footer1'   =>  'Mám schůzku',
     'msg_footer2'   =>  'za mým milovaným horizontem.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Text Captchy',
+    'captcha_msg_input'     =>  'Zadejte text Captchy pro ověření.',
+    'captcha_msg_incorrect' =>  'Zadali jste nesprávnou Captchu. Zkuste to prosím znovu.',
 
     /*--------------------------------------------------------------
     # Credits

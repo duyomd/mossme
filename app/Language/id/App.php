@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Nama lengkap',
     'your_mail' =>  'Email Anda',
     'subject'   =>  'Subjek',
-    'send'      =>  'Kirim Pesan',
+    'send'      =>  'Kirim',
     'loading'   =>  'Memuat',
 
     'label_name'    =>  '*nama*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'Pesan Anda telah dikirim. Terima kasih!',
     'msg_footer1'   =>  'Saya memiliki janji',
     'msg_footer2'   =>  'di luar cakrawala tercinta saya.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Teks Captcha',
+    'captcha_msg_input'     =>  'Silakan masukkan teks Captcha untuk verifikasi.',
+    'captcha_msg_incorrect' =>  'Anda memasukkan Captcha yang salah. Silakan coba lagi.',
 
     /*--------------------------------------------------------------
     # Credits

@@ -21,6 +21,7 @@ use App\Controllers\ChangePassword;
 use App\Controllers\MagicLink;
 use App\Controllers\UserSettings;
 use App\Controllers\Search;
+use App\Controllers\Captcha;
 
 /**
  * @var RouteCollection $routes
@@ -111,6 +112,8 @@ $routes->get('login/verify-magic-link', [MagicLink::class, 'verify'], ['as' => '
 
 $routes->get('changePassword', [ChangePassword::class, 'show'], ['as' => 'change_password']);
 $routes->post('changePassword', [ChangePassword::class, 'action']);
+
+$routes->get('captcha', [Captcha::class, 'show']);
 
 // TODO:
 // page not found?

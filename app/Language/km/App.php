@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Full name',
     'your_mail' =>  'Your email',
     'subject'   =>  'Subject',
-    'send'      =>  'Send Message',
+    'send'      =>  'Send',
     'loading'   =>  'Loading',
 
     'label_name'    =>  '*name*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'Your message has been sent. Thank you!',
     'msg_footer1'   =>  'I have a rendevouz',
     'msg_footer2'   =>  'beyond my beloved horizon.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Captcha text',
+    'captcha_msg_input'     =>  'Please enter Captcha text to verify.',
+    'captcha_msg_incorrect' =>  'You entered an incorrect Captcha. Please try again.',
 
     /*--------------------------------------------------------------
     # Credits

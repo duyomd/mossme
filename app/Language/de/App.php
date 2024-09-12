@@ -176,6 +176,13 @@ return [
     'msg_footer2'   =>  'hinter meinem geliebten horizont.',
 
     /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Captcha-Text',
+    'captcha_msg_input'     =>  'Bitte geben Sie den Captcha-Text zur Verifizierung ein.',
+    'captcha_msg_incorrect' =>  'Sie haben einen falschen Captcha eingegeben. Bitte versuchen Sie es erneut.',
+
+    /*--------------------------------------------------------------
     # Credits
     --------------------------------------------------------------*/
     'credits_gratitude'     =>  'Tiefste Dankbarkeit.',

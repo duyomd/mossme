@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Koko nimi',
     'your_mail' =>  'Sähköpostisi',
     'subject'   =>  'Aihe',
-    'send'      =>  'Lähetä viesti',
+    'send'      =>  'Lähetä',
     'loading'   =>  'Ladataan',
 
     'label_name'    =>  '*nimi*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'Viestisi on lähetetty. Kiitos!',
     'msg_footer1'   =>  'Minulla on tapaaminen',
     'msg_footer2'   =>  'rakastetun horisontin yli.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Captcha-teksti',
+    'captcha_msg_input'     =>  'Syötä Captcha-teksti varmistaaksesi.',
+    'captcha_msg_incorrect' =>  'Syöttämäsi Captcha on virheellinen. Yritä uudelleen.',
 
     /*--------------------------------------------------------------
     # Credits

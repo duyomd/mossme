@@ -39,6 +39,15 @@ class Contact extends BaseController
             return $this->index(true);
         }
 
+        // Captcha
+        $captcha_input = $_POST['captcha_challenge'];
+        if (Utilities::isNullOrBlank($captcha_input)) {
+            return $this->index(lang('App.captcha_msg_input'));
+        }
+        if ($captcha_input !== session()->captcha_text) {
+            return $this->index(lang('App.captcha_msg_incorrect'));
+        }
+
         // // Gets the validated data.
         $post = $this->validator->getValidated();
 

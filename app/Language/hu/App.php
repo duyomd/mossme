@@ -160,7 +160,7 @@ return [
     'fullname'  =>  'Teljes név',
     'your_mail' =>  'Az Ön email címe',
     'subject'   =>  'Tárgy',
-    'send'      =>  'Üzenet küldése',
+    'send'      =>  'Küldése',
     'loading'   =>  'Betöltés',
 
     'label_name'    =>  '*név*',
@@ -174,6 +174,13 @@ return [
     'msg_sent'      =>  'Az üzenetét elküldtük. Köszönjük!',
     'msg_footer1'   =>  'Van egy találkozóm',
     'msg_footer2'   =>  'a szeretett horizontomon túl.',
+
+    /*--------------------------------------------------------------
+    # Captcha
+    --------------------------------------------------------------*/
+    'captcha_text'          =>  'Captcha szöveg',
+    'captcha_msg_input'     =>  'Kérjük, adja meg a Captcha szöveget a megerősítéshez.',
+    'captcha_msg_incorrect' =>  'Hibás Captcha-t adott meg. Kérjük, próbálja újra.',
 
     /*--------------------------------------------------------------
     # Credits
