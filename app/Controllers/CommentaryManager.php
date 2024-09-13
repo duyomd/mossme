@@ -64,7 +64,7 @@ class CommentaryManager extends BaseController
 
         } else if ($mode == 'insert' || $mode == 'modify') {
             if (! $this->validate([
-                'entry_id'      => ['label' => lang('App.translation_label_entry_id'),      'rules' => 'required|max_length[32]'],
+                'entry_id'      => ['label' => lang('App.translation_label_entry_id'),      'rules' => 'required|max_length[64]'],
                 'author'        => ['label' => lang('App.commentary_label_author'),         'rules' => 'required|max_length[128]'],
                 'author_note'   => ['label' => lang('App.commentary_label_author_note'),    'rules' => 'max_length[255]'],
                 'notation'      => ['label' => lang('App.commentary_label_notation'),       'rules' => 'max_length[1024]'],

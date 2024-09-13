@@ -64,7 +64,7 @@ class TranslationManager extends BaseController
 
         } else if ($mode == 'insert' || $mode == 'modify') {
             if (! $this->validate([
-                'entry_id'      => ['label' => lang('App.translation_label_entry_id'),      'rules' => 'required|max_length[32]'],
+                'entry_id'      => ['label' => lang('App.translation_label_entry_id'),      'rules' => 'required|max_length[64]'],
                 'title'         => ['label' => lang('App.translation_label_title'),         'rules' => 'required|max_length[255]'],
                 'author'        => ['label' => lang('App.translation_label_author'),        'rules' => 'max_length[128]'],
                 'author_note'   => ['label' => lang('App.translation_label_author_note'),   'rules' => 'max_length[255]'],
