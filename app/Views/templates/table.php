@@ -168,8 +168,8 @@
     }
     if (e && e.srcElement && 
           (e.srcElement.classList.contains("cancel-row-selected")
-            ||e.srcElement.classList.contains("folder")
-          // || e.srcElement.tagName == "A"
+            || e.srcElement.classList.contains("folder")
+            || e.srcElement.tagName == "A"
           )) {      
       return;
     }
