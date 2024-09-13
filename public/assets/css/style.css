@@ -2495,7 +2495,7 @@ section {
 
 .modal .btn-close {
   --bs-btn-close-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M8 8 L24 24 M8 24 L24 8'/%3E%3C/svg%3E");
-  background: transparent var(--bs-btn-close-bg) center/1.5em auto no-repeat;
+  background: transparent var(--bs-btn-close-bg) center/1.5em auto no-repeat !important;
 }
 
 .modal button[type="button"].btn-cancel {
