@@ -1,25 +1,23 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="robots" content="noindex">
+<?php
+    use App\Helpers\Utilities;
+    $displayHeader = lang('Errors.error');
+    $path = dirname(dirname(dirname(__FILE__))) . '/';
+    include $path . 'templates/header.php';?>
+<!-- End Header -->
 
-    <title><?= lang('Errors.whoops') ?></title>
+<main id="main">
 
-    <style>
-        <?= preg_replace('#[\r\n\t ]+#', ' ', file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'debug.css')) ?>
-    </style>
-</head>
-<body>
-
-    <div class="container text-center">
-
-        <h1 class="headline"><?= lang('Errors.whoops') ?></h1>
-
-        <p class="lead"><?= lang('Errors.weHitASnag') ?></p>
-
+  <section class="errors">
+    <div class="container d-flex justify-content-center" data-aos="fade-up">
+        <div class="wrap">
+            <h2><?=lang('Errors.somethingWrong')?></h2>
+            <p><?=lang('Errors.gotError')?></p>
+            <p class="mt-0"><?=lang('Errors.pleaseContact')?></p>
+        </div>
     </div>
+  </div>
 
-</body>
+</main><!-- End #main -->
 
-</html>
+<!-- ======= Footer ======= -->
+<?php include $path . 'templates/footer.php';?>
