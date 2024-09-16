@@ -2219,6 +2219,14 @@ section {
   inset-inline-start: calc(var(--bs-gutter-x) * -.5);  
 }
 
+.table tbody tr td.short-url {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* word-wrap: break-word; */
+}
+
 .table tbody .disabled {
   border: 1px solid var(--mm-color-border-disabled);
 }

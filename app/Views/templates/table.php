@@ -33,6 +33,7 @@
   const CONTENT_FIELD_BOX_HREFS     = 'fieldBoxHrefs';
   const CONTENT_FIELD_STICKY        = 'fieldSticky';
   const CONTENT_FIELD_TRIM          = 'fieldTrim';
+  const CONTENT_FIELD_SHORT_URL     = 'fieldShortUrl';
 
   const CONTENT_TYPE                = 'type';
   const CONTENT_TYPES               = { LINK: 'link', IMAGE: 'image', BOX: 'box', TEXT: 'text', };
@@ -481,6 +482,13 @@
             break;
 
           case CONTENT_TYPES.LINK:
+            if (FIELDS_TABLE[j].CONTENT_FIELD_SHORT_URL) {
+              if (tdCss.length > 0) {
+                tdCss = tdCss.slice(0, tdCss.length - 2) + " short-url" + tdCss.slice(tdCss.length - 2);
+              } else {
+                tdCss = ' class="short-url" ';
+              }
+            }
             let href = ''; hash = ''; let extra = ''; let onclick = '';
             if (FIELDS_TABLE[j].CONTENT_FIELD_EXTRA != null) {
               href = eval(FIELDS_TABLE[j].CONTENT_FIELD_EXTRA);
