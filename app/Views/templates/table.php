@@ -554,7 +554,7 @@
   }
 
   function htmlTableFooter(sort) {
-    var numOfCols = document.querySelector('.table').children[0].children[0].children.length;
+    var numOfCols = document.querySelector('.table-striped').children[0].children[0].children.length;
     var html =
       '<tr>' +
         '<td colspan="' + numOfCols + '" class="text-end">' +
