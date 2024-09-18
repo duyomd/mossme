@@ -185,7 +185,7 @@ class TranslationModel extends BaseModel
 
         $this->db->transStart();
 
-        $sql = 'SELECT *, 
+        $sql = 'SELECT translation.*, 
                     CONCAT(IF(entry.enumeration IS NULL, "", CONCAT(entry.enumeration, SPACE(1))), translation.title) AS enum_title
                 FROM translation 
                 LEFT JOIN language ON translation.language_code = language.code
