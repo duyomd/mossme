@@ -280,6 +280,7 @@ class EntryModel extends BaseModel
 
     /**
      * query entry + previous/next entries id
+     * ?? theoretically, inactive parent but active grandparent ??
      */
     private function getEntryAndSiblings($id = null) 
     {
@@ -287,23 +288,62 @@ class EntryModel extends BaseModel
 
         $this->db->transStart();
 
-        $sql = 'SELECT *,
-                    (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) 
-                        AS image_url_header,
-	                (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) 
-                        AS image_url_content,
-                    (SELECT image_url FROM image_url WHERE image_id_commentary = image_url.id) 
-                        AS image_url_commentary,
-                    (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) 
-                        AS image_url_footer,
-                    (SELECT id FROM entry e2 WHERE e2.parent_id = e1.parent_id AND status = :status: AND e2.sequence = e1.sequence - 1
-                        AND EXISTS (SELECT t.id FROM translation t WHERE t.entry_id = e2.id AND t.status = :status: AND e2.status = :status:)) 
-                        AS previous_id,
-                    (SELECT id FROM entry e2 WHERE e2.parent_id = e1.parent_id AND status = :status: AND e2.sequence = e1.sequence + 1
-                        AND EXISTS (SELECT t.id FROM translation t WHERE t.entry_id = e2.id AND t.status = :status: AND e2.status = :status:)) 
-                        AS next_id    
-                FROM entry e1
-                WHERE e1.id = :id: AND e1.status = :status:';
+        /** Old SQL, last child's <next> is disabled */
+        // $sql = 'SELECT *,
+        //             (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) 
+        //                 AS image_url_header,
+	    //             (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) 
+        //                 AS image_url_content,
+        //             (SELECT image_url FROM image_url WHERE image_id_commentary = image_url.id) 
+        //                 AS image_url_commentary,
+        //             (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) 
+        //                 AS image_url_footer,
+        //             (SELECT id FROM entry e2 WHERE e2.parent_id = e1.parent_id AND status = :status: AND e2.sequence = e1.sequence - 1
+        //                 AND EXISTS (SELECT t.id FROM translation t WHERE t.entry_id = e2.id AND t.status = :status: AND e2.status = :status:)) 
+        //                 AS previous_id,
+        //             (SELECT id FROM entry e2 WHERE e2.parent_id = e1.parent_id AND status = :status: AND e2.sequence = e1.sequence + 1
+        //                 AND EXISTS (SELECT t.id FROM translation t WHERE t.entry_id = e2.id AND t.status = :status: AND e2.status = :status:)) 
+        //                 AS next_id    
+        //         FROM entry e1
+        //         WHERE e1.id = :id: AND e1.status = :status:';
+
+        /** New SQL, if last child clicked <next> then forward to next parent */
+        $sql = 
+        'SELECT *,
+            (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) AS image_url_header,
+            (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) AS image_url_content,
+            (SELECT image_url FROM image_url WHERE image_id_commentary = image_url.id) AS image_url_commentary,
+            (SELECT image_url FROM image_url WHERE image_id_footer = image_url.id) AS image_url_footer,
+            (SELECT SUBSTRING_INDEX(GROUP_CONCAT(previous_id ORDER BY lvl), ",", 1)
+                FROM (
+                    SELECT el.lvl AS lvl,
+                        (SELECT es.id FROM entry es
+                        WHERE es.parent_id = e.parent_id AND es.sequence = e.sequence - 1 AND es.status = :status:
+                        AND EXISTS (SELECT * FROM translation t WHERE t.entry_id = es.id AND t.status = :status:)) AS previous_id
+                    FROM (
+                        SELECT @r1 AS _id, (SELECT @r1 := parent_id FROM entry WHERE id = _id) AS parent_id, @l1 := @l1 + 1 AS lvl
+                        FROM (SELECT @r1 := :id: COLLATE utf8mb4_unicode_ci, @l1 := 0) AS vars JOIN entry en ON en.status = :status:
+                        WHERE @r1 IS NOT NULL
+                    ) el JOIN entry e ON el._id = e.id
+                ) temp
+                WHERE temp.previous_id IS NOT NULL
+            ) AS previous_id, 	
+            (SELECT SUBSTRING_INDEX(GROUP_CONCAT(next_id ORDER BY lvl), ",", 1)
+                FROM (
+                    SELECT el.lvl AS lvl,
+                        (SELECT es.id FROM entry es
+                        WHERE es.parent_id = e.parent_id AND es.sequence = e.sequence + 1 AND es.status = :status:
+                        AND EXISTS (SELECT * FROM translation t WHERE t.entry_id = es.id AND t.status = :status:)) AS next_id
+                    FROM (
+                        SELECT @r2 AS _id, (SELECT @r2 := parent_id FROM entry WHERE id = _id) AS parent_id, @l2 := @l2 + 1 AS lvl
+                        FROM (SELECT @r2 := :id: COLLATE utf8mb4_unicode_ci, @l2 := 0) AS vars JOIN entry en ON en.status = :status:
+                        WHERE @r2 IS NOT NULL
+                    ) el JOIN entry e ON el._id = e.id        
+                ) temp
+                WHERE temp.next_id IS NOT NULL
+            ) AS next_id
+        FROM entry e1
+        WHERE e1.id = :id: AND e1.status = :status:';
         $query = $this->db->query($sql, [
                                     'id'        => $id, 
                                     'status'    => Utilities::STATUS_ACTIVE,
