@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Căutare paralele',
     'article_parallels_loading' =>  'Se caută date...',
     'article_parallels_patient' =>  'Aceasta poate dura câteva momente, vă rugăm să fiți răbdător.',
-    'article_parallels_found'   =>  '{0, number} paralele găsite ▼',
+    'article_parallels_found'   =>  '{0, number} paralele găsite ▲',
     'article_parallels_failed'  =>  'Căutarea paralelilor a eșuat...',
     'article_parallels_error'   =>  'A apărut o problemă, vă rugăm să încercați din nou mai târziu.',
+    'article_group_1'           =>  'Compilare: ',
+    'article_group_2'           =>  ' (Compilare)',
 
     /*--------------------------------------------------------------
     # Contact

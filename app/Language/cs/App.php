@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Hledat paralely',
     'article_parallels_loading' =>  'Vyhledávají se data...',
     'article_parallels_patient' =>  'To může chvíli trvat, buďte prosím trpěliví.',
-    'article_parallels_found'   =>  'Nalezeno {0, number} paralel ▼',
+    'article_parallels_found'   =>  'Nalezeno {0, number} paralel ▲',
     'article_parallels_failed'  =>  'Vyhledávání paralel selhalo...',
     'article_parallels_error'   =>  'Něco se pokazilo, zkuste to prosím později.',
+    'article_group_1'           =>  'Kompilace: ',
+    'article_group_2'           =>  ' (Kompilace)',
 
     /*--------------------------------------------------------------
     # Contact

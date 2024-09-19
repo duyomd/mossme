@@ -51,7 +51,9 @@ class Ajax extends BaseController
       
       array_push($jsonPars, $jsonPar);
     }
-    return json_encode($jsonPars);
+    // return json_encode($jsonPars);
+    return json_encode((object)array('urls' => $jsonPars, 
+                                     'msg'  => lang('App.article_parallels_found', [count($jsonPars)])));
   }
 
   /**

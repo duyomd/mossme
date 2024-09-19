@@ -309,6 +309,13 @@
                         <span><?= $child->enum_title ?></span>
                       </a></li>
                     <?php endforeach ?>
+                    <!-- Group all items' content in 1 page -->
+                    <?php if ($entry->translationsChildren[0]->type == App\Helpers\Utilities::TYPE_FILE) : ?>
+                      <br/>
+                      <li style="list-style-type: disclosure-closed;"><a href="/article-group/<?=$entry->id?>">
+                        <span><?= lang('App.article_group_1') . $entry->displayTitle ?></span>
+                      </a></li>
+                    <?php endif ?>  
                   </ul>
               </div>
             </div>
@@ -345,7 +352,8 @@
       var _bilingual = false;
 
       var _parallelsOn = false;
-
+    
+      // TODO array
       function loadParallels(pars) {
         if (_parallelsOn) return;        
         loading(true);
@@ -380,7 +388,9 @@
       }
 
       function parallelsResult(titleEle, contentEle, responseText) {
-        var result = JSON.parse(responseText);
+        var data = JSON.parse(responseText);
+        var result = data['urls'];
+        var msg = data['msg'];
         var content = '';
         for (var i = 0; i < result.length; i++) {
           par = result[i];
@@ -395,7 +405,7 @@
         }
         contentEle.classList.add("text-uppercase");
         contentEle.innerHTML = content;
-        titleEle.innerHTML = "<?=lang('App.article_parallels_found', [$parallelsCount])?>";  
+        titleEle.innerHTML = msg;  
       }
 
       function parallelsError(titleEle, contentEle) {

@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Zoek naar parallellen',
     'article_parallels_loading' =>  'Bezig met het zoeken naar gegevens...',
     'article_parallels_patient' =>  'Dit kan even duren, bedankt voor uw geduld.',
-    'article_parallels_found'   =>  '{0, number} parallellen gevonden ▼',
+    'article_parallels_found'   =>  '{0, number} parallellen gevonden ▲',
     'article_parallels_failed'  =>  'Zoeken naar parallellen mislukt...',
     'article_parallels_error'   =>  'Er is iets misgegaan, probeer het later opnieuw.',
+    'article_group_1'           =>  'Verzameling: ',
+    'article_group_2'           =>  ' (Verzameling)',
 
     /*--------------------------------------------------------------
     # Contact

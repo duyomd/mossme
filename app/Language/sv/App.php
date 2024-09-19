@@ -148,9 +148,11 @@ return [
     'article_parallels_search'  =>  'Sök efter paralleller',
     'article_parallels_loading' =>  'Söker efter data...',
     'article_parallels_patient' =>  'Detta kan ta en stund, vänligen ha tålamod.',
-    'article_parallels_found'   =>  '{0, number} paralleller hittade ▼',
+    'article_parallels_found'   =>  '{0, number} paralleller hittade ▲',
     'article_parallels_failed'  =>  'Sökningen efter paralleller misslyckades...',
     'article_parallels_error'   =>  'Något gick fel, vänligen försök igen senare.',
+    'article_group_1'           =>  'Samling: ',
+    'article_group_2'           =>  ' (Samling)',
 
     /*--------------------------------------------------------------
     # Contact

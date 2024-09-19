@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'חיפוש מקבילים',
     'article_parallels_loading' =>  'מחפש נתונים...',
     'article_parallels_patient' =>  'זה עלול לקחת כמה רגעים, אנא היה סבלני.',
-    'article_parallels_found'   =>  'נמצאו {0, number} מקבילים ▼',
+    'article_parallels_found'   =>  'נמצאו {0, number} מקבילים ▲',
     'article_parallels_failed'  =>  'חיפוש המקבילים נכשל...',
     'article_parallels_error'   =>  'משהו השתבש, אנא נסה שוב מאוחר יותר.',
+    'article_group_1'           =>  'אוספים: ',
+    'article_group_2'           =>  ' (אוספים)',
 
     /*--------------------------------------------------------------
     # Contact

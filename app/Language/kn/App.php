@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'ಪ್ಯಾರಲೆಲ್ಸ್ ಹುಡುಕಿ',
     'article_parallels_loading' =>  'ಡೇಟಾ ಹುಡುಕಲಾಗುತ್ತಿದೆ...',
     'article_parallels_patient' =>  'ಇದರಲ್ಲೇ ಕೆಲವು ಕ್ಷಣಗಳ ಕಾಲ ತಾಳ್ಮೆ ಇಡಿ.',
-    'article_parallels_found'   =>  '{0, number} ಪ್ಯಾರಲೆಲ್ಸ್ ಸಿಕ್ಕಿವೆ ▼',
+    'article_parallels_found'   =>  '{0, number} ಪ್ಯಾರಲೆಲ್ಸ್ ಸಿಕ್ಕಿವೆ ▲',
     'article_parallels_failed'  =>  'ಪ್ಯಾರಲೆಲ್ಸ್ ಹುಡುಕುವುದು ವಿಫಲವಾಗಿದೆ...',
     'article_parallels_error'   =>  'ಊಹಿತ ಸಮಸ್ಯೆ ಉಂಟಾಗಿದೆ, ದಯವಿಟ್ಟು ನಂತರ ಪುನಃ ಪ್ರಯತ್ನಿಸಿ.',
+    'article_group_1'           =>  'ಸಂಗ್ರಹ: ',
+    'article_group_2'           =>  ' (ಸಂಗ್ರಹ)',
 
     /*--------------------------------------------------------------
     # Contact

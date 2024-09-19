@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Поиск параллелей',
     'article_parallels_loading' =>  'Идет поиск данных...',
     'article_parallels_patient' =>  'Это может занять некоторое время, пожалуйста, подождите.',
-    'article_parallels_found'   =>  'Найдено {0, number} параллелей ▼',
+    'article_parallels_found'   =>  'Найдено {0, number} параллелей ▲',
     'article_parallels_failed'  =>  'Поиск параллелей не удался...',
     'article_parallels_error'   =>  'Что-то пошло не так, пожалуйста, попробуйте позже.',
+    'article_group_1'           =>  'Сборник: ',
+    'article_group_2'           =>  ' (Сборник)',
 
     /*--------------------------------------------------------------
     # Contact

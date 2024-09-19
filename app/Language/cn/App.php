@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  '搜索相似内容',
     'article_parallels_loading' =>  '正在搜索数据...',
     'article_parallels_patient' =>  '这可能需要一些时间，请耐心等待。',
-    'article_parallels_found'   =>  '找到 {0, number} 个相似内容 ▼',
+    'article_parallels_found'   =>  '找到 {0, number} 个相似内容 ▲',
     'article_parallels_failed'  =>  '相似内容搜索失败...',
     'article_parallels_error'   =>  '出了些问题，请稍后再试。',
+    'article_group_1'           =>  '汇编：',
+    'article_group_2'           =>  '（汇编）',
 
     /*--------------------------------------------------------------
     # Contact

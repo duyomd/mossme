@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  '類似を検索',
     'article_parallels_loading' =>  'データを検索中...',
     'article_parallels_patient' =>  '少々お待ちください。',
-    'article_parallels_found'   =>  '{0, number} 件の類似が見つかりました ▼',
+    'article_parallels_found'   =>  '{0, number} 件の類似が見つかりました ▲',
     'article_parallels_failed'  =>  '類似の検索に失敗しました...',
     'article_parallels_error'   =>  '何か問題が発生しました。後でもう一度お試しください。',
+    'article_group_1'           =>  '編集：',
+    'article_group_2'           =>  '（編集）',
 
     /*--------------------------------------------------------------
     # Contact

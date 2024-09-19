@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Cari paralel',
     'article_parallels_loading' =>  'Mencari data...',
     'article_parallels_patient' =>  'Ini mungkin memerlukan beberapa saat, mohon bersabar.',
-    'article_parallels_found'   =>  '{0, number} paralel ditemukan ▼',
+    'article_parallels_found'   =>  '{0, number} paralel ditemukan ▲',
     'article_parallels_failed'  =>  'Pencarian paralel gagal...',
     'article_parallels_error'   =>  'Terjadi kesalahan, mohon coba lagi nanti.',
+    'article_group_1'           =>  'Kompilasi: ',
+    'article_group_2'           =>  ' (Kompilasi)',
 
     /*--------------------------------------------------------------
     # Contact

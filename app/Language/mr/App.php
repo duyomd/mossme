@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'समानांतर शोधा',
     'article_parallels_loading' =>  'डेटा शोधत आहे...',
     'article_parallels_patient' =>  'यात काही क्षण लागू शकतात, कृपया थोडे धैर्य ठेवा.',
-    'article_parallels_found'   =>  '{0, number} समानांतर सापडले ▼',
+    'article_parallels_found'   =>  '{0, number} समानांतर सापडले ▲',
     'article_parallels_failed'  =>  'समानांतर शोधण्यात अयशस्वी...',
     'article_parallels_error'   =>  'काहीतरी चूक झाली आहे, कृपया नंतर पुन्हा प्रयत्न करा.',
+    'article_group_1'           =>  'संग्रह: ',
+    'article_group_2'           =>  ' (संग्रह)',
     
     /*--------------------------------------------------------------
     # Contact

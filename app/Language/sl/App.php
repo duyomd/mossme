@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Iskanje paralel',
     'article_parallels_loading' =>  'Iščem podatke...',
     'article_parallels_patient' =>  'To lahko traja nekaj trenutkov, prosimo, bodite potrpežljivi.',
-    'article_parallels_found'   =>  'Najdenih {0, number} paralel ▼',
+    'article_parallels_found'   =>  'Najdenih {0, number} paralel ▲',
     'article_parallels_failed'  =>  'Iskanje paralel ni uspelo...',
     'article_parallels_error'   =>  'Prišlo je do težave, prosimo, poskusite znova kasneje.',
+    'article_group_1'           =>  'Kompilacija: ',
+    'article_group_2'           =>  ' (Kompilacija)',
 
     /*--------------------------------------------------------------
     # Kontakt

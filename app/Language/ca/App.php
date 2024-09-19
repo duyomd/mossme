@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Cerca de paral·lels',
     'article_parallels_loading' =>  'Cercant dades...',
     'article_parallels_patient' =>  'Això pot trigar uns moments, si us plau, tingueu paciència.',
-    'article_parallels_found'   =>  'S’han trobat {0, number} paral·lels ▼',
+    'article_parallels_found'   =>  'S’han trobat {0, number} paral·lels ▲',
     'article_parallels_failed'  =>  'La cerca de paral·lels ha fallat...',
     'article_parallels_error'   =>  'Alguna cosa ha fallat, torneu-ho a intentar més tard.',
+    'article_group_1'           =>  'Compilació: ',
+    'article_group_2'           =>  ' (Compilació)',
 
     /*--------------------------------------------------------------
     # Contact

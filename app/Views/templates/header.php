@@ -44,7 +44,7 @@
 <body id="body" class="<?= App\Helpers\Utilities::getSessionLiteMode() ? 'lite' : ''; ?>">
 
   <!-- ======= Toast Message ======= -->
-  <div class="toast-container modal position-fixed bottom-0 start-50 translate-middle-x p-3">
+  <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
     <div class="toast text-bg-success bg-gradient border-0" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
         <img src="/assets/img/favicon.png" class="rounded">

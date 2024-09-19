@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'ஒத்திசைவு தேடுங்கள்',
     'article_parallels_loading' =>  'தரவுகளை தேடுகிறது...',
     'article_parallels_patient' =>  'இது சில நிமிடங்கள் நேரிடலாம், தயவுசெய்து பொறுமை காத்திருங்கள்.',
-    'article_parallels_found'   =>  '{0, number} ஒத்திசைவுகள் கண்டுபிடிக்கப்பட்டது ▼',
+    'article_parallels_found'   =>  '{0, number} ஒத்திசைவுகள் கண்டுபிடிக்கப்பட்டது ▲',
     'article_parallels_failed'  =>  'ஒத்திசைவு தேடுதல் தோல்வியுற்றது...',
     'article_parallels_error'   =>  'ஏதோ தவறு ஏற்பட்டுள்ளது, தயவுசெய்து பின்னர் மீண்டும் முயற்சிக்கவும்.',
+    'article_group_1'           =>  'சேர்க்கை: ',
+    'article_group_2'           =>  ' (சேர்க்கை)',
 
     /*--------------------------------------------------------------
     # Contact

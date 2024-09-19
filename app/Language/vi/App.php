@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Tìm các văn bản tương đồng',
     'article_parallels_loading' =>  'Đang tìm kiếm dữ liệu...',
     'article_parallels_patient' =>  'Xin vui lòng chờ trong giây lát.',
-    'article_parallels_found'   =>  'Có {0, number} văn bản tương đồng ▼',
+    'article_parallels_found'   =>  'Có {0, number} văn bản tương đồng ▲',
     'article_parallels_failed'  =>  'Không tìm được dữ liệu...',
     'article_parallels_error'   =>  'Có vấn đề xảy ra, xin vui lòng thử lại sau.',
+    'article_group_1'           =>  'Tổng hợp: ',
+    'article_group_2'           =>  ' (Tổng hợp)',
 
     /*--------------------------------------------------------------
     # Contact

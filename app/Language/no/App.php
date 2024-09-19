@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Søk etter paralleller',
     'article_parallels_loading' =>  'Laster inn data...',
     'article_parallels_patient' =>  'Dette kan ta noen øyeblikk, vær tålmodig.',
-    'article_parallels_found'   =>  '{0, number} paralleller funnet ▼',
+    'article_parallels_found'   =>  '{0, number} paralleller funnet ▲',
     'article_parallels_failed'  =>  'Søket etter paralleller mislyktes...',
     'article_parallels_error'   =>  'Noe gikk galt, vennligst prøv igjen senere.',
+    'article_group_1'           =>  'Samling: ',
+    'article_group_2'           =>  ' (Samling)',
 
     /*--------------------------------------------------------------
     # Contact

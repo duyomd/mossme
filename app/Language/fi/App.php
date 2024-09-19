@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Etsi vastineita',
     'article_parallels_loading' =>  'Tietoja etsitään...',
     'article_parallels_patient' =>  'Tämä voi kestää hetken, ole hyvä ja ole kärsivällinen.',
-    'article_parallels_found'   =>  '{0, number} vastinetta löydetty ▼',
+    'article_parallels_found'   =>  '{0, number} vastinetta löydetty ▲',
     'article_parallels_failed'  =>  'Vastineiden haku epäonnistui...',
     'article_parallels_error'   =>  'Jokin meni pieleen, yritä uudelleen myöhemmin.',
+    'article_group_1'           =>  'Kokoelma: ',
+    'article_group_2'           =>  ' (Kokoelma)',
 
     /*--------------------------------------------------------------
     # Contact

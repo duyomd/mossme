@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Párhuzamok keresése',
     'article_parallels_loading' =>  'Adatok keresése...',
     'article_parallels_patient' =>  'Ez néhány pillanatig eltarthat, kérjük, legyen türelemmel.',
-    'article_parallels_found'   =>  '{0, number} párhuzam találva ▼',
+    'article_parallels_found'   =>  '{0, number} párhuzam találva ▲',
     'article_parallels_failed'  =>  'A párhuzamok keresése meghiúsult...',
     'article_parallels_error'   =>  'Valami hiba történt, kérjük, próbálja újra később.',
+    'article_group_1'           =>  'Gyűjtemény: ',
+    'article_group_2'           =>  ' (Gyűjtemény)',
 
     /*--------------------------------------------------------------
     # Contact

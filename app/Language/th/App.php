@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'ค้นหาคู่ขนาน',
     'article_parallels_loading' =>  'กำลังค้นหาข้อมูล...',
     'article_parallels_patient' =>  'อาจใช้เวลาสักครู่ กรุณารอคอยอย่างอดทน',
-    'article_parallels_found'   =>  'พบคู่ขนาน {0, number} รายการ ▼',
+    'article_parallels_found'   =>  'พบคู่ขนาน {0, number} รายการ ▲',
     'article_parallels_failed'  =>  'การค้นหาคู่ขนานล้มเหลว...',
     'article_parallels_error'   =>  'เกิดข้อผิดพลาดบางประการ กรุณาลองอีกครั้งภายหลัง',
+    'article_group_1'           =>  'การรวบรวม: ',
+    'article_group_2'           =>  ' (การรวบรวม)',
 
     /*--------------------------------------------------------------
     # Contact

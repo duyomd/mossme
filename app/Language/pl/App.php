@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Szukaj paraleli',
     'article_parallels_loading' =>  'Wyszukiwanie danych...',
     'article_parallels_patient' =>  'To może chwilę potrwać, proszę o cierpliwość.',
-    'article_parallels_found'   =>  'Znaleziono {0, number} paraleli ▼',
+    'article_parallels_found'   =>  'Znaleziono {0, number} paraleli ▲',
     'article_parallels_failed'  =>  'Wyszukiwanie paraleli nie powiodło się...',
     'article_parallels_error'   =>  'Coś poszło nie tak, proszę spróbować później.',
+    'article_group_1'           =>  'Kompilacja: ',
+    'article_group_2'           =>  ' (Kompilacja)',
 
     /*--------------------------------------------------------------
     # Contact

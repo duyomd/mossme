@@ -185,7 +185,7 @@ class TranslationModel extends BaseModel
 
         $this->db->transStart();
 
-        $sql = 'SELECT translation.*, 
+        $sql = 'SELECT translation.*, language,
                     CONCAT(IF(entry.enumeration IS NULL, "", CONCAT(entry.enumeration, SPACE(1))), translation.title) AS enum_title
                 FROM translation 
                 LEFT JOIN language ON translation.language_code = language.code
@@ -219,9 +219,9 @@ class TranslationModel extends BaseModel
 
         /** This SQL is better, but supported on SQL>=8.0 only */////////////////////////////////////////////
         // $sql = 
-        //     'SELECT entry_id, author, author_note, title, status, enum_title
+        //     'SELECT entry_id, author, author_note, title, status, enum_title, type
         //     FROM (
-        //         SELECT translation.*,
+        //         SELECT translation.*, entry.type,
         //             CONCAT(IF(entry.enumeration IS NULL, "", CONCAT(entry.enumeration, SPACE(1))), translation.title) AS enum_title
         //             , ROW_NUMBER() OVER(PARTITION BY entry_id 
         //                 ORDER BY CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END ASC,
@@ -238,9 +238,9 @@ class TranslationModel extends BaseModel
 
         /** Used for host with lower SQL version (T.T) */ 
         $sql = 
-            'SELECT entry_id, author, author_note, title, status, enum_title
+            'SELECT entry_id, author, author_note, title, status, enum_title, type
             FROM (
-                SELECT translation.*, entry.sequence AS entry_seq,
+                SELECT translation.*, entry.sequence AS entry_seq, entry.type AS type,
                     CONCAT(IF(entry.enumeration IS NULL, "", CONCAT(entry.enumeration, SPACE(1))), translation.title) AS enum_title,
                     CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - language.sequence, 3, "0"), IF(author IS NULL, "", author)) AS sort_value
                 FROM translation 

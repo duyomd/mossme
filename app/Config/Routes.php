@@ -6,6 +6,7 @@ use App\Controllers\Dhamma;
 use App\Controllers\Credits;
 use App\Controllers\Contact;
 use App\Controllers\Article;
+use App\Controllers\ArticleGroup;
 use App\Controllers\LanguageManager;
 use App\Controllers\MessageManager;
 use App\Controllers\ImageUrlManager;
@@ -33,9 +34,10 @@ $routes->get('credits', [Credits::class, 'index']);
 $routes->get('contact', [Contact::class, 'index']);
 $routes->post('contact', [Contact::class, 'save']);
 
-// $routes->get('article', [Article::class, 'index']);
 $routes->get('article/(:segment)', [Article::class, 'show']);
 $routes->get('article/(:segment)/forward=(:alpha)/(:segment)/', [Article::class, 'show']);
+
+$routes->get('article-group/(:segment)', [ArticleGroup::class, 'show']);
 
 $routes->get('userSettings', [UserSettings::class, 'show']);
 $routes->post('userSettings', [UserSettings::class, 'action']);

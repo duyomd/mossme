@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  '유사 항목 검색',
     'article_parallels_loading' =>  '데이터 검색 중...',
     'article_parallels_patient' =>  '잠시 기다려 주세요.',
-    'article_parallels_found'   =>  '{0, number} 개의 유사 항목이 발견되었습니다 ▼',
+    'article_parallels_found'   =>  '{0, number} 개의 유사 항목이 발견되었습니다 ▲',
     'article_parallels_failed'  =>  '유사 항목 검색 실패...',
     'article_parallels_error'   =>  '문제가 발생했습니다. 나중에 다시 시도해 주세요.',
+    'article_group_1'           =>  '편집: ',
+    'article_group_2'           =>  ' （편집）',
 
     /*--------------------------------------------------------------
     # Contact

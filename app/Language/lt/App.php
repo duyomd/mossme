@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Ieškoti paralelių',
     'article_parallels_loading' =>  'Ieškoma duomenų...',
     'article_parallels_patient' =>  'Tai gali užtrukti kelias minutes, prašome būti kantriems.',
-    'article_parallels_found'   =>  'Rasta {0, number} paralelių ▼',
+    'article_parallels_found'   =>  'Rasta {0, number} paralelių ▲',
     'article_parallels_failed'  =>  'Paralelių paieška nepavyko...',
     'article_parallels_error'   =>  'Įvyko klaida, prašome bandyti vėliau.',
+    'article_group_1'           =>  'Rinkinys: ',
+    'article_group_2'           =>  ' (Rinkinys)',
 
     /*--------------------------------------------------------------
     # Contact

@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'Paralel arama',
     'article_parallels_loading' =>  'Veriler aranıyor...',
     'article_parallels_patient' =>  'Bu birkaç dakika sürebilir, lütfen sabırlı olun.',
-    'article_parallels_found'   =>  '{0, number} paralel bulundu ▼',
+    'article_parallels_found'   =>  '{0, number} paralel bulundu ▲',
     'article_parallels_failed'  =>  'Paralel araması başarısız oldu...',
     'article_parallels_error'   =>  'Bir şeyler ters gitti, lütfen daha sonra tekrar deneyin.',
+    'article_group_1'           =>  'Derleme: ',
+    'article_group_2'           =>  ' (Derleme)',
 
     /*--------------------------------------------------------------
     # Contact

@@ -147,9 +147,11 @@ return [
     'article_parallels_search'  =>  'সামঞ্জস্যগুলি খুঁজুন',
     'article_parallels_loading' =>  'তথ্য অনুসন্ধান করা হচ্ছে...',
     'article_parallels_patient' =>  'এটি কিছু সময় নিতে পারে, অনুগ্রহ করে অপেক্ষা করুন।',
-    'article_parallels_found'   =>  '{0, number}টি সামঞ্জস্য পাওয়া গেছে ▼',
+    'article_parallels_found'   =>  '{0, number}টি সামঞ্জস্য পাওয়া গেছে ▲',
     'article_parallels_failed'  =>  'সামঞ্জস্য অনুসন্ধানে ব্যর্থ...',
     'article_parallels_error'   =>  'কিছু সমস্যা হয়েছে, অনুগ্রহ করে পরে আবার চেষ্টা করুন।',
+    'article_group_1'           =>  'সংকলন: ',
+    'article_group_2'           =>  ' (সংকলন)',
 
     /*--------------------------------------------------------------
     # Captcha
