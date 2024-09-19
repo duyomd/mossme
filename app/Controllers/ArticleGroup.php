@@ -20,13 +20,14 @@ class ArticleGroup extends BaseController
 
         // entry data
         $entry = $entryModel->getEntry($parent_id);
-        if ($entry == null) return $this->notFound();        
+        if ($entry == null || !$entry->getIsFolder()) return $this->notFound();        
 
         // child list (similar logic to Article.php)
         // FIXME: optimize to 1 SQL only (in the future if needed for better performance)
         $entry->children = $translationModel->getChildren($entry, $user_language_code);
         $entryChildren = array();
         foreach ($entry->children as $child) {
+            if ($child->type == Utilities::TYPE_FOLDER) return $this->notFound();
             $en = $entryModel->getEntry($child->entry_id);
             $en->translations = $translationModel->getTranslations($en, $user_language_code);
             array_push($entryChildren, Utilities::parallels($en));
