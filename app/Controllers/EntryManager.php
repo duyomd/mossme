@@ -67,7 +67,7 @@ class EntryManager extends BaseController
 
         } else if ($mode == 'insert' || $mode == 'modify') {
             if (! $this->validate([
-                'id'                    => ['label' => lang('App.entry_label_id'),                  'rules' => 'required|max_length[64]'],
+                'id'                    => ['label' => lang('App.entry_label_id'),                  'rules' => 'required|max_length[64]|regex_match[^(?!.*\/)[a-zA-Z0-9.:-]+$]'],
                 'parent_id'             => ['label' => lang('App.entry_label_parent'),              'rules' => 'max_length[64]'],
                 'root_id'               => ['label' => lang('App.entry_label_root'),                'rules' => 'max_length[64]'],
                 'serials'               => ['label' => lang('App.entry_label_serials'),             'rules' => 'required|max_length[512]'],

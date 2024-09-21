@@ -342,7 +342,6 @@
 
     function getCommentaryUrl(entryId) {
       return "'/commentaries/conditions={&quot;entryId&quot;:&quot;' + " + entryId + " + '&quot;}'";
-      return "";
     }
 
     function upOneLevel(parentId) {

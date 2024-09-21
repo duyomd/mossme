@@ -218,7 +218,8 @@
         loading(false);
       }
     };
-    xmlhttp.open("GET", "/" + "<?=$url?>" + "/" + document.getElementById('selected_key').value, true);
+    let selectedKey = encodeURIComponent(document.getElementById('selected_key').value);    
+    xmlhttp.open("GET", "/" + "<?=$url?>" + "/" + selectedKey, true);
     xmlhttp.send();
   }
 

@@ -57,7 +57,7 @@ class LanguageManager extends BaseController
 
         } else if ($mode == 'insert' || $mode == 'modify') {
             if (! $this->validate([
-                'code'      => ['label' => lang('App.label_code'),      'rules' => 'required|max_length[5]'],
+                'code'      => ['label' => lang('App.label_code'),      'rules' => 'required|max_length[5]|alpha'],
                 'language'  => ['label' => lang('App.label_language'),  'rules' => 'required|max_length[32]'],
                 'sequence'  => ['label' => lang('App.label_sequence'),  'rules' => 'required|integer|greater_than[0]|less_than[1000]|max_length[3]'],
             ])) {
