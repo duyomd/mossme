@@ -223,10 +223,10 @@
               <div class="parallels row mt-5 text-center">
                 <div>
                   <a href="javascript:void(0)" onclick="loadParallels('<?=$child->parallels?>', <?=$p?>)">
-                    <i class="bi bi-search"></i><span class="parallels-title"><?=lang('App.article_parallels_search')?></span>
+                    <i class="bi bi-search"></i><span class="parallels-title-<?=$p?>"><?=lang('App.article_parallels_search')?></span>
                   </a>
                 </div>
-                <div class="parallels-content mt-3 fst-italic d-none"></div>
+                <div class="parallels-content-<?=$p?> mt-3 fst-italic d-none"></div>
               </div>
             <?php endif ?><!-- End Parallels -->
 
@@ -265,8 +265,8 @@
     function loadParallels(pars, i) {
       if (_parallelsOns[i]) return;        
       loading(true);
-      var titleEle = document.querySelectorAll('.parallels-title')[i];
-      var contentEle = document.querySelectorAll('.parallels-content')[i];
+      var titleEle = document.querySelector('.parallels-title-' + i);
+      var contentEle = document.querySelector('.parallels-content-' + i);
       parallelsSearching(titleEle, contentEle);
       var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
