@@ -118,7 +118,7 @@
           <div id="title" class="section-title mt-5">
             <h2><?=lang('App.list')?></h2>
           </div>         
-          <div class="table-responsive"></div>
+          <div class="table-responsive ck-content"></div>
 
         </div>
 
