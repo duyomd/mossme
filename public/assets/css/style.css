@@ -29,7 +29,9 @@
   --mm-color-link: #cda45e;
   --mm-color-link-light: #d9ba85;
   --mm-color-link-subtle: #d3af71;
-  --mm-color-link-disabled: rgb(190, 190, 190);  
+  --mm-color-link-disabled: rgb(190, 190, 190);
+  --mm-color-link-content: var(--mm-color-article-tree-link);
+  --mm-color-link-content-hover: var(--mm-color-link-light);
 
   --mm-color-btn-disabled: dimgray;
   --mm-color-border-disabled: dimgray;
@@ -56,8 +58,7 @@
   --mm-color-hero-subfont: #eee;
   --mm-color-hero-play-outer: rgba(205, 164, 94, 0.4);
   --mm-color-hero-play-bg: #cda45e;
-  --mm-color-hero-play-twinkle-bg: rgba(198, 16, 0, 0);  
-  --mm-color-article-tree-link: #ddceb6;
+  --mm-color-hero-play-twinkle-bg: rgba(198, 16, 0, 0);    
   --mm-color-events-carousel-bg: rgba(255, 255, 255, 0.08);
   --mm-color-table-link: blanchedalmond;
   --mm-color-dropdown-link-ref: var(--mm-color-link);
@@ -91,6 +92,7 @@
   --mm-color-pagination-bullet-bg: rgba(255, 255, 255, 0.4);
   --mm-color-testimonials-box-bg: #26231d;
   --mm-color-testimonials-author: rgba(255, 255, 255, 0.6);
+  --mm-color-article-tree-link: #ddceb6;
   
   --mm-color-dropdown-btn: black;
   --mm-color-dropdown-btn-bg: #f8f9fa;
@@ -127,6 +129,8 @@
   /* #325ba1 */
   /* --mm-color-link: rgb(32, 145, 32); 
   --mm-color-link-light: #26457a; */
+  --mm-color-link-content: var(--mm-color-link);
+  --mm-color-link-content-hover: var(--mm-color-link-light);
 
   --mm-color-footer-bg: white;
   --mm-color-bg: #f3f4f6;
@@ -199,6 +203,7 @@ body {
 
 main {
   height: 100%;
+  position: relative;
 }
 
 a {
@@ -1290,11 +1295,11 @@ section {
 }
 
 .content-list a {
-  color: var(--mm-color-article-tree-link);
+  color: var(--mm-color-link-content);
 }
 
 .content-list a:hover {
-  color: var(--mm-color-link-light);
+  color: var(--mm-color-link-content-hover);
 }
 
 .content-list a span {
@@ -1311,7 +1316,12 @@ section {
   display: block; 
   white-space: nowrap; 
   overflow: hidden; 
-  text-overflow: ellipsis
+  text-overflow: ellipsis;
+  color: var(--mm-color-article-tree-link) !important;
+}
+
+.content-list-parents a:hover {
+  color: var(--mm-color-link-light) !important;
 }
 
 .content-list-parents a span {
