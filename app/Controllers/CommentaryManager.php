@@ -84,6 +84,8 @@ class CommentaryManager extends BaseController
                     'content'           => $this->request->getVar('content'),
             ]);
 
+            $commentary = $this->convertTcvn($commentary);
+
             if ($mode == 'insert') {
                 $result = $this->insertCommentary($commentary);
                 if ($result == null) {
@@ -219,6 +221,16 @@ class CommentaryManager extends BaseController
             $entryId = $cds->entryId;
         }
         return $entryId;
+    }
+
+    private function convertTcvn($comm = null) {
+        if ($comm != null) {
+            $comm->content = Utilities::convertTcvn($comm->content);
+            $comm->notation = Utilities::convertTcvn($comm->notation);
+            $comm->author = Utilities::convertTcvn($comm->author);
+            $comm->author_note = Utilities::convertTcvn($comm->author_note);
+        }
+        return $comm;
     }
 
 }

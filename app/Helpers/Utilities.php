@@ -274,5 +274,25 @@ class Utilities
         return false;
     }
     */
+
+    /**
+     * Vietnamese unicode normalization, may create problems when search 
+     *  for ex:
+     *      Character 	UTF-Code 	Unicode
+     *          Ð 	    C3 90 	    U+00D0
+     *          Đ 	    C4 90 	    U+0110
+     *          Ɖ 	    C6 89 	    U+0189
+     *          ᴆ 	    E1 B4 86 	U+1D06
+     */
+    public static function convertTcvn($original)
+    {
+        $converted = $original;
+        if (!self::isNullOrBlank($converted)) {
+            // Đ
+            $converted = str_replace('Ð', 'Đ', $converted);
+        }
+        return $converted;
+    }
+
     
 }

@@ -86,6 +86,8 @@ class TranslationManager extends BaseController
                     'content'           => $this->request->getVar('content'),
             ]);
 
+            $tran = $this->convertTcvn($tran);
+
             if ($mode == 'insert') {
                 $result = $this->insertTranslation($tran);
                 if ($result == null) {
@@ -226,6 +228,17 @@ class TranslationManager extends BaseController
             $entryId = $cds->entryId;
         }
         return $entryId;
+    }
+
+    private function convertTcvn($tran = null) {
+        if ($tran != null) {
+            $tran->title = Utilities::convertTcvn($tran->title);
+            $tran->content = Utilities::convertTcvn($tran->content);
+            $tran->notation = Utilities::convertTcvn($tran->notation);
+            $tran->author = Utilities::convertTcvn($tran->author);
+            $tran->author_note = Utilities::convertTcvn($tran->author_note);
+        }
+        return $tran;
     }
 
 }
