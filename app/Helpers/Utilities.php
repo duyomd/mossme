@@ -64,6 +64,30 @@ class Utilities
     }
 
     /**
+     * FIXME
+     */ 
+    public static function encodeUrlJsonParameter($srcStr = null)
+    {
+        $result = $srcStr;
+        if (!self::isNullOrBlank($srcStr)) {
+            $result = htmlspecialchars($result);
+            // temp solution: escape # (in encoded single quote) for ajax [GET] url
+            $result = str_replace('&#039;', '&&039;', $result);
+        }
+        return $result;
+    }
+
+    public static function decodeUrlJsonParameter($srcStr = null)
+    {
+        $result = $srcStr;
+        if (!self::isNullOrBlank($srcStr)) {
+            $result = str_replace('&&039;', '&#039;', $result);
+            $result = htmlspecialchars_decode($result);
+        }
+        return $result;
+    }
+
+    /**
      * Datetime to string
      */
     public static function formatDatetime($date, $format = null) {

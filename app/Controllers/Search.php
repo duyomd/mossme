@@ -18,6 +18,7 @@ class Search extends BaseController
 
   public function changePage($pageNo = null, $orderBys = '-1', $sortOrders = '-1', $conditions = null) 
   {
+    log_message('error', 'DUY:'.$conditions);
     $data = $this->loadList($pageNo, $orderBys, $sortOrders, $conditions);
     return $this->responseJsonList($data);
   }
@@ -27,7 +28,8 @@ class Search extends BaseController
     helper('form');
 
     if (! $this->validate([
-      'keyword' => ['label' => lang('App.search_label_keyword'), 'rules' => 'trim|required|min_length[3]|max_length[84]'],
+      'keyword' => ['label' => lang('App.search_label_keyword'), 
+        'rules' => 'trim|required|min_length[3]|max_length[84]|regex_match[^[^!@#$%^&*()=|\/{}\\[\\]:?<>]*$]'],
     ])) {
       $errorsHtml = Utilities::createHtmlValidatedMsg($this->validator->getErrors());
       return json_encode($this->showResult(false, $errorsHtml));
@@ -66,9 +68,9 @@ class Search extends BaseController
                               'commentary' => $this->request->getVar('commentary'),);
       $sectionIds = $this->request->getVar('section') != null ? explode(',', $this->request->getVar('section')) : [];
       $conditions = json_encode(
-                      (object)array('keyword'     => $keyword,
+                      (object)array('keyword'     => Utilities::encodeUrlJsonParameter($keyword),
                                     'checks'      => $checks,
-                                    'sectionIds'  => $sectionIds,));
+                                    'sectionIds'  => $sectionIds,), JSON_UNESCAPED_UNICODE);
 
       $data = $this->loadList($pageNo, $orderBys, $sortOrders, $conditions);
       $json->responseJsonList = $this->responseJsonList($data);
@@ -85,6 +87,8 @@ class Search extends BaseController
 
     if ($conditions != '-1') {
       $cds = json_decode($conditions);
+      $cds->keyword = Utilities::decodeUrlJsonParameter($cds->keyword);
+      log_message('error', 'DUY-keyword:'.$cds->keyword);
       $user_language_code = Utilities::getSessionLocale();
 
       $model = model(SearchModel::class);
