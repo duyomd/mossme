@@ -1215,6 +1215,11 @@ section {
   max-width: 100%;
 }
 
+.article .dropdown-menu {
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
 .article #title-main, .article #title-sub {
   text-transform: capitalize;
 }
@@ -1275,6 +1280,11 @@ section {
 
 .commentary .dropdown-toggle, .commentary .dropdown-menu {
   max-width: 100%;
+}
+
+.commentary .dropdown-menu {
+  overflow-y: auto;
+  max-height: 50vh;
 }
 
 @media (min-width: 1920px) {
