@@ -534,6 +534,10 @@
           document.getElementById('btn-commentary').click();
         } else if ('<?=$forward?>' == 'translation') {
           setTimeout(function(){
+            var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+            if (isChrome && window.location.hash) {
+              window.location.hash = '';
+            }
             window.location.hash = '#article';
           }, DELAY_PERIOD);                   
         }
