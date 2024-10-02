@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Связанные Агама',
                 'dc_zh_numbered'    =>  'Нумерованные Агама',
         'history'       =>  'История',
+        'sutta_other'       =>  'Другие Рукописи',
+        'sutta_other_short' =>  'Другие',
 
     'weed'          =>  'Нарост',
         'law'           => 'Монашеский закон',

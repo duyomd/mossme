@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'લિંક આગમ',
                 'dc_zh_numbered'    =>  'અંકિત આગમ',
         'history'       =>  'ઇતિહાસ',
+        'sutta_other'       =>  'અન્ય પત્રક',
+        'sutta_other_short' =>  'અન્ય',
 
     'weed'          =>  'વીડ',
         'law'           => 'સંઘનિયમ',

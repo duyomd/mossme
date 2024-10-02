@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Susietasis Āgama',
                 'dc_zh_numbered'    =>  'Numeruotas Āgama',
         'history'       =>  'Istorija',
+        'sutta_other'       =>  'Kiti Rankraščiai',
+        'sutta_other_short' =>  'Kiti',
 
     'weed'          =>  'Piktžolė',
         'law'           => 'Vienuolinis Įstatymas',

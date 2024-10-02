@@ -59,8 +59,8 @@
                   <div class="col-md-3 mt-md-0">
                     <label for="status" class="form-label"><?= lang('App.search_label_section') ?></label>
                     <select class="form-select fs-6" name="section" id="section">
-                      <option value="1,2,3,4,5,7"><?= lang('App.search_section_all') ?></option>
-                      <option value="1,2"><?= lang('App.search_section_discourse') ?></option>
+                      <option value="1,2,3,4,5,7,8"><?= lang('App.search_section_all') ?></option>
+                      <option value="1,2,8"><?= lang('App.search_section_discourse') ?></option>
                       <option value="3"><?= lang('App.search_section_discipline') ?></option>
                       <option value="4"><?= lang('App.search_section_analysis') ?></option>
                       <option value="5"><?= lang('App.search_section_reference') ?></option>

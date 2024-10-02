@@ -261,28 +261,24 @@
           
           <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.ancient_path')?></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.discourses')?></span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.dc_pi')?></span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.dc_pi')?></span> <i class="bi bi-chevron-right"></i></a>
-                    <ul>
-                      <li><a href="/article/dn"><?=lang('App.dc_pi_long')?></a></li>
-                      <li><a href="/article/mn"><?=lang('App.dc_pi_middle')?></a></li>
-                      <li><a href="/article/sn"><?=lang('App.dc_pi_linked')?></a></li>
-                      <li><a href="/article/an"><?=lang('App.dc_pi_numbered')?></a></li>
-                      <li><a href="/article/kn"><?=lang('App.dc_pi_minor')?></a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.dc_zh')?></span> <i class="bi bi-chevron-right"></i></a>
-                    <ul>
-                      <li><a href="/article/da"><?=lang('App.dc_zh_long')?></a></li>
-                      <li><a href="/article/ma"><?=lang('App.dc_zh_middle')?></a></li>
-                      <li><a href="/article/sa"><?=lang('App.dc_zh_linked')?></a></li>
-                      <li><a href="/article/ea"><?=lang('App.dc_zh_numbered')?></a></li>
-                    </ul>
-                  </li>
+                  <li><a href="/article/dn"><?=lang('App.dc_pi_long')?></a></li>
+                  <li><a href="/article/mn"><?=lang('App.dc_pi_middle')?></a></li>
+                  <li><a href="/article/sn"><?=lang('App.dc_pi_linked')?></a></li>
+                  <li><a href="/article/an"><?=lang('App.dc_pi_numbered')?></a></li>
+                  <li><a href="/article/kn"><?=lang('App.dc_pi_minor')?></a></li>
                 </ul>
               </li>
-              <li><a href="/article/his"><?=lang('App.history')?></a></li>
+              <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.dc_zh')?></span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="/article/da"><?=lang('App.dc_zh_long')?></a></li>
+                  <li><a href="/article/ma"><?=lang('App.dc_zh_middle')?></a></li>
+                  <li><a href="/article/sa"><?=lang('App.dc_zh_linked')?></a></li>
+                  <li><a href="/article/ea"><?=lang('App.dc_zh_numbered')?></a></li>
+                </ul>
+              </li>
+              <li><a href="/article/sot"><?=lang('App.sutta_other')?></a></li>
             </ul>
           </li>
           
@@ -296,6 +292,7 @@
                 </ul>
               </li>
               <li><a href="/article/ref"><?=lang('App.references')?></a></li>
+              <li><a href="/article/his"><?=lang('App.history')?></a></li>
               <li><a href="/#discussions" class="nav-link dropdown-outlaw"><?=lang('App.niraya_umibe')?></a></li>
             </ul>
           </li>

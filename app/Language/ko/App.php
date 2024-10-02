@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  '잡아함',
                 'dc_zh_numbered'    =>  '증일아함',
         'history'       =>  '역사',
+        'sutta_other'       =>  '기타 원고',
+        'sutta_other_short' =>  '기타',
     
     'weed'          =>  '잡초',
         'law'           => '율장',

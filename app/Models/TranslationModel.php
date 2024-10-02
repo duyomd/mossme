@@ -361,7 +361,7 @@ class TranslationModel extends BaseModel
     }
 
     /**
-     * get sutta (nikaya + agama) & history
+     * get sutta (nikaya + agama + suttaother)
      */
     private function getSuttaTranslations(string $user_language_code) 
     {
@@ -392,7 +392,7 @@ class TranslationModel extends BaseModel
         //         WHERE parent_id IS NULL AND s.id IN :section_ids:
         //             AND t.status = :status: AND e.status = :status:
         //         GROUP BY section_id, entry_id, language_code, author
-        //         ORDER BY CASE WHEN e.section_id = :section_id_history: THEN 2 ELSE 1 END ASC,
+        //         ORDER BY CASE WHEN e.section_id = :section_id_suttaother: THEN 2 ELSE 1 END ASC,
     	//             e.sequence ASC, s.sequence ASC   
         //         ) temp
         //     WHERE temp.rn = 1';
@@ -423,11 +423,11 @@ class TranslationModel extends BaseModel
                 LEFT JOIN section s ON e.section_id = s.id
             WHERE t.entry_id = tmain.entry_id AND parent_id IS NULL AND s.id IN :section_ids: AND t.status = :status: AND e.status = :status:
         ) 
-        ORDER BY CASE WHEN section_id = :section_id_history: THEN 2 ELSE 1 END ASC, entry_seq ASC, section_seq ASC';    
+        ORDER BY CASE WHEN section_id = :section_id_suttaother: THEN 2 ELSE 1 END ASC, entry_seq ASC, section_seq ASC';    
 
         $query = $this->db->query($sql, [
                                     'section_ids'           => Utilities::SECTION_IDS_MENU_SUTTA,
-                                    'section_id_history'    => Utilities::SECTION_ID_HISTORY,
+                                    'section_id_suttaother' => Utilities::SECTION_ID_SUTTAOTHER,
                                     'status'                => Utilities::STATUS_ACTIVE,
                                     'user_lang'             => $user_language_code,      
                                 ]);
@@ -440,7 +440,7 @@ class TranslationModel extends BaseModel
     }
 
     /**
-     * get neither [nikaya, agama, history]
+     * get neither [nikaya, agama, suttaother]
      * ORDER BY is different from getSuttaTranslations()
      */
     private function getNonSuttaTranslations(string $user_language_code) 

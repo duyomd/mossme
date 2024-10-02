@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'ಜೋಡಿಸಿದ ಆಗಮ',
                 'dc_zh_numbered'    =>  'ಸಂಖ್ಯಾತ್ಮಕ ಆಗಮ',
         'history'       =>  'ಇತಿಹಾಸ',
+        'sutta_other'       =>  'ಇತರ ಮಂಜೂರುಗಳು',
+        'sutta_other_short' =>  'ಇತರ',
 
     'weed'          =>  'ಬಾಲ್ಕ',
         'law'           => 'ಮೋನಾಸ್ಟಿಕ್ ಕಾನೂನು',

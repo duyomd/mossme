@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Tạp A-hàm',
                 'dc_zh_numbered'    =>  'Tăng Nhất A-hàm',
         'history'       =>  'Lịch Sử',
+        'sutta_other'       =>  'Văn Bản Khác',
+        'sutta_other_short' =>  'Khác',
 
     'weed'          =>  'Dã Thảo',
         'law'           => 'Luật Tạng',

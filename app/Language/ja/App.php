@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  '相応阿含経',
                 'dc_zh_numbered'    =>  '増一阿含経',
         'history'       =>  '歴史',
+        'sutta_other'       =>  'その他の原稿',
+        'sutta_other_short' =>  'その他',
 
     'weed'          =>  '野草',
         'law'           => '戒律',

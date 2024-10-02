@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Bağlantılı Āgama',
                 'dc_zh_numbered'    =>  'Numaralı Āgama',
         'history'       =>  'Tarih',
+        'sutta_other'       =>  'Diğer El Yazmaları',
+        'sutta_other_short' =>  'Diğer',
 
     'weed'          =>  'Kötü alışkanlıklar',
         'law'           => 'Manastır Yasası',

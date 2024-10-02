@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Powiązany Āgama',
                 'dc_zh_numbered'    =>  'Numerowany Āgama',
         'history'       =>  'Historia',
+        'sutta_other'       =>  'Inne Rękopisy',
+        'sutta_other_short' =>  'Inne',
 
     'weed'          =>  'Zioło',
         'law'           => 'Prawo Monastyczne',

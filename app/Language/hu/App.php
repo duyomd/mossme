@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Kapcsolt Āgama',
                 'dc_zh_numbered'    =>  'Számozott Āgama',
         'history'       =>  'Történelem',
+        'sutta_other'       =>  'Egyéb Kéziratok',
+        'sutta_other_short' =>  'Egyéb',
 
     'weed'          =>  'Gyógynövény',
         'law'           => 'Monasztikus Törvény',

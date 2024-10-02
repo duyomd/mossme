@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Knyttede Āgama',
                 'dc_zh_numbered'    =>  'Nummererte Āgama',
         'history'       =>  'Historie',
+        'sutta_other'       =>  'Andre Manuskripter',
+        'sutta_other_short' =>  'Andre',
 
     'weed'          =>  'Weed',
         'law'           => 'Monastisk lov',

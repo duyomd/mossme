@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'אגמה מקושרת',
                 'dc_zh_numbered'    =>  'אגמה ממוספרת',
         'history'       =>  'היסטוריה',
+        'sutta_other'       =>  'מנחות אחרות',
+        'sutta_other_short' =>  'אחרות',
 
     'weed'          =>  'עשב',
         'law'           => 'חוק מנזרי',

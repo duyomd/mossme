@@ -136,7 +136,7 @@
               <li data-filter="*" class="filter-active"><?=lang('App.total')?></li>
               <li data-filter=".filter-pali"><?=lang('App.pi')?></li>
               <li data-filter=".filter-agama"><?=lang('App.zh')?></li>
-              <li data-filter=".filter-history"><?=lang('App.history_short')?></li>
+              <li data-filter=".filter-other"><?=lang('App.sutta_other_short')?></li>
             </ul>
           </div>
         </div>
@@ -145,7 +145,7 @@
 
           <?php foreach ($suttaMenuTranslations as $tran) : ?>
             <div class="col-lg-6 menu-item <?=$tran->isPali() ? 'filter-pali' : 
-                                             ($tran->isAgama() ? 'filter-agama' : 'filter-history')?>">
+                                             ($tran->isAgama() ? 'filter-agama' : 'filter-other')?>">
               <a href="/article/<?=$tran->entry_id?>">
                 <img src="<?=$tran->image_url_header?>" class="menu-img" alt="">
               </a>

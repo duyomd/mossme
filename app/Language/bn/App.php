@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'সংযুক্ত আগম',
                 'dc_zh_numbered'    =>  'সংখ্যাযুক্ত আগম',
         'history'       =>  'ইতিহাস',
+        'sutta_other'       =>  'অন্যান্য পাণ্ডুলিপি',
+        'sutta_other_short' =>  'অন্যান্য',
 
     'weed'          =>  'অলংকার',
         'law'           => 'মঠ আইন',

@@ -31,10 +31,10 @@ class Utilities
     public const SECTION_ID_NIKAYA      = 1;
     public const SECTION_ID_AGAMA       = 2;
     public const SECTION_ID_OUTLAW      = 6;
-    public const SECTION_ID_HISTORY     = 7;
+    public const SECTION_ID_SUTTAOTHER  = 8;
     public const SECTION_IDS_MENU_SUTTA = [self::SECTION_ID_NIKAYA, 
                                            self::SECTION_ID_AGAMA, 
-                                           self::SECTION_ID_HISTORY];
+                                           self::SECTION_ID_SUTTAOTHER];
 
     public const IMAGE_FOLDER_BACKGROUND    = 'background';
     public const IMAGE_FOLDER_MENU          = 'menu';

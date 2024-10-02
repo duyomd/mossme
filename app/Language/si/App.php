@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'සම්බන්ධ ආගම',
                 'dc_zh_numbered'    =>  'අංක ආගම',
         'history'       =>  'ඉතිහාසය',
+        'sutta_other'       =>  'අනෙකුත් ලිප්පී',
+        'sutta_other_short' =>  'අනෙකුත්',
     
     'weed'          =>  'වීඩ්',
         'law'           => 'සමනළ නීතිය',

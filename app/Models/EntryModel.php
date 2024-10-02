@@ -9,7 +9,7 @@ use App\Helpers\Utilities;
 
 class EntryModel extends BaseModel
 {
-    public const DEFAULT_ORDERBYS                   = array('section_id', 'sequence');
+    public const DEFAULT_ORDERBYS                   = array('section_sequence', 'sequence');
     public const DEFAULT_SORTORDERS                 = array('ASC', 'ASC');
     
     public const HEADER_TYPE_ORDERBYS               = array('type');
@@ -110,7 +110,7 @@ class EntryModel extends BaseModel
     public function getEntries($parentId, $sort) 
     {
         $sql = 
-        'SELECT e.*, section_name, 
+        'SELECT e.*, section_name, s.sequence AS section_sequence,
             CASE WHEN e.status = :status_inactive: THEN "' . lang('App.entry_label_status_inactive') . '"' .
                 ' ELSE "' . lang('App.entry_label_status_active') . '" END AS status_name,
             (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) AS image_url_header ,
@@ -268,7 +268,7 @@ class EntryModel extends BaseModel
 
     public function getSections()
     {
-        return $this->db->table('section')->where('status', 1)->get()->getResult();
+        return $this->db->table('section')->where('status', 1)->orderBy('sequence', 'ASC')->get()->getResult();
     }
 
     public function getRootEntries()

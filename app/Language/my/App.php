@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'ဆက်စပ်အာဂမ',
                 'dc_zh_numbered'    =>  'အင်္ဂုတရာအာဂမ',
         'history'       =>  'သမိုင်း',
+        'sutta_other'       =>  'အခြားစာရွက်စာတမ်းများ',
+        'sutta_other_short' =>  'အခြား',
 
     'weed'          =>  'ပေါက်ကွဲ',
         'law'           => 'သံဃမိန့်',

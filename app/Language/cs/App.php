@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Propojený Āgama',
                 'dc_zh_numbered'    =>  'Číslovaný Āgama',
         'history'       =>  'Historie',
+        'sutta_other'       =>  'Jiné rukopisy',
+        'sutta_other_short' =>  'Jiné',
 
     'weed'          =>  'Weed',
         'law'           => 'Monastické právo',

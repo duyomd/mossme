@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Āgama Ligado',
                 'dc_zh_numbered'    =>  'Āgama Numerado',
         'history'       =>  'História',
+        'sutta_other'       =>  'Outros Manuscritos',
+        'sutta_other_short' =>  'Outros',
 
     'weed'          =>  'Erva',
         'law'           => 'Lei Monástica',

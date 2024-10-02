@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'อากาที่เชื่อมโยง',
                 'dc_zh_numbered'    =>  'อากาที่มีหมายเลข',
         'history'       =>  'ประวัติ',
+        'sutta_other'       =>  'เอกสารอื่น ๆ',
+        'sutta_other_short' =>  'อื่น ๆ',
 
     'weed'          =>  'วัชพืช',
         'law'           => 'กฎหมายพระภิกษุ',

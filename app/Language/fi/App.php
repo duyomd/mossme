@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Liitetty Āgama',
                 'dc_zh_numbered'    =>  'Numeroitu Āgama',
         'history'       =>  'Historia',
+        'sutta_other'       =>  'Muut Käsikirjoitukset',
+        'sutta_other_short' =>  'Muut',
 
     'weed'          =>  'Weed',
         'law'           => 'Luostarin laki',

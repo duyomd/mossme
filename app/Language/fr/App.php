@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Āgama Lié',
                 'dc_zh_numbered'    =>  'Āgama Numéroté',
         'history'       =>  'Histoire',
+        'sutta_other'       =>  'Autres Manuscrits',
+        'sutta_other_short' =>  'Autres',
     
     'weed'          =>  'Herbe',
         'law'           => 'Loi Monastique',

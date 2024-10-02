@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Povezani Āgama',
                 'dc_zh_numbered'    =>  'Numerisani Āgama',
         'history'       =>  'Istorija',
+        'sutta_other'       =>  'Ostali Rukopisi',
+        'sutta_other_short' =>  'Ostali',
 
     'weed'          =>  'Korov',
         'law'           => 'Monastički Zakon',

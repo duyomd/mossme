@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Länkad Āgama',
                 'dc_zh_numbered'    =>  'Numrerad Āgama',
         'history'       =>  'Historia',
+        'sutta_other'       =>  'Andra Manuskript',
+        'sutta_other_short' =>  'Andra',
 
     'weed'          =>  'Växter',
         'law'           => 'Munklag',

@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Povezani Āgama',
                 'dc_zh_numbered'    =>  'Številčeni Āgama',
         'history'       =>  'Zgodovina',
+        'sutta_other'       =>  'Drugi Rokopisi',
+        'sutta_other_short' =>  'Drugi',
 
     'weed'          =>  'Weed',
         'law'           => 'Monastično pravo',

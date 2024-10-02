@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Āgama Terkait',
                 'dc_zh_numbered'    =>  'Āgama Bernomor',
         'history'       =>  'Sejarah',
+        'sutta_other'       =>  'Naskah Lainnya',
+        'sutta_other_short' =>  'Lainnya',
 
     'weed'          =>  'Rumput',
         'law'           => 'Hukum Monastik',

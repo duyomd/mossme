@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'Āgama Legat',
                 'dc_zh_numbered'    =>  'Āgama Numerot',
         'history'       =>  'Istorie',
+        'sutta_other'       =>  'Alte Manuscrise',
+        'sutta_other_short' =>  'Alte',
 
     'weed'          =>  'Iarbă',
         'law'           => 'Legea Monastică',

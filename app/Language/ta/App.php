@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  'இணைக்கப்பட்ட ஆகமா',
                 'dc_zh_numbered'    =>  'எண் காட்டப்பட்ட ஆகமா',
         'history'       =>  'வரலாறு',
+        'sutta_other'       =>  'மற்ற கைவெளிகள்',
+        'sutta_other_short' =>  'மற்ற',
 
     'weed'          =>  'புல்',
         'law'           => 'மத நியமங்கள்',

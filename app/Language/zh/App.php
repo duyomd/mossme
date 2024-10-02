@@ -42,6 +42,8 @@ return [
                 'dc_zh_linked'      =>  '雜阿含',
                 'dc_zh_numbered'    =>  '增一阿含',
         'history'       =>  '歷史',
+        'sutta_other'       =>  '其他手稿',
+        'sutta_other_short' =>  '其他',
 
     'weed'          =>  '野草',
         'law'           => '律藏',
