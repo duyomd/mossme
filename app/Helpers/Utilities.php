@@ -312,8 +312,10 @@ class Utilities
     {
         $converted = $original;
         if (!self::isNullOrBlank($converted)) {
-            // Đ
+            // Đ (C3 90 -> C4 90)
             $converted = str_replace('Ð', 'Đ', $converted);
+            // Đ (C6 89 -> C3 90)
+            $converted = str_replace('Ɖ', 'Đ', $converted);
         }
         return $converted;
     }

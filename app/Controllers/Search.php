@@ -61,7 +61,7 @@ class Search extends BaseController
       $sortOrders = $this->request->getVar('sortOrders');
 
       // search conditions
-      $keyword = trim($this->request->getVar('keyword'));
+      $keyword = Utilities::convertTcvn(trim($this->request->getVar('keyword')));
       $checks = (object)array('serial'     => $this->request->getVar('serial'),
                               'content'    => $this->request->getVar('content'),
                               'author'     => $this->request->getVar('author'),
