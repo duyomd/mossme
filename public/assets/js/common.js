@@ -2,6 +2,7 @@
  * Constants
  */
 const TOAST_MESSAGE_ID = 'toast-msg';
+const DELAY_PERIOD_ANCHOR = 370;
 
 function changeLanguage(lang) {
   var xmlhttp = new XMLHttpRequest();
@@ -115,6 +116,7 @@ function hasClass(element, className) {
  * Add onclick onfocus... event handlers
  */
 function addEvent(ele, type, func) {
+  if (ele == null) return;
   if (ele.addEventListener) {
     ele.addEventListener(type, func, false);
   // old browsers like IE  
@@ -174,4 +176,42 @@ function initMenu() {
   initUserDropdown();
   initToast(['copy-link']);
   initModal();
+}
+
+/**
+ * Workaround for Chrome issue, scrolling to a specified anchor from another page
+ */
+function scrollToSectionWorkaround() {
+  let hash = window.location.hash;
+  if (hash == null || hash.length <= 0) return;
+  const sectionID = hash.substring(1);
+  if (sectionID) {
+    // Function to animate scrolling to the section with the specified ID
+    function scrollToSection() {
+      const section = document.getElementById(sectionID);
+      if (section) {
+        const sectionOffset = section.getBoundingClientRect().top;
+        const currentScroll = window.pageYOffset;
+        const targetScroll = currentScroll + sectionOffset;
+        const duration = DELAY_PERIOD_ANCHOR; // Animation duration in milliseconds
+        const startTime = performance.now();
+        function scrollAnimation(currentTime) {
+          const elapsedTime = currentTime - startTime;
+          const scrollProgress = Math.min(elapsedTime / duration, 1);
+          const easedProgress = easeOutCubic(scrollProgress);
+          const scrollTo = currentScroll + (sectionOffset * easedProgress);
+          window.scrollTo(0, scrollTo);
+          if (elapsedTime < duration) {
+            requestAnimationFrame(scrollAnimation);
+          }
+        }
+        function easeOutCubic(t) {
+          return (t - 1) * Math.pow(t, 2) + 1;
+        }
+        requestAnimationFrame(scrollAnimation);
+      }
+    }
+    // Wait for the page to finish loading
+    window.addEventListener("load", scrollToSection);
+  }
 }

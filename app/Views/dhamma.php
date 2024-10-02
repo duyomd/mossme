@@ -18,8 +18,8 @@
             <h2 class="<?= App\Helpers\Utilities::isTallTitle() ? 'mt-4' : ''; ?>"><?=lang('App.hero_text')?></h2>
             
             <div class="btns">
-              <a href="#menu" class="btn-scroll animated fadeInUp scrollto"><?=lang('App.library')?></a>
-              <a href="#events" class="btn-scroll animated fadeInUp scrollto ms-btns"><?=lang('App.card')?></a>
+              <a href="#menu" class="btn-scroll animated fadeInUp"><?=lang('App.library')?></a>
+              <a href="#events" class="btn-scroll animated fadeInUp ms-btns"><?=lang('App.card')?></a>
             </div>
           </div>
 
@@ -327,3 +327,7 @@
 
   <!-- ======= Footer ======= -->
   <?php include 'templates/footer.php';?>
+
+  <script type="text/javascript">
+    scrollToSectionWorkaround();
+  </script>

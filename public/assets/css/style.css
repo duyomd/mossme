@@ -2251,7 +2251,7 @@ section {
   border: 1px solid var(--mm-color-border-disabled);
 }
 
-.table tbody a {
+.table-responsive .table tbody a {
   color: var(--mm-color-table-link);
 }
 

@@ -296,7 +296,7 @@
                 </ul>
               </li>
               <li><a href="/article/ref"><?=lang('App.references')?></a></li>
-              <li><a href="/#discussions" class="nav-link scrollto dropdown-outlaw"><?=lang('App.niraya_umibe')?></a></li>
+              <li><a href="/#discussions" class="nav-link dropdown-outlaw"><?=lang('App.niraya_umibe')?></a></li>
             </ul>
           </li>
           
@@ -313,3 +313,11 @@
 
     </div>
   </header>
+  <script type="text/javascript">
+    document.querySelector('.dropdown-outlaw').addEventListener('click', () => {
+      let closeMobileNaviMenu = document.querySelector('.bi-x'); 
+      if (closeMobileNaviMenu) {
+        closeMobileNaviMenu.click();
+      }
+    });
+  </script>
