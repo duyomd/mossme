@@ -11,8 +11,8 @@ use App\Models\BaseModel;
 
 class UserModel extends ShieldUserModel
 {
-  public const DEFAULT_ORDERBYS                 = array('username');
-  public const DEFAULT_SORTORDERS               = array('ASC');
+  public const DEFAULT_ORDERBYS                 = array('created_at');
+  public const DEFAULT_SORTORDERS               = array('DESC');
   
   public const HEADER_USERNAME_ORDERBYS         = array('username');
   public const HEADER_USERNAME_SORTORDERS       = array('ASC');
