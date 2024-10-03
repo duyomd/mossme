@@ -2236,6 +2236,7 @@ section {
 .table tbody tr td.col-sticky,
 .table thead tr th.col-sticky {
   position: sticky;
+  z-index: 1;
   inset-inline-start: calc(var(--bs-gutter-x) * -.5);  
 }
 

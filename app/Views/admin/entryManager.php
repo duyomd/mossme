@@ -243,9 +243,11 @@
                                       
                                       {CONTENT_TYPE: CONTENT_TYPES.BOX, CONTENT_FIELD: 'item.id',
                                         CONTENT_FIELD_BOX_LABELS: ['"<?=lang("App.entry_label_translations")?>"', 
-                                                                   '"<?=lang("App.entry_label_commentaries")?>"'],
+                                                                   '"<?=lang("App.entry_label_commentaries")?>"',
+                                                                   '"<?=lang("App.entry_label_view")?>"'],
                                         CONTENT_FIELD_BOX_HREFS: [getTranslationUrl('item.id'), 
-                                                                  getCommentaryUrl('item.id')],
+                                                                  getCommentaryUrl('item.id'),
+                                                                  getViewUrl('item.id')],
                                       },
 
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'serials',
@@ -342,6 +344,10 @@
 
     function getCommentaryUrl(entryId) {
       return "'/commentaries/conditions={&quot;entryId&quot;:&quot;' + " + entryId + " + '&quot;}'";
+    }
+
+    function getViewUrl(entryId) {
+      return "'/article/' + " + entryId;
     }
 
     function upOneLevel(parentId) {

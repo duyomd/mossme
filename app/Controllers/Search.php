@@ -18,7 +18,6 @@ class Search extends BaseController
 
   public function changePage($pageNo = null, $orderBys = '-1', $sortOrders = '-1', $conditions = null) 
   {
-    log_message('error', 'DUY:'.$conditions);
     $data = $this->loadList($pageNo, $orderBys, $sortOrders, $conditions);
     return $this->responseJsonList($data);
   }
@@ -88,7 +87,6 @@ class Search extends BaseController
     if ($conditions != '-1') {
       $cds = json_decode($conditions);
       $cds->keyword = Utilities::decodeUrlJsonParameter($cds->keyword);
-      log_message('error', 'DUY-keyword:'.$cds->keyword);
       $user_language_code = Utilities::getSessionLocale();
 
       $model = model(SearchModel::class);

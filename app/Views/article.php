@@ -28,6 +28,9 @@
           
           <h2 class="article-name">
             <?php if ($count > 1) echo $entry->displayEnumTitle; else echo '&nbsp;'; ?>
+            <a class="<?= (auth()->loggedIn() && auth()->user()->inGroup('dataoperator', 'superadmin') ? '' : 'hidden') ?> ms-btns-navi"
+               href='/translations/conditions={"entryId":"<?=$entry->id?>"}'>
+               <i id="icon-bilingual" class="bi bi-pencil-square"></i></a>
           </h2>
           
           <div class="btns">

@@ -148,7 +148,9 @@
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'entry_id'},
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'language'},
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'author'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'title',
+                                      {CONTENT_TYPE: CONTENT_TYPES.LINK, CONTENT_FIELD: 'item.title',
+                                        CONTENT_FIELD_EXTRA: getArticleUrl('item.entry_id', 'item.id'),
+                                        CONTENT_FIELD_EXTRA_HASH: '"article"',
                                         CONTENT_FIELD_STICKY: 'true'},                                       
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'content',
                                         CONTENT_FIELD_TRIM: 2},
@@ -192,6 +194,10 @@
 
     function getFolderUrl(entryId) {
       return "'/entries/conditions={&quot;parentId&quot;:&quot;' + " + entryId + " + '&quot;}'";
+    }
+
+    function getArticleUrl(entryId, translationId) {
+      return "'/article/' + " + entryId + " + '/forward=translation/' + " + translationId;
     }
 
   </script>
