@@ -60,7 +60,7 @@ return [
     'magicTokenNotFound' => 'Nije moguća verifikacija linka.',
     'magicLinkExpired'   => 'Žao nam je, link je istekao.',
     'checkYourEmail'     => 'Proverite Vaš email!',
-    'magicLinkDetails'   => 'Upravo smo Vam poslali pristupni link. Pristupni link će biti validan još samo {0} minuta.',
+    'magicLinkDetails'   => 'Upravo smo Vam poslali pristupni link. Ako ne možete da ga pronađete, proverite fasciklu sa neželjenom poštom. Pristupni link će biti validan još samo {0} minuta.',
     'magicLinkDisabled'  => 'Korišćenje MagicLink-a trenutno nije dozvoljeno.',
     'successLogout'      => 'Uspešno ste se odjavili sa sistema.',
     'backToLogin'        => 'Nazad na prijavljivanje',
@@ -109,7 +109,7 @@ return [
 
     // Activate
     'emailActivateTitle'    => 'Aktivacija email-a',
-    'emailActivateBody'     => 'Upravo smo Vam poslali kod za proveru email adrese. Molimo vas alepite kod ispod',
+    'emailActivateBody'     => 'Upravo smo Vam poslali kod za proveru email adrese. Ako ne možete da ga pronađete, proverite fasciklu sa neželjenom poštom. Molimo vas alepite kod ispod',
     'emailActivateSubject'  => 'Baš aktivacioni kod',
     'emailActivateMailBody' => 'Koristite kod u nastavku kako bi ste aktivirali Vaš nalog i počeli korišćenje servisa.',
     'invalidActivateToken'  => 'Kod nije ispravan.',

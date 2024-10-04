@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'Bijwerken',
     'list'                  =>  'Lijst',
+    'back'                  =>  'Terug',
 
     'btn_insert'                =>  'Toevoegen',
     'btn_modify'                =>  'Wijzigen',

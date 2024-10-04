@@ -60,7 +60,7 @@ return [
     'magicTokenNotFound' => 'Nu s-a putut verifica linkul.',
     'magicLinkExpired'   => 'Ne pare rău, linkul a expirat.',
     'checkYourEmail'     => 'Verifică-ți emailul!',
-    'magicLinkDetails'   => 'Tocmai ți-am trimis un email cu un link de autentificare. Este valabil doar timp de {0} minute.',
+    'magicLinkDetails'   => 'Tocmai ți-am trimis un email cu un link de autentificare. Dacă nu-l găsești, verifică folderul Spam/Junk. Este valabil doar timp de {0} minute.',
     'magicLinkDisabled'  => 'Utilizarea MagicLink-ului nu este momentan permisă.',
     'successLogout'      => 'Te-ai deconectat cu succes.',
     'backToLogin'        => 'Înapoi la autentificare',
@@ -109,7 +109,7 @@ return [
 
     // Activate
     'emailActivateTitle'    => 'Activare Email',
-    'emailActivateBody'     => 'Tocmai ți-am trimis un email cu un cod pentru a confirma adresa ta de email. Copiază acel cod și lipește-l mai jos.',
+    'emailActivateBody'     => 'Tocmai ți-am trimis un email cu un cod pentru a confirma adresa ta de email. Dacă nu-l găsești, verifică folderul Spam/Junk. Copiază acel cod și lipește-l mai jos.',
     'emailActivateSubject'  => 'Codul tău de activare',
     'emailActivateMailBody' => 'Te rog să folosești codul de mai jos pentru a activa contul tău și a începe să folosești site-ul.',
     'invalidActivateToken'  => 'Codul a fost incorect.',

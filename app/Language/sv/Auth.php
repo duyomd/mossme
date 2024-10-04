@@ -60,7 +60,7 @@ return [
     'magicTokenNotFound' => 'Kan inte verifiera länken.',
     'magicLinkExpired'   => 'Tyvärr, länken har gått ut.',
     'checkYourEmail'     => 'Kontrollera din epost!',
-    'magicLinkDetails'   => 'En login-länk har skickats med epost. Den gäller bara i {0} minuter.',
+    'magicLinkDetails'   => 'En login-länk har skickats med epost. Om du inte hittar det, kontrollera din skräppostmapp. Den gäller bara i {0} minuter.',
     'magicLinkDisabled'  => 'Användning av MagicLink är för närvarande inte tillåten.',
     'successLogout'      => 'Du har loggats ut.',
     'backToLogin'        => 'Tillbaka till inloggning',
@@ -109,7 +109,7 @@ return [
 
     // Activate
     'emailActivateTitle'    => 'Verifiering av epostadress',
-    'emailActivateBody'     => 'Ett meddelande har just skickats för att det skall gå att verifiera din epostadress. Kopiera aktiveringskoden från meddelandet och klistra in den nedan.',
+    'emailActivateBody'     => 'Ett meddelande har just skickats för att det skall gå att verifiera din epostadress. Om du inte hittar det, kontrollera din skräppostmapp. Kopiera aktiveringskoden från meddelandet och klistra in den nedan.',
     'emailActivateSubject'  => 'Din aktiveringskod',
     'emailActivateMailBody' => 'Använd koden nedan för att aktivera ditt konto för att kunna använda webplatsen.',
     'invalidActivateToken'  => 'Koden var fel.',

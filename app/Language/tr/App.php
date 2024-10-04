@@ -249,10 +249,11 @@ return [
 
     'update'                =>  'Güncelle',
     'list'                  =>  'Liste',
+    'back'                  =>  'Back',
 
     'btn_insert'            =>  'Ekle',
     'btn_modify'            =>  'Düzenle',
-    'btn_delete'            =>  'Sil',
+    'btn_delete'            =>  'Geri',
 
     'confirm'               =>  'Onayla',
 

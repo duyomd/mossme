@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'Perbarui',
     'list'                  =>  'Daftar',
+    'back'                  =>  'Kembali',
 
     'btn_insert'                =>  'Tambahkan',
     'btn_modify'                =>  'Ubah',

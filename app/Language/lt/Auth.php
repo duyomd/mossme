@@ -60,7 +60,7 @@ return [
     'magicTokenNotFound' => 'Nepavyksta patvirtinti nuorodos.',
     'magicLinkExpired'   => 'Deja, nuorodos galiojimas baigėsi.',
     'checkYourEmail'     => 'Patikrinkite savo el. paštą!',
-    'magicLinkDetails'   => 'Mes ką tik išsiuntėme Jums el. laišką su prisijungimo nuoroda. Ji galios tiki {0} minučių(-es).',
+    'magicLinkDetails'   => 'Mes ką tik išsiuntėme Jums el. laišką su prisijungimo nuoroda. Jei jo nerandate, patikrinkite savo šlamšto aplanką. Ji galios tiki {0} minučių(-es).',
     'magicLinkDisabled'  => 'MagicLink naudojimas šiuo metu nėra leidžiamas.',
     'successLogout'      => 'Jūs sėkmingai atsijungėte.',
     'backToLogin'        => 'Grįžti į prisijungimą',
@@ -109,7 +109,7 @@ return [
 
     // Activate
     'emailActivateTitle'    => 'Aktyvavimas el. paštu',
-    'emailActivateBody'     => 'Mes ką tik išsiuntėme Jums el. laišką su kodu el. pašto adreso patvirtinimui. Nukopijuokite tą kodą ir įterpkite žemiau.',
+    'emailActivateBody'     => 'Mes ką tik išsiuntėme Jums el. laišką su kodu el. pašto adreso patvirtinimui. Jei jo nerandate, patikrinkite savo šlamšto aplanką. Nukopijuokite tą kodą ir įterpkite žemiau.',
     'emailActivateSubject'  => 'Jūsų aktyvavimo kodas',
     'emailActivateMailBody' => 'Prašome naudoti žemiau esantį kodą paskyros aktyvavimui. Tuomet galėsite pradėti naudoti mūsų svetainę.',
     'invalidActivateToken'  => 'Kodas buvo neteisingas.',

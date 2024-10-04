@@ -60,7 +60,7 @@ return [
     'magicTokenNotFound' => 'No se puede verificar el enlace.',
     'magicLinkExpired'   => 'Lo siento, el enlace ha caducado.',
     'checkYourEmail'     => '¡Revisa tu correo electrónico!',
-    'magicLinkDetails'   => 'Acabamos de enviarte un correo electrónico con un enlace de inicio de sesión. Solo es válido durante {0} minutos.',
+    'magicLinkDetails'   => 'Acabamos de enviarte un correo electrónico con un enlace de inicio de sesión. Si no lo encuentras, revisa tu carpeta de Spam o Correo no deseado. Solo es válido durante {0} minutos.',
     'magicLinkDisabled'  => 'El uso de MagicLink actualmente no está permitido.',
     'successLogout'      => 'Has cerrado sesión correctamente.',
     'backToLogin'        => 'Volver al inicio de sesión',
@@ -109,7 +109,7 @@ return [
 
     // Activar
     'emailActivateTitle'    => 'Activación de correo electrónico',
-    'emailActivateBody'     => 'Acabamos de enviarte un correo electrónico con un código para confirmar tu dirección de correo electrónico. Copia ese código y pégalo a continuación.',
+    'emailActivateBody'     => 'Acabamos de enviarte un correo electrónico con un código para confirmar tu dirección de correo electrónico. Si no lo encuentras, revisa tu carpeta de Spam o Correo no deseado. Copia ese código y pégalo a continuación.',
     'emailActivateSubject'  => 'Tu código de activación',
     'emailActivateMailBody' => 'Utiliza el código siguiente para activar tu cuenta y comenzar a usar el sitio.',
     'invalidActivateToken'  => 'El código era incorrecto.',

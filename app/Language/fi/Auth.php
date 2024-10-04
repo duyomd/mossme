@@ -61,7 +61,7 @@ return [
     'magicTokenNotFound' => 'Linkin varmennus epäonnistui.',
     'magicLinkExpired'   => 'Pahoittelut, linkki on vanhentunut.',
     'checkYourEmail'     => 'Tarkista sähköpostisi!',
-    'magicLinkDetails'   => 'Olemme juuri lähettäneet sinulle sähköpostin, jossa on kirjautumislinkki. Linkki on voimassa vain {0} minuuttia.',
+    'magicLinkDetails'   => 'Olemme juuri lähettäneet sinulle sähköpostin, jossa on kirjautumislinkki. Jos et löydä sitä, tarkista roskapostikansiosi. Linkki on voimassa vain {0} minuuttia.',
     'magicLinkDisabled'  => 'MagicLinkin käyttö ei ole tällä hetkellä sallittua.',
     'successLogout'      => 'Olet kirjautunut ulos onnistuneesti.',
     'backToLogin'        => 'Takaisin kirjautumiseen',
@@ -110,7 +110,7 @@ return [
 
     // Activate
     'emailActivateTitle'    => 'Sähköpostin aktivointi',
-    'emailActivateBody'     => 'Olemme juuri lähettäneet sinulle sähköpostin koodilla sähköpostiosoitteesi vahvistamiseksi. Kopioi se koodi ja liitä se alle.',
+    'emailActivateBody'     => 'Olemme juuri lähettäneet sinulle sähköpostin koodilla sähköpostiosoitteesi vahvistamiseksi. Jos et löydä sitä, tarkista roskapostikansiosi. Kopioi se koodi ja liitä se alle.',
     'emailActivateSubject'  => 'Aktivointikoodisi',
     'emailActivateMailBody' => 'Käytä alla olevaa koodia aktivoidaksesi tilisi ja aloittaaksesi sivuston käytön.',
     'invalidActivateToken'  => 'Koodi oli virheellinen.',

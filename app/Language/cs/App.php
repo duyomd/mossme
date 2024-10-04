@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'Aktualizovat',
     'list'                  =>  'Seznam',
+    'back'                  =>  'Zpět',
 
     'btn_insert'            =>  'Vložit',
     'btn_modify'            =>  'Upravit',

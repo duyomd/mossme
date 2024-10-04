@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'Actualizează',
     'list'                  =>  'Listă',
+    'back'                  =>  'Înapoi',
 
     'btn_insert'                =>  'Inserare',
     'btn_modify'                =>  'Modificare',

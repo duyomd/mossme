@@ -24,10 +24,10 @@ class CardTranslationModel extends BaseModel
     public const HEADER_STATUS_ORDERBYS         = array('status_name');
     public const HEADER_STATUS_SORTORDERS       = array('ASC');
 
-    public const HEADER_HEADER_ORDERBYS         = array('header');
+    public const HEADER_HEADER_ORDERBYS         = array('header_field');
     public const HEADER_HEADER_SORTORDERS       = array('ASC');
 
-    public const HEADER_FOOTER_ORDERBYS         = array('footer');
+    public const HEADER_FOOTER_ORDERBYS         = array('footer_field');
     public const HEADER_FOOTER_SORTORDERS       = array('ASC');
 
     public const HEADER_CONTENT_ORDERBYS        = array('content');
@@ -111,7 +111,8 @@ class CardTranslationModel extends BaseModel
         if (!isset($cardId)) return null;
 
         $sql = 
-        'SELECT t.*, c.memo, l.language AS language,
+        'SELECT t.id, t.card_id, t.language_code, t.author, t.content, t.status, t.header AS header_field, t.footer AS footer_field, 
+            c.memo, l.language AS language,
             CASE WHEN t.status = :status_inactive: THEN "' . lang('App.card_translation_label_status_inactive') . '"' .
                 ' ELSE "' . lang('App.card_translation_label_status_active') . '" END AS status_name ' .
         'FROM card_translation t LEFT JOIN language l ON t.language_code = l.code
@@ -128,7 +129,7 @@ class CardTranslationModel extends BaseModel
         $query->freeResult();
 
         $this->db->transComplete();
-        return $this->encodeData($results);
+        return $results;
     }
 
     public function findCardTranslation($id) 

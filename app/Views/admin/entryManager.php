@@ -211,8 +211,16 @@
           </div>
 
           <div id="title" class="section-title mt-5">
-            <h2><?=lang('App.list')?></h2>
-          </div>         
+            <h2>
+              <?php if(isset($parentId)) : ?>
+                <a href="javascript:void(0)" onclick="upOneLevel(`'<?=$grandParentId?>'`)" class="return">
+                  <?=lang('App.back')?> <?=lang('App.to_left')?>
+                </a></h2>
+              <?php else : ?>
+                <?=lang('App.list')?>
+              <?php endif ?>
+          </div>
+
           <div class="table-responsive"></div>
 
         </div>
@@ -285,7 +293,7 @@
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'sequence',
                                         CONTENT_FIELD_EXTRA_SORT: 'sequence'},),
         FIELDS_TABLE_HEADER:        new Array('',
-                                      '<a href="' + upOneLevel(`\'<?=$grandpParentId?>\'`) + '"><i class="bi bi-reply"></i></a>',
+                                      '',
                                       '<?=lang('App.entry_label_section')?>', 
                                       '<?=lang('App.entry_label_root')?>',
                                       '<?=lang('App.entry_label_parent')?>',
@@ -304,7 +312,7 @@
                                       '<?=lang('App.entry_label_created_by')?>',
                                       '<?=lang('App.entry_label_sequence')?>',),
         FIELDS_TABLE_ORDERBYS:      new Array('',
-                                        '<?=implode(",", EntryModel::HEADER_TYPE_ORDERBYS)?>',
+                                        '',
                                         '<?=implode(",", EntryModel::HEADER_SECTION_ORDERBYS)?>',
                                         '<?=implode(",", EntryModel::HEADER_ROOT_ORDERBYS)?>',
                                         '<?=implode(",", EntryModel::HEADER_PARENT_ORDERBYS)?>',
@@ -351,10 +359,11 @@
     }
 
     function upOneLevel(parentId) {
+      var url = '/entries';
       if (parentId && parentId != "''") {
-        return eval(getFolderUrl(parentId));
+        url = eval(getFolderUrl(parentId)).replaceAll('&quot;', '"');
       }
-      return '/entries';
+      window.location = url;      
     }
 
   </script>

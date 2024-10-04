@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'Ažuriraj',
     'list'                  =>  'Lista',
+    'back'                  =>  'Nazad',
 
     'btn_insert'                =>  'Unesi',
     'btn_modify'                =>  'Izmeni',

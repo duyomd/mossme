@@ -125,9 +125,7 @@ class CardTranslationManager extends BaseController
                 $jsonTran->language = $tran->language;
                 $jsonTran->status = $tran->status;
                 $jsonTran->status_name = $tran->status_name;
-                $jsonTran->header = $tran->header;
                 $jsonTran->header_field = $tran->header_field;
-                $jsonTran->footer = $tran->footer;
                 $jsonTran->footer_field = $tran->footer_field;
                 $jsonTran->content = $tran->content;
 

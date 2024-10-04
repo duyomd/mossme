@@ -12,6 +12,9 @@ declare(strict_types=1);
  */
 
 return [
+    'magicLinkDetails'      => 'Właśnie wysłaliśmy do Ciebie wiadomość e-mail z linkiem do logowania. Jeśli nie możesz tego znaleźć, sprawdź folder Spam/Śmieci. Jest on ważny tylko {0} minut.',
+    'emailActivateBody'     => 'Właśnie wysłaliśmy do Ciebie wiadomość e-mail z kodem potwierdzającym Twój adres e-mail. Jeśli nie możesz tego znaleźć, sprawdź folder Spam/Śmieci. Skopiuj ten kod i wklej go poniżej.',
+
     // Change password
     'changePassword'            => 'Zmień hasło',
     'newPassword'               => 'Nowe hasło',

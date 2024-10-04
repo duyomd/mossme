@@ -60,7 +60,7 @@ return [
     'magicTokenNotFound' => 'Não foi possível verificar o link.',
     'magicLinkExpired'   => 'Desculpe, o link expirou.',
     'checkYourEmail'     => 'Verifique o seu e-mail!',
-    'magicLinkDetails'   => 'Acabamos de enviar um e-mail com um link de Login. Ele é válido apenas por {0} minutos.',
+    'magicLinkDetails'   => 'Acabamos de enviar um e-mail com um link de Login. Se não conseguir encontrar, verifique a sua pasta de Spam/Lixo Eletrônico. Ele é válido apenas por {0} minutos.',
     'magicLinkDisabled'  => 'O uso do MagicLink está atualmente desativado.',
     'successLogout'      => 'Saiu com sucesso.',
     'backToLogin'        => 'Voltar ao login',
@@ -109,7 +109,7 @@ return [
 
     // Ativar
     'emailActivateTitle'    => 'Ativação de email',
-    'emailActivateBody'     => 'Acabamos de enviar um email para você com um código para confirmar seu endereço de e-mail. Copie esse código e cole abaixo.',
+    'emailActivateBody'     => 'Acabamos de enviar um email para você com um código para confirmar seu endereço de e-mail. Se não conseguir encontrar, verifique a sua pasta de Spam/Lixo Eletrônico. Copie esse código e cole abaixo.',
     'emailActivateSubject'  => 'O seu código de ativação',
     'emailActivateMailBody' => 'Use o código abaixo para ativar sua conta e começar a usar o site.',
     'invalidActivateToken'  => 'O código estava incorreto.',

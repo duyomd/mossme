@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'Oppdater',
     'list'                  =>  'Liste',
+    'back'                  =>  'Tilbake',
 
     'btn_insert'                =>  'Sett inn',
     'btn_modify'                =>  'Endre',

@@ -12,6 +12,9 @@ declare(strict_types=1);
  */
 
 return [
+    'magicLinkDetails'   => 'ログインリンクが含まれたメールを送信しました。見つからない場合は、迷惑メールフォルダを確認してください。これは {0} 分間だけ有効です。',
+    'emailActivateBody'     => 'メールアドレスを確認するために、コードを送信しました。見つからない場合は、迷惑メールフォルダを確認してください。以下にコピーペーストしてください。',
+
     // Change password
     'changePassword'            => 'パスワードを変更',
     'newPassword'               => '新しいパスワード',

@@ -12,6 +12,9 @@ declare(strict_types=1);
  */
 
 return [
+    'magicLinkDetails'      => 'Kami baru saja mengirimi Anda email dengan tautan Masuk di dalamnya. Jika Anda tidak menemukannya, periksa folder Spam/Junk Anda. Ini hanya berlaku selama {0} menit.',
+    'emailActivateBody'     => 'Kami baru saja mengirim email kepada Anda dengan kode untuk mengonfirmasi alamat email Anda. Jika Anda tidak menemukannya, periksa folder Spam/Junk Anda. Salin kode itu dan tempel di bawah ini.',
+
     // Change password
     'changePassword'            => 'Ubah Kata Sandi',
     'newPassword'               => 'Kata sandi baru',

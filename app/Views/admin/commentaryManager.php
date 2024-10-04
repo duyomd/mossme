@@ -128,8 +128,9 @@
           </div>
 
           <div id="title" class="section-title mt-5">
-            <h2><?=lang('App.list')?></h2>
-          </div>         
+            <h2><a href="javascript:void(0)" onclick="backToEntry(`'<?=$parentEntryId?>'`)" class="return"><?=lang('App.back')?> <?=lang('App.to_left')?></a></h2>
+          </div>
+
           <div class="table-responsive ck-content"></div>
 
         </div>
@@ -150,7 +151,6 @@
         FIELDS_FETCH:               new Array('id', 'entry_id', 'author', 'language_code', 'language', 
                                       'status', 'status_name', 'author_note', 'notation', 'content'),
         FIELDS_TABLE:               new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'id'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: ''},   
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'entry_id'},
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'language'},
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'author',
@@ -163,7 +163,6 @@
                                         CONTENT_FIELD_TRIM: 4},
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'status_name'},),
         FIELDS_TABLE_HEADER:        new Array('',
-                                      '<a href="' + backToEntry(`\'<?=$parentEntryId?>\'`) + '"><i class="bi bi-reply"></i></a>',
                                       '<?=lang('App.commentary_label_entry_id')?>', 
                                       '<?=lang('App.commentary_label_language')?>', 
                                       '<?=lang('App.commentary_label_author')?>', 
@@ -172,7 +171,6 @@
                                       '<?=lang('App.commentary_label_notation')?>', 
                                       '<?=lang('App.commentary_label_status')?>',),
         FIELDS_TABLE_ORDERBYS:      new Array('',
-                                        '',
                                         '<?=implode(",", CommentaryModel::HEADER_ENTRY_ID_ORDERBYS)?>',
                                         '<?=implode(",", CommentaryModel::HEADER_LANGUAGE_ORDERBYS)?>',
                                         '<?=implode(",", CommentaryModel::HEADER_AUTHOR_ORDERBYS)?>',
@@ -187,10 +185,11 @@
     }
 
     function backToEntry(parentId) {
+      var url = '/entries';
       if (parentId && parentId != "''") {
-        return eval(getFolderUrl(parentId));
+        url = eval(getFolderUrl(parentId)).replaceAll('&quot;', '"');
       }
-      return '/entries';
+      window.location = url;
     }
 
     function getFolderUrl(entryId) {

@@ -248,6 +248,7 @@ return [
 
     'update'                =>  'Aktualisieren',
     'list'                  =>  'Liste',
+    'back'                  =>  'Zurück',
 
     'btn_insert'                =>  'Einfügen',
     'btn_modify'                =>  'Ändern',

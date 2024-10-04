@@ -61,7 +61,7 @@ return [
     'magicTokenNotFound' => 'Không thể xác thực liên kết.',
     'magicLinkExpired'   => 'Xin lỗi, liên kết đã hết hạn.',
     'checkYourEmail'     => 'Xin kiểm tra email!',
-    'magicLinkDetails'   => 'Bạn vừa nhận được một email có chứa liên kết đăng nhập. Liên kết chỉ khả dụng trong {0} phút.',
+    'magicLinkDetails'   => 'Bạn vừa nhận được một email có chứa liên kết đăng nhập. Nếu bạn không tìm thấy, vui lòng kiểm tra mục Thư Rác của bạn. Liên kết chỉ khả dụng trong {0} phút.',
     'magicLinkDisabled'  => 'Liên kết đăng nhập tạm thời không được cấp phép.',
     'successLogout'      => 'Đăng xuất thành công.',
     'backToLogin'        => 'Trở lại màn hình đăng nhập',
@@ -110,7 +110,7 @@ return [
 
     // Activate
     'emailActivateTitle'    => 'Xác thự Email',
-    'emailActivateBody'     => 'Một email với mã xác thực đã được gửi đến địa chỉ email của bạn. Hãy nhập mã xác thực ấy vào ô bên dưới đây.',
+    'emailActivateBody'     => 'Một email với mã xác thực đã được gửi đến địa chỉ email của bạn. Nếu bạn không tìm thấy, vui lòng kiểm tra mục Thư Rác của bạn. Hãy nhập mã xác thực ấy vào ô bên dưới đây.',
     'emailActivateSubject'  => 'Mã xác thực',
     'emailActivateMailBody' => 'Vui lòng dùng mã xác thự này để kích hoạt tài khoản của bạn.',
     'invalidActivateToken'  => 'Mã xác thực không đúng.',

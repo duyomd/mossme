@@ -12,6 +12,9 @@ declare(strict_types=1);
  */
 
 return [
+    'magicLinkDetails'      => 'We just sent you an email with a Login link inside. If you can\'t find it, please check your Spam/Junk folder. It is only valid for {0} minutes.',
+    'emailActivateBody'     => 'We just sent an email to you with a code to confirm your email address. If you can\'t find it, please check your Spam/Junk folder. Copy that code and paste it below.',
+
     // Change password
     'changePassword'            => 'Change Password',
     'newPassword'               => 'New password',

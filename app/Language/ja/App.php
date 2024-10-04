@@ -249,6 +249,7 @@ return [
 
     'update'                =>  '更新',
     'list'                  =>  '一覧',
+    'back'                  =>  '戻る',
 
     'btn_insert'                =>  '挿入',
     'btn_modify'                =>  '変更',

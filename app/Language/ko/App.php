@@ -249,6 +249,7 @@ return [
 
     'update'                =>  '수정',
     'list'                  =>  '목록',
+    'back'                  =>  '뒤로',
 
     'btn_insert'            =>  '추가',
     'btn_modify'            =>  '수정',

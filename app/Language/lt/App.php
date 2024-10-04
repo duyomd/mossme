@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'Atnaujinti',
     'list'                  =>  'Sąrašas',
+    'back'                  =>  'Atgal',
 
     'btn_insert'                =>  'Įterpti',
     'btn_modify'                =>  'Keisti',

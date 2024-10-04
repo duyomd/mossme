@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'Update',
     'list'                  =>  'List',
+    'back'                  =>  'Back',
 
     'btn_insert'                =>  'Insert',
     'btn_modify'                =>  'Mofify',
@@ -481,6 +482,7 @@ return [
     'underscore'        =>  '_',
     'sequence'          =>  '#{0, number}',
     'ellipsis'          =>  '...',
+    'to_left'           =>  '👈',
     
     'video_url_home'    =>  'https://youtu.be/wbDNlTXatp4',
     'copyright_start'   =>  '&copy; Copyright ',

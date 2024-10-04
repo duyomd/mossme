@@ -250,6 +250,7 @@ return [
 
     'update'                =>  'Uppdatera',
     'list'                  =>  'Lista',
+    'back'                  =>  'Tillbaka',
 
     'btn_insert'            =>  'Infoga',
     'btn_modify'            =>  'Ändra',

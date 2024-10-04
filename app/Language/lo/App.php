@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'Update',
     'list'                  =>  'List',
+    'back'                  =>  'Back',
 
     'btn_insert'                =>  'Insert',
     'btn_modify'                =>  'Mofify',

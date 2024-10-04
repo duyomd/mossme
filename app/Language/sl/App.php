@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'Posodobi',
     'list'                  =>  'Seznam',
+    'back'                  =>  'Nazaj',
 
     'btn_insert'            =>  'Vstavi',
     'btn_modify'            =>  'Spremeni',

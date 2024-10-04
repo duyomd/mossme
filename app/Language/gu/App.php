@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'અપડેટ',
     'list'                  =>  'યાદી',
+    'back'                  =>  'પાછા',
 
     'btn_insert'                =>  'ઉમેરો',
     'btn_modify'                =>  'બદલો',

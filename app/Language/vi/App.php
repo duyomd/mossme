@@ -249,6 +249,7 @@ return [
 
     'update'                    =>  'Cập nhật',
     'list'                      =>  'Danh sách',
+    'back'                      =>  'Quay Lại',
 
     'btn_insert'                =>  'Tạo',
     'btn_modify'                =>  'Sửa',

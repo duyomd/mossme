@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'עדכן',
     'list'                  =>  'רשימה',
+    'back'                  =>  'חזרה',
 
     'btn_insert'                =>  'הוסף',
     'btn_modify'                =>  'שנה',

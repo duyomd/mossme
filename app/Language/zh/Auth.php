@@ -61,7 +61,7 @@ return [
     'magicTokenNotFound' => '無法驗證鏈接。',
     'magicLinkExpired'   => '抱歉，鏈接已過期。',
     'checkYourEmail'     => '檢查您的電子郵件！',
-    'magicLinkDetails'   => '我們剛剛向您發送了一封電子郵件，其中包含登入鏈接。該鏈接僅在 {0} 分鐘內有效。',
+    'magicLinkDetails'   => '我們剛剛向您發送了一封電子郵件，其中包含登入鏈接。如果您找不到，請檢查您的垃圾郵件文件夾。該鏈接僅在 {0} 分鐘內有效。',
     'magicLinkDisabled'  => '目前不允許使用 MagicLink。',
     'successLogout'      => '您已成功登出。',
     'backToLogin'        => '返回登入',
@@ -110,7 +110,7 @@ return [
 
     // Activate
     'emailActivateTitle'    => '電子郵件激活',
-    'emailActivateBody'     => '我們剛剛向您發送了一封電子郵件，其中包含確認您的電子郵件地址的代碼。複製該代碼並將其粘貼在下面。',
+    'emailActivateBody'     => '我們剛剛向您發送了一封電子郵件，其中包含確認您的電子郵件地址的代碼。如果您找不到，請檢查您的垃圾郵件文件夾。複製該代碼並將其粘貼在下面。',
     'emailActivateSubject'  => '您的激活代碼',
     'emailActivateMailBody' => '請使用以下代碼來激活您的帳戶並開始使用網站。',
     'invalidActivateToken'  => '代碼不正確。',

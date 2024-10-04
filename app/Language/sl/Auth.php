@@ -60,7 +60,7 @@ return [
     'magicTokenNotFound' => 'Povezave ni mogoče preveriti.',
     'magicLinkExpired'   => 'Opravičujemo se, povezava je potekla.',
     'checkYourEmail'     => 'Preverite svojo e-pošto!',
-    'magicLinkDetails'   => 'Pravkar smo vam poslali e-pošto s povezavo za prijavo. Veljavna je le {0} minut.',
+    'magicLinkDetails'   => 'Pravkar smo vam poslali e-pošto s povezavo za prijavo. Če ga ne najdete, preverite mapo z neželeno pošto. Veljavna je le {0} minut.',
     'magicLinkDisabled'  => 'Uporaba MagicLink trenutno ni dovoljena.',
     'successLogout'      => 'Uspešno ste se odjavili.',
     'backToLogin'        => 'Nazaj na prijavo',
@@ -109,7 +109,7 @@ return [
 
     // Aktivacija
     'emailActivateTitle'    => 'Aktivacija e-pošte',
-    'emailActivateBody'     => 'Pravkar smo vam poslali e-pošto s kodo za potrditev vašega e-poštnega naslova. Kodo kopirajte in prilepite spodaj.',
+    'emailActivateBody'     => 'Pravkar smo vam poslali e-pošto s kodo za potrditev vašega e-poštnega naslova. Če ga ne najdete, preverite mapo z neželeno pošto. Kodo kopirajte in prilepite spodaj.',
     'emailActivateSubject'  => 'Vaša aktivacijska koda',
     'emailActivateMailBody' => 'Uporabite kodo spodaj za aktivacijo svojega računa in začnite uporabljati spletno stran.',
     'invalidActivateToken'  => 'Koda je bila napačna.',

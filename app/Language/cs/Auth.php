@@ -60,7 +60,7 @@ return [
     'magicTokenNotFound' => 'Nelze ověřit odkaz.',
     'magicLinkExpired'   => 'Omlouváme se, odkaz vypršel.',
     'checkYourEmail'     => 'Zkontrolujte svůj e-mail!',
-    'magicLinkDetails'   => 'Právě jsme vám poslali e-mail s přihlašovacím odkazem. Platí pouze {0} minut.',
+    'magicLinkDetails'   => 'Právě jsme vám poslali e-mail s přihlašovacím odkazem. Pokud jej nemůžete najít, zkontrolujte složku Spam/Nevyžádaná pošta. Platí pouze {0} minut.',
     'magicLinkDisabled'  => 'Použití MagicLink je aktuálně zakázáno.',
     'successLogout'      => 'Úspěšně jste se odhlásili.',
     'backToLogin'        => 'Zpět na přihlášení',
@@ -109,7 +109,7 @@ return [
 
     // Activate
     'emailActivateTitle'    => 'Aktivace e-mailu',
-    'emailActivateBody'     => 'Právě jsme vám poslali e-mail s kódem pro potvrzení vaší e-mailové adresy. Zkopírujte tento kód a vložte jej níže.',
+    'emailActivateBody'     => 'Právě jsme vám poslali e-mail s kódem pro potvrzení vaší e-mailové adresy. Pokud jej nemůžete najít, zkontrolujte složku Spam/Nevyžádaná pošta. Zkopírujte tento kód a vložte jej níže.',
     'emailActivateSubject'  => 'Váš aktivace kód',
     'emailActivateMailBody' => 'Použijte níže uvedený kód k aktivaci svého účtu a začněte používat web.',
     'invalidActivateToken'  => 'Kód byl nesprávný.',

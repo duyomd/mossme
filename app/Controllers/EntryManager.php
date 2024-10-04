@@ -25,7 +25,7 @@ class EntryManager extends BaseController
         $data['roots']              = model(EntryModel::class)->getRootEntries(); 
         $data['sections']           = model(EntryModel::class)->getSections();
         $data['parentId']           = $parentId;
-        $data['grandpParentId']     = isset($parentId) ? 
+        $data['grandParentId']     = isset($parentId) ? 
                                         model(EntryModel::class)->getEntryOnly($parentId)->parent_id : null;
         $data['images']             = model(ImageUrlModel::class)->getImageUrls();
 

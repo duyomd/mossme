@@ -60,7 +60,7 @@ return [
     'magicTokenNotFound' => 'Bağlantı doğrulanamıyor.',
     'magicLinkExpired'   => 'Üzgünüm, bağlantının süresi doldu.',
     'checkYourEmail'     => 'E-postanı kontrol et!',
-    'magicLinkDetails'   => 'Az önce size içinde bir Giriş bağlantısı olan bir e-posta gönderdik. Bağlantı {0} dakika için geçerlidir.',
+    'magicLinkDetails'   => 'Az önce size içinde bir Giriş bağlantısı olan bir e-posta gönderdik. Bulamazsanız lütfen Spam/Gereksiz klasörünüzü kontrol edin. Bağlantı {0} dakika için geçerlidir.',
     'magicLinkDisabled'  => 'MagicLink kullanımı şu anda izin verilmiyor.',
     'successLogout'      => 'Başarıyla çıkış yaptınız.',
     'backToLogin'        => 'Girişe Geri Dön',
@@ -109,7 +109,7 @@ return [
 
     // Activate
     'emailActivateTitle'    => 'E-Posta Aktivasyonu',
-    'emailActivateBody'     => 'Az önce size e-posta adresinizi doğrulamak için bir kod içeren bir e-posta gönderdik. Bu kodu kopyalayın ve aşağıya yapıştırın.',
+    'emailActivateBody'     => 'Az önce size e-posta adresinizi doğrulamak için bir kod içeren bir e-posta gönderdik. Bulamazsanız lütfen Spam/Gereksiz klasörünüzü kontrol edin. Bu kodu kopyalayın ve aşağıya yapıştırın.',
     'emailActivateSubject'  => 'Aktivasyon kodunuz',
     'emailActivateMailBody' => 'Hesabınızı etkinleştirmek ve siteyi kullanmaya başlamak için lütfen aşağıdaki kodu kullanın.',
     'invalidActivateToken'  => 'Kod yanlıştı.',

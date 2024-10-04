@@ -249,6 +249,7 @@ return [
 
     'update'                =>  '更新',
     'list'                  =>  '列表',
+    'back'                  =>  '返回',
 
     'btn_insert'                =>  '插入',
     'btn_modify'                =>  '修改',

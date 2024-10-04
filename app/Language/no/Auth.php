@@ -60,7 +60,7 @@ return [
     'magicTokenNotFound' => 'Kan ikke verifisere lenken.',
     'magicLinkExpired'   => 'Beklager, lenken har utløpt.',
     'checkYourEmail'     => 'Sjekk e-posten din!',
-    'magicLinkDetails'   => 'Vi har nettopp sendt deg en e-post med en påloggingslenke. Den er kun gyldig i {0} minutter.',
+    'magicLinkDetails'   => 'Vi har nettopp sendt deg en e-post med en påloggingslenke. Hvis du ikke finner det, vennligst sjekk søppelpost-/spam-mappen din. Den er kun gyldig i {0} minutter.',
     'magicLinkDisabled'  => 'Bruk av MagicLink er for øyeblikket ikke tillatt.',
     'successLogout'      => 'Du har blitt logget ut.',
     'backToLogin'        => 'Tilbake til innlogging',
@@ -109,7 +109,7 @@ return [
 
     // Activate
     'emailActivateTitle'    => 'E-postaktivisering',
-    'emailActivateBody'     => 'Vi har nettopp sendt deg en e-post med en kode for å bekrefte e-postadressen din. Kopier den koden og lim den inn nedenfor.',
+    'emailActivateBody'     => 'Vi har nettopp sendt deg en e-post med en kode for å bekrefte e-postadressen din. Hvis du ikke finner det, vennligst sjekk søppelpost-/spam-mappen din. Kopier den koden og lim den inn nedenfor.',
     'emailActivateSubject'  => 'Din aktiveringskode',
     'emailActivateMailBody' => 'Bruk koden nedenfor for å aktivere kontoen din og begynne å bruke nettstedet.',
     'invalidActivateToken'  => 'Koden var feil.',

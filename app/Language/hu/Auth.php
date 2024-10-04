@@ -60,7 +60,7 @@ return [
     'magicTokenNotFound' => 'Nem sikerült ellenőrizni a linket.',
     'magicLinkExpired'   => 'Sajnáljuk, a link lejárt.',
     'checkYourEmail'     => 'Ellenőrizze az e-mailjét!',
-    'magicLinkDetails'   => 'Most elküldtünk Önnek egy e-mailt, amely tartalmaz egy bejelentkezési linket. A link csak {0} percig érvényes.',
+    'magicLinkDetails'   => 'Most elküldtünk Önnek egy e-mailt, amely tartalmaz egy bejelentkezési linket. Ha nem találja, ellenőrizze a Spam/Szemét mappát. A link csak {0} percig érvényes.',
     'magicLinkDisabled'  => 'A MagicLink használata jelenleg nem engedélyezett.',
     'successLogout'      => 'Sikeresen kijelentkezett.',
     'backToLogin'        => 'Vissza a bejelentkezéshez',
@@ -109,7 +109,7 @@ return [
 
     // Activate
     'emailActivateTitle'    => 'E-mail Aktiválás',
-    'emailActivateBody'     => 'Most elküldtünk Önnek egy e-mailt egy kóddal, amely megerősíti az e-mail címét. Másolja be a kódot az alábbi mezőbe.',
+    'emailActivateBody'     => 'Most elküldtünk Önnek egy e-mailt egy kóddal, amely megerősíti az e-mail címét. Ha nem találja, ellenőrizze a Spam/Szemét mappát. Másolja be a kódot az alábbi mezőbe.',
     'emailActivateSubject'  => 'Az Ön aktiváló kódja',
     'emailActivateMailBody' => 'Kérjük, használja az alábbi kódot a fiókja aktiválásához és az oldal használatának megkezdéséhez.',
     'invalidActivateToken'  => 'A kód helytelen volt.',

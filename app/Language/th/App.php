@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'อัปเดต',
     'list'                  =>  'รายการ',
+    'back'                  =>  'ย้อนกลับ',
 
     'btn_insert'                =>  'เพิ่ม',
     'btn_modify'                =>  'แก้ไข',

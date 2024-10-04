@@ -1025,6 +1025,25 @@ section {
   color: var(--mm-color-link);
 }
 
+.section-title h2 a.return {
+  color: white;
+  font-weight: bolder;
+}
+
+.section-title h2 a.return:hover {
+  display: inline-block;
+  animation: backForth 0.6s infinite alternate ease-in-out; 
+}
+
+@keyframes backForth {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(5px); /* Moves the link 10px to the right */
+  }
+}
+
 /*--------------------------------------------------------------
 # Legacy
 --------------------------------------------------------------*/

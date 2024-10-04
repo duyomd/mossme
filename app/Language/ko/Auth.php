@@ -61,7 +61,7 @@ return [
     'magicTokenNotFound' => '링크를 확인할 수 없습니다.',
     'magicLinkExpired'   => '죄송합니다. 링크가 만료되었습니다.',
     'checkYourEmail'     => '이메일을 확인하세요!',
-    'magicLinkDetails'   => '방금 로그인 링크가 포함된 이메일을 보냈습니다. 이 링크는 {0}분 동안만 유효합니다.',
+    'magicLinkDetails'   => '방금 로그인 링크가 포함된 이메일을 보냈습니다. 찾을 수 없으면 스팸/정크 메일 폴더를 확인해 보세요. 이 링크는 {0}분 동안만 유효합니다.',
     'magicLinkDisabled'  => 'MagicLink 사용이 현재 허용되지 않습니다.',
     'successLogout'      => '로그아웃되었습니다.',
     'backToLogin'        => '로그인으로 돌아가기',
@@ -110,7 +110,7 @@ return [
 
     // Activate
     'emailActivateTitle'    => '이메일 활성화',
-    'emailActivateBody'     => '이메일 주소를 확인하기 위해 코드가 포함된 이메일을 보냈습니다. 그 코드를 복사하여 아래에 붙여넣으십시오.',
+    'emailActivateBody'     => '이메일 주소를 확인하기 위해 코드가 포함된 이메일을 보냈습니다. 찾을 수 없으면 스팸/정크 메일 폴더를 확인해 보세요. 그 코드를 복사하여 아래에 붙여넣으십시오.',
     'emailActivateSubject'  => '귀하의 활성화 코드',
     'emailActivateMailBody' => '계정을 활성화하고 사이트를 사용 시작하려면 아래 코드를 사용하십시오.',
     'invalidActivateToken'  => '코드가 올바르지 않습니다.',

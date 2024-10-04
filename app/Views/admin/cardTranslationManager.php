@@ -133,8 +133,9 @@
           </div>
 
           <div id="title" class="section-title mt-5">
-            <h2><?=lang('App.list')?></h2>
-          </div>         
+            <h2><a href="/cards" class="return"><?=lang('App.back')?> <?=lang('App.to_left')?></a></h2>
+          </div>
+                   
           <div class="table-responsive ck-content"></div>
 
         </div>
@@ -155,7 +156,6 @@
         FIELDS_FETCH:               new Array('id', 'card_id', 'title', 'author', 'language_code', 'language', 
                                       'status', 'status_name', 'header_field', 'footer_field', 'content'),
         FIELDS_TABLE:               new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'id'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: ''},   
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'card_id'},
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'language'},
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'author'},
@@ -167,7 +167,6 @@
                                         CONTENT_FIELD_TRIM: 4},
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'status_name'},),
         FIELDS_TABLE_HEADER:        new Array('',
-                                      '<a href="' + backToCard() + '"><i class="bi bi-reply"></i></a>',
                                       '<?=lang('App.card_translation_label_card_id')?>', 
                                       '<?=lang('App.card_translation_label_language')?>', 
                                       '<?=lang('App.card_translation_label_author')?>', 
@@ -176,7 +175,6 @@
                                       '<?=lang('App.card_translation_label_footer')?>', 
                                       '<?=lang('App.translation_label_status')?>',),
         FIELDS_TABLE_ORDERBYS:      new Array('',
-                                        '',  
                                         '<?=implode(",", CardTranslationModel::HEADER_CARD_ID_ORDERBYS)?>',
                                         '<?=implode(",", CardTranslationModel::HEADER_LANGUAGE_ORDERBYS)?>',
                                         '<?=implode(",", CardTranslationModel::HEADER_AUTHOR_ORDERBYS)?>',
@@ -188,10 +186,6 @@
         noMove: true,                                      
       };
       initTable(option);
-    }
-
-    function backToCard(parentId) {
-      return '/cards';
     }
 
   </script>

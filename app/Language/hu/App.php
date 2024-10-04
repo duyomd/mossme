@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'Frissítés',
     'list'                  =>  'Lista',
+    'back'                  =>  'Vissza',
 
     'btn_insert'                =>  'Beszúrás',
     'btn_modify'                =>  'Módosítás',

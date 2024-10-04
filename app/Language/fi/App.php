@@ -249,6 +249,7 @@ return [
 
     'update'                =>  'Päivitä',
     'list'                  =>  'Luettelo',
+    'back'                  =>  'Takaisin',
 
     'btn_insert'                =>  'Lisää',
     'btn_modify'                =>  'Muokkaa',

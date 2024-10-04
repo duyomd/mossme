@@ -249,6 +249,7 @@ return [
     
     'update'                =>  'अपडेट करा',
     'list'                  =>  'यादी',
+    'back'                  =>  'परत',
     
     'btn_insert'                =>  'घाला',
     'btn_modify'                =>  'सुधारणा करा',
