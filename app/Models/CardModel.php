@@ -45,10 +45,33 @@ class CardModel extends BaseModel
         return $this->db->table('card')->countAll();
     }
 
-    public function getCard($id) 
+    public function getCard($id = null) 
     {
         if (!isset($id)) return null;
         return $this->where('id', $id)->first();
+    }
+
+    public function getCardSiblings($id = null) 
+    {
+        if (!isset($id)) return null;
+
+        $this->db->transStart();
+
+        $sql = 'SELECT *,
+                    (SELECT id FROM card c2 WHERE c2.sequence = c1.sequence - 1) AS previous_id,
+                    (SELECT id FROM card c2 WHERE c2.sequence = c1.sequence + 1) AS next_id    
+                FROM card c1
+                WHERE c1.id = :id:';
+
+        $query = $this->db->query($sql, [
+                                    'id'        => $id, 
+                                ]);
+        $card = $query->getRow(0, Card::class);
+        $query->freeResult();
+
+        $this->db->transComplete();
+        
+        return $card;
     }
 
     public function getCards($sort) 

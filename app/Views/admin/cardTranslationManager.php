@@ -30,7 +30,7 @@
 
               <div class="row">
 
-                <div class="col-md-3 mt-3 mt-md-0">
+                <div class="col-md-2 mt-3 mt-md-0">
                   <label for="card_id" class="form-label"><?=lang('App.card_translation_label_card_id')?></label>
                   <input type="text" class="form-control" disabled
                     value="<?=$cardId?>">
@@ -39,12 +39,17 @@
                 </div>
 
                 <div class="col-md-3 mt-3 mt-md-0">
+                  <label for="card_id" class="form-label"><?=lang('App.card_label_memo')?></label>
+                  <input type="text" class="form-control" disabled value="<?=$cardMemo?>">
+                </div>
+
+                <div class="col-md-3 mt-3 mt-md-0">
                   <label for="author" class="form-label"><?=lang('App.card_translation_label_author')?></label>
                   <input type="text" class="form-control" name="author" id="author"
                     value="<?= set_value('author') ?>">
                 </div>
 
-                <div class="col-md-3 mt-3 mt-md-0">
+                <div class="col-md-2 mt-3 mt-md-0">
                   <label for="language_code" class="form-label"><?=lang('App.card_translation_label_language')?></label>
                   <select class="form-select" name="language_code" id="language_code">
                     <?php foreach ($languages as $language) :?>
@@ -53,7 +58,7 @@
                   </select>
                 </div>
 
-                <div class="col-md-3 mt-3 mt-md-0">
+                <div class="col-md-2 mt-3 mt-md-0">
                   <label for="status" class="form-label"><?=lang('App.card_translation_label_status')?></label>
                   <select class="form-select" name="status" id="status">
                     <option value="0"><?=lang('App.card_translation_label_status_inactive')?></option>
@@ -98,18 +103,30 @@
               <input type="hidden" id="cardId" name="cardId" value="<?=$cardId?>">
               <?php include $path . 'templates/hiddenFormList.php';?>
               
-              <div class="mt-3 text-center text-md-end">
-                <button id="btn-delete" data-bs-target="#confirm-modal" data-bs-toggle="modal"
-                    type="button" class="me-2 hidden">
-                    <?=lang('App.btn_delete')?>
+              <div class="row mt-3">
+                <div class="col-md-6 d-none d-md-block text-md-start">
+                  <a href='/cardTranslations/conditions={"cardId":"<?=$previousCardId?>"}' 
+                    class="me-2 d-inline-block text-center <?php if(!isset($previousCardId)) echo ' disabled'; ?>" type="button">
+                    <i class="bi bi-chevron-double-<?= App\Helpers\Utilities::isRightToLeft() ? 'right' : 'left' ?>"></i>
+                  </a>
+                  <a href='/cardTranslations/conditions={"cardId":"<?=$nextCardId?>"}'
+                    class="d-inline-block text-center <?php if(!isset($nextCardId)) echo ' disabled'; ?>" type="button">
+                    <i class="bi bi-chevron-double-<?= App\Helpers\Utilities::isRightToLeft() ? 'left' : 'right' ?>"></i>
+                  </a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                  <button id="btn-delete" data-bs-target="#confirm-modal" data-bs-toggle="modal"
+                      type="button" class="me-2 hidden">
+                      <?=lang('App.btn_delete')?>
+                    </button>
+                  <button id="btn-modify" type="submit" class="me-2 hidden" onclick="onsubmitContent();setMode('modify');">
+                    <?=lang('App.btn_modify')?>
                   </button>
-                <button id="btn-modify" type="submit" class="me-2 hidden" onclick="onsubmitContent();setMode('modify');">
-                  <?=lang('App.btn_modify')?>
-                </button>
-                <button id="btn-insert" type="submit" onclick="onsubmitContent();setMode('insert');">
-                  <?=lang('App.btn_insert')?>
-                </button>
-                <button id="hdn-delete" type="submit" class="hidden" onclick="setMode('delete')"></button>
+                  <button id="btn-insert" type="submit" onclick="onsubmitContent();setMode('insert');">
+                    <?=lang('App.btn_insert')?>
+                  </button>
+                  <button id="hdn-delete" type="submit" class="hidden" onclick="setMode('delete')"></button>
+                </div>
               </div>
               
             </form>

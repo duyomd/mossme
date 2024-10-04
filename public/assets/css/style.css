@@ -137,6 +137,7 @@
   --mm-color-bg-light: #e5e7eb;
   --mm-color-font: #000;
   --mm-color-font-detail: #555555;
+  --mm-color-input-disabled: light-dark;
   --mm-color-border-subtle: rgba(0, 0, 0, 0.2);
   --mm-color-menu-description: rgba(0, 0, 0, 0.5);
   --mm-color-sati-box-shadow: rgba(255, 255, 255, 0.1);

@@ -111,10 +111,11 @@ class CardTranslationModel extends BaseModel
         if (!isset($cardId)) return null;
 
         $sql = 
-        'SELECT t.*, l.language AS language,
+        'SELECT t.*, c.memo, l.language AS language,
             CASE WHEN t.status = :status_inactive: THEN "' . lang('App.card_translation_label_status_inactive') . '"' .
                 ' ELSE "' . lang('App.card_translation_label_status_active') . '" END AS status_name ' .
         'FROM card_translation t LEFT JOIN language l ON t.language_code = l.code
+            JOIN card c ON c.id = t.card_id
          WHERE card_id = :card_id: ' .
         $this->getOrderBySql($sort) .
         $this->getLimitSql($sort);
