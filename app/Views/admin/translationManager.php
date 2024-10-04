@@ -104,18 +104,30 @@
               <input type="hidden" id="entryId" name="entryId" value="<?=$entryId?>">
               <?php include $path . 'templates/hiddenFormList.php';?>
               
-              <div class="mt-3 text-center text-md-end">
-                <button id="btn-delete" data-bs-target="#confirm-modal" data-bs-toggle="modal"
-                    type="button" class="me-2 hidden">
-                    <?=lang('App.btn_delete')?>
+              <div class="row mt-3">
+                <div class="col-md-6 d-none d-md-block text-md-start">
+                  <a href='/translations/conditions={"entryId":"<?=$previousEntryId?>"}' 
+                    class="me-2 d-inline-block text-center <?php if(!isset($previousEntryId)) echo ' disabled'; ?>" type="button">
+                    <i class="bi bi-chevron-double-<?= App\Helpers\Utilities::isRightToLeft() ? 'right' : 'left' ?>"></i>
+                  </a>
+                  <a href='/translations/conditions={"entryId":"<?=$nextEntryId?>"}'
+                    class="d-inline-block text-center <?php if(!isset($nextEntryId)) echo ' disabled'; ?>" type="button">
+                    <i class="bi bi-chevron-double-<?= App\Helpers\Utilities::isRightToLeft() ? 'left' : 'right' ?>"></i>
+                  </a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                  <button id="btn-delete" data-bs-target="#confirm-modal" data-bs-toggle="modal"
+                      type="button" class="me-2 hidden">
+                      <?=lang('App.btn_delete')?>
                   </button>
-                <button id="btn-modify" type="submit" class="me-2 hidden" onclick="onsubmitContent();setMode('modify');">
-                  <?=lang('App.btn_modify')?>
-                </button>
-                <button id="btn-insert" type="submit" onclick="onsubmitContent();setMode('insert');">
-                  <?=lang('App.btn_insert')?>
-                </button>
-                <button id="hdn-delete" type="submit" class="hidden" onclick="setMode('delete')"></button>
+                  <button id="btn-modify" type="submit" class="me-2 hidden" onclick="onsubmitContent();setMode('modify');">
+                    <?=lang('App.btn_modify')?>
+                  </button>
+                  <button id="btn-insert" type="submit" onclick="onsubmitContent();setMode('insert');">
+                    <?=lang('App.btn_insert')?>
+                  </button>
+                  <button id="hdn-delete" type="submit" class="hidden" onclick="setMode('delete')"></button>
+                </div>
               </div>
               
             </form>

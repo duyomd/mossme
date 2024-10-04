@@ -2183,6 +2183,32 @@ section {
   background: var(--mm-color-link-subtle);
 }
 
+.ajax-form button:hover {
+  background: var(--mm-color-link-subtle);
+}
+
+.ajax-form a[type=button] {
+  background: var(--mm-color-link);
+  border: 2px solid var(--mm-color-link);
+  padding: 10px 25px;
+  color: var(--mm-color-font-button);
+  transition: 0.4s;
+  border-radius: 50px;
+  height: 44px;
+  width: 77px;
+  font-size: 14px;
+}
+
+.ajax-form a[type=button].disabled {
+  color: var(--mm-color-font-button) !important;
+  border: 2px solid var(--mm-color-link);
+}
+
+.ajax-form a[type=button]:hover {
+  background: var(--mm-color-link-subtle);
+  border-color: var(--mm-color-link-subtle);
+}
+
 @-webkit-keyframes animate-loading {
   0% {
     transform: rotate(0deg);

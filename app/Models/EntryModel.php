@@ -276,10 +276,38 @@ class EntryModel extends BaseModel
         return $this->where('root_id', null)->findAll();
     }
 
+    /**
+     * query entry + previous/next entries id (same parent, no extra info)
+     *  regardless of <status> or <translation's availability>
+     */
+    public function getSiblingsOnly($id = null) 
+    {
+        if (!isset($id)) return null;
+
+        $this->db->transStart();
+
+        $sql = 'SELECT *,
+                    (SELECT id FROM entry e2 WHERE e2.parent_id = e1.parent_id AND e2.sequence = e1.sequence - 1) AS previous_id,
+                    (SELECT id FROM entry e2 WHERE e2.parent_id = e1.parent_id AND e2.sequence = e1.sequence + 1) AS next_id   
+                FROM entry e1
+                WHERE e1.id = :id:';
+
+        $query = $this->db->query($sql, [
+                                    'id'        => $id, 
+                                ]);
+        $entry = $query->getRow(0, Entry::class);
+        $query->freeResult();
+
+        $this->db->transComplete();
+        
+        return $entry;
+    }
+
+
     /******************* Private methods *************************/
 
     /**
-     * query entry + previous/next entries id
+     * query entry + previous/next entries id (in different parents also)
      * ?? theoretically, inactive parent but active grandparent ??
      */
     private function getEntryAndSiblings($id = null) 
