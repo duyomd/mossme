@@ -21,12 +21,14 @@ class EntryManager extends BaseController
         $data = $this->loadList(null, '-1', '-1', $conditions);
         $data['responseJsonList']   = $this->responseJsonList($data);
 
+        $parentEntry = model(EntryModel::class)->getEntryOnly($parentId);
+
         // TODO: necessarily reload after edit entry?
         $data['roots']              = model(EntryModel::class)->getRootEntries(); 
         $data['sections']           = model(EntryModel::class)->getSections();
         $data['parentId']           = $parentId;
-        $data['grandParentId']     = isset($parentId) ? 
-                                        model(EntryModel::class)->getEntryOnly($parentId)->parent_id : null;
+        $data['grandParentId']      = $parentEntry == null ? null : $parentEntry->parent_id;
+        $data['rootId']             = $parentEntry == null ? null : $parentEntry->root_id;
         $data['images']             = model(ImageUrlModel::class)->getImageUrls();
 
         helper('form');

@@ -1263,6 +1263,10 @@ section {
   padding-inline: 0 !important;
 }
 
+.article .ck-content blockquote p {
+  margin-inline-start: 40px;
+}
+
 @media (min-width: 1920px) {
   .article {
     background-attachment: fixed;

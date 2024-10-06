@@ -144,8 +144,9 @@ class EntryModel extends BaseModel
         return $this->encodeData($results);
     }
 
-    public function getEntryOnly($id)
+    public function getEntryOnly($id = null)
     {
+        if (!isset($id)) return null;
         return $this->where('id', $id)->first();
     }
 

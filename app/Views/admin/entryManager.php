@@ -379,6 +379,10 @@
       window.location = url;      
     }
 
+    function extraCallback(isLoadData) {
+      fillAncestors();
+    }
+
     /**** Autofill ****/
 
     const idEle = document.querySelector('#id');
@@ -427,9 +431,15 @@
       }
     }
 
+    function fillAncestors() {
+      document.querySelector('#root_id').value = '<?=$rootId?>';
+      document.querySelector('#parent_id').value = '<?=$parentId?>';
+    }
+
     function autofillForm() {
       autofillRef();
       autofillSerials();
+      autofillAncestors();
     }
 
     function autofillRef() {
@@ -441,7 +451,9 @@
       addEvent(idEle, 'change', fillSerials);
     }
 
-    
+    function autofillAncestors() {
+      fillAncestors();
+    }
 
   </script>
 
