@@ -215,3 +215,13 @@ function scrollToSectionWorkaround() {
     window.addEventListener("load", scrollToSection);
   }
 }
+
+/**
+   * Check if a string starts with any elements in a given array of string
+   * @param {*} str 
+   * @param {*} arr 
+   * @returns 
+   */
+function startsWithAnyOfArr(str, arr) {
+  return arr.some(prefix => str.startsWith(prefix));
+}

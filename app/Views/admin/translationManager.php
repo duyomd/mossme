@@ -62,8 +62,8 @@
                 <div class="col-md-2 mt-3 mt-md-0">
                   <label for="status" class="form-label"><?=lang('App.translation_label_status')?></label>
                   <select class="form-select" name="status" id="status">
-                    <option value="0"><?=lang('App.translation_label_status_inactive')?></option>
                     <option value="1"><?=lang('App.translation_label_status_active')?></option>
+                    <option value="0"><?=lang('App.translation_label_status_inactive')?></option>                    
                   </select>
                 </div>
 

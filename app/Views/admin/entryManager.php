@@ -189,8 +189,8 @@
                 <div class="col-md-2 mt-3 mt-md-0">
                   <label for="status" class="form-label"><?=lang('App.entry_label_status')?></label>
                   <select class="form-select" name="status" id="status">
-                    <option value="0"><?=lang('App.users_inactive')?></option>
                     <option value="1"><?=lang('App.users_active')?></option>
+                    <option value="0"><?=lang('App.users_inactive')?></option>                    
                   </select>
                 </div>
 
@@ -347,6 +347,7 @@
         noMove: false,                                      
       };
       initTable(option);
+      autofillForm();
     }
 
     function setModalContent(title, url) {
@@ -377,6 +378,70 @@
       }
       window.location = url;      
     }
+
+    /**** Autofill ****/
+
+    const idEle = document.querySelector('#id');
+    const refNameEle = document.querySelector('#reference_source');
+    const refUrlEle = document.querySelector('#reference_url');
+    const enumEle = document.querySelector('#enumeration');
+    const seriEle = document.querySelector('#serials');
+    
+    function fillReferenceUrl() {
+      // For suttacentral.net only (atm)
+      if (refNameEle.value.toLowerCase() !== 'sutta central') return;
+
+      let idVal = idEle.value;
+      if (idVal == null || idVal.length < 2) return;
+
+      var checkPrefixes = ['sn', 'an'];
+      if (startsWithAnyOfArr(idVal, checkPrefixes)) {
+        if (idVal.length > 3 && idVal.indexOf('.') >= 2 && !idVal.endsWith('.') && /^\d+$/.test(idVal.slice(idVal.indexOf('.') + 1))) {
+          refUrlEle.value = 'https://suttacentral.net/' + idVal + '/en/sujato?lang=en&layout=linebyline&reference=main&notes=sidenotes&highlight=false&script=latin';
+          enumEle.value = idVal.toUpperCase();
+          return;
+        }
+      }
+
+      checkPrefixes = ['dn', 'mn'];
+      if (startsWithAnyOfArr(idVal, checkPrefixes)) {
+        if (idVal.length > 2 && /^\d+$/.test(idVal.slice(2))) {
+          refUrlEle.value = 'https://suttacentral.net/' + idVal + '/en/sujato?lang=en&layout=linebyline&reference=main&notes=sidenotes&highlight=false&script=latin';
+          enumEle.value = idVal.toUpperCase();
+          return;
+        }
+      }
+
+      // TODO: other texts (later)...
+      checkPrefixes = ['da', 'ma'];
+
+    }
+
+    function fillSerials() {
+      let idVal = idEle.value;
+      if (idVal == null || idVal.length < 2) return;
+      if (seriEle.value.length >= idVal.length) {        
+        seriEle.value = idVal + seriEle.value.slice(idVal.length);
+      } else {
+        seriEle.value = idVal;
+      }
+    }
+
+    function autofillForm() {
+      autofillRef();
+      autofillSerials();
+    }
+
+    function autofillRef() {
+      addEvent(idEle, 'change', fillReferenceUrl);
+      addEvent(refNameEle, 'change', fillReferenceUrl);
+    }
+
+    function autofillSerials() {
+      addEvent(idEle, 'change', fillSerials);
+    }
+
+    
 
   </script>
 
