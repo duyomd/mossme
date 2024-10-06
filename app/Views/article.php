@@ -13,7 +13,14 @@
           <?php $count = count($entry->translationsParents); ?>
           <h1 class="text-lg-start <?php if ($count > 2) echo 'text-start'; else echo 'text-center'; ?>">
             <span><a href="/article/<?= $entry->translationsParents[0]->entry_id ?>">
-            <?= $entry->translationsParents[0]->title ?></a></span></h1>
+            <?= $entry->translationsParents[0]->title ?></a></span>
+            <?php if ($count == 1) :?>
+              <a class="<?= (auth()->loggedIn() && auth()->user()->inGroup('dataoperator', 'superadmin') ? '' : 'hidden') ?> ms-btns-navi"
+                href='/translations/conditions={"entryId":"<?=$entry->id?>"}'>
+                <i id="icon-bilingual" class="bi bi-pencil-square small" ></i>
+              </a>
+            <?php endif ?>
+          </h1>
           <?php if ($count > 2) : ?>
             <ul class="content-list content-list-parents pt-3 ps-2 ps-lg-4">
               <?php for ($i = 1; $i < $count - 1; $i++) : ?>
@@ -27,10 +34,13 @@
           <?php endif ?>
           
           <h2 class="article-name">
-            <?php if ($count > 1) echo $entry->displayEnumTitle; else echo '&nbsp;'; ?>
-            <a class="<?= (auth()->loggedIn() && auth()->user()->inGroup('dataoperator', 'superadmin') ? '' : 'hidden') ?> ms-btns-navi"
-               href='/translations/conditions={"entryId":"<?=$entry->id?>"}'>
-               <i id="icon-bilingual" class="bi bi-pencil-square"></i></a>
+            <?php if ($count > 1) :?>
+              <?=$entry->displayEnumTitle?>
+              <a class="<?= (auth()->loggedIn() && auth()->user()->inGroup('dataoperator', 'superadmin') ? '' : 'hidden') ?> ms-btns-navi"
+                href='/translations/conditions={"entryId":"<?=$entry->id?>"}'>
+                <i id="icon-bilingual" class="bi bi-pencil-square"></i>
+              </a>
+            <?php endif ?>
           </h2>
           
           <div class="btns">
