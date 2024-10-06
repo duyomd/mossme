@@ -36,11 +36,14 @@ class Article extends BaseController
         $entry->translationsParents = $translationModel->getParents($entry, $user_language_code);
 
         // set display title
-        $entryModel->displayTitle($entry, $user_language_code);
+        // $entryModel->displayTitle($entry, $user_language_code);
 
         // commentary list
         $entry->commentaries = model(CommentaryModel::class)
                                 ->getCommentaries($entry, $user_language_code, $forward == 'commentary' ? $f_id : null);
+        
+        // check whether this entry can group all its children to display in one long page
+        $entry->isChildrenGroupable = $translationModel->isChildrenGroupable($entry->id);
 
         $data = [
             'displayHeader' => $entry->displayEnumTitle,

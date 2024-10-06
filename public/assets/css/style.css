@@ -1025,6 +1025,10 @@ section {
   color: var(--mm-color-link);
 }
 
+.section-title p.chapter {
+  -webkit-text-stroke: 0.5px goldenrod;
+}
+
 .section-title h2 a.return {
   color: white;
   font-weight: bolder;

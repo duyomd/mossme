@@ -313,10 +313,10 @@
                       </a></li>
                     <?php endforeach ?>
                     <!-- Group all items' content in 1 page -->
-                    <?php if ($entry->translationsChildren[0]->type == App\Helpers\Utilities::TYPE_FILE) : ?>
+                    <?php if ($entry->isChildrenGroupable) : ?>
                       <br/>
                       <li style="list-style-type: disclosure-closed;"><a href="/article-group/<?=$entry->id?>">
-                        <span><?= lang('App.article_group_1') . $entry->displayTitle ?></span>
+                        <span><?= lang('App.article_group_1') . $entry->displayEnumTitle ?></span>
                       </a></li>
                     <?php endif ?>  
                   </ul>
@@ -508,17 +508,17 @@
         }
         if (ti) {
           ti.innerHTML = decodeURIComponent(item.title);
-          ti.setAttribute("lang", item.lang);
+          // ti.setAttribute("lang", item.lang);
         }
         co.innerHTML = decodeURIComponent(item.content);
-        co.setAttribute("lang", item.lang);
+        // co.setAttribute("lang", item.lang);
         au.innerHTML = decodeURIComponent(item.author);
-        au.setAttribute("lang", item.lang);
+        // au.setAttribute("lang", item.lang);
       }
 
       function initContent(_title, _content, _author, _al, _title_comm, _content_comm, _author_comm, _cl) {
-        var tran = {title: _title, content: _content, author: _author, lang: _al};
-        var comm = {content: _content_comm, author: _author_comm, lang: _cl};
+        var tran = {title: _title, content: _content, author: _author/*, lang: _al*/};
+        var comm = {content: _content_comm, author: _author_comm/*, lang: _cl*/};
         if (_author) {
           reloadContent(1, tran);
           reloadContent(2, tran);

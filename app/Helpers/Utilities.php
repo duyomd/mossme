@@ -7,7 +7,11 @@ class Utilities
     public const TYPE_FOLDER    = "0";
     public const TYPE_FILE      = "1";
 
+    public const STATUS_INACTIVE   = 0;
     public const STATUS_ACTIVE     = 1;
+    
+    public const CHILDREN_UNGROUPABLE   = 0;
+    public const CHILDREN_GROUPABLE     = 1;
 
     public const SERIALS_DELIMETER  = " ";
     public const URL_ARTICLE        = "/article/";

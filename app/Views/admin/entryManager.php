@@ -98,7 +98,47 @@
 
               <div class="row mt-3">                
 
-                <div class="col-md-2 mt-3 mt-md-0">
+                <div class="col-md-2 form-group mt-3 mt-md-0">
+                  <label for="tags" class="form-label"><?=lang('App.entry_label_tags')?></label>
+                  <input type="text" class="form-control" name="tags" id="tags"
+                    value="<?= set_value('tags') ?>">
+                </div>
+
+                <div class="col-md-2 form-group mt-3 mt-md-0">
+                  <label for="video_url" class="form-label"><?=lang('App.entry_label_video_url')?></label>
+                  <input type="text" class="form-control" name="video_url" id="video_url"
+                    value="<?= set_value('video_url') ?>">
+                </div>
+                
+                <div class="col-md-2 form-group mt-3 mt-md-0">
+                  <label for="reference_source" class="form-label"><?=lang('App.entry_label_reference_source')?></label>
+                  <input type="text" class="form-control" name="reference_source" id="reference_source"
+                    value="<?= set_value('reference_source') ?>">
+                </div>
+
+                <div class="col-md-2 form-group mt-3 mt-md-0">
+                  <label for="reference_url" class="form-label"><?=lang('App.entry_label_reference_url')?></label>
+                  <input type="text" class="form-control" name="reference_url" id="reference_url"
+                    value="<?= set_value('reference_url') ?>">
+                </div>
+
+                <div class="col-md-2 form-group mt-3 mt-md-0">
+                  <label for="sequence" class="form-label"><?=lang('App.label_sequence')?></label>
+                  <input type="text" class="form-control" name="sequence" id="sequence"
+                    value="<?= set_value('sequence') ?>">
+                </div>
+
+                <div class="col-md-2 form-group mt-3 mt-md-0">
+                  <label for="enumeration" class="form-label"><?=lang('App.entry_label_enumeration')?></label>
+                  <input type="text" class="form-control" name="enumeration" id="enumeration"
+                    value="<?= set_value('enumeration') ?>">
+                </div>
+
+              </div>
+
+              <div class="row  mt-3">
+
+              <div class="col-md-2 mt-3 mt-md-0">
                   <label for="image_id_header" class="form-label"><?=lang('App.entry_label_image_header')?></label>
                   <select class="form-select" name="image_id_header" id="image_id_header">
                     <option value=""></option>
@@ -139,51 +179,19 @@
                 </div>
 
                 <div class="col-md-2 mt-3 mt-md-0">
+                  <label for="children_groupable" class="form-label"><?=lang('App.entry_label_children_grouping')?></label>
+                  <select class="form-select" name="children_groupable" id="children_groupable">
+                    <option value="0"><?=lang('App.entry_label_cg_ungroupable')?></option>
+                    <option value="1"><?=lang('App.entry_label_cg_groupable')?></option>
+                  </select>
+                </div>
+
+                <div class="col-md-2 mt-3 mt-md-0">
                   <label for="status" class="form-label"><?=lang('App.entry_label_status')?></label>
                   <select class="form-select" name="status" id="status">
                     <option value="0"><?=lang('App.users_inactive')?></option>
                     <option value="1"><?=lang('App.users_active')?></option>
                   </select>
-                </div>
-
-                <div class="col-md-2 form-group mt-3 mt-md-0">
-                  <label for="sequence" class="form-label"><?=lang('App.label_sequence')?></label>
-                  <input type="text" class="form-control" name="sequence" id="sequence"
-                    value="<?= set_value('sequence') ?>">
-                </div>
-
-              </div>
-
-              <div class="row  mt-3">
-
-                <div class="col-md-2 form-group mt-3 mt-md-0">
-                  <label for="enumeration" class="form-label"><?=lang('App.entry_label_enumeration')?></label>
-                  <input type="text" class="form-control" name="enumeration" id="enumeration"
-                    value="<?= set_value('enumeration') ?>">
-                </div>
-
-                <div class="col-md-2 form-group mt-3 mt-md-0">
-                  <label for="tags" class="form-label"><?=lang('App.entry_label_tags')?></label>
-                  <input type="text" class="form-control" name="tags" id="tags"
-                    value="<?= set_value('tags') ?>">
-                </div>
-
-                <div class="col-md-2 form-group mt-3 mt-md-0">
-                  <label for="video_url" class="form-label"><?=lang('App.entry_label_video_url')?></label>
-                  <input type="text" class="form-control" name="video_url" id="video_url"
-                    value="<?= set_value('video_url') ?>">
-                </div>
-                
-                <div class="col-md-2 form-group mt-3 mt-md-0">
-                  <label for="reference_source" class="form-label"><?=lang('App.entry_label_reference_source')?></label>
-                  <input type="text" class="form-control" name="reference_source" id="reference_source"
-                    value="<?= set_value('reference_source') ?>">
-                </div>
-
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <label for="reference_url" class="form-label"><?=lang('App.entry_label_reference_url')?></label>
-                  <input type="text" class="form-control" name="reference_url" id="reference_url"
-                    value="<?= set_value('reference_url') ?>">
                 </div>
 
               </div>
@@ -241,7 +249,8 @@
                                       'image_id_header', 'image_id_content', 'image_id_commentary', 'image_id_footer', 
                                       'image_url_header', 'image_url_content', 'image_url_commentary', 'image_url_footer', 
                                       'image_name_header', 'image_name_content', 'image_name_commentary', 'image_name_footer', 
-                                      'reference_source', 'reference_url', 'video_url', 'sequence', 'tags', 'status', 'status_name', 'created_by'),
+                                      'reference_source', 'reference_url', 'video_url', 'sequence', 'tags', 
+                                      'children_groupable', 'children_groupable_name', 'status', 'status_name', 'created_by'),
         FIELDS_TABLE:               new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'id'}, 
                                       {CONTENT_TYPE: CONTENT_TYPES.LINK, CONTENT_FIELD: 'item.type == 1 ? "" : "<i class=\'folder\'></i>";',
                                         CONTENT_FIELD_EXTRA: getFolderUrl('item.id')},  
@@ -262,6 +271,7 @@
                                         CONTENT_FIELD_STICKY: 'true',
                                         CONTENT_FIELD_TRIM: 3},
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'enumeration'},
+                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'children_groupable'},
 
                                       {CONTENT_TYPE: CONTENT_TYPES.LINK, CONTENT_FIELD: 'item.image_name_header',
                                         CONTENT_FIELD_EXTRA_HASH: '"content-modal"',
@@ -300,6 +310,7 @@
                                       '<?=lang('App.entry_label_id')?>',                                      
                                       '<?=lang('App.entry_label_serials')?>',
                                       '<?=lang('App.entry_label_enumeration')?>',
+                                      '<?=lang('App.entry_label_children_grouping')?>',
                                       '<?=lang('App.entry_label_image_header')?>',
                                       '<?=lang('App.entry_label_image_content')?>',
                                       '<?=lang('App.entry_label_image_commentary')?>',
@@ -319,6 +330,7 @@
                                         '<?=implode(",", EntryModel::HEADER_ID_ORDERBYS)?>',                                        
                                         '<?=implode(",", EntryModel::HEADER_SERIALS_ORDERBYS)?>',
                                         '<?=implode(",", EntryModel::HEADER_ENUMERATION_ORDERBYS)?>',
+                                        '<?=implode(",", EntryModel::HEADER_CHILDREN_GROUPABLE_ORDERBYS)?>',
                                         '<?=implode(",", EntryModel::HEADER_IMAGE_HEADER_ORDERBYS)?>',
                                         '<?=implode(",", EntryModel::HEADER_IMAGE_CONTENT_ORDERBYS)?>',
                                         '<?=implode(",", EntryModel::HEADER_IMAGE_COMMENTARY_ORDERBYS)?>',

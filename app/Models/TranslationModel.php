@@ -172,6 +172,11 @@ class TranslationModel extends BaseModel
         return $this->db->table('translation')->where('entry_id', $entryId)->countAllResults();
     }
 
+    public function isChildrenGroupable($entryId = null)
+    {
+        return $this->getGroupableUpperNodeCount($entryId) > 0;
+    }
+
     /******************* Private methods *************************/
 
     /**
@@ -358,6 +363,36 @@ class TranslationModel extends BaseModel
         $this->db->transComplete();
 
         return $parents_trans;
+    }
+
+    /**
+     * get groupable upper entry count (including self)
+     *  to check if this entry can group its children
+     */
+    private function getGroupableUpperNodeCount($entry_id = null)
+    {
+        if (!isset($entry_id)) return 0;
+
+        $sql = 
+        'SELECT COUNT(*) AS count
+        FROM (
+            SELECT @r AS _id, (SELECT @r := parent_id FROM entry WHERE id = _id) AS parent_id
+            FROM (SELECT @r := :entry_id: COLLATE utf8mb4_unicode_ci, @l := 0) vars JOIN entry
+            WHERE @r IS NOT NULL 
+        ) temp JOIN entry e ON temp._id = e.id
+        WHERE children_groupable = :children_groupable:';
+      
+        $this->db->transStart();    
+        $query = $this->db->query($sql, [
+                                    'children_groupable'    => Utilities::CHILDREN_GROUPABLE,
+                                    'entry_id'              => $entry_id,
+                                ]);
+        $results = $query->getResult();
+        $count = $query->getRow(0);
+
+        $this->db->transComplete();
+
+        return $count->count;    
     }
 
     /**
@@ -655,6 +690,15 @@ class TranslationModel extends BaseModel
         // if couldnt find matching language then pick the last language in dropdown
         if (!$firstDisplay) {
             $dropdown[1]->default = true;
+        }
+
+        // get main entry's necessary data to display
+        foreach ($dropdown as $row) {
+            if ($row->default) {
+                $entry->displayTitle = $row->title;
+                $entry->displayEnumTitle = $row->enum_title;
+                $entry->displayContent = $row->content;
+            }
         }
 
         return $dropdown;

@@ -1,4 +1,5 @@
 <!-- End Header -->
+<?php use App\Helpers\Utilities; ?>
 
 <div class="ajax-loading"><div><?=lang('App.loading')?></div></div>  
 
@@ -31,7 +32,7 @@
           <div class="btns">
             <a href="/article/<?=$entry->previous_id?>" class="btn-scroll animated fadeInUp scrollto
               <?php if(!isset($entry->previous_id)) echo ' disabled'; ?>">
-              <i class="bi bi-chevron-double-<?= App\Helpers\Utilities::isRightToLeft() ? 'right' : 'left' ?>"></i>
+              <i class="bi bi-chevron-double-<?= Utilities::isRightToLeft() ? 'right' : 'left' ?>"></i>
             </a>
 
             <a id="btn-bilingual" class="btn-scroll animated fadeInUp scrollto ms-btns-navi inactive"
@@ -40,13 +41,13 @@
               
             <a href="/article/<?=$entry->next_id?>" class="btn-scroll animated fadeInUp scrollto ms-btns-navi
               <?php if(!isset($entry->next_id)) echo ' disabled'; ?>">
-              <i class="bi bi-chevron-double-<?= App\Helpers\Utilities::isRightToLeft() ? 'left' : 'right' ?>"></i>
+              <i class="bi bi-chevron-double-<?= Utilities::isRightToLeft() ? 'left' : 'right' ?>"></i>
             </a>
           </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-          <a href="<?php $video = $entry->video_url; echo (!App\Helpers\Utilities::isNullOrBlank($video) ? $video : '#article'); ?>" 
-            class="<?= !App\Helpers\Utilities::isNullOrBlank($video) ? 'glightbox ' : '' ?>play-btn"></a> 
+          <a href="<?php $video = $entry->video_url; echo (!Utilities::isNullOrBlank($video) ? $video : '#article'); ?>" 
+            class="<?= !Utilities::isNullOrBlank($video) ? 'glightbox ' : '' ?>play-btn"></a> 
         </div>
 
       </div>
@@ -70,6 +71,10 @@
 
           <!-- Row start -->
           <div class="row <?= $p > 0 ? 'mt-5' : ''?>">
+
+            <?php if(!Utilities::isNullOrBlank($child->chapter_title)) :?>
+              <div class="section-title text-center"><p class="chapter"><?=$child->chapter_title?></p></div>
+            <?php endif ?>
 
             <!-- COL1 start -->
             <div id="col-main" class="">
@@ -218,7 +223,7 @@
             <!-- COL2 end -->
             
             <!-- Parallel articles -->
-            <?php $parallelsCount = App\Helpers\Utilities::isNullOrBlank($child->parallels) ? 0 : count(explode(",", $child->parallels));
+            <?php $parallelsCount = Utilities::isNullOrBlank($child->parallels) ? 0 : count(explode(",", $child->parallels));
               if ($parallelsCount > 0) :?>
               <div class="parallels row mt-5 text-center">
                 <div>
@@ -383,12 +388,12 @@
       }
       if (ti) {
         ti.innerHTML = item.title;
-        ti.setAttribute("lang", item.lang); // unnecessary though?
+        // ti.setAttribute("lang", item.lang); // unnecessary though?
       }
       co.innerHTML = item.content;
-      co.setAttribute("lang", item.lang);
+      // co.setAttribute("lang", item.lang);
       au.innerHTML = item.author;
-      au.setAttribute("lang", item.lang);
+      // au.setAttribute("lang", item.lang);
     }
 
     function initContent(items) {
@@ -432,12 +437,13 @@
             break;
           }
         }
-        $title = ''; $content = ''; $author = ''; $lang = 'auto';
+        $title = ''; $content = ''; $author = ''; //$lang = 'auto';
         if (isset($defaultTran)) {
           $item = (object)['title'    =>  $defaultTran->enum_title,
                            'content'  =>  $defaultTran->content,
                            'author'   =>  $defaultTran->author,
-                           'lang'     =>  $defaultTran->language_code,];
+                          //  'lang'     =>  $defaultTran->language_code,
+                          ];
           array_push($items, $item);
         }
       }      

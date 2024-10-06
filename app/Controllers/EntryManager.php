@@ -107,6 +107,7 @@ class EntryManager extends BaseController
                     'video_url'             => Utilities::trimInput($this->request->getVar('video_url')),
                     'reference_source'      => Utilities::trimInput($this->request->getVar('reference_source')),
                     'reference_url'         => Utilities::trimInput($this->request->getVar('reference_url')),
+                    'children_groupable'    => $this->request->getVar('children_groupable'),
             ]);
 
             // root_id & parent_id relation check
@@ -196,6 +197,7 @@ class EntryManager extends BaseController
             $jsonEntry->reference_url = $entry->reference_url;
             $jsonEntry->video_url = $entry->video_url;
             $jsonEntry->tags = $entry->tags;
+            $jsonEntry->children_groupable = $entry->children_groupable;
             $jsonEntry->status = $entry->status;
             $jsonEntry->status_name = $entry->status_name;
             $jsonEntry->created_by = $entry->created_by;

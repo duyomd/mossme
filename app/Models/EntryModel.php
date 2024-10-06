@@ -9,72 +9,75 @@ use App\Helpers\Utilities;
 
 class EntryModel extends BaseModel
 {
-    public const DEFAULT_ORDERBYS                   = array('section_sequence', 'sequence');
-    public const DEFAULT_SORTORDERS                 = array('ASC', 'ASC');
+    public const DEFAULT_ORDERBYS                       = array('section_sequence', 'sequence');
+    public const DEFAULT_SORTORDERS                     = array('ASC', 'ASC');
     
-    public const HEADER_TYPE_ORDERBYS               = array('type');
-    public const HEADER_TYPE_SORTORDERS             = array('ASC');
+    public const HEADER_TYPE_ORDERBYS                   = array('type');
+    public const HEADER_TYPE_SORTORDERS                 = array('ASC');
     
-    public const HEADER_SECTION_ORDERBYS            = array('section_name');
-    public const HEADER_SECTION_SORTORDERS          = array('ASC');
+    public const HEADER_SECTION_ORDERBYS                = array('section_name');
+    public const HEADER_SECTION_SORTORDERS              = array('ASC');
 
-    public const HEADER_ROOT_ORDERBYS               = array('root_id');
-    public const HEADER_ROOT_SORTORDERS             = array('ASC');
+    public const HEADER_ROOT_ORDERBYS                   = array('root_id');
+    public const HEADER_ROOT_SORTORDERS                 = array('ASC');
 
-    public const HEADER_ID_ORDERBYS                 = array('id');
-    public const HEADER_ID_SORTORDERS               = array('ASC');
+    public const HEADER_ID_ORDERBYS                     = array('id');
+    public const HEADER_ID_SORTORDERS                   = array('ASC');
 
-    public const HEADER_PARENT_ORDERBYS             = array('parent_id');
-    public const HEADER_PARENT_SORTORDERS           = array('ASC');
+    public const HEADER_PARENT_ORDERBYS                 = array('parent_id');
+    public const HEADER_PARENT_SORTORDERS               = array('ASC');
 
-    public const HEADER_SERIALS_ORDERBYS            = array('serials');
-    public const HEADER_SERIALS_SORTORDERS          = array('ASC');
+    public const HEADER_SERIALS_ORDERBYS                = array('serials');
+    public const HEADER_SERIALS_SORTORDERS              = array('ASC');
 
-    public const HEADER_ENUMERATION_ORDERBYS        = array('enumeration');
-    public const HEADER_ENUMERATION_SORTORDERS      = array('ASC');
+    public const HEADER_ENUMERATION_ORDERBYS            = array('enumeration');
+    public const HEADER_ENUMERATION_SORTORDERS          = array('ASC');
 
-    public const HEADER_IMAGE_HEADER_ORDERBYS       = array('image_name_header');
-    public const HEADER_IMAGE_HEADER_SORTORDERS     = array('ASC');
+    public const HEADER_IMAGE_HEADER_ORDERBYS           = array('image_name_header');
+    public const HEADER_IMAGE_HEADER_SORTORDERS         = array('ASC');
 
-    public const HEADER_IMAGE_CONTENT_ORDERBYS      = array('image_name_content');
-    public const HEADER_IMAGE_CONTENT_SORTORDERS    = array('ASC');
+    public const HEADER_IMAGE_CONTENT_ORDERBYS          = array('image_name_content');
+    public const HEADER_IMAGE_CONTENT_SORTORDERS        = array('ASC');
 
-    public const HEADER_IMAGE_COMMENTARY_ORDERBYS   = array('image_name_commentary');
-    public const HEADER_IMAGE_COMMENTARY_SORTORDERS = array('ASC');
+    public const HEADER_IMAGE_COMMENTARY_ORDERBYS       = array('image_name_commentary');
+    public const HEADER_IMAGE_COMMENTARY_SORTORDERS     = array('ASC');
 
-    public const HEADER_IMAGE_FOOTER_ORDERBYS       = array('image_name_footer');
-    public const HEADER_IMAGE_FOOTER_SORTORDERS     = array('ASC');
+    public const HEADER_IMAGE_FOOTER_ORDERBYS           = array('image_name_footer');
+    public const HEADER_IMAGE_FOOTER_SORTORDERS         = array('ASC');
 
-    public const HEADER_STATUS_ORDERBYS             = array('status_name');
-    public const HEADER_STATUS_SORTORDERS           = array('ASC');
+    public const HEADER_STATUS_ORDERBYS                 = array('status_name');
+    public const HEADER_STATUS_SORTORDERS               = array('ASC');
 
-    public const HEADER_TAGS_ORDERBYS               = array('tags');
-    public const HEADER_TAGS_SORTORDERS             = array('ASC');
+    public const HEADER_CHILDREN_GROUPABLE_ORDERBYS     = array('children_groupable_name');
+    public const HEADER_CHILDREN_GROUPABLE_SORTORDERS   = array('ASC');
 
-    public const HEADER_VIDEO_URL_ORDERBYS          = array('video_url');
-    public const HEADER_VIDEO_URL_SORTORDERS        = array('ASC');
+    public const HEADER_TAGS_ORDERBYS                   = array('tags');
+    public const HEADER_TAGS_SORTORDERS                 = array('ASC');
 
-    public const HEADER_REFERENCE_SOURCE_ORDERBYS   = array('reference_source');
-    public const HEADER_REFERENCE_SOURCE_SORTORDERS = array('ASC');
+    public const HEADER_VIDEO_URL_ORDERBYS              = array('video_url');
+    public const HEADER_VIDEO_URL_SORTORDERS            = array('ASC');
 
-    public const HEADER_REFERENCE_URL_ORDERBYS      = array('reference_url');
-    public const HEADER_REFERENCE_URL_SORTORDERS    = array('ASC');
+    public const HEADER_REFERENCE_SOURCE_ORDERBYS       = array('reference_source');
+    public const HEADER_REFERENCE_SOURCE_SORTORDERS     = array('ASC');
 
-    public const HEADER_CREATED_BY_ORDERBYS      = array('created_by');
-    public const HEADER_CREATED_BY_SORTORDERS    = array('ASC');
+    public const HEADER_REFERENCE_URL_ORDERBYS          = array('reference_url');
+    public const HEADER_REFERENCE_URL_SORTORDERS        = array('ASC');
 
-    public const HEADER_SEQUENCE_ORDERBYS           = array('sequence');
-    public const HEADER_SEQUENCE_SORTORDERS         = array('ASC');
+    public const HEADER_CREATED_BY_ORDERBYS             = array('created_by');
+    public const HEADER_CREATED_BY_SORTORDERS           = array('ASC');
 
-    public const HEADER_SEQUENCE_MIXED_ORDERBYS     = self::DEFAULT_ORDERBYS;
-    public const HEADER_SEQUENCE_MIXED_SORTORDERS   = self::DEFAULT_SORTORDERS;
+    public const HEADER_SEQUENCE_ORDERBYS               = array('sequence');
+    public const HEADER_SEQUENCE_SORTORDERS             = array('ASC');
+
+    public const HEADER_SEQUENCE_MIXED_ORDERBYS         = self::DEFAULT_ORDERBYS;
+    public const HEADER_SEQUENCE_MIXED_SORTORDERS       = self::DEFAULT_SORTORDERS;
 
     protected $table = 'entry';
     protected $allowedFields = [
         'id', 'parent_id', 'root_id', 'type', 'serials', 'enumeration', 'section_id',
         'image_id_header', 'image_id_content', 'image_id_commentary', 'image_id_footer',
         'reference_source', 'reference_url', 'sequence', 'status', 'video_url', 'tags',
-        'previous_id', 'next_id', 'created_by',
+        'previous_id', 'next_id', 'created_by', 'children_groupable',
     ];
     protected $primaryKey = 'id';
     protected $returnType = Entry::class;
@@ -86,26 +89,26 @@ class EntryModel extends BaseModel
         return $this->setEntryExtraInfo($entry);
     }
 
-    /**
-     * title for display on screen based on specified language
-     */
-    public function displayTitle($entry, $user_language_code)
-    {
-        $display_title = '';
-        $display_enum_title = '';
-        $display_content = '';
-        $parents = $entry->translationsParents;
-        if (isset($parents) && count($parents) > 0) {
-            $display_title = end($parents)->title;
-            $display_enum_title = end($parents)->enum_title;
-            $display_content = end($parents)->content;
-        }
-        // TODO encode for html
-        $entry->displayTitle = $display_title;
-        $entry->displayEnumTitle = $display_enum_title;
-        $entry->displayContent = $display_content;
-        return $entry;
-    }
+    // /**
+    //  * title for display on screen based on specified language
+    //  */
+    // public function displayTitle($entry, $user_language_code)
+    // {
+    //     $display_title = '';
+    //     $display_enum_title = '';
+    //     $display_content = '';
+    //     $parents = $entry->translationsParents;
+    //     if (isset($parents) && count($parents) > 0) {
+    //         $display_title = end($parents)->title;
+    //         $display_enum_title = end($parents)->enum_title;
+    //         $display_content = end($parents)->content;
+    //     }
+    //     // TODO encode for html
+    //     $entry->displayTitle = $display_title;
+    //     $entry->displayEnumTitle = $display_enum_title;
+    //     $entry->displayContent = $display_content;
+    //     return $entry;
+    // }
 
     public function getEntries($parentId, $sort) 
     {
@@ -113,6 +116,8 @@ class EntryModel extends BaseModel
         'SELECT e.*, section_name, s.sequence AS section_sequence,
             CASE WHEN e.status = :status_inactive: THEN "' . lang('App.entry_label_status_inactive') . '"' .
                 ' ELSE "' . lang('App.entry_label_status_active') . '" END AS status_name,
+            CASE WHEN e.children_groupable = :ungroupable: THEN "' . lang('App.entry_label_cg_ungroupable') . '"' .
+                ' ELSE "' . lang('App.entry_label_cg_groupable') . '" END AS children_groupable_name,    
             (SELECT image_url FROM image_url WHERE image_id_header = image_url.id) AS image_url_header ,
             (SELECT image_name FROM image_url WHERE image_id_header = image_url.id) AS image_name_header, 
             (SELECT image_url FROM image_url WHERE image_id_content = image_url.id) AS image_url_content ,
@@ -129,7 +134,8 @@ class EntryModel extends BaseModel
 
         $this->db->transStart();    
         $query = $this->db->query($sql, ['parent_id'        => $parentId,
-                                         'status_inactive'  => 0,]);
+                                         'status_inactive'  => Utilities::STATUS_INACTIVE,
+                                         'ungroupable'      => Utilities::CHILDREN_UNGROUPABLE,]);
                                 
         $results = $query->getResult();
         $query->freeResult();
