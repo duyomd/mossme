@@ -271,7 +271,7 @@
                                         CONTENT_FIELD_STICKY: 'true',
                                         CONTENT_FIELD_TRIM: 3},
                                       {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'enumeration'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'children_groupable'},
+                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'children_groupable_name'},
 
                                       {CONTENT_TYPE: CONTENT_TYPES.LINK, CONTENT_FIELD: 'item.image_name_header',
                                         CONTENT_FIELD_EXTRA_HASH: '"content-modal"',

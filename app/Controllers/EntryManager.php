@@ -198,6 +198,7 @@ class EntryManager extends BaseController
             $jsonEntry->video_url = $entry->video_url;
             $jsonEntry->tags = $entry->tags;
             $jsonEntry->children_groupable = $entry->children_groupable;
+            $jsonEntry->children_groupable_name = $entry->children_groupable_name;
             $jsonEntry->status = $entry->status;
             $jsonEntry->status_name = $entry->status_name;
             $jsonEntry->created_by = $entry->created_by;
