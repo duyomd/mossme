@@ -13,7 +13,7 @@
   --bg-article: var(--bg-legacy);
   --bg-cmt: url("/assets/img/background/commentary.jpg");
   --bg-settings: url("/assets/img/background/settings.jpg");
-  --bg-errors: var(--bg-settings);
+  --bg-exception: var(--bg-settings);
   --bg-data-input: var(--bg-settings);  
   --bg-shield: var(--bg-settings);
 
@@ -2507,13 +2507,13 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Errors
+# Error Page
 --------------------------------------------------------------*/
-.errors {
+.exception {
   min-height: calc(100vh - (30px + 80.5px));
 }
 
-.errors:before {
+.exception:before {
   content: "";
   display: block;
   position: fixed;
@@ -2522,7 +2522,7 @@ section {
   width: 100%;
   height: 100%;
   z-index: -10;
-  background: var(--bg-errors) no-repeat center center;
+  background: var(--bg-exception) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2530,11 +2530,11 @@ section {
   opacity: var(--mm-opacity-settings-bg);
 }
 
-.errors .container {
+.exception .container {
   margin-top: 80px;
 }
 
-.errors h1 {
+.exception h1 {
   font-weight: lighter;
   letter-spacing: normal;
   font-size: 3rem;
@@ -2542,11 +2542,11 @@ section {
   margin-bottom: 1rem;
 }
 
-.errors h2 {
+.exception h2 {
   margin-bottom: 2rem;
 }
 
-.errors .wrap {
+.exception .wrap {
   max-width: 1024px;
   margin: 5rem auto;
   padding: 2rem;
@@ -2554,7 +2554,7 @@ section {
   position: relative;
 }
 
-.errors p {
+.exception p {
   margin-top: 1.5rem;
 }
 

@@ -7,7 +7,7 @@
 
 <main id="main">
 
-  <section class="errors">
+  <section class="exception">
     <div class="container d-flex justify-content-center" data-aos="fade-up">
         <div class="wrap">
             <h2><?=lang('Errors.somethingWrong')?></h2>
