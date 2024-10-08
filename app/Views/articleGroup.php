@@ -63,8 +63,7 @@
       
         <?php $p = 0; ?>
         <script type="text/javascript">
-          var js_trans_main = new Array(<?=count($entry->entryChildren)?>);
-          var js_trans_sub = new Array(<?=count($entry->entryChildren)?>);
+          var js_trans = new Array(<?=count($entry->entryChildren)?>);
         </script>
 
         <?php foreach ($entry->entryChildren as $child) :?>
@@ -96,7 +95,7 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdown-main">
                       <?php $i = 0; $count = count($child->translations); ?>
                       <script type="text/javascript">
-                        js_trans_main[<?=$p?>] = new Array(<?=$count?>);
+                        js_trans[<?=$p?>] = new Array(<?=$count?>);
                       </script>
                       <?php foreach ($child->translations as $tran) :?>
                         <?php if ($tran->pseudo) : ?>
@@ -105,32 +104,31 @@
                               <li><hr class="dropdown-divider"></li>
                             <?php else : ?>
                               <li>
-                                <a class="dropdown-item text-truncate ref" href="<?=htmlspecialchars($tran->encodedNotation)?>" 
+                                <a class="dropdown-item text-truncate ref" href="<?=htmlspecialchars($tran->notation)?>" 
                                     target="_blank" rel="noreferrer noopener">
-                                    <?=$tran->encodedAuthor?>
+                                    <?=$tran->author?>
                                   <i class="bi bi-box-arrow-up-right float-end"></i>
                                 </a>
                               </li>
                             <?php endif ?>    
                           <?php endif ?>
                           <?php if ($i < $count - 1) :?>
-                            <li><h6 class="dropdown-header"> <?=$tran->encodedAuthor?></h6></li>
+                            <li><h6 class="dropdown-header"> <?=$tran->author?></h6></li>
                           <?php endif ?>
                         <?php else : ?>
                           <?php 
-                            $item = (object)['title'    =>  $tran->enum_title,
-                                            'content'  =>  $tran->content,
-                                            'author'   =>  $tran->author,
-                                            'lang'     =>  $tran->language_code,];  
+                            $item = (object)['id'       =>  $tran->id,
+                                             'title'    =>  $tran->enum_title,
+                                             'author'   =>  $tran->author,];  
                           ?>
                           <script type="text/javascript">
-                            js_trans_main[<?=$p?>][<?=$i?>] = <?=json_encode($item)?>;
+                            js_trans[<?=$p?>][<?=$i?>] = <?=json_encode($item)?>;
                           </script>
                           <li><a class="dropdown-item text-truncate link-main-<?=$p?>
                                 <?php if ($tran->default) echo ' active'; ?>" href="javascript:void(0)"
-                                onclick="reloadContent(1, js_trans_main[<?=$p?>][<?=$i?>], <?=$p?>);
-                                          selectDropdownItem(1, this, <?=$p?>);//TODO">
-                            <?=$tran->encodedAuthor?></a>
+                                onclick="reloadContent(1, js_trans[<?=$p?>][<?=$i?>], <?=$p?>);
+                                          selectDropdownItem(1, this, <?=$p?>);">
+                            <?=$tran->author?></a>
                           </li>
                         <?php endif ?>
                         <?php $i++; ?>
@@ -138,7 +136,6 @@
                     </ul>
 
                   </div>
-
                   
                 </div>
 
@@ -168,9 +165,6 @@
 
                   <ul class="dropdown-menu" aria-labelledby="dropdown-sub">
                     <?php $i = 0; $count = count($child->translations); ?>
-                    <script type="text/javascript">
-                      js_trans_sub[<?=$p?>] = new Array(<?=$count?>);
-                    </script>
                     <?php foreach ($child->translations as $tran) :?>
                       <?php if ($tran->pseudo) : ?>
                         <?php if ($i > 0) :?>
@@ -178,32 +172,23 @@
                             <li><hr class="dropdown-divider"></li>
                           <?php else : ?>
                             <li>
-                              <a class="dropdown-item text-truncate ref" href="<?=htmlspecialchars($tran->encodedNotation)?>" 
+                              <a class="dropdown-item text-truncate ref" href="<?=htmlspecialchars($tran->notation)?>" 
                                   target="_blank" rel="noreferrer noopener">
-                                  <?=$tran->encodedAuthor?>
+                                  <?=$tran->author?>
                                 <i class="bi bi-box-arrow-up-right float-end"></i>
                               </a>
                             </li>
                           <?php endif ?>
                         <?php endif ?>
                         <?php if ($i < $count - 1) :?>
-                          <li><h6 class="dropdown-header"> <?=$tran->encodedAuthor?></h6></li>
+                          <li><h6 class="dropdown-header"> <?=$tran->author?></h6></li>
                         <?php endif ?>
                       <?php else : ?>
-                        <?php 
-                          $item = (object)['title'    =>  $tran->enum_title,
-                                          'content'  =>  $tran->content,
-                                          'author'   =>  $tran->author,
-                                          'lang'     =>  $tran->language_code,];  
-                        ?>
-                        <script type="text/javascript">
-                          js_trans_sub[<?=$p?>][<?=$i?>] = <?=json_encode($item)?>;
-                        </script>
                         <li><a class="dropdown-item text-truncate link-sub-<?=$p?>
                               <?php if ($tran->default) echo ' active'; ?>" href="javascript:void(0)"
-                              onclick="reloadContent(2, js_trans_sub[<?=$p?>][<?=$i?>], <?=$p?>);
+                              onclick="reloadContent(2, js_trans[<?=$p?>][<?=$i?>], <?=$p?>);
                                         selectDropdownItem(2, this, <?=$p?>);">
-                          <?=$tran->encodedAuthor?></a>
+                          <?=$tran->author?></a>
                         </li>
                       <?php endif ?>
                       <?php $i++; ?>
@@ -259,201 +244,61 @@
     '</div>';
   include 'templates/footer.php';?>
 
+  <?php
+    $items = [];
+    foreach ($entry->entryChildren as $child) {
+      $defaultTran = null;
+      foreach ($child->translations as $tran) {
+        if ($tran->default) {
+          $defaultTran = $tran;
+          break;
+        }
+      }
+      $title = ''; $content = ''; $author = '';
+      if (isset($defaultTran)) {
+        $item = (object)['id'       =>  $defaultTran->id, 
+                         'title'    =>  $defaultTran->enum_title,
+                         'content'  =>  $defaultTran->content,
+                         'author'   =>  $defaultTran->author,
+                        ];
+        array_push($items, $item);
+      }
+    }      
+  ?>
+  
   <!-- JS -->
+  <script src="/assets/js/view/article.js"></script>
   <script type="text/javascript">
 
-    var _bilingual = false;
-
-    var _parallelsOns = new Array(<?=count($entry->entryChildren)?>);
-    for (let i = 0; i < _parallelsOns.length; i++) {_parallelsOns[i] = false;}
-
-    function loadParallels(pars, i) {
-      if (_parallelsOns[i]) return;        
-      loading(true);
-      var titleEle = document.querySelector('.parallels-title-' + i);
-      var contentEle = document.querySelector('.parallels-content-' + i);
-      parallelsSearching(titleEle, contentEle);
-      var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-          try {
-            if (this.readyState == 4) {
-              if (this.status == 200) {                  
-                parallelsResult(titleEle, contentEle, this.responseText);                  
-                _parallelsOns[i] = true;
-              } else {                  
-                parallelsError(titleEle, contentEle);
-              }
-              loading(false);
-            }
-          } catch(e) {
-            parallelsError(titleEle, contentEle)
-            loading(false);
-          }
-        };          
-        xmlhttp.open("GET", "/parallels=" + pars, true);
-        xmlhttp.send();
-    }
-
-    function parallelsSearching(titleEle, contentEle) {
-      titleEle.innerHTML = "<?=lang('App.article_parallels_loading')?>";
-      contentEle.innerHTML = "<?=lang('App.article_parallels_patient')?>";
-      contentEle.classList.remove('d-none');        
-    }
-
-    function parallelsResult(titleEle, contentEle, responseText) {
-      var data = JSON.parse(responseText);
-      var result = data['urls'];
-      var msg = data['msg'];
-      var content = '';
-      for (var i = 0; i < result.length; i++) {
-        par = result[i];
-        if (content.length > 0) {
-          content += ", ";
+    const entryCount = <?=count($entry->entryChildren)?>;
+    let _translations = new Array(entryCount);
+    var p = 0;
+    <?php foreach ($entry->entryChildren as $en) :?>
+      var map = new Map();      
+      <?php foreach ($en->translations as $tran) :?>
+        if ('<?=$tran->id?>'.length > 0) {
+          map.set('<?=$tran->id?>', '<?=esc($tran->content)?>');
         }
-        if (par.url) {
-          content += '<a href="' + par.url + '">' + par.entry_id + '</a>';
-        } else {
-          content += '<span>' + par.entry_id + '</span>';
-        }
-      }
-      contentEle.classList.add("text-uppercase");
-      contentEle.innerHTML = content;
-      titleEle.innerHTML = msg;  
-    }
+      <?php endforeach ?>
+      _translations[p] = map;
+      p++;
+    <?php endforeach ?>
 
-    function parallelsError(titleEle, contentEle) {
-      contentEle.innerHTML = "<?=lang('App.article_parallels_error')?>";
-      titleEle.innerHTML = "<?=lang('App.article_parallels_failed')?>"
-      titleEle.parentElement.removeAttribute("href");
-      titleEle.parentElement.removeAttribute("onclick");
-    }
+    let params = {
+      MSG_PARALLELES_LOADING  : "<?=lang('App.article_parallels_loading')?>",
+      MSG_PARALLELES_PATIENT  : "<?=lang('App.article_parallels_patient')?>",
+      MSG_PARALLELES_ERROR    : "<?=lang('App.article_parallels_error')?>",
+      MSG_PARALLELES_FAILED   : "<?=lang('App.article_parallels_failed')?>",
+      MSG_MONO_MONOLINGUAL    : "<?=lang('App.article_msg_monolingual')?>",
+      MSG_MONO_BILINGUAL      : "<?=lang('App.article_msg_bilingual')?>",
 
-    function bilingual(e) {
-      var col_mains = document.querySelectorAll('#col-main');
-      if (col_mains == null || col_mains.length <= 0) return;
+      ENTRY_COUNT             : entryCount,
       
-      var col_subs = document.querySelectorAll('#col-sub');
-      var _bilingual = !hasClass(col_subs[0], 'hidden');
-      for (var i = 0; i < col_mains.length; i++) {
-        let col_main = col_mains[i];
-        let col_sub = col_subs[i];
-        if (!_bilingual) {
-          col_main.className = 'col-6';
-          col_sub.className = 'col-6'; 
-        } else {
-          col_main.className = '';
-          col_sub.className = 'hidden'; 
-        }
-      }
-
-      if (!e) return;
-      var msg = '';
-      if (_bilingual) {
-        loopToggleCss(new Array(e.id), 'active', 'inactive');
-        msg = '<?=lang('App.article_msg_monolingual')?>';
-      } else {
-        loopToggleCss(new Array(e.id), 'inactive', 'active');
-        msg = '<?=lang('App.article_msg_bilingual')?>';
-      }
-      setToastMessage(msg);
-
-      window.location.href = '#article';
+      TRANSLATIONS_DEFAULT    : <?=json_encode($items)?>,
+      TRANSLATIONS_ALL        : _translations,
     }
+    articleGlobal(params);
 
-    function selectDropdownItem(type, e, i) {        
-      if (!e) return;
-      var css = type == 1 ? ('link-main-' + i) : type == 2 ? ('link-sub-' + i) : null;
-      if (css == null) return;
-
-      var items = document.querySelectorAll('.' + css);
-      loopToggleCssByElements(items, 'active', '');
-      loopToggleCssByElements(new Array(e), '', 'active');
-    }
-
-    function reloadContent(type, item, i) {
-      if (!item) return;
-      var ti, co, au;
-      // main dropdown
-      if (type == 1) {        
-        ti = document.querySelectorAll('#title-main')[i];
-        co = document.querySelectorAll('#content-main')[i];
-        au = document.querySelectorAll('#dropdown-main')[i].children[0];
-      // sub dropdown  
-      } else if (type == 2) {
-        ti = document.querySelectorAll('#title-sub')[i];
-        co = document.querySelectorAll('#content-sub')[i];
-        au = document.querySelectorAll('#dropdown-sub')[i].children[0];
-      } else {
-        return;
-      }
-      if (ti) {
-        ti.innerHTML = item.title;
-        // ti.setAttribute("lang", item.lang); // unnecessary though?
-      }
-      co.innerHTML = item.content;
-      // co.setAttribute("lang", item.lang);
-      au.innerHTML = item.author;
-      // au.setAttribute("lang", item.lang);
-    }
-
-    function initContent(items) {
-      if (!items || items.length <= 0) return;      
-      for (var i = 0; i < items.length; i++) {
-        reloadContent(1, items[i], i);
-        reloadContent(2, items[i], i);
-      }
-    }
-
-    function initToastArticle() {
-      initToast(['btn-bilingual']);
-    }
-
-    function dropdownOverflow() {
-      dropdownArticle();
-    }
-
-    function dropdownArticle() {
-      let das = document.querySelectorAll('#dd-article');
-      if (!das || das.length <= 0) return;
-      let ar = document.querySelector('#article');
-      for (var i = 0; i < das.length; i++) {
-        let da = das[i];
-        da.addEventListener('show.bs.dropdown', () => {
-          ar.style.overflow = 'auto';
-        });
-        da.addEventListener('hide.bs.dropdown', () => { 
-          ar.style.overflow = 'hidden';
-        });
-      }
-    }
-
-    <?php
-      $items = [];
-      foreach ($entry->entryChildren as $child) {
-        $defaultTran = null;
-        foreach ($child->translations as $tran) {
-          if ($tran->default) {
-            $defaultTran = $tran;
-            break;
-          }
-        }
-        $title = ''; $content = ''; $author = ''; //$lang = 'auto';
-        if (isset($defaultTran)) {
-          $item = (object)['title'    =>  $defaultTran->enum_title,
-                           'content'  =>  $defaultTran->content,
-                           'author'   =>  $defaultTran->author,
-                          //  'lang'     =>  $defaultTran->language_code,
-                          ];
-          array_push($items, $item);
-        }
-      }      
-    ?>
-
-    window.onload = function() {
-      initToastArticle();
-      initContent(<?=json_encode($items)?>);
-      dropdownOverflow();
-    }
-    
   </script>
+  
   <link rel="stylesheet" href="/assets/js/ckeditor5-43.1.0/ckeditor5.css">

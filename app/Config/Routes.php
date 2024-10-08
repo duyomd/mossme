@@ -105,6 +105,7 @@ $routes->post('cardTranslations', [CardTranslationManager::class, 'ajaxSubmit'])
 $routes->get('lang=(:segment)', [Ajax::class, 'changeLanguage']);
 $routes->get('theme=(:segment)', [Ajax::class, 'changeTheme']);
 $routes->get('parallels=(:segment)', [Ajax::class, 'loadParallels']);
+$routes->get('articleContent/type=(:segment)/id=(:segment)', [Ajax::class, 'loadArticleContent']);
 $routes->get('rpp=(:alphanum)/conditions=(:segment)/url=(:any)', [Ajax::class, 'changeRowsPerPage']);
 
 service('auth')->routes($routes, ['except' => ['magic-link']]);

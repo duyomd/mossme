@@ -190,12 +190,12 @@ class TranslationModel extends BaseModel
 
         $this->db->transStart();
 
-        $sql = 'SELECT translation.*, language,
-                    CONCAT(IF(entry.enumeration IS NULL, "", CONCAT(entry.enumeration, SPACE(1))), translation.title) AS enum_title
-                FROM translation 
-                LEFT JOIN language ON translation.language_code = language.code
-                LEFT JOIN entry ON entry.id = translation.entry_id
-                WHERE entry_id = ? AND translation.status = ? AND entry.status = ?
+        $sql = 'SELECT t.id, t.entry_id, t.language_code, t.author, t.author_note, t.title, t.notation, t.status, language,
+                    CONCAT(IF(entry.enumeration IS NULL, "", CONCAT(entry.enumeration, SPACE(1))), t.title) AS enum_title
+                FROM translation t
+                LEFT JOIN language ON t.language_code = language.code
+                LEFT JOIN entry ON entry.id = t.entry_id
+                WHERE entry_id = ? AND t.status = ? AND entry.status = ?
                 ORDER BY language.sequence DESC, author ASC';
         $query = $this->db->query($sql, [$entry_id, Utilities::STATUS_ACTIVE, Utilities::STATUS_ACTIVE]);
         $translations = $query->getResult(Translation::class);
@@ -692,11 +692,13 @@ class TranslationModel extends BaseModel
             $dropdown[1]->default = true;
         }
 
-        // get main entry's necessary data to display
+        // get main entry's necessary data to display (and default translation's content)
         foreach ($dropdown as $row) {
             if ($row->default) {
+                $row->content = $this->where('id', $row->id)->first()->content;
+
                 $entry->displayTitle = $row->title;
-                $entry->displayEnumTitle = $row->enum_title;
+                $entry->displayEnumTitle = $row->enum_title;                
                 $entry->displayContent = $row->content;
             }
         }
@@ -708,20 +710,20 @@ class TranslationModel extends BaseModel
      * encoding string data for js / html
      */
     private function encodeData($translations, $slash = true) {
-        if (isset($translations)) {
-            foreach ($translations as $tran) {
-                $tran->encodedTitle = Utilities::encodeDataHtml($tran->title, $slash);
-                $tran->encodedEnumTitle = isset($tran->enum_title) ? Utilities::encodeDataHtml($tran->enum_title, $slash) : $tran->encodedTitle;
-                $tran->encodedContent = Utilities::encodeDataHtml($tran->content, $slash);
-                $tran->encodedAuthor = Utilities::encodeDataHtml($tran->author, $slash);
-                $tran->encodedAuthorNote = Utilities::encodeDataHtml($tran->author_note, $slash);
-                $tran->encodedNotation = Utilities::encodeDataHtml($tran->notation, $slash);
+        // if (isset($translations)) {
+        //     foreach ($translations as $tran) {
+        //         $tran->encodedTitle = Utilities::encodeDataHtml($tran->title, $slash);
+        //         $tran->encodedEnumTitle = isset($tran->enum_title) ? Utilities::encodeDataHtml($tran->enum_title, $slash) : $tran->encodedTitle;
+        //         $tran->encodedContent = Utilities::encodeDataHtml($tran->content, $slash);
+        //         $tran->encodedAuthor = Utilities::encodeDataHtml($tran->author, $slash);
+        //         $tran->encodedAuthorNote = Utilities::encodeDataHtml($tran->author_note, $slash);
+        //         $tran->encodedNotation = Utilities::encodeDataHtml($tran->notation, $slash);
 
-                // $tran->content_str = Utilities::shortenString($tran->content, self::SHORTENED_CONTENT_LENGTH);
-                // $tran->author_note_str = Utilities::shortenString($tran->author_note, self::SHORTENED_CONTENT_LENGTH);
-                // $tran->notation_str = Utilities::shortenString($tran->notation, self::SHORTENED_CONTENT_LENGTH);
-            }
-        }
+        //         // $tran->content_str = Utilities::shortenString($tran->content, self::SHORTENED_CONTENT_LENGTH);
+        //         // $tran->author_note_str = Utilities::shortenString($tran->author_note, self::SHORTENED_CONTENT_LENGTH);
+        //         // $tran->notation_str = Utilities::shortenString($tran->notation, self::SHORTENED_CONTENT_LENGTH);
+        //     }
+        // }
         return $translations;
     }
 

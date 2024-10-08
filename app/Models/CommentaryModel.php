@@ -148,8 +148,8 @@ class CommentaryModel extends BaseModel
 
         $this->db->transStart();
 
-        $sql = 'SELECT * FROM commentary LEFT JOIN language
-                ON commentary.language_code = language.code
+        $sql = 'SELECT l.language, c.id, c.entry_id, c.language_code, c.author, c.author_note, c.notation, c.status
+                FROM commentary c LEFT JOIN language l ON c.language_code = l.code
                 WHERE entry_id = ? AND status = ?
                 ORDER BY sequence DESC, author ASC';
         $query = $this->db->query($sql, [$entry_id, 1]);
@@ -220,6 +220,13 @@ class CommentaryModel extends BaseModel
             $dropdown[1]->default = true;
         }
 
+        // get default commentary's content
+        foreach ($dropdown as $row) {
+            if ($row->default) {
+                $row->content = $this->where('id', $row->id)->first()->content;
+            }
+        }
+
         return $dropdown;
     }
 
@@ -236,14 +243,14 @@ class CommentaryModel extends BaseModel
      * encoding string data for js / html
      */
     private function encodeData($commentaries) {
-        if (isset($commentaries)) {
-            foreach ($commentaries as $comm) {
-                $comm->encodedContent = Utilities::encodeDataHtml($comm->content);
-                $comm->encodedAuthor = Utilities::encodeDataHtml($comm->author);
-                $comm->encodedAuthorNote = Utilities::encodeDataHtml($comm->author_note);
-                $comm->encodedNotation = Utilities::encodeDataHtml($comm->notation);
-            }
-        }
+        // if (isset($commentaries)) {
+        //     foreach ($commentaries as $comm) {
+        //         $comm->encodedContent = Utilities::encodeDataHtml($comm->content);
+        //         $comm->encodedAuthor = Utilities::encodeDataHtml($comm->author);
+        //         $comm->encodedAuthorNote = Utilities::encodeDataHtml($comm->author_note);
+        //         $comm->encodedNotation = Utilities::encodeDataHtml($comm->notation);
+        //     }
+        // }
         return $commentaries;
     }
 }

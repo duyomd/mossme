@@ -5,6 +5,8 @@ use App\Helpers\Utilities;
 use App\Models\UserSettingsModel;
 use App\Models\BookmarkModel;
 use App\Models\EntryModel;
+use App\Models\TranslationModel;
+use App\Models\CommentaryModel;
 use App\Entities\Bookmark;
 
 
@@ -54,6 +56,15 @@ class Ajax extends BaseController
     // return json_encode($jsonPars);
     return json_encode((object)array('urls' => $jsonPars, 
                                      'msg'  => lang('App.article_parallels_found', [count($jsonPars)])));
+  }
+
+  public function loadArticleContent($type = 1, $id = null)
+  {
+    if (!isset($id)) return '';
+    if ($type == 3) {
+      return model(CommentaryModel::class)->findCommentary($id)->content;  
+    } 
+    return model(TranslationModel::class)->findTranslation($id)->content;
   }
 
   /**

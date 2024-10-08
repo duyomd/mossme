@@ -149,9 +149,12 @@ function initToast(elementIds, option) {
   const toastElList = document.querySelectorAll('.toast');
   const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl, option));
   for (let i = 0; i < elementIds.length; i++) {
-    addEvent(document.getElementById(elementIds[i]), "click", function() {
-      toastList.forEach(toast => toast.show());
-    });
+    const ele = document.getElementById(elementIds[i]);
+    if (ele) {
+      addEvent(ele, "click", function() {
+        toastList.forEach(toast => toast.show());
+      });
+    }
   }
 }
 
