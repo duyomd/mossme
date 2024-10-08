@@ -400,7 +400,7 @@
 
       var checkPrefixes = ['sn', 'an'];
       if (startsWithAnyOfArr(idVal, checkPrefixes)) {
-        if (idVal.length > 3 && idVal.indexOf('.') >= 2 && !idVal.endsWith('.') && /^\d+$/.test(idVal.slice(idVal.indexOf('.') + 1))) {
+        if (idVal.length > 3 && idVal.indexOf('.') >= 2 && !idVal.endsWith('.') && /^[\d-]+$/.test(idVal.slice(idVal.indexOf('.') + 1))) {
           refUrlEle.value = 'https://suttacentral.net/' + idVal + '/en/sujato?lang=en&layout=linebyline&reference=main&notes=sidenotes&highlight=false&script=latin';
           enumEle.value = idVal.toUpperCase();
           return;
