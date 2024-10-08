@@ -26,9 +26,10 @@ class Search extends BaseController
     if (!$this->request->is('post') || !$this->request->isAjax())  return;
     helper('form');
 
+    $kw_minlength = $this->request->getVar('serial') == null ? '3' : '2';
     if (! $this->validate([
       'keyword' => ['label' => lang('App.search_label_keyword'), 
-        'rules' => 'trim|required|min_length[3]|max_length[84]|regex_match[^[^!@#$%^&*()=|\/{}\\[\\]:?<>]*$]'],
+        'rules' => 'trim|required|min_length['.$kw_minlength.']|max_length[84]|regex_match[^[^!@#$%^&*()=|\/{}\\[\\]:?<>]*$]'],
     ])) {
       $errorsHtml = Utilities::createHtmlValidatedMsg($this->validator->getErrors());
       return json_encode($this->showResult(false, $errorsHtml));
