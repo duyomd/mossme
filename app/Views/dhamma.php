@@ -153,7 +153,7 @@
                 <a href="/article/<?=$tran->entry_id?>"><?=$tran->title?></a><!--<span>152</span>-->
               </div>
               <div class="menu-description">
-                <?=$tran->encodedAuthorNote?>
+                <?=$tran->author_note?>
               </div>
             </div>  
           <?php endforeach ?>  
@@ -198,9 +198,9 @@
                 <div class="tab-pane<?=$css?>" id="tab-<?=$i?>">
                   <div class="row">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3><?=$tran->encodedAuthor?></h3>
-                      <p class="fst-italic"><?=$tran->encodedAuthorNote?></p>
-                      <p><?=$tran->encodedNotation?>
+                      <h3><?=$tran->author?></h3>
+                      <p class="fst-italic"><?=$tran->author_note?></p>
+                      <p><?=$tran->notation?>
                         <a href="/article/<?=$tran->entry_id?>" class="<?=$css?>">
                           <?= $tran->isOutlaw() ? lang('App.samsara_link') : lang('App.detail_link') ?>
                         </a>
