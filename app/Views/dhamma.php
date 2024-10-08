@@ -1,4 +1,5 @@
 <!-- End Header -->
+<?php use App\Helpers\Utilities; ?>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -8,14 +9,14 @@
         <div class="row">
           <div class="col-lg-8">
             <h1>
-              <?php $lc = App\Helpers\Utilities::getSessionLocale(); 
-                if (!App\Helpers\Utilities::isRevertibleTitle()) : ?>
+              <?php $lc = Utilities::getSessionLocale(); 
+                if (!Utilities::isRevertibleTitle()) : ?>
                 <?=lang('App.hero_caption_start')?><span><?=lang('App.hero_caption_end')?></span>
               <?php else : ?>
                 <span><?=lang('App.hero_caption_start')?></span><?=lang('App.hero_caption_end')?>
               <?php endif ?>  
             </h1>
-            <h2 class="<?= App\Helpers\Utilities::isTallTitle() ? 'mt-4' : ''; ?>"><?=lang('App.hero_text')?></h2>
+            <h2 class="<?= Utilities::isTallTitle() ? 'mt-4' : ''; ?>"><?=lang('App.hero_text')?></h2>
             
             <div class="btns">
               <a href="#menu" class="btn-scroll animated fadeInUp"><?=lang('App.library')?></a>
@@ -153,7 +154,7 @@
                 <a href="/article/<?=$tran->entry_id?>"><?=$tran->title?></a><!--<span>152</span>-->
               </div>
               <div class="menu-description">
-                <?=$tran->author_note?>
+                <?=nl2br($tran->author_note)?>
               </div>
             </div>  
           <?php endforeach ?>  
@@ -199,8 +200,8 @@
                   <div class="row">
                     <div class="col-lg-8 details order-2 order-lg-1">
                       <h3><?=$tran->author?></h3>
-                      <p class="fst-italic"><?=$tran->author_note?></p>
-                      <p><?=$tran->notation?>
+                      <p class="fst-italic"><?=nl2br($tran->author_note)?></p>
+                      <p><?=nl2br($tran->notation)?>
                         <a href="/article/<?=$tran->entry_id?>" class="<?=$css?>">
                           <?= $tran->isOutlaw() ? lang('App.samsara_link') : lang('App.detail_link') ?>
                         </a>
@@ -246,11 +247,11 @@
                       <p><span><?=lang('App.sequence', [$cardTran->id])?></span></p>
                     </div>
                     <p class="fst-italic">
-                      <?=$cardTran->header?>
+                      <?=nl2br($cardTran->header)?>
                     </p>
                     <?=$cardTran->content?>
                     <p>
-                      <?=$cardTran->footer?>
+                      <?=nl2br($cardTran->footer)?>
                     </p>
                   </div>
                 </div>
