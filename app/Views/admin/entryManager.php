@@ -393,10 +393,11 @@
     
     function fillReferenceUrl() {
       // For suttacentral.net only (atm)
-      if (refNameEle.value.toLowerCase() !== 'sutta central') return;
+      if (refNameEle.value.trim().toLowerCase() !== 'sutta central') return;
 
       let idVal = idEle.value;
       if (idVal == null || idVal.length < 2) return;
+      idVal = idVal.trim();
 
       var checkPrefixes = ['sn', 'an'];
       if (startsWithAnyOfArr(idVal, checkPrefixes)) {
