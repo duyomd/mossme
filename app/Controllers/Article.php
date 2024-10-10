@@ -56,9 +56,4 @@ class Article extends BaseController
         return view('templates/header', $data).view('article');
     }
 
-    private function notFound()
-    {
-        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(); 
-    }
-
 }

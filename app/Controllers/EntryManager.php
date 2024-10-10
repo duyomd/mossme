@@ -22,6 +22,9 @@ class EntryManager extends BaseController
         $data['responseJsonList']   = $this->responseJsonList($data);
 
         $parentEntry = model(EntryModel::class)->getEntryOnly($parentId);
+        if ($parentId != null && $parentEntry == null) {
+            return $this->notFound();
+        }
 
         // TODO: necessarily reload after edit entry?
         $data['roots']              = model(EntryModel::class)->getRootEntries(); 

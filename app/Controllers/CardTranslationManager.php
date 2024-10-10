@@ -19,13 +19,16 @@ class CardTranslationManager extends BaseController
         } 
         $cardId = $this->parseCardId($conditions);
         $card = model(CardModel::class)->getCardSiblings($cardId);
+        if ($card == null) {
+            return $this->notFound();
+        }
 
         $data = $this->loadList(null, '-1', '-1', $conditions);
         $data['responseJsonList']   = $this->responseJsonList($data);
         $data['cardId']             = $cardId;
-        $data['cardMemo']           = $card == null ? null : $card->memo;
-        $data['previousCardId']     = $card == null ? null : $card->previous_id;
-        $data['nextCardId']         = $card == null ? null : $card->next_id;
+        $data['cardMemo']           = $card->memo;
+        $data['previousCardId']     = $card->previous_id;
+        $data['nextCardId']         = $card->next_id;
         $data['languages']          = model(LanguageModel::class)->getLanguages(); 
 
         helper('form');        

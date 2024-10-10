@@ -9,6 +9,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+use CodeIgniter\Exceptions\PageNotFoundException;
 use App\Helpers\Utilities;
 
 /**
@@ -38,6 +39,14 @@ abstract class BaseController extends Controller
      * @var array
      */
     protected $helpers = [];
+
+    /**
+     * Throws Page Not Found exception
+     */
+    protected function notFound()
+    {
+        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(); 
+    }
 
     /**
      * Be sure to declare properties for any property fetch you initialized.

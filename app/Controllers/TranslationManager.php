@@ -19,13 +19,16 @@ class TranslationManager extends BaseController
         } 
         $entryId = $this->parseEntryId($conditions);
         $entry = model(EntryModel::class)->getSiblingsOnly($entryId);
+        if ($entry == null) {
+            return $this->notFound();
+        }
 
         $data = $this->loadList(null, '-1', '-1', $conditions);
         $data['responseJsonList']   = $this->responseJsonList($data);
         $data['entryId']            = $entryId;
-        $data['parentEntryId']      = $entry == null ? null : $entry->parent_id;
-        $data['previousEntryId']    = $entry == null ? null : $entry->previous_id;
-        $data['nextEntryId']        = $entry == null ? null : $entry->next_id;
+        $data['parentEntryId']      = $entry->parent_id;
+        $data['previousEntryId']    = $entry->previous_id;
+        $data['nextEntryId']        = $entry->next_id;
         $data['languages']          = model(LanguageModel::class)->getLanguages(); 
 
         helper('form');

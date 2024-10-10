@@ -95,21 +95,4 @@ class ArticleGroup extends BaseController
         return $result;
     }
 
-
-
-    private function notFound()
-    {
-        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(); 
-    }
-
-    private function parallels($entry = null)
-    {
-        if ($entry == null) return null;
-        $parArr = explode(Utilities::SERIALS_DELIMETER, $entry->serials);
-        $parArr = array_diff($parArr, [$entry->id]);
-        // request from js somehow messed up with url contains ":" ??
-        $entry->parallels = implode(",", str_replace(":", "_", $parArr));
-        return $entry;
-    }
-
 }
