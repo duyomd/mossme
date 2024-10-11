@@ -122,14 +122,17 @@ class SearchModel extends BaseModel
           FROM translation tra 
             JOIN entry en ON tra.entry_id = en.id
             JOIN language la ON tra.language_code = la.code
-          WHERE en.id LIKE '%" . $this->db->escapeLikeString($conditions->keyword) . "%' ESCAPE '!' 
+          WHERE (en.type = " . Utilities::TYPE_FOLDER . " AND en.id LIKE '%" . $this->db->escapeLikeString($conditions->keyword) . "%' ESCAPE '!')
+            OR (en.type = " . Utilities::TYPE_FILE . " AND :keyword: BETWEEN en.group_ids_start AND en.group_ids_end)
       ) tmain
       WHERE sort_value = (
         SELECT MIN(CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - la.sequence, 3, '0'), IF(author IS NULL, '', author)))
         FROM translation tra 
     	    JOIN entry en ON tra.entry_id = en.id
           JOIN language la ON tra.language_code = la.code
-        WHERE tra.entry_id = tmain.entry_id AND en.id LIKE '%" . $this->db->escapeLikeString($conditions->keyword) . "%' ESCAPE '!' 
+        WHERE tra.entry_id = tmain.entry_id AND 
+          ((en.type = " . Utilities::TYPE_FOLDER . " AND en.id LIKE '%" . $this->db->escapeLikeString($conditions->keyword) . "%' ESCAPE '!')
+            OR (en.type = " . Utilities::TYPE_FILE . " AND :keyword: BETWEEN en.group_ids_start AND en.group_ids_end))
       )";
     } else {
       if ($conditions->checks->content) {

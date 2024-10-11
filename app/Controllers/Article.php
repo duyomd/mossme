@@ -19,8 +19,8 @@ class Article extends BaseController
         $entryModel = model(EntryModel::class);
         $translationModel = model(TranslationModel::class);
 
-        // entry data
-        $entry = $entryModel->getEntry($id);
+        // entry data        
+        $entry = $entryModel->getEntry($entryModel->getEntryRangeId($id));
         if ($entry == null) return $this->notFound();
         Utilities::parallels($entry);
 

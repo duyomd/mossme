@@ -93,7 +93,6 @@ class EntryManager extends BaseController
                 return json_encode($this->showResult(false, $errorsHtml));
             }
 
-            // log_message('error', 'DUY1:' . $this->parentId);
             $entry = new Entry([
                     'type'                  => $this->request->getVar('type'),
                     'section_id'            => $this->request->getVar('section_id'),
@@ -116,6 +115,36 @@ class EntryManager extends BaseController
                     'reference_url'         => Utilities::trimInput($this->request->getVar('reference_url')),
                     'children_groupable'    => $this->request->getVar('children_groupable'),
             ]);
+
+            // group_ids autofill
+            $group_ids_start    = '';
+            $group_ids_end      = '';
+            $id                 = $entry->id;
+            if (!$entry->getIsFolder()) {
+                if (preg_match('/^([a-zA-Z]+-\d+)\.(\d+)-(\d+)$/', $id, $matches)) {
+                    // For IDs like sa-2.5-8
+                    $group_ids_start    = $matches[1] . '.' . $matches[2];
+                    $group_ids_end      = $matches[1] . '.' . $matches[3];
+                } elseif (preg_match('/^([a-zA-Z]+-\d+\.\d+)$/', $id)) {
+                    // For IDs like sa-2.9
+                    $group_ids_start    = $id;
+                    $group_ids_end      = $id;
+                } elseif (preg_match('/^([a-zA-Z]+\d+)\.(\d+)-(\d+)$/', $id, $matches)) {
+                    // For IDs like sn3.12-15
+                    $group_ids_start    = $matches[1] . '.' . $matches[2];
+                    $group_ids_end      = $matches[1] . '.' . $matches[3];
+                } elseif (preg_match('/^([a-zA-Z]+\d+)-(\d+)$/', $id, $matches)) {
+                    // For IDs like an12-14
+                    $group_ids_start    = $matches[1];        
+                    $group_ids_end      = preg_replace('/\d+$/', '', $matches[1]) . $matches[2];
+                } else {
+                    // Without range
+                    $group_ids_start    = $id;
+                    $group_ids_end      = $id;
+                }
+            }
+            $entry->group_ids_start = $group_ids_start;
+            $entry->group_ids_end = $group_ids_end;
 
             // root_id & parent_id relation check
             if (($entry->parent_id == null && $entry->root_id != null)

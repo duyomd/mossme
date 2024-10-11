@@ -78,6 +78,7 @@ class EntryModel extends BaseModel
         'image_id_header', 'image_id_content', 'image_id_commentary', 'image_id_footer',
         'reference_source', 'reference_url', 'sequence', 'status', 'video_url', 'tags',
         'previous_id', 'next_id', 'created_by', 'children_groupable',
+        'group_ids_start', 'group_ids_end',
     ];
     protected $primaryKey = 'id';
     protected $returnType = Entry::class;
@@ -148,6 +149,32 @@ class EntryModel extends BaseModel
     {
         if (!isset($id)) return null;
         return $this->where('id', $id)->first();
+    }
+
+    public function getEntryRangeId($id = null)
+    {
+        if (!isset($id)) return null;
+
+        $this->db->transStart();
+
+        $sql = 'SELECT id 
+        FROM entry 
+        WHERE (type = :type_folder: AND id = :id:)
+            OR (type = :type_file: AND :id: BETWEEN group_ids_start AND group_ids_end)
+        AND status = :status:';
+        
+        $query = $this->db->query($sql, [
+                                    'id'            => $id, 
+                                    'status'        => Utilities::STATUS_ACTIVE,
+                                    'type_folder'   => Utilities::TYPE_FOLDER,
+                                    'type_file'     => Utilities::TYPE_FILE,
+                                ]);
+        $result = $query->getRow(0);
+        $query->freeResult();
+
+        $this->db->transComplete();
+        
+        return $result == null ? null : $result->id;
     }
 
     public function findParentWithRoot($parentId, $rootId)

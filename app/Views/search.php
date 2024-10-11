@@ -106,7 +106,7 @@
   <!-- JS -->
   <script type="text/javascript">
     window.onload = function() {
-      addEventSerial();
+      eventCheckboxes();
       
       var option = {
         FIELDS_FETCH:           new Array('id', 'found_in', 'matched_at', 'language', 'entry_id', 
@@ -140,26 +140,34 @@
       initTable(option);
     }
 
-    function toggleChecks() { 
-      if (document.getElementById('serial').checked) {
-        document.getElementById('content').disabled = true;
-        document.getElementById('content').checked = false;
-        document.getElementById('author').disabled = true;
-        document.getElementById('author').checked = false;
-        document.getElementById('commentary').disabled = true;
-        document.getElementById('commentary').checked = false;
-      } else {
-        document.getElementById('content').disabled = false;
-        document.getElementById('author').disabled = false;
-        document.getElementById('commentary').disabled = false;
-      } 
+    const serialCkb   = document.getElementById('serial');
+    const contentCkb  = document.getElementById('content');
+    const authorCkb   = document.getElementById('author');
+    const commentCkb  = document.getElementById('commentary');
+
+    function eventCheckboxes() {
+      let ckbs = [serialCkb, contentCkb, authorCkb, commentCkb];
+      for (let i = 0; i < ckbs.length; i++) {
+        addEvent(ckbs[i], 'change', toggleCkbs);
+      }
     }
 
-    function addEventSerial() {
-      addEvent(document.getElementById('serial'), 'change', function() {
-        toggleChecks();
-      });
+    function toggleCkbs(e) {
+      let target = e.target;
+      if (!target) return;
+      if (target == serialCkb) {
+        if (target.checked) {
+          contentCkb.checked = false;
+          authorCkb.checked = false;
+          commentCkb.checked = false;
+        }  
+      } else {
+        if (target.checked) {
+          serialCkb.checked = false;
+        }
+      }
     }
+
   </script>
 
 <?php include 'templates/footer.php';?>
