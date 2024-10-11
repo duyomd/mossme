@@ -21,21 +21,24 @@ class EntryManager extends BaseController
         $data = $this->loadList(null, '-1', '-1', $conditions);
         $data['responseJsonList']   = $this->responseJsonList($data);
 
-        $parentEntry = model(EntryModel::class)->getEntryOnly($parentId);
+        $parentEntry = model(EntryModel::class)->getSiblingsOnly($parentId);
         if ($parentId != null && $parentEntry == null) {
             return $this->notFound();
         }
 
         // TODO: necessarily reload after edit entry?
-        $data['roots']              = model(EntryModel::class)->getRootEntries(); 
+        $data['roots']              = model(EntryModel::class)->getRootEntries();
         $data['sections']           = model(EntryModel::class)->getSections();
+        $data['images']             = model(ImageUrlModel::class)->getImageUrls();
+
         $data['parentId']           = $parentId;
         $data['grandParentId']      = $parentEntry == null ? null : $parentEntry->parent_id;
         $data['rootId']             = $parentEntry == null ? null : 
                                         ($parentEntry->root_id != null ? $parentEntry->root_id : 
                                             ($parentId == null ? null : $parentId));
-        $data['images']             = model(ImageUrlModel::class)->getImageUrls();
-
+        $data['previousParentId']   = $parentEntry == null ? null : $parentEntry->previous_id;
+        $data['nextParentId']       = $parentEntry == null ? null : $parentEntry->next_id;
+        
         helper('form');
         
         return view('admin/entryManager', $data);
@@ -303,8 +306,8 @@ class EntryManager extends BaseController
     private function prepareSort($currentPage, $orderBys = '-1', $sortOrders = '-1', $conditions = '-1', $count = 0) 
     {
         $parentId = $this->parseParentId($conditions);
-        $obs = isset($parentId) ? EntryModel::HEADER_SEQUENCE_ORDERBYS : EntryModel::DEFAULT_ORDERBYS;
-        $sos = isset($parentId) ? EntryModel::HEADER_SEQUENCE_SORTORDERS : EntryModel::DEFAULT_SORTORDERS;
+        $obs = !Utilities::isNullOrBlank($parentId) ? EntryModel::HEADER_SEQUENCE_ORDERBYS : EntryModel::DEFAULT_ORDERBYS;
+        $sos = !Utilities::isNullOrBlank($parentId) ? EntryModel::HEADER_SEQUENCE_SORTORDERS : EntryModel::DEFAULT_SORTORDERS;
         if ($orderBys != '-1') $obs = explode(',', $orderBys);
         if ($sortOrders != '-1') $sos = explode(',', $sortOrders);
         if (!isset($currentPage)) $currentPage = 1;
