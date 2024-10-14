@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'משהו השתבש, אנא נסה שוב מאוחר יותר.',
     'article_group_1'           =>  'אוספים: ',
     'article_group_2'           =>  ' (אוספים)',
+    'article_expand_all'        => 'הרחב הכל',
+    'article_collapse_all'      => 'כווץ הכל',
 
     /*--------------------------------------------------------------
     # Contact

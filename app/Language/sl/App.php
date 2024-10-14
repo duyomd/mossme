@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Prišlo je do težave, prosimo, poskusite znova kasneje.',
     'article_group_1'           =>  'Kompilacija: ',
     'article_group_2'           =>  ' (Kompilacija)',
+    'article_expand_all'        =>  'Razširi vse',
+    'article_collapse_all'      =>  'Strni vse',
 
     /*--------------------------------------------------------------
     # Kontakt

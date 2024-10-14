@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Er is iets misgegaan, probeer het later opnieuw.',
     'article_group_1'           =>  'Verzameling: ',
     'article_group_2'           =>  ' (Verzameling)',
+    'article_expand_all'        =>  'Alles uitvouwen',
+    'article_collapse_all'      =>  'Alles inklappen',
 
     /*--------------------------------------------------------------
     # Contact

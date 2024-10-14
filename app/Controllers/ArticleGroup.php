@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Controllers\ArticleBase;
 use App\Entities\Entry;
 use App\Models\EntryModel;
 use App\Models\TranslationModel;
@@ -9,7 +10,7 @@ use App\Helpers\Utilities;
 
 use CodeIgniter\Exceptions\PageNotFoundException;
 
-class ArticleGroup extends BaseController
+class ArticleGroup extends ArticleBase
 {
 
     public function show($parent_id = null)

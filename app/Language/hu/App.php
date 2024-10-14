@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Valami hiba történt, kérjük, próbálja újra később.',
     'article_group_1'           =>  'Gyűjtemény: ',
     'article_group_2'           =>  ' (Gyűjtemény)',
+    'article_expand_all'        =>  'Mindet kibont',
+    'article_collapse_all'      =>  'Mindet összecsuk',
 
     /*--------------------------------------------------------------
     # Contact

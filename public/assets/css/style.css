@@ -39,6 +39,7 @@
   --mm-color-font-header: #fff;
   --mm-color-font-button: #fff;
   --mm-color-font-info: #bab3a6;
+  --mm-color-font-tree-leaf: seashell;
   --mm-color-danger-bg: #ed3c0d;
   --mm-color-success-bg: #18d26e;
   --mm-color-input-border: #625b4b;
@@ -137,6 +138,7 @@
   --mm-color-bg-light: #e5e7eb;
   --mm-color-font: #000;
   --mm-color-font-detail: #555555;
+  --mm-color-font-tree-leaf: lightsalmon;
   --mm-color-input-disabled: light-dark;
   --mm-color-border-subtle: rgba(0, 0, 0, 0.2);
   --mm-color-menu-description: rgba(0, 0, 0, 0.5);
@@ -1325,11 +1327,12 @@ section {
 # Content links
 --------------------------------------------------------------*/
 .content-list {
-  list-style-position: outside; 
-  list-style-type: disc;
+  /* list-style-position: outside; 
+  list-style-type: disc; */
   /* list-style-type: disclosure-closed; */
   /* list-style-type: decimal; */
   text-align: start;
+  list-style: none;
 }
 
 .content-list a {
@@ -1340,8 +1343,7 @@ section {
   color: var(--mm-color-link-content-hover);
 }
 
-.content-list a span {
-  padding-inline-start: 1rem;
+.content-list a span {  
   display: inline-flex;
   line-height: 2.5rem;
 }
@@ -1366,6 +1368,33 @@ section {
   padding-inline-start: 1.2rem;
   display: initial !important;
   line-height: initial !important;
+}
+
+.content-list-tree a i {
+  padding-inline-end: 1rem;
+}
+
+.content-list-tree a span.tree-folder {
+  /* font-weight: 600; */
+}
+
+.content-list-tree a span.tree-leaf {
+  padding-inline-start: 1rem;
+  /* -webkit-text-stroke: 0.2px var(--mm-color-font-tree-leaf);   */
+}
+
+.content-list-tree a span.tree-leaf-no-parent {
+  padding-inline-start: calc(22px + 1rem);  
+}
+
+div.tree span.tree-expand {
+  text-transform: uppercase;
+}
+
+@media (max-width: 576px) {
+  div.tree > ul.content-list-tree {
+    padding-inline-start: 1rem !important;
+  }
 }
 
 /*--------------------------------------------------------------

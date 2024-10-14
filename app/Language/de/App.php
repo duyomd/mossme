@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Etwas ist schiefgelaufen, bitte versuchen Sie es später erneut.',
     'article_group_1'           =>  'Zusammenstellung: ',
     'article_group_2'           =>  ' (Zusammenstellung)',
+    'article_expand_all'        =>  'Alle erweitern',
+    'article_collapse_all'      =>  'Alle reduzieren',
 
     /*--------------------------------------------------------------
     # Contact

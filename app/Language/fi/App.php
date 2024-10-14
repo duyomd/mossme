@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Jokin meni pieleen, yritä uudelleen myöhemmin.',
     'article_group_1'           =>  'Kokoelma: ',
     'article_group_2'           =>  ' (Kokoelma)',
+    'article_expand_all'        =>  'Laajenna kaikki',
+    'article_collapse_all'      =>  'Pienennä kaikki',
 
     /*--------------------------------------------------------------
     # Contact

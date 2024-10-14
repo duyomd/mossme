@@ -5,6 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 use App\Controllers\Dhamma;
 use App\Controllers\Credits;
 use App\Controllers\Contact;
+use App\Controllers\ArticleBase;
 use App\Controllers\Article;
 use App\Controllers\ArticleGroup;
 use App\Controllers\LanguageManager;
@@ -36,8 +37,10 @@ $routes->post('contact', [Contact::class, 'save']);
 
 $routes->get('article/(:segment)', [Article::class, 'show']);
 $routes->get('article/(:segment)/forward=(:alpha)/(:segment)/', [Article::class, 'show']);
-
 $routes->get('article-group/(:segment)', [ArticleGroup::class, 'show']);
+$routes->get('parallels=(:segment)', [ArticleBase::class, 'loadParallels']);
+$routes->get('articleContent/type=(:segment)/id=(:segment)', [ArticleBase::class, 'loadArticleContent']);
+$routes->get('openFolder/(:segment)', [ArticleBase::class, 'fetchChildNodes']);
 
 $routes->get('userSettings', [UserSettings::class, 'show']);
 $routes->post('userSettings', [UserSettings::class, 'action']);
@@ -104,8 +107,6 @@ $routes->post('cardTranslations', [CardTranslationManager::class, 'ajaxSubmit'])
 
 $routes->get('lang=(:segment)', [Ajax::class, 'changeLanguage']);
 $routes->get('theme=(:segment)', [Ajax::class, 'changeTheme']);
-$routes->get('parallels=(:segment)', [Ajax::class, 'loadParallels']);
-$routes->get('articleContent/type=(:segment)/id=(:segment)', [Ajax::class, 'loadArticleContent']);
 $routes->get('rpp=(:alphanum)/conditions=(:segment)/url=(:any)', [Ajax::class, 'changeRowsPerPage']);
 
 service('auth')->routes($routes, ['except' => ['magic-link']]);

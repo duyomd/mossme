@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  '何か問題が発生しました。後でもう一度お試しください。',
     'article_group_1'           =>  '編集：',
     'article_group_2'           =>  '（編集）',
+    'article_expand_all'        =>  'すべて展開',
+    'article_collapse_all'      =>  'すべて折りたたむ',
 
     /*--------------------------------------------------------------
     # Contact

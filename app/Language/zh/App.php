@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  '发生错误，请稍后再试。',
     'article_group_1'           =>  '汇编：',
     'article_group_2'           =>  '（汇编）',
+    'article_expand_all'        =>  '展開全部',
+    'article_collapse_all'      =>  '全部摺疊',
 
     /*--------------------------------------------------------------
     # Contact

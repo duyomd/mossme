@@ -1,4 +1,5 @@
 <!-- End Header -->
+  <?php use App\Helpers\Utilities; ?>
 
   <div class="ajax-loading"><div><?=lang('App.loading')?></div></div>  
 
@@ -44,7 +45,7 @@
           <div class="btns">
             <a href="/article/<?=$entry->previous_id?>" class="btn-scroll animated fadeInUp scrollto
               <?php if(!isset($entry->previous_id)) echo ' disabled'; ?>">
-              <i class="bi bi-chevron-double-<?= App\Helpers\Utilities::isRightToLeft() ? 'right' : 'left' ?>"></i>
+              <i class="bi bi-chevron-double-<?= Utilities::isRightToLeft() ? 'right' : 'left' ?>"></i>
             </a>
 
             <?php if (!$entry->isFolder) : ?>      
@@ -64,13 +65,13 @@
               
             <a href="/article/<?=$entry->next_id?>" class="btn-scroll animated fadeInUp scrollto ms-btns-navi
               <?php if(!isset($entry->next_id)) echo ' disabled'; ?>">
-              <i class="bi bi-chevron-double-<?= App\Helpers\Utilities::isRightToLeft() ? 'left' : 'right' ?>"></i>
+              <i class="bi bi-chevron-double-<?= Utilities::isRightToLeft() ? 'left' : 'right' ?>"></i>
             </a>
           </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-          <a href="<?php $video = $entry->video_url; echo (!App\Helpers\Utilities::isNullOrBlank($video) ? $video : '#article'); ?>" 
-            class="<?= !App\Helpers\Utilities::isNullOrBlank($video) ? 'glightbox ' : '' ?>play-btn"></a> 
+          <a href="<?php $video = $entry->video_url; echo (!Utilities::isNullOrBlank($video) ? $video : '#article'); ?>" 
+            class="<?= !Utilities::isNullOrBlank($video) ? 'glightbox ' : '' ?>play-btn"></a> 
         </div>
 
       </div>
@@ -220,7 +221,7 @@
           </div>
 
           <!-- Parallel articles -->
-          <?php $parallelsCount = App\Helpers\Utilities::isNullOrBlank($entry->parallels) ? 0 : count(explode(",", $entry->parallels));
+          <?php $parallelsCount = Utilities::isNullOrBlank($entry->parallels) ? 0 : count(explode(",", $entry->parallels));
             if ($parallelsCount > 0) :?>
             <div class="parallels row mt-5 text-center">
               <div>
@@ -310,27 +311,57 @@
                 <p id="title-main" class="mt-4"><?= $entry->displayEnumTitle ?></p>
               </div>
           </div>
-          <?php if (!App\Helpers\Utilities::isNullOrBlank($entry->displayContent)) : ?>
+          <?php if (!Utilities::isNullOrBlank($entry->displayContent)) : ?>
             <div class="mb-4 row justify-content-center">
               <div class="ck-content"><?= $entry->displayContent ?></div>
             </div>
           <?php endif ?>
           <?php if ($entry->isFolder && count($entry->translationsChildren) > 0) : ?>
             <div class="row justify-content-center">
-              <div class="col-lg-10">
-                  <ul class="content-list">
+              <div class="col-lg-10 tree">
+                  <ul class="content-list content-list-tree">
+
+                    <?php if ($entry->translationsChildren[0]->type == Utilities::TYPE_FOLDER) : ?>
+                      <li>
+                        <a href="javascript:void(0)" onclick="toggleAllNodes()">
+                          <i id="btn-toggle-all" class="d-inline bi bi-grid-3x3-gap-fill"></i>
+                          <span class="tree-expand"><?=lang('App.article_expand_all')?></span>
+                        </a>
+                      </li>
+                      <br/>
+                    <?php endif ?>
+                      
                     <?php foreach ($entry->translationsChildren as $child) : ?>
-                      <li><a href="/article/<?=$child->entry_id?>">
-                        <span><?= $child->enum_title ?></span>
-                      </a></li>
+                      <?php $eId = $child->entry_id; 
+                            $isFolder = $child->type == Utilities::TYPE_FOLDER; ?>
+                      <li>
+                        <?php if ($isFolder) : ?>
+                          <a href="javascript:void(0)">
+                            <i id="<?=$eId?>-tree-i" data-bs-toggle="collapse" href="#<?=$eId?>-tree-ul" 
+                              class="d-inline bi bi-plus-square-fill tree-folder-no-parent"
+                              onclick="toggleNode('<?=$eId?>', false)"></i>
+                          </a>
+                        <?php endif ?>
+                        <a href="/article/<?=$child->entry_id?>">
+                          <span class="<?=$isFolder ? 'tree-folder' : 'tree-leaf-no-parent'?>"><?=$child->enum_title?></span>
+                        </a>
+                        <?php if ($isFolder) : ?>
+                          <ul id="<?=$eId?>-tree-ul" class="content-list content-list-tree collapse"></ul>
+                        <?php endif ?>
+                      </li>
                     <?php endforeach ?>
+                    
                     <!-- Group all items' content in 1 page -->
                     <?php if ($entry->isChildrenGroupable) : ?>
                       <br/>
-                      <li style="list-style-type: disclosure-closed;"><a href="/article-group/<?=$entry->id?>">
-                        <span><?= lang('App.article_group_1') . $entry->displayEnumTitle ?></span>
-                      </a></li>
-                    <?php endif ?>  
+                      <li>
+                        <a href="/article-group/<?=$entry->id?>">
+                          <i class="d-inline bi bi-stack"></i>
+                          <span><?=lang('App.article_group_1') . $entry->displayEnumTitle?></span>
+                        </a>
+                      </li>
+                    <?php endif ?>
+
                   </ul>
               </div>
             </div>
@@ -357,6 +388,7 @@
     '</div>';
   include 'templates/footer.php';?>
 
+  <script src="/assets/js/view/article.js"></script>
   <!-- JS -->
   <?php if (!$entry->isFolder) : ?>
 
@@ -411,7 +443,6 @@
       array_push($comms, $item_comm);
     ?>
     
-    <script src="/assets/js/view/article.js"></script>
     <script type="text/javascript">
 
       var _translations = new Array(1);
@@ -428,7 +459,6 @@
           _commentaries[0].set('<?=$comm->id?>', '<?=esc($comm->content)?>');
         }
       <?php endforeach ?>
-
       let params = {
         MSG_PARALLELES_LOADING  : "<?=lang('App.article_parallels_loading')?>",
         MSG_PARALLELES_PATIENT  : "<?=lang('App.article_parallels_patient')?>",
@@ -450,5 +480,15 @@
       articleGlobal(params);
 
     </script>
+
+  <?php else : ?>
+    <script type="text/javascript">
+      let params = {
+        MSG_EXPAND_ALL          : "<?=lang('App.article_expand_all')?>",
+        MSG_COLLAPSE_ALL        : "<?=lang('App.article_collapse_all')?>",
+      }
+      articleGlobal(params);
+    </script>
   <?php endif ?>
+
   <link rel="stylesheet" href="/assets/js/ckeditor5-43.1.0/ckeditor5.css">

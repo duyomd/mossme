@@ -155,6 +155,8 @@ return [
     'article_parallels_error'   =>  'Något gick fel, vänligen försök igen senare.',
     'article_group_1'           =>  'Samling: ',
     'article_group_2'           =>  ' (Samling)',
+    'article_expand_all'        =>  'Expandera alla',
+    'article_collapse_all'      =>  'Kollapsa alla',
 
     /*--------------------------------------------------------------
     # Contact

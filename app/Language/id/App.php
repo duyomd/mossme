@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Terjadi kesalahan, mohon coba lagi nanti.',
     'article_group_1'           =>  'Kompilasi: ',
     'article_group_2'           =>  ' (Kompilasi)',
+    'article_expand_all'        =>  'Perluas semua',
+    'article_collapse_all'      =>  'Tutup semua',
 
     /*--------------------------------------------------------------
     # Contact

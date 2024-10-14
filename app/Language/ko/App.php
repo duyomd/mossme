@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  '문제가 발생했습니다. 나중에 다시 시도해 주세요.',
     'article_group_1'           =>  '편집: ',
     'article_group_2'           =>  ' （편집）',
+    'article_expand_all'        =>  '모두 펼치기',
+    'article_collapse_all'      =>  '모두 접기',
 
     /*--------------------------------------------------------------
     # Contact

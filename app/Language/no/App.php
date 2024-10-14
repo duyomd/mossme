@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Noe gikk galt, vennligst prøv igjen senere.',
     'article_group_1'           =>  'Samling: ',
     'article_group_2'           =>  ' (Samling)',
+    'article_expand_all'        =>  'Utvid alt',
+    'article_collapse_all'      =>  'Kollaps alt',
 
     /*--------------------------------------------------------------
     # Contact

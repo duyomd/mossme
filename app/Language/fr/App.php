@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Quelque chose s’est mal passé, veuillez réessayer plus tard.',
     'article_group_1'           =>  'Compilation: ',
     'article_group_2'           =>  ' (Compilation)',
+    'article_expand_all'        =>  'Tout développer',
+    'article_collapse_all'      =>  'Tout réduire',
 
     /*--------------------------------------------------------------
     # Contact

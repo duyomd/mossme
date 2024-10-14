@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Có vấn đề xảy ra, xin vui lòng thử lại sau.',
     'article_group_1'           =>  'Tổng hợp: ',
     'article_group_2'           =>  ' (Tổng hợp)',
+    'article_expand_all'        =>  'Mở toàn bộ mục lục',
+    'article_collapse_all'      =>  'Thu gọn mục lục',
 
     /*--------------------------------------------------------------
     # Contact

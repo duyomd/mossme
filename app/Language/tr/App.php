@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Bir şeyler ters gitti, lütfen daha sonra tekrar deneyin.',
     'article_group_1'           =>  'Derleme: ',
     'article_group_2'           =>  ' (Derleme)',
+    'article_expand_all'        =>  'Hepsini genişlet',
+    'article_collapse_all'      =>  'Hepsini daralt',
 
     /*--------------------------------------------------------------
     # Contact

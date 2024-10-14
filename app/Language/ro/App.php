@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'A apărut o problemă, vă rugăm să încercați din nou mai târziu.',
     'article_group_1'           =>  'Compilare: ',
     'article_group_2'           =>  ' (Compilare)',
+    'article_expand_all'        =>  'Extinde tot',
+    'article_collapse_all'      =>  'Restrânge tot',
 
     /*--------------------------------------------------------------
     # Contact

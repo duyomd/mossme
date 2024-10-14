@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Qualcosa è andato storto, per favore riprova più tardi.',
     'article_group_1'           =>  'Compilazione: ',
     'article_group_2'           =>  ' (Compilazione)',
+    'article_expand_all'        =>  'Espandi tutto',
+    'article_collapse_all'      =>  'Comprimi tutto',
 
     /*--------------------------------------------------------------
     # Contact

@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Něco se pokazilo, zkuste to prosím později.',
     'article_group_1'           =>  'Kompilace: ',
     'article_group_2'           =>  ' (Kompilace)',
+    'article_expand_all'        =>  'Rozbalit vše',
+    'article_collapse_all'      =>  'Sbalit vše',
 
     /*--------------------------------------------------------------
     # Contact

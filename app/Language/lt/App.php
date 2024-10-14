@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Įvyko klaida, prašome bandyti vėliau.',
     'article_group_1'           =>  'Rinkinys: ',
     'article_group_2'           =>  ' (Rinkinys)',
+    'article_expand_all'        =>  'Išskleisti viską',
+    'article_collapse_all'      =>  'Suskleisti viską',
 
     /*--------------------------------------------------------------
     # Contact

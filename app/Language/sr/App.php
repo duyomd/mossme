@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Došlo je do greške, molimo pokušajte ponovo kasnije.',
     'article_group_1'           =>  'Kompilacija: ',
     'article_group_2'           =>  ' (Kompilacija)',
+    'article_expand_all'        =>  'Прошири све',
+    'article_collapse_all'      =>  'Скупи све',
 
     /*--------------------------------------------------------------
     # Contact

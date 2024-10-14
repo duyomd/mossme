@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'કંઈક ગડબડ થઈ ગઈ છે, કૃપા કરીને પછી ફરી પ્રયાસ કરો.',
     'article_group_1'           =>  'સંગ્રહ: ',
     'article_group_2'           =>  ' (સંગ્રહ)',
+    'article_expand_all'        =>  'બધું વિસ્તારો',
+    'article_collapse_all'      =>  'બધું સંકોચો',
 
     /*--------------------------------------------------------------
     # Contact

@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   =>  'Alguna cosa ha fallat, torneu-ho a intentar més tard.',
     'article_group_1'           =>  'Compilació: ',
     'article_group_2'           =>  ' (Compilació)',
+    'article_expand_all'        =>  'Expandir tot',
+    'article_collapse_all'      =>  'Reduir tot',
 
     /*--------------------------------------------------------------
     # Contact

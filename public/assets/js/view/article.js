@@ -8,6 +8,8 @@ let MSG_MONO_MONOLINGUAL;
 let MSG_MONO_BILINGUAL;
 let MSG_COMMENTARY_HIDDEN;
 let MSG_COMMENTARY_DISPLAY;
+let MSG_EXPAND_ALL;
+let MSG_COLLAPSE_ALL;
 
 let ENTRY_COUNT;
 let TRANSLATIONS_DEFAULT;
@@ -26,6 +28,8 @@ function articleGlobal(params) {
   MSG_MONO_BILINGUAL      = params.MSG_MONO_BILINGUAL;
   MSG_COMMENTARY_HIDDEN   = params.MSG_COMMENTARY_HIDDEN;
   MSG_COMMENTARY_DISPLAY  = params.MSG_COMMENTARY_DISPLAY;
+  MSG_EXPAND_ALL          = params.MSG_EXPAND_ALL;
+  MSG_COLLAPSE_ALL        = params.MSG_COLLAPSE_ALL;
 
   ENTRY_COUNT             = params.ENTRY_COUNT;
   FORWARD                 = params.FORWARD;
@@ -311,10 +315,183 @@ function dropdownCommentary() {
   });
 }
 
-window.onload = function() {
+function initArticle() {
   initToastArticle();
   initContent(TRANSLATIONS_DEFAULT, COMMENTARIES_DEFAULT);
   initDefaultState();
   dropdownOverflow();
 }
+
+/****** Article Tree ******/
+
+const SUFFIX_TOGGLE   = '-tree-i';
+const SUFFIX_SUBTREE  = '-tree-ul';
+
+const CSS_SHOW        = 'show';
+const CSS_SUBTREE     = 'content-list-tree';
+const CSS_EXPANDING   = 'bi-dash-square';
+const CSS_COLLAPSING  = 'bi-plus-square-fill';
+
+var _treemap = new Map();
+
+function getTreeElement(eId, suffix) {
+  return document.getElementById(eId.replaceAll('.', '\\.') + suffix);
+}
+
+function getEidFromTreeElement(treeE, suffix) {
+  return treeE.id.slice(0, -1*(suffix).length);
+}
+
+function getToggleElement(eId) {
+  return getTreeElement(eId, SUFFIX_TOGGLE);
+}
+
+function getSubtreeElement(eId) {
+  return getTreeElement(eId, SUFFIX_SUBTREE);
+}
+
+function expandCss(eId) {
+  getSubtreeElement(eId).classList.add(CSS_SHOW);
+  getToggleElement(eId).classList.replace(CSS_COLLAPSING, CSS_EXPANDING);
+}
+
+function collapseCss(eId) {
+  getSubtreeElement(eId).classList.remove(CSS_SHOW);
+  getToggleElement(eId).classList.replace(CSS_EXPANDING, CSS_COLLAPSING);
+}
+
+/**
+ * Open/close folder tree
+ * @param {*} e: eventListner 
+ * @param {*} eId: entry_id
+ */
+function toggleNode(eId, isRecursive) {
+  if (getToggleElement(eId).classList.contains(CSS_COLLAPSING)) {  
+    openNode(eId, isRecursive);
+  } else {
+    closeNode(eId);
+  }  
+}
+
+function openNode(eId, isRecursive) {
+  let ulEle = getSubtreeElement(eId);
+  let childLis = ulEle.children;
+  if (childLis.length == 0) {
+    fetchChildNodes(eId, isRecursive);
+  } else {
+    if (isRecursive) {      
+      for (let i = 0; i < childLis.length; i++) {
+        // check if any of its direct children has subtree (whether this is a folder) (length < 3 is actually unnecessary)
+        if (!Array.from(childLis[i].children).some(child => child.classList.contains(CSS_SUBTREE))
+          || childLis[i].children.length < 3) {
+          break;          
+        }
+        let childUl = childLis[i].querySelector('.' + CSS_SUBTREE);
+        openNode(getEidFromTreeElement(childUl, SUFFIX_SUBTREE), isRecursive);
+      }
+    }
+    expandCss(eId);
+  }  
+}
+
+function closeNode(eId) {
+  collapseCss(eId);  
+}
+
+function fetchChildNodes(parentEntryId, isRecursive) {
+  if (!parentEntryId) return;
+  if (_treemap.get(parentEntryId)) {
+    expandCss(parentEntryId);
+    return;
+  } else {
+    _treemap.set(parentEntryId, true);
+  }
+  loading(true);
+  var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      try {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            let trans = JSON.parse(this.responseText);
+            printChildNodes(parentEntryId, trans, isRecursive);
+          } else {}
+          loading(false);
+        }
+      } catch(e) {
+        loading(false);
+      }
+    };
+    xmlhttp.open("GET", "/openFolder/" + parentEntryId, true);
+    xmlhttp.send();
+}
+
+function printChildNodes(parentEntryId, trans, isRecursive) {
+  let parentUl = getSubtreeElement(parentEntryId);
+  for (let i = 0; i < trans.length; i++) {
+    let tran = trans[i];
+    let li = document.createElement('li');
+    let innerHTML = '';
+    let isFolder = tran.type == 0;
+    if (isFolder) {
+      innerHTML += 
+      '<a href="javascript:void(0)" >' +  
+        '<i id="' + tran.entry_id + SUFFIX_TOGGLE + '" data-bs-toggle="collapse" href="#' + tran.entry_id + SUFFIX_SUBTREE + '"' + 
+          'class="d-inline bi ' + CSS_COLLAPSING + '" ' + 
+          'onclick="toggleNode(`' + tran.entry_id + '`, false)"></i>' + 
+      '</a>'
+    }
+    innerHTML += 
+      '<a href="/article/' + tran.entry_id + '">' + 
+        '<span class="' + (isFolder ? 'tree-folder' : 'tree-leaf') + '">' + tran.enum_title + '</span>' + 
+      '</a>';
+    if (isFolder) {
+      innerHTML += 
+      '<ul id="' + tran.entry_id + SUFFIX_SUBTREE + '" class="content-list ' + CSS_SUBTREE + ' collapse"></ul>';
+    }
+    li.innerHTML = innerHTML;
+    parentUl.appendChild(li);  
+  }
+  expandCss(parentEntryId);
+
+  if (isRecursive) {
+    for (let i = 0; i < trans.length; i++) {
+      let tran = trans[i];
+      if (tran.type == 0) {
+        openNode(tran.entry_id, isRecursive);
+      }
+    }
+  }
+}
+
+function toggleAllNodes() {  
+  let toggleAllEle = document.getElementById('btn-toggle-all');
+  if (!toggleAllEle) return;
+  if (toggleAllEle.classList.contains('bi-grid-3x3-gap-fill')) {
+    expandAll();
+    toggleAllEle.nextElementSibling.innerHTML = MSG_COLLAPSE_ALL;
+  } else {
+    collapseAll();
+    toggleAllEle.nextElementSibling.innerHTML = MSG_EXPAND_ALL;
+  }
+  toggleAllEle.classList.toggle('bi-grid-3x3-gap-fill');
+  toggleAllEle.classList.toggle('bi-grid-3x3-gap');
+}
+
+function expandAll() {
+  let roots = document.querySelectorAll('.tree-folder-no-parent');
+  for (let i = 0; i < roots.length; i++) {
+    openNode(getEidFromTreeElement(roots[i], SUFFIX_TOGGLE), true);
+  }
+}
+
+function collapseAll() {
+  let uls = document.querySelectorAll('.' + CSS_SUBTREE);
+  for (let i = 1; i < uls.length; i++) {
+    closeNode(getEidFromTreeElement(uls[i], SUFFIX_SUBTREE));
+  }  
+}
+
+/****** Page Onload ******/
+
+addEvent(window, "load", initArticle);
 scrollToSectionWorkaround();

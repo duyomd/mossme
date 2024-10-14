@@ -154,6 +154,8 @@ return [
     'article_parallels_error'   => 'Algo deu errado, por favor tente novamente mais tarde.',
     'article_group_1'           =>  'Compilação: ',
     'article_group_2'           =>  ' (Compilação)',
+    'article_expand_all'        => 'Expandir tudo',
+    'article_collapse_all'      => 'Recolher tudo',
 
     /*--------------------------------------------------------------
     # Contact
