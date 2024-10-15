@@ -371,6 +371,7 @@ return [
     'entry_label_created_by'        =>  'Created by',
     
     'entry_msg_parent_root_relation'    =>  'Root and Parent fields are not appropriated.',
+    'entry_msg_type_mismatch'           =>  'Type mismatch.',
 
     /*--------------------------------------------------------------
     # Translation Manager

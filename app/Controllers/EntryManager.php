@@ -119,6 +119,23 @@ class EntryManager extends BaseController
                     'children_groupable'    => $this->request->getVar('children_groupable'),
             ]);
 
+            // root_id & parent_id relation check
+            if (($entry->parent_id == null && $entry->root_id != null)
+                    || ($entry->parent_id != null && $entry->root_id == null)) {
+                return json_encode($this->showResult(false, lang('App.entry_msg_parent_root_relation')));
+            }
+            // check if parent_id exists
+            if ($entry->parent_id != null && $this->findParentWithRoot($entry->parent_id, $entry->root_id) == null) {
+                return json_encode($this->showResult(false, lang('App.entry_msg_parent_root_relation')));
+            }
+
+            // check type
+            if ($entry->getIsFolder()) {
+                if (str_contains($entry->id, '.')) {
+                    return json_encode($this->showResult(false, lang('App.entry_msg_type_mismatch')));
+                }
+            }
+
             // group_ids autofill
             $group_ids_start    = '';
             $group_ids_end      = '';
@@ -148,16 +165,6 @@ class EntryManager extends BaseController
             }
             $entry->group_ids_start = $group_ids_start;
             $entry->group_ids_end = $group_ids_end;
-
-            // root_id & parent_id relation check
-            if (($entry->parent_id == null && $entry->root_id != null)
-                    || ($entry->parent_id != null && $entry->root_id == null)) {
-                return json_encode($this->showResult(false, lang('App.entry_msg_parent_root_relation')));
-            }
-            // check if parent_id exists
-            if ($entry->parent_id != null && $this->findParentWithRoot($entry->parent_id, $entry->root_id) == null) {
-                return json_encode($this->showResult(false, lang('App.entry_msg_parent_root_relation')));
-            }
 
             if ($mode == 'insert') {
                 $entry->created_by = auth()->user()->username;
