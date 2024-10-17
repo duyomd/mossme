@@ -79,6 +79,7 @@ function parallelsSearching(titleEle, contentEle) {
 }
 
 function parallelsResult(titleEle, contentEle, responseText) {
+  const newTab = ' target="_blank" rel="noreferrer noopener" ';
   var data = JSON.parse(responseText);
   var result = data['urls'];
   var msg = data['msg'];
@@ -88,10 +89,19 @@ function parallelsResult(titleEle, contentEle, responseText) {
     if (content.length > 0) {
       content += ", ";
     }
+    
     if (par.url) {
-      content += '<a href="' + par.url + '">' + par.entry_id + '</a>';
+      content += '<a href="' + par.url + '"' + newTab + '>' + par.entry_id + '</a>';
     } else {
-      content += '<span>' + par.entry_id + '</span>';
+      let eId = par.entry_id.toLowerCase();
+      // TODO: later...
+      if (startsWithAnyOfArr(eId, ['kd', 'mvu', 'sht'])) {
+        content += '<span>' + par.entry_id + '</span>';      
+      } else {
+        let url = 'https://suttacentral.net/' + eId;
+        content += '<a class="ref" href="' + url + '"' + newTab + '>' + par.entry_id + '</a>';
+      }
+      
     }
   }
   contentEle.classList.add("text-uppercase");

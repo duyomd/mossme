@@ -65,6 +65,8 @@
   --mm-color-dropdown-link-ref: var(--mm-color-link);
   --mm-color-dropdown-link-ref-hover: var(--mm-color-link-light);
   --mm-color-dropdown-link-active-bg: var(--bs-secondary);
+  --mm-color-parallels-link-ref: darkseagreen;
+  --mm-color-parallels-link-ref-hover: gainsboro;
 
   --mm-color-font-darktheme: #fff;
   --mm-color-font-detail-darktheme: #aaaaaa;
@@ -123,7 +125,7 @@
   --mm-color-menu-before-bg: rgba(255, 255, 255, 0.8);
   --mm-color-events-before-bg: rgba(255, 255, 255, 0.9);
   --mm-color-commentary-before-bg: rgba(255, 255, 255, 0.9);
-  --mm-opacity-article-bg: 0.1;
+  --mm-opacity-article-bg: 0.06;
   --mm-opacity-credits-bg: 0.1;
   --mm-opacity-settings-bg: 0.25;
 
@@ -132,6 +134,8 @@
   --mm-color-link-light: #26457a; */
   --mm-color-link-content: var(--mm-color-link);
   --mm-color-link-content-hover: var(--mm-color-link-light);
+  --mm-color-parallels-link-ref: sandybrown;
+  --mm-color-parallels-link-ref-hover: var(--mm-color-link-light);
 
   --mm-color-footer-bg: white;
   --mm-color-bg: #f3f4f6;
@@ -1254,8 +1258,16 @@ section {
   margin-inline-end: 5px;
 }
 
-.article .parallels .parallels-content {
+.article .parallels div[class^="parallels-content"] {
   font-family: "serif";
+}
+
+.article .parallels a.ref {
+  color: var(--mm-color-parallels-link-ref);
+}
+
+.article .parallels a.ref:hover {
+  color: var(--mm-color-parallels-link-ref-hover);
 }
 
 /* ckeditor blockquote */
