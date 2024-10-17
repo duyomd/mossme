@@ -395,8 +395,8 @@ function processQueue() {
 
 /**
  * Open/close folder tree
- * @param {*} e: eventListner 
- * @param {*} eId: entry_id
+ *  @param {*} eId: entry_id
+ *  @param {*} isRecursive: true when [expand all]
  */
 function toggleNode(eId, isRecursive) {
   if (getToggleElement(eId).classList.contains(CSS_COLLAPSING)) {  
