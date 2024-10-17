@@ -342,6 +342,11 @@ const CSS_SUBTREE     = 'content-list-tree';
 const CSS_EXPANDING   = 'bi-dash-square';
 const CSS_COLLAPSING  = 'bi-plus-square-fill';
 
+const MAX_CONCURRENT_REQUESTS = 5;  // Limit the number of concurrent requests
+
+let requestQueue    = [];           // Queue to hold requests
+let activeRequests  = 0;            // Track active requests
+
 var _treemap = new Map();
 
 function getTreeElement(eId, suffix) {
@@ -370,6 +375,24 @@ function collapseCss(eId) {
   getToggleElement(eId).classList.replace(CSS_EXPANDING, CSS_COLLAPSING);
 }
 
+function queueRequest(eId, isRecursive) {
+  requestQueue.push({ eId, isRecursive });
+  processQueue();
+}
+
+function processQueue() {
+  if (activeRequests >= MAX_CONCURRENT_REQUESTS || requestQueue.length === 0) return;
+
+  const { eId, isRecursive } = requestQueue.shift();
+  activeRequests++;
+
+  fetchChildNodes(eId, isRecursive)
+    .finally(() => {
+      activeRequests--;
+      processQueue(); // Continue processing the queue after the request completes
+    });
+}
+
 /**
  * Open/close folder tree
  * @param {*} e: eventListner 
@@ -377,7 +400,7 @@ function collapseCss(eId) {
  */
 function toggleNode(eId, isRecursive) {
   if (getToggleElement(eId).classList.contains(CSS_COLLAPSING)) {  
-    openNode(eId, isRecursive);
+    queueRequest(eId, isRecursive);
   } else {
     closeNode(eId);
   }  
@@ -387,7 +410,7 @@ function openNode(eId, isRecursive) {
   let ulEle = getSubtreeElement(eId);
   let childLis = ulEle.children;
   if (childLis.length == 0) {
-    fetchChildNodes(eId, isRecursive);
+    queueRequest(eId, isRecursive);
   } else {
     if (isRecursive) {      
       for (let i = 0; i < childLis.length; i++) {
@@ -409,34 +432,43 @@ function closeNode(eId) {
 }
 
 function fetchChildNodes(parentEntryId, isRecursive) {
-  if (!parentEntryId) return;
-  if (_treemap.get(parentEntryId)) {
-    expandCss(parentEntryId);
-    return;
-  } else {
-    _treemap.set(parentEntryId, true);
-  }
-  loading(true);
-  var xmlhttp = new XMLHttpRequest();
+  return new Promise((resolve, reject) => {
+    if (!parentEntryId) return resolve();
+
+    if (_treemap.get(parentEntryId)) {
+      expandCss(parentEntryId);
+      return resolve();
+    } else {
+      _treemap.set(parentEntryId, true);
+    }
+
+    loading(true);
+    var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       try {
         if (this.readyState == 4) {
           if (this.status == 200) {
             let trans = JSON.parse(this.responseText);
             printChildNodes(parentEntryId, trans, isRecursive);
-          } else {}
+            resolve(); // Resolve promise after successful fetch
+          } else {
+            reject(); // Reject if status is not 200
+          }
           loading(false);
         }
       } catch(e) {
         loading(false);
+        reject(e); // Reject promise on error
       }
     };
     xmlhttp.open("GET", "/openFolder/" + parentEntryId, true);
     xmlhttp.send();
+  });
 }
 
 function printChildNodes(parentEntryId, trans, isRecursive) {
   let parentUl = getSubtreeElement(parentEntryId);
+  let fragment = document.createDocumentFragment(); // reducing reflow & repainting
   for (let i = 0; i < trans.length; i++) {
     let tran = trans[i];
     let li = document.createElement('li');
@@ -459,8 +491,9 @@ function printChildNodes(parentEntryId, trans, isRecursive) {
       '<ul id="' + tran.entry_id + SUFFIX_SUBTREE + '" class="content-list ' + CSS_SUBTREE + ' collapse"></ul>';
     }
     li.innerHTML = innerHTML;
-    parentUl.appendChild(li);  
+    fragment.appendChild(li);
   }
+  parentUl.appendChild(fragment);  
   expandCss(parentEntryId);
 
   if (isRecursive) {
