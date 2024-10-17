@@ -29,7 +29,7 @@
   <link href="/assets/css/critical.css" rel="stylesheet">
   <link href="/assets/vendor/animate.css/animate.min.css" rel="stylesheet" media="none" onload="this.media='all'">
   <link href="/assets/vendor/aos/aos.css" rel="stylesheet" media="none" onload="this.media='all'">  
-  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="none" onload="this.media='all'">
   <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" media="none" onload="this.media='all'">
   <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="none" onload="this.media='all'">
   <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="none" onload="this.media='all'">
