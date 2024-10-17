@@ -1386,9 +1386,9 @@ section {
   padding-inline-end: 1rem;
 }
 
-.content-list-tree a span.tree-folder {
-  /* font-weight: 600; */
-}
+/* .content-list-tree a span.tree-folder {
+  font-weight: 600;
+} */
 
 .content-list-tree a span.tree-leaf {
   padding-inline-start: 1rem;
