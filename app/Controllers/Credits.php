@@ -12,6 +12,7 @@ class Credits extends BaseController
 
         $data = [
             'displayHeader' => lang('App.credits'),
+            'description'   => lang('App.description_credits'),
         ];
         
         return view('templates/header', $data).view('credits');

@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Page Description
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Explore comprehensive teachings on Buddhism, Dhamma, Nikaya, Agama, and monastic discipline. Dive deep into Dhamma analysis, available in multiple languages for a global audience seeking spiritual wisdom and insight.',
+    'description_article'       =>  'Delve into the profound discourses of Buddhism, exploring teachings from the Nikayas and Agamas. Discover insights into the Buddha\'s words on Dhamma, monastic discipline, and spiritual practice, with multilingual translations from renowned monks, researchers, and translators throughout history.',
+    'description_bookmark'      =>  'Organize and manage your favorite Buddhist teachings, discourses, and Dhamma resources with ease. Save and revisit key insights from Nikayas, Agamas, and other texts, with a personalized bookmark manager for deeper spiritual study.',
+    'description_contact'       =>  'Get in touch with us by sending a message through our contact form. Leave your email, and we will try to respond to your inquiries about related topics.',
+    'description_credits'       =>  'Expressing our deepest gratitude to the countless ancient Buddhas, teachers, and practitioners throughout history. We honor the lineage of teachings and contributions that have shaped the understanding of Buddhism and Dhamma. If any materials are misused, please contact us.',
+    'description_search'        =>  'Easily find articles on Buddhism and Dhamma by searching with keywords, author names, or specific topics. The search tool helps you navigate through the collection to discover valuable insights and teachings.',
+    'description_settings'      =>  'Customize your experience by adjusting your theme color, mode, and default language. Personalize your interface to enhance your interaction with the Buddhist resources and teachings.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Login',

@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Deskripsi Halaman
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Jelajahi pengajaran komprehensif tentang Buddhisme, Dhamma, Nikaya, Agama, dan disiplin biara. Mendalami analisis Dhamma, tersedia dalam berbagai bahasa untuk audiens global yang mencari kebijaksanaan dan wawasan spiritual.',
+    'description_article'       =>  'Mendalami diskursus mendalam Buddhisme, menjelajahi ajaran dari Nikaya dan Agama. Temukan wawasan tentang kata-kata Buddha tentang Dhamma, disiplin biara, dan praktik spiritual, dengan terjemahan multibahasa dari biksu, peneliti, dan penerjemah terkenal sepanjang sejarah.',
+    'description_bookmark'      =>  'Atur dan kelola dengan mudah pengajaran Buddhis favorit Anda, diskursus, dan sumber daya Dhamma. Simpan dan kunjungi kembali wawasan penting dari Nikaya, Agama, dan teks lainnya, dengan pengelola penanda pribadi untuk studi spiritual yang lebih mendalam.',
+    'description_contact'       =>  'Hubungi kami dengan mengirimkan pesan melalui formulir kontak kami. Tinggalkan email Anda, dan kami akan berusaha untuk menjawab pertanyaan Anda tentang topik terkait.',
+    'description_credits'       =>  'Kami menyampaikan rasa terima kasih yang mendalam kepada sejumlah besar Buddha kuno, guru, dan praktisi sepanjang sejarah. Kami menghormati garis ajaran dan kontribusi yang telah membentuk pemahaman tentang Buddhisme dan Dhamma. Jika ada materi yang disalahgunakan, harap hubungi kami.',
+    'description_search'        =>  'Temukan artikel tentang Buddhisme dan Dhamma dengan mudah dengan mencari kata kunci, nama penulis, atau topik tertentu. Alat pencarian membantu Anda menjelajahi koleksi untuk menemukan wawasan dan ajaran yang berharga.',
+    'description_settings'      =>  'Sesuaikan pengalaman Anda dengan menyesuaikan warna tema, mode, dan bahasa default. Personalisasikan antarmuka Anda untuk meningkatkan interaksi Anda dengan sumber daya dan pengajaran Buddhis.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Masuk',

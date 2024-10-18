@@ -1,6 +1,17 @@
 <?php
 
 return [
+
+    /*--------------------------------------------------------------
+    # Descripció de la pàgina
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Explora els ensenyaments complets sobre el budisme, el Dhamma, els Nikaya, els Agama i la disciplina monàstica. Endinsa\'t profundament en l\'anàlisi del Dhamma, disponible en diversos idiomes per a un públic global que busca saviesa i comprensió espiritual.',
+    'description_article'       =>  'Submergeix-te en els profunds discursos del budisme, explorant els ensenyaments dels Nikaya i els Agama. Descobreix coneixements sobre les paraules del Buda sobre el Dhamma, la disciplina monàstica i la pràctica espiritual, amb traduccions multilingües de monjos, investigadors i traductors reconeguts al llarg de la història.',
+    'description_bookmark'      =>  'Organitza i gestiona fàcilment els teus ensenyaments preferits del budisme, discursos i recursos del Dhamma. Desa i torna a visitar els coneixements clau dels Nikaya, Agama i altres textos amb un gestor de marcadors personalitzat per a un estudi espiritual més profund.',
+    'description_contact'       =>  'Posa\'t en contacte amb nosaltres enviant un missatge mitjançant el nostre formulari de contacte. Deixa el teu correu electrònic i intentarem respondre les teves consultes sobre temes relacionats.',
+    'description_credits'       =>  'Expressant el nostre més profund agraïment als innombrables Budes antics, mestres i practicants al llarg de la història. Honorem la línia d\'ensenyaments i contribucions que han donat forma a la comprensió del budisme i el Dhamma. Si algun material està mal utilitzat, contacta\'ns.',
+    'description_search'        =>  'Troba fàcilment articles sobre budisme i Dhamma buscant per paraules clau, noms d\'autors o temes específics. L\'eina de cerca t\'ajuda a navegar per la col·lecció per descobrir coneixements i ensenyaments valuosos.',
+    'description_settings'      =>  'Personalitza la teva experiència ajustant el color del tema, el mode i l\'idioma predeterminat. Personalitza la interfície per millorar la teva interacció amb els recursos i ensenyaments budistes.',
     
     /*--------------------------------------------------------------
     # Menu

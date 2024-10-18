@@ -19,6 +19,7 @@ class UserSettings extends BaseController
     helper('form');
     $data = [
       'displayHeader' => lang('App.settings'),
+      'description'   => lang('App.description_settings'),
       'languages'     => $this->getLanguages(),
       'userSettings'  => $this->getUserSettings(), 
     ];

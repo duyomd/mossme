@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Descrizione della pagina
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Esplora gli insegnamenti completi sul buddismo, il Dhamma, il Nikaya, l\'Agama e la disciplina monastica. Immergiti nell\'analisi del Dhamma, disponibile in più lingue per un pubblico globale in cerca di saggezza e intuizioni spirituali.',
+    'description_article'       =>  'Immergiti nei profondi discorsi del buddismo, esplorando gli insegnamenti dei Nikaya e degli Agama. Scopri intuizioni sulle parole del Buddha riguardo al Dhamma, alla disciplina monastica e alla pratica spirituale, con traduzioni multilingue di monaci, ricercatori e traduttori rinomati nel corso della storia.',
+    'description_bookmark'      =>  'Organizza e gestisci facilmente i tuoi insegnamenti buddisti preferiti, discorsi e risorse sul Dhamma. Salva e rivedi approfondimenti chiave dai Nikaya, dagli Agama e da altri testi, con un gestore di segnalibri personalizzato per uno studio spirituale più profondo.',
+    'description_contact'       =>  'Contattaci inviando un messaggio tramite il nostro modulo di contatto. Lascia il tuo indirizzo email e cercheremo di rispondere alle tue domande sui temi correlati.',
+    'description_credits'       =>  'Esprimiamo la nostra più profonda gratitudine ai numerosi antichi Buddha, insegnanti e praticanti nel corso della storia. Onoriamo la tradizione degli insegnamenti e dei contributi che hanno plasmato la comprensione del buddismo e del Dhamma. Se vengono utilizzati materiali in modo improprio, ti preghiamo di contattarci.',
+    'description_search'        =>  'Trova facilmente articoli sul buddismo e sul Dhamma cercando parole chiave, nomi di autori o argomenti specifici. Lo strumento di ricerca ti aiuta a navigare nella collezione per scoprire intuizioni e insegnamenti preziosi.',
+    'description_settings'      =>  'Personalizza la tua esperienza regolando il colore del tema, la modalità e la lingua predefinita. Personalizza la tua interfaccia per migliorare la tua interazione con le risorse e gli insegnamenti buddisti.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Login',

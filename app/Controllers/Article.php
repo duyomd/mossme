@@ -48,6 +48,7 @@ class Article extends ArticleBase
 
         $data = [
             'displayHeader' => $entry->displayEnumTitle,
+            'description'   => lang('App.description_article'),
             'entry'         => $entry,
             'forward'       => $forward,
         ];

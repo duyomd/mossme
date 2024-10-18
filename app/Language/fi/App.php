@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Sivun kuvaus
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Tutustu kattaviin opetuksiin buddhalaisuudesta, Dhamhasta, Nikayasta, Agamasta ja luostaridisciplinista. Syvenny Dhamman analyysiin, joka on saatavilla useilla kielillä globaalille yleisölle, joka etsii hengellistä viisautta ja näkemystä.',
+    'description_article'       =>  'Syvenny buddhalaisuuden syvällisiin puheisiin, tutkien Nikayan ja Agaman opetuksia. Löydä oivalluksia Buddhan sanoista Dhammasta, luostaridisciplinista ja hengellisestä käytännöstä, monikielisten käännösten kanssa tunnetuilta munkeilta, tutkijoilta ja kääntäjiltä historian aikana.',
+    'description_bookmark'      =>  'Järjestä ja hallinnoi helposti suosikkibuddhalaisia opetuksiasi, puheitasi ja Dhamma-resurssejasi. Tallenna ja käy uudelleen läpi avainoivalluksia Nikayasta, Agamasta ja muista teksteistä henkilökohtaisella kirjanmerkinhallinnalla syvempää hengellistä opiskelua varten.',
+    'description_contact'       =>  'Ota meihin yhteyttä lähettämällä viesti yhteydenottolomakkeen kautta. Jätä sähköpostiosoitteesi, ja yritämme vastata kysymyksiisi aiheeseen liittyen.',
+    'description_credits'       =>  'Ilmaise syvin kiitollisuutemme lukemattomille muinaisen Buddhan, opettajien ja harjoittajien sukupolville historian aikana. Kunnioitamme opetusperinteitä ja panoksia, jotka ovat muovanneet buddhalaisuuden ja Dhamman ymmärtämistä. Jos materiaaleja käytetään väärin, ole hyvä ja ota meihin yhteyttä.',
+    'description_search'        =>  'Löydä helposti artikkeleita buddhalaisuudesta ja Dhammasta hakemalla avainsanojen, kirjoittajien nimien tai tiettyjen aiheiden avulla. Hakutyökalu auttaa sinua navigoimaan kokoelmassa löytääksesi arvokkaita oivalluksia ja opetuksia.',
+    'description_settings'      =>  'Mukauta kokemustasi säätämällä teeman väriä, tilaa ja oletuskieltä. Personoi käyttöliittymäsi parantaaksesi vuorovaikutustasi buddhalaisiin resursseihin ja opetuksiin.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Kirjaudu',

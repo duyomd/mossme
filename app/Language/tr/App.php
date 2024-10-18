@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Sayfa Açıklaması
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Budizm, Dhamma, Nikaya, Agama ve manastır disiplinine dair kapsamlı öğretileri keşfedin. Dünyanın dört bir yanındaki ruhsal bilgi ve içgörü arayan bir kitle için çok dilli olarak sunulan Dhamma analizine derinlemesine dalın.',
+    'description_article'       =>  'Budizm üzerine derin tartışmalara dalın, Nikaya ve Agama öğretilerini keşfedin. Budha\'nın Dhamma, manastır disiplini ve ruhsal pratik konusundaki sözlerine dair içgörüler keşfedin; tarih boyunca tanınmış rahipler, araştırmacılar ve çevirmenler tarafından sağlanan çok dilli çevirilerle.',
+    'description_bookmark'      =>  'Favori Budist öğretilerinizi, tartışmalarınızı ve Dhamma kaynaklarınızı kolayca düzenleyin ve yönetin. Nikaya, Agama ve diğer metinlerden önemli içgörüleri kaydedin ve tekrar ziyaret edin; daha derin ruhsal çalışmalar için kişisel yer imi yöneticisi ile.',
+    'description_contact'       =>  'İletişim formumuz aracılığıyla bize ulaşın. E-posta adresinizi bırakın, ilgili konular hakkında sorularınıza cevap vermeye çalışacağız.',
+    'description_credits'       =>  'Tarihteki sayısız antik Budalara, öğretmenlere ve uygulayıcılara derin teşekkürlerimizi sunuyoruz. Budizm ve Dhamma anlayışını şekillendiren öğretilerin ve katkıların devamını onurlandırıyoruz. Herhangi bir materyal uygunsuz bir şekilde kullanıldıysa, lütfen bizimle iletişime geçin.',
+    'description_search'        =>  'Anahtar kelimeler, yazar adları veya belirli konularla arama yaparak Budizm ve Dhamma ile ilgili makaleleri kolayca bulun. Arama aracı, değerli içgörüler ve öğretiler keşfetmek için koleksiyonda gezinmenize yardımcı olur.',
+    'description_settings'      =>  'Tema rengi, modu ve varsayılan dili ayarlayarak deneyiminizi kişiselleştirin. Budist kaynaklar ve öğretilerle etkileşiminizi geliştirmek için arayüzünüzü kişiselleştirin.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Giriş',

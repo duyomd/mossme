@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Seitenbeschreibung
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Erkunde umfassende Lehren über Buddhismus, Dhamma, Nikaya, Agama und die monastische Disziplin. Tauche tief in die Dhamma-Analyse ein, die in mehreren Sprachen verfügbar ist, für ein globales Publikum, das nach spiritueller Weisheit und Einsicht sucht.',
+    'description_article'       =>  'Vertiefe dich in die tiefgründigen Diskurse des Buddhismus und erforsche die Lehren aus den Nikayas und Agamas. Entdecke Einsichten in die Worte des Buddha über Dhamma, die monastische Disziplin und die spirituelle Praxis, mit mehrsprachigen Übersetzungen von renommierten Mönchen, Forschern und Übersetzern im Laufe der Geschichte.',
+    'description_bookmark'      =>  'Organisiere und verwalte deine bevorzugten buddhistischen Lehren, Diskurse und Dhamma-Ressourcen mühelos. Speichere und besuche wichtige Einsichten aus den Nikayas, Agamas und anderen Texten erneut, mit einem personalisierten Lesezeichen-Manager für ein tieferes spirituelles Studium.',
+    'description_contact'       =>  'Nimm Kontakt mit uns auf, indem du uns über unser Kontaktformular eine Nachricht sendest. Hinterlasse deine E-Mail-Adresse, und wir werden versuchen, deine Anfragen zu den entsprechenden Themen zu beantworten.',
+    'description_credits'       =>  'Unser tiefster Dank gilt den unzähligen alten Buddhas, Lehrern und Praktizierenden im Laufe der Geschichte. Wir ehren die Linie der Lehren und Beiträge, die das Verständnis des Buddhismus und Dhammas geprägt haben. Falls irgendwelche Materialien missbraucht werden, kontaktiere uns bitte.',
+    'description_search'        =>  'Finde leicht Artikel über Buddhismus und Dhamma, indem du nach Schlüsselwörtern, Autorennamen oder bestimmten Themen suchst. Das Suchwerkzeug hilft dir, durch die Sammlung zu navigieren, um wertvolle Einsichten und Lehren zu entdecken.',
+    'description_settings'      =>  'Passe dein Erlebnis an, indem du die Farbgestaltung, den Modus und die Standardsprache änderst. Personalisiere dein Interface, um deine Interaktion mit den buddhistischen Ressourcen und Lehren zu verbessern.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Anmelden',

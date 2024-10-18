@@ -14,7 +14,8 @@ class Contact extends BaseController
 
         $data = [
             'displayHeader' => lang('App.contact'),
-            'error'        => $error,
+            'description'   => lang('App.description_contact'),
+            'error'         => $error,
         ];
         
         return view('templates/header', $data).view('contact');

@@ -1,6 +1,17 @@
 <?php
 
 return [
+
+    /*--------------------------------------------------------------
+    # Descripción de la página
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Explora las enseñanzas completas sobre el budismo, el Dhamma, los Nikayas, los Agamas y la disciplina monástica. Profundiza en el análisis del Dhamma, disponible en múltiples idiomas para una audiencia global que busca sabiduría espiritual y comprensión.',
+    'description_article'       =>  'Sumérgete en los profundos discursos del budismo, explorando las enseñanzas de los Nikayas y Agamas. Descubre conocimientos sobre las palabras del Buda acerca del Dhamma, la disciplina monástica y la práctica espiritual, con traducciones multilingües de renombrados monjes, investigadores y traductores a lo largo de la historia.',
+    'description_bookmark'      =>  'Organiza y gestiona fácilmente tus enseñanzas budistas favoritas, discursos y recursos del Dhamma. Guarda y vuelve a visitar ideas clave de los Nikayas, Agamas y otros textos, con un gestor de marcadores personalizado para un estudio espiritual más profundo.',
+    'description_contact'       =>  'Ponte en contacto con nosotros enviando un mensaje a través de nuestro formulario de contacto. Deja tu correo electrónico y trataremos de responder a tus consultas sobre temas relacionados.',
+    'description_credits'       =>  'Expresamos nuestra más profunda gratitud a los innumerables Budas antiguos, maestros y practicantes a lo largo de la historia. Honramos la línea de enseñanzas y contribuciones que han dado forma a la comprensión del budismo y el Dhamma. Si se malutilizan materiales, contáctanos.',
+    'description_search'        =>  'Encuentra fácilmente artículos sobre budismo y Dhamma buscando por palabras clave, nombres de autores o temas específicos. La herramienta de búsqueda te ayuda a navegar por la colección para descubrir valiosas ideas y enseñanzas.',
+    'description_settings'      =>  'Personaliza tu experiencia ajustando el color del tema, el modo y el idioma predeterminado. Personaliza tu interfaz para mejorar tu interacción con los recursos y enseñanzas budistas.',
     
     /*--------------------------------------------------------------
     # Menu

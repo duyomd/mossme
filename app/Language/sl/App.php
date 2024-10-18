@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Opis strani
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Raziskujte obsežne učne vsebine o budizmu, Dhammi, Nikajah, Agamah in samostanski disciplini. Potopite se v analizo Dhamme, ki je na voljo v več jezikih za globalno občinstvo, ki išče duhovno modrost in vpogled.',
+    'description_article'       =>  'Poglobite se v globoke razprave o budizmu, ki raziskujejo nauke iz Nikajah in Agamah. Odkrijte vpoglede v besede Bude o Dhammi, samostanski disciplini in duhovni praksi, z večjezičnimi prevodi priznanih menihov, raziskovalcev in prevajalcev skozi zgodovino.',
+    'description_bookmark'      =>  'Enostavno organizirajte in upravljajte svoje najljubše budistične nauke, razprave in vire Dhamme. Shranjujte in ponovno pregledujte ključne vpoglede iz Nikajah, Agamah in drugih besedil z osebno upravljalnikom zaznamkov za globlje duhovno študijo.',
+    'description_contact'       =>  'Stopite v stik z nami tako, da nam pošljete sporočilo prek našega kontaktnega obrazca. Pustite svoj e-poštni naslov in poskusili bomo odgovoriti na vaša vprašanja o povezanih temah.',
+    'description_credits'       =>  'Izražamo svojo globoko hvaležnost neštetim starodavnim Buddham, učiteljem in praktikom skozi zgodovino. Častimo linijo naukov in prispevkov, ki so oblikovali razumevanje budizma in Dhamme. Če so bili kakšni materiali napačno uporabljeni, nas prosimo kontaktirajte.',
+    'description_search'        =>  'Enostavno poiščite članke o budizmu in Dhammi s iskanjem po ključnih besedah, imenih avtorjev ali specifičnih temah. Orodje za iskanje vam pomaga krmariti skozi zbirko in odkrivati dragocene vpoglede in nauke.',
+    'description_settings'      =>  'Prilagodite svoje izkušnje z nastavitvijo barve teme, načina in privzetega jezika. Osebno prilagodite svoj vmesnik za izboljšanje interakcije z budističnimi viri in nauki.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Prijava',

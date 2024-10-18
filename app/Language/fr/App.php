@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Description de la page
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Explorez les enseignements complets sur le bouddhisme, le Dhamma, les Nikayas, les Agamas et la discipline monastique. Plongez profondément dans l\'analyse du Dhamma, disponible en plusieurs langues pour un public mondial en quête de sagesse spirituelle et d\'insight.',
+    'description_article'       =>  'Plongez dans les discours profonds du bouddhisme, en explorant les enseignements des Nikayas et des Agamas. Découvrez des insights sur les paroles du Bouddha concernant le Dhamma, la discipline monastique et la pratique spirituelle, avec des traductions multilingues de moines, chercheurs et traducteurs renommés à travers l\'histoire.',
+    'description_bookmark'      =>  'Organisez et gérez facilement vos enseignements bouddhistes préférés, discours et ressources sur le Dhamma. Enregistrez et revisitez des idées clés des Nikayas, des Agamas et d\'autres textes, avec un gestionnaire de signets personnalisé pour une étude spirituelle plus approfondie.',
+    'description_contact'       =>  'Contactez-nous en nous envoyant un message via notre formulaire de contact. Laissez votre e-mail et nous essaierons de répondre à vos questions sur des sujets connexes.',
+    'description_credits'       =>  'Nous exprimons notre plus profonde gratitude aux innombrables Bouddhas anciens, enseignants et pratiquants à travers l\'histoire. Nous honorons la lignée des enseignements et des contributions qui ont façonné la compréhension du bouddhisme et du Dhamma. Si des matériaux sont mal utilisés, veuillez nous contacter.',
+    'description_search'        =>  'Trouvez facilement des articles sur le bouddhisme et le Dhamma en recherchant par mots-clés, noms d\'auteurs ou sujets spécifiques. L\'outil de recherche vous aide à naviguer à travers la collection pour découvrir des idées et enseignements précieux.',
+    'description_settings'      =>  'Personnalisez votre expérience en ajustant la couleur du thème, le mode et la langue par défaut. Personnalisez votre interface pour améliorer votre interaction avec les ressources et enseignements bouddhistes.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Connexion',

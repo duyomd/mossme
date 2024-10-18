@@ -1,6 +1,17 @@
 <?php
 
 return [
+
+    /*--------------------------------------------------------------
+    # Popis stránky
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Prozkoumejte komplexní učení o buddhismu, Dhammě, Nikájích, Agamách a mnišské disciplíně. Ponořte se hluboko do analýzy Dhammy, která je dostupná v několika jazycích pro globální publikum hledající duchovní moudrost a vhled.',
+    'description_article'       =>  'Ponořte se do hlubokých diskurzů buddhismu, zkoumejte učení z Nikájí a Agam. Objevujte vhledy do Buddhova učení o Dhammě, mnišské disciplíně a duchovní praxi, s vícejazyčnými překlady od uznávaných mnichů, výzkumníků a překladatelů v průběhu historie.',
+    'description_bookmark'      =>  'Snadno si organizujte a spravujte své oblíbené buddhistické učení, diskurzy a zdroje o Dhammě. Ukládejte a znovu navštěvujte klíčové vhledy z Nikájí, Agam a dalších textů s personalizovaným správcem záložek pro hlubší duchovní studium.',
+    'description_contact'       =>  'Kontaktujte nás zasláním zprávy prostřednictvím našeho kontaktního formuláře. Zanechte svůj e-mail a my se pokusíme odpovědět na vaše dotazy týkající se souvisejících témat.',
+    'description_credits'       =>  'Vyjadřujeme naši nejhlubší vděčnost nesčetným starověkým Buddhům, učitelům a praktikujícím napříč historií. Ctíme linii učení a příspěvků, které formovaly porozumění buddhismu a Dhammě. Pokud jsou jakékoliv materiály zneužity, kontaktujte nás.',
+    'description_search'        =>  'Snadno najděte články o buddhismu a Dhammě pomocí klíčových slov, jmen autorů nebo specifických témat. Nástroj pro vyhledávání vám pomůže navigovat sbírkou a objevit cenné vhledy a učení.',
+    'description_settings'      =>  'Přizpůsobte si své prostředí úpravou barvy motivu, režimu a výchozího jazyka. Personalizujte své rozhraní pro lepší interakci s buddhistickými zdroji a učením.',
     
     /*--------------------------------------------------------------
     # Menu

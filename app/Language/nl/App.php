@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Pagina Beschrijving
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Verken uitgebreide leerstellingen over het boeddhisme, Dhamma, Nikaya, Agama en monastieke discipline. Duik diep in Dhamma-analyse, beschikbaar in meerdere talen voor een wereldwijd publiek dat op zoek is naar spirituele wijsheid en inzicht.',
+    'description_article'       =>  'Verken de diepgaande discoursen van het boeddhisme en ontdek de leerstellingen uit de Nikaya\'s en Agama\'s. Ontdek inzichten in de woorden van de Boeddha over Dhamma, monastieke discipline en spirituele praktijk, met meertalige vertalingen van gerenommeerde monniken, onderzoekers en vertalers door de geschiedenis heen.',
+    'description_bookmark'      =>  'Organiseer en beheer eenvoudig uw favoriete boeddhistische leerstellingen, discoursen en Dhamma-bronnen. Sla belangrijke inzichten uit de Nikaya\'s, Agama\'s en andere teksten op en bezoek ze opnieuw met een persoonlijke bladwijzerbeheerder voor diepgaandere spirituele studie.',
+    'description_contact'       =>  'Neem contact met ons op door een bericht te sturen via ons contactformulier. Laat uw e-mailadres achter, en we zullen proberen te reageren op uw vragen over gerelateerde onderwerpen.',
+    'description_credits'       =>  'Onze diepste dankbaarheid aan de ontelbare oude Boeddha\'s, leraren en beoefenaars door de geschiedenis heen. We eren de lijn van leringen en bijdragen die het begrip van het boeddhisme en Dhamma hebben gevormd. Als er materialen verkeerd zijn gebruikt, neem dan contact met ons op.',
+    'description_search'        =>  'Vind eenvoudig artikelen over boeddhisme en Dhamma door te zoeken op trefwoorden, auteursnamen of specifieke onderwerpen. De zoekfunctie helpt u door de verzameling te navigeren om waardevolle inzichten en leerstellingen te ontdekken.',
+    'description_settings'      =>  'Pas uw ervaring aan door uw themakleur, modus en standaardtaal aan te passen. Personaliseer uw interface om uw interactie met de boeddhistische bronnen en leerstellingen te verbeteren.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Inloggen',

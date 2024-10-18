@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Puslapio aprašymas
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Tyrinėkite išsamius mokymus apie budizmą, Dhamma, Nikajus, Agamas ir vienuolių discipliną. Pasinerkite į Dhamma analizę, prieinamą keliomis kalbomis globaliai auditorijai, ieškančiai dvasinės išminties ir įžvalgų.',
+    'description_article'       =>  'Pasinerkite į gilius budizmo diskursus, tyrinėdami mokymus iš Nikajų ir Agamų. Atraskite įžvalgas apie Budos žodžius Dhamma, vienuolių discipliną ir dvasinę praktiką, su daugiakalbėmis vertimais iš žymių vienuolių, tyrėjų ir vertėjų per istoriją.',
+    'description_bookmark'      =>  'Lengvai organizuokite ir tvarkykite savo mėgstamus budizmo mokymus, diskursus ir Dhamma išteklius. Išsaugokite ir vėl peržiūrėkite svarbias įžvalgas iš Nikajų, Agamų ir kitų tekstų, naudodamiesi asmeniniu žymeklių valdymo įrankiu, kad galėtumėte giliau studijuoti dvasiškai.',
+    'description_contact'       =>  'Susisiekite su mumis, išsiųsdami žinutę per mūsų kontaktinę formą. Palikite savo el. pašto adresą, ir mes stengsimės atsakyti į jūsų užklausas apie susijusias temas.',
+    'description_credits'       =>  'Išreiškiame giliausią dėkingumą nesuskaičiuojamiems senovės Buddham, mokytojams ir praktikams per istoriją. Gerbiame mokymų ir indėlių, kurie formavo budizmo ir Dhamma supratimą, liniją. Jei kokios nors medžiagos buvo netinkamai naudojamos, prašome susisiekti su mumis.',
+    'description_search'        =>  'Lengvai raskite straipsnius apie budizmą ir Dhamma, ieškodami pagal raktinius žodžius, autorių vardus arba konkrečias temas. Paieškos įrankis padeda jums naršyti per kolekciją, kad atrastumėte vertingas įžvalgas ir mokymus.',
+    'description_settings'      =>  'Pridėkite asmeninį prisilietimą, pritaikydami temos spalvą, režimą ir numatytąją kalbą. Pritaikykite savo sąsają, kad pagerintumėte savo sąveiką su budizmo ištekliais ir mokymais.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Prisijungti',

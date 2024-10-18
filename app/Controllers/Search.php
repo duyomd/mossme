@@ -10,6 +10,7 @@ class Search extends BaseController
   public function show()
   {
     $data = $this->loadList();
+    $data['description']      = lang('App.description_search');
     $data['responseJsonList'] = $this->responseJsonList($data);
     helper('form');
     

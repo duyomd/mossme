@@ -15,6 +15,7 @@ class BookmarkManager extends BaseController
     }
 
     $data = $this->loadList();
+    $data['description']      = lang('App.description_bookmark');
     $data['responseJsonList'] = $this->responseJsonList($data);
     helper('form');
     

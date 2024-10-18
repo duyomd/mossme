@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Oldal leírás
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Fedezd fel a buddhizmus, a Dhamma, a Nikája, az Ágáma és a kolostori fegyelem átfogó tanításait. Merülj el a Dhamma elemzésében, amely több nyelven érhető el a globális közönség számára, akik lelki bölcsességet és betekintést keresnek.',
+    'description_article'       =>  'Mélyedj el a buddhizmus mély diskurzusaiban, felfedezve a Nikáják és Ágámák tanításait. Fedezd fel a Buddha szavait a Dhamma, a kolostori fegyelem és a spirituális gyakorlatok témájában, neves szerzetesek, kutatók és fordítók többnyelvű fordításával a történelem során.',
+    'description_bookmark'      =>  'Szervezd és kezeld könnyedén a kedvenc buddhista tanításaidat, diskurzusaidat és Dhamma forrásaidat. Mentsd el és nézd vissza a Nikájákból, Ágámákból és más szövegekből származó kulcsfontosságú betekintéseket egy személyre szabott könyvjelzőkezelővel, hogy mélyebb spirituális tanulmányozást végezhess.',
+    'description_contact'       =>  'Lépj kapcsolatba velünk, ha üzenetet küldesz a kapcsolatfelvételi űrlapunkon keresztül. Hagyj egy e-mail címet, és megpróbálunk válaszolni a kapcsolódó témákban tett kérdéseidre.',
+    'description_credits'       =>  'A történelem során számtalan ősi Buddha, tanár és gyakorló iránti mély hálánkat fejezzük ki. Tiszteljük azokat a tanítások és hozzájárulások sorozatát, amelyek formálták a buddhizmus és a Dhamma megértését. Ha bármilyen anyagot visszaélnek, kérjük, lépj velünk kapcsolatba.',
+    'description_search'        =>  'Könnyedén találj cikkeket a buddhizmusról és a Dhamma-ról kulcsszavak, szerzők nevei vagy konkrét témák keresésével. A keresőeszköz segít navigálni a gyűjteményben, hogy értékes betekintéseket és tanításokat fedezhess fel.',
+    'description_settings'      =>  'Testreszabhatod élményedet a téma színének, módjának és alapértelmezett nyelvének beállításával. Személyre szabhatod az interfészedet, hogy javítsd a buddhista forrásokkal és tanításokkal való interakciódat.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Bejelentkezés',

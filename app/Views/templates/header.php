@@ -7,15 +7,20 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <?php if(!isset($description)) : ?>
+    <meta name="robots" content="noindex, nofollow">
+  <?php endif ?>
 
   <title><?= 
             // strtoupper(lang('App.project_name')) . " " .
             // lang('App.vertical_slash') . " " . 
             $displayHeader 
           ?></title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  
+  <meta name="description" content="<?=isset($description) ? $description : ''?>">
+  <meta name="keywords" content="">
 
   <!-- Favicons -->
   <link href="/assets/img/favicon.png" rel="icon">

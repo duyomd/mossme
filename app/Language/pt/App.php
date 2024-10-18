@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Descrição da Página
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Explore ensinamentos abrangentes sobre budismo, Dhamma, Nikaya, Agama e disciplina monástica. Mergulhe profundamente na análise do Dhamma, disponível em vários idiomas para um público global em busca de sabedoria e insights espirituais.',
+    'description_article'       =>  'Aprofunde-se nos profundos discursos do budismo, explorando os ensinamentos dos Nikayas e Agamas. Descubra insights sobre as palavras do Buda sobre Dhamma, disciplina monástica e prática espiritual, com traduções multilíngues de monges, pesquisadores e tradutores renomados ao longo da história.',
+    'description_bookmark'      =>  'Organize e gerencie facilmente seus ensinamentos budistas, discursos e recursos de Dhamma favoritos. Salve e revise insights-chave dos Nikayas, Agamas e outros textos, com um gerenciador de marcadores personalizado para um estudo espiritual mais profundo.',
+    'description_contact'       =>  'Entre em contato conosco enviando uma mensagem por meio de nosso formulário de contato. Deixe seu e-mail e tentaremos responder às suas perguntas sobre tópicos relacionados.',
+    'description_credits'       =>  'Expressamos nossa mais profunda gratidão aos incontáveis Budas, professores e praticantes antigos ao longo da história. Honramos a linhagem de ensinamentos e contribuições que moldaram a compreensão do budismo e do Dhamma. Se algum material for mal utilizado, entre em contato conosco.',
+    'description_search'        =>  'Encontre facilmente artigos sobre budismo e Dhamma pesquisando por palavras-chave, nomes de autores ou tópicos específicos. A ferramenta de busca ajuda você a navegar pela coleção para descobrir insights e ensinamentos valiosos.',
+    'description_settings'      =>  'Personalize sua experiência ajustando a cor do tema, o modo e o idioma padrão. Personalize sua interface para aprimorar sua interação com os recursos e ensinamentos budistas.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Login',

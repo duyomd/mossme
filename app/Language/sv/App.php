@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Sidbeskrivning
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Utforska omfattande läror om buddhism, Dhamma, Nikaya, Agama och monastisk disciplin. Dyk djupt ner i Dhammaanalys, tillgänglig på flera språk för en global publik som söker andlig visdom och insikt.',
+    'description_article'       =>  'Fördjupa dig i de djupa diskurserna av buddhismen, och utforska läror från Nikayas och Agamas. Upptäck insikter i Buddhas ord om Dhamma, monastisk disciplin och andlig praktik, med flerspråkiga översättningar från erkända munkar, forskare och översättare genom historien.',
+    'description_bookmark'      =>  'Organisera och hantera enkelt dina favorit buddhistiska läror, diskurser och Dhamma-resurser. Spara och återbesök nyckelinsikter från Nikayas, Agamas och andra texter med en personlig bokmärkeshanterare för djupare andlig studie.',
+    'description_contact'       =>  'Kontakta oss genom att skicka ett meddelande via vårt kontaktformulär. Lämna din e-postadress så ska vi försöka svara på dina frågor om relaterade ämnen.',
+    'description_credits'       =>  'Vi uttrycker vår djupaste tacksamhet till de otaliga antika Buddhas, lärare och utövare genom historien. Vi hedrar linjen av läror och bidrag som har format förståelsen av buddhism och Dhamma. Om några material har använts felaktigt, vänligen kontakta oss.',
+    'description_search'        =>  'Hitta enkelt artiklar om buddhism och Dhamma genom att söka med nyckelord, författarnamn eller specifika ämnen. Sökverktyget hjälper dig att navigera genom samlingen för att upptäcka värdefulla insikter och läror.',
+    'description_settings'      =>  'Anpassa din upplevelse genom att justera temaets färg, läge och standardspråk. Anpassa ditt gränssnitt för att förbättra din interaktion med de buddhistiska resurserna och lärorna.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Logga in',

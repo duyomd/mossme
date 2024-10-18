@@ -29,6 +29,7 @@ class Dhamma extends BaseController
         
         $data = [
             'displayHeader'             => lang('App.ancient_path'),
+            'description'               => lang('App.description_home'),
             'suttaMenuTranslations'     => $suttaMenuTranslations,
             'nonSuttaMenuTranslations'  => $nonSuttaMenuTranslations,
             'cardTranslations'          => $cardTranslations,

@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Opis Strony
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Poznaj kompleksowe nauki o buddyzmie, Dhamma, Nikaya, Agama i dyscyplinie monastycznej. Zgłębiaj analizy Dhammy, dostępne w wielu językach dla globalnej publiczności poszukującej duchowej mądrości i wglądu.',
+    'description_article'       =>  'Zanurz się w głębokie dyskursy buddyzmu, badając nauki z Nikaj i Agam. Odkryj wglądy w słowa Buddy na temat Dhammy, dyscypliny monastycznej i praktyki duchowej, z wielojęzycznymi tłumaczeniami od uznanych mnichów, badaczy i tłumaczy na przestrzeni historii.',
+    'description_bookmark'      =>  'Łatwo organizuj i zarządzaj swoimi ulubionymi naukami buddyjskimi, dyskursami i zasobami Dhammy. Zapisuj i ponownie przeglądaj kluczowe wglądy z Nikaj, Agam i innych tekstów, korzystając z osobistego menedżera zakładek dla głębszego duchowego studium.',
+    'description_contact'       =>  'Skontaktuj się z nami, wysyłając wiadomość za pośrednictwem naszego formularza kontaktowego. Zostaw swój adres e-mail, a postaramy się odpowiedzieć na Twoje zapytania dotyczące powiązanych tematów.',
+    'description_credits'       =>  'Wyrażamy naszą najgłębszą wdzięczność niezliczonym starożytnym Buddham, nauczycielom i praktykom w historii. Czcimy linię nauk i wkładów, które ukształtowały zrozumienie buddyzmu i Dhammy. Jeśli jakiekolwiek materiały zostały użyte niewłaściwie, prosimy o kontakt z nami.',
+    'description_search'        =>  'Łatwo znajdź artykuły o buddyzmie i Dhammie, wyszukując za pomocą słów kluczowych, nazwisk autorów lub konkretnych tematów. Narzędzie wyszukiwania pomoże Ci poruszać się po zbiorze, aby odkryć cenne wglądy i nauki.',
+    'description_settings'      =>  'Dostosuj swoje doświadczenie, zmieniając kolor motywu, tryb i domyślny język. Spersonalizuj swoje interfejs, aby poprawić interakcję z zasobami i naukami buddyjskimi.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Zaloguj się',

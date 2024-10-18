@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Opis stranice
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Istražite sveobuhvatna učenja o budizmu, Dhammi, Nikaji, Agami i monaškoj disciplini. Uronite duboko u analizu Dhamme, dostupnu na više jezika za globalnu publiku koja traži duhovnu mudrost i uvid.',
+    'description_article'       =>  'Proučavajte duboke diskurse budizma istražujući učenja iz Nikaja i Agama. Otkrijte uvide u reči Bude o Dhammi, monaškoj disciplini i duhovnoj praksi, uz višejezične prevode uglednih monaha, istraživača i prevodilaca kroz istoriju.',
+    'description_bookmark'      =>  'Jednostavno organizujte i upravljajte svojim omiljenim budističkim učenjima, diskursima i resursima Dhamme. Sačuvajte i ponovo pregledajte ključne uvide iz Nikaja, Agama i drugih tekstova, uz pomoć personalizovanog menadžera oznaka za dublje duhovno proučavanje.',
+    'description_contact'       =>  'Kontaktirajte nas slanjem poruke putem našeg kontakt forme. Ostavite svoju e-mail adresu i potrudićemo se da odgovorimo na vaša pitanja o povezanim temama.',
+    'description_credits'       =>  'Izražavamo našu duboku zahvalnost bezbrojnim drevnim Budama, učiteljima i praktikantima kroz istoriju. Poštujemo liniju učenja i doprinosa koji su oblikovali razumevanje budizma i Dhamme. Ako su neki materijali korišćeni na neprimeren način, molimo vas da nas kontaktirate.',
+    'description_search'        =>  'Lako pronađite članke o budizmu i Dhammi pretražujući ključne reči, imena autora ili specifične teme. Alat za pretragu vam pomaže da se snađete u zbirci i otkrijete vredne uvide i učenja.',
+    'description_settings'      =>  'Prilagodite svoje iskustvo podešavanjem boje teme, režima i zadatog jezika. Personalizujte svoj interfejs kako biste poboljšali interakciju sa budističkim resursima i učenjima.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Prijava',

@@ -3,6 +3,17 @@
 return [
 
     /*--------------------------------------------------------------
+    # Page Description
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Khám phá những giáo lý toàn diện về Phật pháp, Nikaya, Agama và giới luật tu sĩ. Đi sâu vào phân tích Giáo pháp, dưới nhiều ngôn ngữ cho những người đang tìm kiếm con đường tâm linh và trí tuệ.',
+    'description_article'       =>  'Khám phá những bài thuyết giảng sâu sắc của Phật giáo, khám phá các giáo lý từ Nikayas và Agamas. Khám phá những hiểu biết về lời dạy của Đức Phật về Dhamma, kỷ luật tu sĩ và thực hành tâm linh, với các bản dịch đa ngôn ngữ từ các vị tăng, nhà nghiên cứu và dịch giả nổi tiếng xuyên suốt các quá trình lịch sử.',
+    'description_bookmark'      =>  'Tổ chức và quản lý những giáo lý Phật giáo, các bài thuyết giảng và tài nguyên Dhamma yêu thích của bạn một cách dễ dàng. Lưu lại những tài liệu từ Nikayas, Agamas và các văn bản khác, với một trình quản lý dấu trang cá nhân hóa.',
+    'description_contact'       =>  'Liên hệ với chúng tôi bằng cách gửi tin nhắn qua mẫu liên hệ. Để lại email của bạn, và chúng tôi sẽ cố gắng phản hồi các yêu cầu của bạn về chủ đề liên quan.',
+    'description_credits'       =>  'Xin bày tỏ lòng biết ơn sâu sắc đến vô số Đức Phật cổ đại, các bậc thầy và những người thực hành xuyên suốt lịch sử. Tôn vinh dòng truyền thừa giáo lý và những đóng góp đã hình thành nên sự hiểu biết về Phật giáo và Dhamma. Nếu bất kỳ tài liệu nào được sử dụng chưa phù hợp, xin vui lòng liên hệ.',
+    'description_search'        =>  'Dễ dàng tìm kiếm các bài viết về Phật pháp bằng cách tìm kiếm với từ khóa, tên tác giả hoặc chủ đề cụ thể. Công cụ tìm kiếm giúp bạn điều hướng qua bộ sưu tập để khám phá những hiểu biết và giáo lý quý giá.',
+    'description_settings'      =>  'Tùy chỉnh trải nghiệm của bạn bằng cách điều chỉnh màu sắc giao diện, chế độ và ngôn ngữ mặc định. Cá nhân hóa giao diện của bạn để nâng cao tương tác với các tài nguyên và giáo lý Phật giáo.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Đăng nhập',

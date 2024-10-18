@@ -3,6 +3,17 @@
 return [
     
     /*--------------------------------------------------------------
+    # Descrierea Paginii
+    --------------------------------------------------------------*/
+    'description_home'          =>  'Explorați învățăturile cuprinzătoare despre budism, Dhamma, Nikaya, Agama și disciplina monastică. Înclinați-vă profund în analiza Dhamma, disponibilă în mai multe limbi pentru un public global în căutarea înțelepciunii și a perspectivelor spirituale.',
+    'description_article'       =>  'Adânciți-vă în discursurile profunde ale budismului, explorând învățăturile din Nikaya și Agama. Descoperiți perspective asupra cuvintelor lui Buddha despre Dhamma, disciplina monastică și practica spirituală, cu traduceri în mai multe limbi realizate de călugări, cercetători și traducători renumiți de-a lungul istoriei.',
+    'description_bookmark'      =>  'Organizați și gestionați cu ușurință învățăturile budiste, discursurile și resursele Dhamma preferate. Salvați și revizitați perspectivele cheie din Nikaya, Agama și alte texte, folosind un manager de marcaje personalizat pentru studii spirituale mai profunde.',
+    'description_contact'       =>  'Contactați-ne prin trimiterea unui mesaj prin formularul nostru de contact. Lăsați-vă adresa de e-mail și vom încerca să răspundem întrebărilor dumneavoastră legate de subiecte conexe.',
+    'description_credits'       =>  'Ne exprimăm cea mai profundă recunoștință față de nenumărații Buddha antici, profesori și practicanți de-a lungul istoriei. Onorăm linia învățăturilor și contribuțiilor care au modelat înțelegerea budismului și a Dhammei. Dacă materialele au fost utilizate greșit, vă rugăm să ne contactați.',
+    'description_search'        =>  'Găsiți cu ușurință articole despre budism și Dhamma căutând cuvinte cheie, nume de autori sau subiecte specifice. Instrumentul de căutare vă ajută să navigați prin colecție pentru a descoperi perspective și învățături valoroase.',
+    'description_settings'      =>  'Personalizați-vă experiența ajustând culoarea temei, modul și limba implicită. Personalizați-vă interfața pentru a îmbunătăți interacțiunea cu resursele și învățăturile budiste.',
+
+    /*--------------------------------------------------------------
     # Menu
     --------------------------------------------------------------*/
     'login'         =>  'Autentificare',
