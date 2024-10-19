@@ -211,7 +211,7 @@
     }
 
     function getArticleUrl(entryId, translationId) {
-      return "'/article/' + " + entryId + " + '/forward=translation/' + " + translationId;
+      return "'/article/' + " + entryId + " + '/anchor=translation/' + " + translationId;
     }
 
   </script>

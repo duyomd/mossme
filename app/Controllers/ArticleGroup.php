@@ -33,7 +33,7 @@ class ArticleGroup extends ArticleBase
 
         $data = [
             'displayHeader' => $entry->displayEnumTitle,
-            'description'   => lang('App.description_article'),
+            'description'   => lang('App.description_article') . lang('App.article_group_2'),
             'entry'         => $entry,
         ];
 

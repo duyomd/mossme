@@ -13,7 +13,7 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 class Article extends ArticleBase
 {
 
-    public function show($id = null, $forward = null, $f_id = null): string
+    public function show($id = null, $anchor = null, $a_id = null): string
     {
         $user_language_code = Utilities::getSessionLocale();
 
@@ -26,7 +26,7 @@ class Article extends ArticleBase
         Utilities::parallels($entry);
 
         // translation data by entry_id (for dropdown display also)        
-        $translations = $translationModel->getTranslations($entry, $user_language_code, $forward == 'translation' ? $f_id : null);
+        $translations = $translationModel->getTranslations($entry, $user_language_code, $anchor == 'translation' ? $a_id : null);
         if ($translations == null) return $this->notFound();
         $entry->translations = $translations;
 
@@ -41,7 +41,7 @@ class Article extends ArticleBase
 
         // commentary list
         $entry->commentaries = model(CommentaryModel::class)
-                                ->getCommentaries($entry, $user_language_code, $forward == 'commentary' ? $f_id : null);
+                                ->getCommentaries($entry, $user_language_code, $anchor == 'commentary' ? $a_id : null);
         
         // check whether this entry can group all its children to display in one long page
         $entry->isChildrenGroupable = $translationModel->isChildrenGroupable($entry->id);
@@ -50,12 +50,20 @@ class Article extends ArticleBase
             'displayHeader' => $entry->displayEnumTitle,
             'description'   => lang('App.description_article'),
             'entry'         => $entry,
-            'forward'       => $forward,
+            'anchor'        => $anchor,
         ];
 
         helper('form');
 
         return view('templates/header', $data).view('article');
+    }
+
+    // article/(:segment)/(:num)?lang=(:alpha)&anchor=(:alpha)&aid=(:num)
+    public function test($id = null, $tid = null, $lang = null, $anchor = null, $aid = null)
+    {
+        var_dump([$id, $tid, $this->request->getGet('lang'), $this->request->getGet('anchor'), $this->request->getGet('aid')]);
+        
+        return $this->show($id);
     }
 
 }

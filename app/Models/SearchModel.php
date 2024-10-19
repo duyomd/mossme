@@ -166,9 +166,9 @@ class SearchModel extends BaseModel
         }
         // Title href
         $re->title_link = '/article/' . $re->entry_id . 
-          '/forward=' . (strpos($re->found_in, 'commentary') === false ? 'translation' : 'commentary') . 
+          '/anchor=' . (strpos($re->found_in, 'commentary') === false ? 'translation' : 'commentary') . 
           '/' . $re->id;
-        $re->title_hash = (strpos($re->found_in, 'commentary') === false ? 'article' : 'commentary');
+        $re->title_hash = (strpos($re->found_in, 'commentary') === false ? 'article' : '');
 
         // $re->encodedTitle = Utilities::encodeDataHtml($re->encodedTitle, $slash);
         // $re->encodedAuthor = Utilities::encodeDataHtml($re->author, $slash);

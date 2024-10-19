@@ -17,7 +17,7 @@ let TRANSLATIONS_ALL;
 let COMMENTARIES_DEFAULT;
 let COMMENTARIES_ALL;
 
-let FORWARD;
+let ANCHOR;
 
 function articleGlobal(params) {
   MSG_PARALLELES_LOADING  = params.MSG_PARALLELES_LOADING;
@@ -32,7 +32,7 @@ function articleGlobal(params) {
   MSG_COLLAPSE_ALL        = params.MSG_COLLAPSE_ALL;
 
   ENTRY_COUNT             = params.ENTRY_COUNT;
-  FORWARD                 = params.FORWARD;
+  ANCHOR                  = params.ANCHOR;
 
   TRANSLATIONS_DEFAULT    = params.TRANSLATIONS_DEFAULT;
   TRANSLATIONS_ALL        = params.TRANSLATIONS_ALL;
@@ -273,10 +273,10 @@ function initToastArticle() {
 }
 
 function initDefaultState() {
-  if (!FORWARD) return;
-  if (FORWARD == 'commentary') {
+  if (!ANCHOR) return;
+  if (ANCHOR == 'commentary') {
     document.getElementById('btn-commentary').click();
-  } else if (FORWARD == 'translation') {
+  } else if (ANCHOR == 'translation') {
     // setTimeout(function(){
     //   var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     //   if (isChrome && window.location.hash) {

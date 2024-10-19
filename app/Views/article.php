@@ -470,7 +470,7 @@
         MSG_COMMENTARY_DISPLAY  : "<?=lang('App.article_msg_comm_shown')?>",
 
         ENTRY_COUNT             : 1,
-        FORWARD                 : "<?=$forward?>",
+        ANCHOR                  : "<?=$anchor?>",
 
         TRANSLATIONS_DEFAULT    : <?=json_encode($trans)?>,
         COMMENTARIES_DEFAULT    : <?=json_encode($comms)?>,
