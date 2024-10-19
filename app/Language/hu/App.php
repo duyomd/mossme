@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'A kiválasztott kép részletes nézete.',
+    'alt_favicon'           =>  'Mossme logó',
+    'alt_earth'             =>  'Zöldítsd a világot',
+    'alt_eye'               =>  'A csend hangja',
+    'alt_captcha'           =>  'CAPTCHA: Kérjük, írd be a képen látható szöveget.',
+    'alt_newfeed'           =>  'Új hírfolyam ikon',
+    'alt_legacy_read'       =>  'Gyermek szerzetes lépcsőn ül, gyertyák meleg fényénél olvas egy könyvet.',
+    'alt_menu'              =>  'Kis borítókép ehhez a gyűjteményhez',
+    'alt_discussion'        =>  'Kis borítókép ehhez a részhez',
+    'alt_card'              =>  'Ennek a kártyának a képe',
+    'alt_testimonial'       =>  'Kör alakú ajánlókép',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

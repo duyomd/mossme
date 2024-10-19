@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Vista dettagliata dell\'immagine selezionata.',
+    'alt_favicon'           =>  'Logo Mossme',
+    'alt_earth'             =>  'Rendi verde il mondo',
+    'alt_eye'               =>  'Il suono del silenzio',
+    'alt_captcha'           =>  'CAPTCHA: Inserisci il testo mostrato nell\'immagine.',
+    'alt_newfeed'           =>  'Icona nuovo feed',
+    'alt_legacy_read'       =>  'Monaco bambino seduto sui gradini, legge un libro con la luce calda delle candele.',
+    'alt_menu'              =>  'Immagine di copertina piccola per questa collezione',
+    'alt_discussion'        =>  'Immagine di copertina piccola per questa sezione',
+    'alt_card'              =>  'Immagine di questa scheda',
+    'alt_testimonial'       =>  'Immagine circolare della testimonianza',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

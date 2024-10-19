@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Detaljert visning av det valgte bildet.',
+    'alt_favicon'           =>  'Mossme-logo',
+    'alt_earth'             =>  'Gjør verden grønn',
+    'alt_eye'               =>  'Lyden av stillhet',
+    'alt_captcha'           =>  'CAPTCHA: Vennligst skriv inn teksten som vises i bildet.',
+    'alt_newfeed'           =>  'Nyhetsfeedikon',
+    'alt_legacy_read'       =>  'Barnemunk som sitter på trappen og leser en bok med lys fra stearinlys.',
+    'alt_menu'              =>  'Liten omslagsbilde for denne samlingen',
+    'alt_discussion'        =>  'Liten omslagsbilde for denne seksjonen',
+    'alt_card'              =>  'Bildet av dette kortet',
+    'alt_testimonial'       =>  'Sirkulær attestbilde',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

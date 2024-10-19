@@ -39,8 +39,8 @@
               </div>
 
               <div class="phone">
-                  <img id="earth" src="/assets/img/contact/earth.gif" alt="" onclick="toggleAnimation(this);">
-                  <img id="eye" src="/assets/img/contact/eye.gif" alt="" onclick="toggleAnimation(this);" class=" hidden">
+                <img id="earth" src="/assets/img/contact/earth.gif" alt="<?=lang('App.alt_earth')?>" onclick="toggleAnimation(this);">
+                <img id="eye" src="/assets/img/contact/eye.gif" alt="<?=lang('App.alt_eye')?>" onclick="toggleAnimation(this);" class=" hidden" aria-hidden="true">
               </div>
 
             </div>  
@@ -97,7 +97,7 @@
               <div class="form-group mt-3">
                 <div class="row">
                   <div class="col-xl-4 col-md-5 text-md-start text-center" >
-                    <img src="/captcha" alt="CAPTCHA" class="captcha-image">
+                    <img src="/captcha" alt="<?=lang('App.alt_captcha')?>" class="captcha-image">
                     <a href="javascript:void(0)" class="bi bi-bootstrap-reboot d-inline-block ps-3 ps-md-2 refresh-captcha"></a>
                   </div>
                   <div class="col-xl-3 col-md-4 mt-md-0 mt-3">

@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Podroben ogled izbrane slike.',
+    'alt_favicon'           =>  'Mossme logo',
+    'alt_earth'             =>  'Zelenimo svet',
+    'alt_eye'               =>  'Zven tišine',
+    'alt_captcha'           =>  'CAPTCHA: Prosimo, vnesite besedilo, prikazano na sliki.',
+    'alt_newfeed'           =>  'Ikona novega vira',
+    'alt_legacy_read'       =>  'Mali menih sedi na stopnicah in bere knjigo s svečami, ki nudijo toplo svetlobo.',
+    'alt_menu'              =>  'Majhna naslovna slika za to zbirko',
+    'alt_discussion'        =>  'Majhna naslovna slika za to sekcijo',
+    'alt_card'              =>  'Slika te kartice',
+    'alt_testimonial'       =>  'Krožna slika pričevanja',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

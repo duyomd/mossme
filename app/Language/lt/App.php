@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Išsamus pasirinktos nuotraukos vaizdas.',
+    'alt_favicon'           =>  'Mossme logotipas',
+    'alt_earth'             =>  'Pavertk pasaulį žaliu',
+    'alt_eye'               =>  'Tylios garso',
+    'alt_captcha'           =>  'CAPTCHA: Prašome įvesti tekste, parodytame paveikslėlyje.',
+    'alt_newfeed'           =>  'Naujo turinio piktograma',
+    'alt_legacy_read'       =>  'Vaikinas vienuolis sėdi ant laiptų ir skaito knygą, šviesą teikia žvakės.',
+    'alt_menu'              =>  'Maža šios kolekcijos viršelio nuotrauka',
+    'alt_discussion'        =>  'Maža šios sekcijos viršelio nuotrauka',
+    'alt_card'              =>  'Šios kortelės nuotrauka',
+    'alt_testimonial'       =>  'Apskritimo rekomendacijos nuotrauka',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

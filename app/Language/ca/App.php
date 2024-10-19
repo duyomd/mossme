@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Vista detallada de la imatge seleccionada.',
+    'alt_favicon'           =>  'Logotip de Mossme',
+    'alt_earth'             =>  'Verda el món',
+    'alt_eye'               =>  'So del silenci',
+    'alt_captcha'           =>  'CAPTCHA: Si us plau, introdueix el text que apareix a la imatge.',
+    'alt_newfeed'           =>  'Icona de nou feed',
+    'alt_legacy_read'       =>  'Un monjo nen assegut a les escales llegint un llibre amb espelmes que proporcionen una llum càlida.',
+    'alt_menu'              =>  'Imatge de coberta petita per a aquesta col·lecció',
+    'alt_discussion'        =>  'Imatge de coberta petita per a aquesta secció',
+    'alt_card'              =>  'Imatge d’aquesta targeta',
+    'alt_testimonial'       =>  'Imatge circular de testimoni',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

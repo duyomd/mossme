@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Seçilen resmin detaylı görünümü.',
+    'alt_favicon'           =>  'Mossme logosu',
+    'alt_earth'             =>  'Dünyayı yeşillendir',
+    'alt_eye'               =>  'Sessizliğin sesi',
+    'alt_captcha'           =>  'CAPTCHA: Lütfen görüntüde gösterilen metni girin.',
+    'alt_newfeed'           =>  'Yeni besleme simgesi',
+    'alt_legacy_read'       =>  'Bir çocuk rahip, merdivenlerde oturuyor, mumların sağladığı sıcak ışıkta bir kitap okuyor.',
+    'alt_menu'              =>  'Bu koleksiyon için küçük kapak resmi',
+    'alt_discussion'        =>  'Bu bölüm için küçük kapak resmi',
+    'alt_card'              =>  'Bu kartın resmi',
+    'alt_testimonial'       =>  'Dairesel referans resmi',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

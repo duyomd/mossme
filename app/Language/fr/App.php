@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Vue détaillée de l\'image sélectionnée.',
+    'alt_favicon'           =>  'Logo Mossme',
+    'alt_earth'             =>  'Verdir le monde',
+    'alt_eye'               =>  'Le son du silence',
+    'alt_captcha'           =>  'CAPTCHA : Veuillez entrer le texte affiché dans l\'image.',
+    'alt_newfeed'           =>  'Icône du nouveau flux',
+    'alt_legacy_read'       =>  'Un jeune moine assis sur des marches, lisant un livre avec des bougies diffusant une lumière chaude.',
+    'alt_menu'              =>  'Petite image de couverture pour cette collection',
+    'alt_discussion'        =>  'Petite image de couverture pour cette section',
+    'alt_card'              =>  'Image de cette carte',
+    'alt_testimonial'       =>  'Image circulaire du témoignage',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

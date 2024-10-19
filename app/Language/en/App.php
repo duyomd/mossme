@@ -490,6 +490,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Detailed view of the selected image.',
+    'alt_favicon'           =>  'Mossme logo',
+    'alt_earth'             =>  'Green the world',
+    'alt_eye'               =>  'Sound of silence',
+    'alt_captcha'           =>  'CAPTCHA: Please enter the text shown in the image.',
+    'alt_newfeed'           =>  'New feed icon',
+    'alt_legacy_read'       =>  'Child monk seating on stair steps, reading a book with candles providing warm light.',
+    'alt_menu'              =>  'Small cover image for this collection',
+    'alt_discussion'        =>  'Small cover image for this section',
+    'alt_card'              =>  'This card\'s image',
+    'alt_testimonial'       =>  'Circular testimonial image',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

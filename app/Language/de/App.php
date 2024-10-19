@@ -483,6 +483,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Detailansicht des ausgewählten Bildes.',
+    'alt_favicon'           =>  'Mossme-Logo',
+    'alt_earth'             =>  'Grüne Erde',
+    'alt_eye'               =>  'Klang der Stille',
+    'alt_captcha'           =>  'CAPTCHA: Bitte geben Sie den im Bild angezeigten Text ein.',
+    'alt_newfeed'           =>  'Icon für neuen Feed',
+    'alt_legacy_read'       =>  'Ein kleiner Mönch sitzt auf Treppenstufen und liest ein Buch, während Kerzen warmes Licht spenden.',
+    'alt_menu'              =>  'Kleines Titelbild für diese Sammlung',
+    'alt_discussion'        =>  'Kleines Titelbild für diesen Abschnitt',
+    'alt_card'              =>  'Bild dieser Karte',
+    'alt_testimonial'       =>  'Rundes Testimonial-Bild',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

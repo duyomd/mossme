@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Tampilan detail dari gambar yang dipilih.',
+    'alt_favicon'           =>  'Logo Mossme',
+    'alt_earth'             =>  'Hijaukan dunia',
+    'alt_eye'               =>  'Suara keheningan',
+    'alt_captcha'           =>  'CAPTCHA: Silakan masukkan teks yang ditampilkan pada gambar.',
+    'alt_newfeed'           =>  'Ikon umpan berita baru',
+    'alt_legacy_read'       =>  'Biksu anak sedang duduk di tangga, membaca buku dengan cahaya lilin yang hangat.',
+    'alt_menu'              =>  'Gambar sampul kecil untuk koleksi ini',
+    'alt_discussion'        =>  'Gambar sampul kecil untuk bagian ini',
+    'alt_card'              =>  'Gambar dari kartu ini',
+    'alt_testimonial'       =>  'Gambar testimoni melingkar',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

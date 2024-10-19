@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Vista detallada de la imagen seleccionada.',
+    'alt_favicon'           =>  'Logo de Mossme',
+    'alt_earth'             =>  'Verde el mundo',
+    'alt_eye'               =>  'Sonido del silencio',
+    'alt_captcha'           =>  'CAPTCHA: Por favor, introduzca el texto que aparece en la imagen.',
+    'alt_newfeed'           =>  'Icono de nuevo feed',
+    'alt_legacy_read'       =>  'Un monje niño sentado en los escalones leyendo un libro con velas proporcionando una luz cálida.',
+    'alt_menu'              =>  'Pequeña imagen de portada para esta colección',
+    'alt_discussion'        =>  'Pequeña imagen de portada para esta sección',
+    'alt_card'              =>  'Imagen de esta tarjeta',
+    'alt_testimonial'       =>  'Imagen circular del testimonio',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

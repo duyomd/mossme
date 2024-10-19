@@ -487,6 +487,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Xem chi tiết hình ảnh đã chọn.',
+    'alt_favicon'           =>  'Logo Mossme',
+    'alt_earth'             =>  'Xanh hóa thế giới',
+    'alt_eye'               =>  'Âm thanh của sự im lặng',
+    'alt_captcha'           =>  'CAPTCHA: Vui lòng nhập văn bản hiển thị trong ảnh.',
+    'alt_newfeed'           =>  'Ảnh thu nhỏ cho nguồn tin mới',
+    'alt_legacy_read'       =>  'Một tu sĩ nhỏ ngồi trên bậc thang, đọc sách dưới ánh sáng ấm áp của những ngọn nến.',
+    'alt_menu'              =>  'Ảnh bìa thu nhỏ của bộ kinh này',
+    'alt_discussion'        =>  'Ảnh bìa thu nhỏ cho thư mục này',
+    'alt_card'              =>  'Hình ảnh của thẻ',
+    'alt_testimonial'       =>  'Ảnh tròn cho mục hồi hướng',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

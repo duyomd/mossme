@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Szczegółowy widok wybranego obrazu.',
+    'alt_favicon'           =>  'Logo Mossme',
+    'alt_earth'             =>  'Zielona planeta',
+    'alt_eye'               =>  'Dźwięk ciszy',
+    'alt_captcha'           =>  'CAPTCHA: Proszę wpisać tekst wyświetlony na obrazie.',
+    'alt_newfeed'           =>  'Ikona nowego kanału',
+    'alt_legacy_read'       =>  'Młody mnich siedzący na schodach, czytający książkę przy świetle świec.',
+    'alt_menu'              =>  'Mały obrazek okładkowy dla tej kolekcji',
+    'alt_discussion'        =>  'Mały obrazek okładkowy dla tej sekcji',
+    'alt_card'              =>  'Obraz tego karty',
+    'alt_testimonial'       =>  'Okrągły obrazek referencyjny',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

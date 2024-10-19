@@ -485,6 +485,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Detaljerad vy av den valda bilden.',
+    'alt_favicon'           =>  'Mossme-logotyp',
+    'alt_earth'             =>  'Gör världen grön',
+    'alt_eye'               =>  'Tystnadens ljud',
+    'alt_captcha'           =>  'CAPTCHA: Vänligen ange texten som visas i bilden.',
+    'alt_newfeed'           =>  'Ikon för nytt flöde',
+    'alt_legacy_read'       =>  'Barnmunk som sitter på trappsteg och läser en bok med ljusande ljus.',
+    'alt_menu'              =>  'Liten omslagsbild för denna samling',
+    'alt_discussion'        =>  'Liten omslagsbild för denna sektion',
+    'alt_card'              =>  'Denna karts bild',
+    'alt_testimonial'       =>  'Cirkulär bild av vittnesmål',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Gedetailleerd uitzicht op de geselecteerde afbeelding.',
+    'alt_favicon'           =>  'Mossme-logo',
+    'alt_earth'             =>  'Maak de wereld groen',
+    'alt_eye'               =>  'Geluid van stilte',
+    'alt_captcha'           =>  'CAPTCHA: Voer de tekst in die in de afbeelding wordt weergegeven.',
+    'alt_newfeed'           =>  'Nieuwsdienstenpictogram',
+    'alt_legacy_read'       =>  'Kindermonnik die op de trappen zit en een boek leest met kaarsen die warm licht geven.',
+    'alt_menu'              =>  'Kleine omslagafbeelding voor deze collectie',
+    'alt_discussion'        =>  'Kleine omslagafbeelding voor deze sectie',
+    'alt_card'              =>  'Afbeelding van deze kaart',
+    'alt_testimonial'       =>  'Circulaire getuigenis afbeelding',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

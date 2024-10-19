@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Valitun kuvan yksityiskohtainen näkymä.',
+    'alt_favicon'           =>  'Mossme-logo',
+    'alt_earth'             =>  'Vihreä maailma',
+    'alt_eye'               =>  'Hiljaisuuden ääni',
+    'alt_captcha'           =>  'CAPTCHA: Kirjoita kuvassa näkyvä teksti.',
+    'alt_newfeed'           =>  'Uuden syötteen kuvake',
+    'alt_legacy_read'       =>  'Lapsimunkki istuu portailla ja lukee kirjaa kynttilöiden lämpimässä valossa.',
+    'alt_menu'              =>  'Pieni kansikuva tälle kokoelmalle',
+    'alt_discussion'        =>  'Pieni kansikuva tälle osastolle',
+    'alt_card'              =>  'Tämän kortin kuva',
+    'alt_testimonial'       =>  'Pyöreä suosituskuva',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

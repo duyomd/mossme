@@ -55,7 +55,7 @@
   <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
     <div class="toast text-bg-success bg-gradient border-0" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-        <img src="/assets/img/favicon.png" class="rounded">
+        <img src="/assets/img/favicon.png" class="rounded" alt="<?=lang('App.alt_favicon')?>">
         <strong><?=lang('App.project_name')?></strong>
         <small><?=lang('App.moments')?></small>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>

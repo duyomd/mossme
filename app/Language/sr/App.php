@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Detaljan pregled izabrane slike.',
+    'alt_favicon'           =>  'Mossme logo',
+    'alt_earth'             =>  'Zelenimo svet',
+    'alt_eye'               =>  'Zvuk tišine',
+    'alt_captcha'           =>  'CAPTCHA: Molimo unesite tekst prikazan na slici.',
+    'alt_newfeed'           =>  'Ikona novog feed-a',
+    'alt_legacy_read'       =>  'Mali monah sedi na stepenicama i čita knjigu uz sveće koje pružaju toplu svetlost.',
+    'alt_menu'              =>  'Mala naslovna slika za ovu kolekciju',
+    'alt_discussion'        =>  'Mala naslovna slika za ovu sekciju',
+    'alt_card'              =>  'Slika ove kartice',
+    'alt_testimonial'       =>  'Kružna slika svedočenja',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

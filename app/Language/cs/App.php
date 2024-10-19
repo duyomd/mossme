@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Detailní zobrazení vybraného obrázku.',
+    'alt_favicon'           =>  'Logo Mossme',
+    'alt_earth'             =>  'Zelený svět',
+    'alt_eye'               =>  'Zvuk ticha',
+    'alt_captcha'           =>  'CAPTCHA: Zadejte prosím text zobrazený na obrázku.',
+    'alt_newfeed'           =>  'Ikona nového kanálu',
+    'alt_legacy_read'       =>  'Malý mnich sedí na schodech, čte knihu, svíčky vyzařují teplé světlo.',
+    'alt_menu'              =>  'Malý titulní obrázek této sbírky',
+    'alt_discussion'        =>  'Malý titulní obrázek této sekce',
+    'alt_card'              =>  'Obrázek této karty',
+    'alt_testimonial'       =>  'Kulatý doporučující obrázek',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

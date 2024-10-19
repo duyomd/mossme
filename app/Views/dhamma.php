@@ -43,8 +43,8 @@
                   <div class="swiper-slide">
                     <div class="feeds-item d-flex align-items-center justify-content-center">
                       <a href="/article/<?=$feed->entry_id?>">
-                        <img src="<?=$feed->image_url_header?>" class="d-lg-inline d-none feeds-img">
-                        <img src="<?=$feed->image_url_header?>" class="d-lg-none feeds-img feeds-img-sm">
+                        <img src="<?=$feed->image_url_header?>" class="d-lg-inline d-none feeds-img" alt="<?=lang('App.alt_newfeed')?>">
+                        <img src="<?=$feed->image_url_header?>" class="d-lg-none feeds-img feeds-img-sm" alt="<?=lang('App.alt_newfeed')?>">
                       </a>  
                       <a href="/article/<?=$feed->entry_id?>"><?=$feed->title?></a>
                     </div>
@@ -71,7 +71,7 @@
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
             <div class="legacy-img">
-              <img src="/assets/img/gallery/legacy.jpg" alt="">
+              <img src="/assets/img/gallery/legacy.jpg" alt="<?=lang('App.alt_legacy_read')?>">
             </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
@@ -148,7 +148,7 @@
             <div class="col-lg-6 menu-item <?=$tran->isPali() ? 'filter-pali' : 
                                              ($tran->isAgama() ? 'filter-agama' : 'filter-other')?>">
               <a href="/article/<?=$tran->entry_id?>">
-                <img src="<?=$tran->image_url_header?>" class="menu-img" alt="">
+                <img src="<?=$tran->image_url_header?>" class="menu-img" alt="<?=lang('App.alt_menu')?>">
               </a>
               <div class="menu-content">
                 <a href="/article/<?=$tran->entry_id?>"><?=$tran->title?></a><!--<span>152</span>-->
@@ -208,7 +208,7 @@
                       </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="<?=$tran->image_url_header?>" alt="" class="img-fluid">
+                      <img src="<?=$tran->image_url_header?>" alt="<?=lang('App.alt_discussion')?>" class="img-fluid">
                     </div>
                   </div>
                 </div>
@@ -239,7 +239,7 @@
                 <div class="swiper-slide">
                 <div class="row event-item">
                   <div class="col-lg-6">
-                    <img src="<?=$cardTran->image_url?>" class="img-fluid" alt="">
+                    <img src="<?=$cardTran->image_url?>" class="img-fluid" alt="<?=lang('App.alt_card')?>">
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
                     <h3><?=$cardTran->author?></h3>
@@ -310,7 +310,7 @@
                     <?= lang('App.prns.' . $i . '.content') ?>
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="<?= lang('App.prns.' . $i . '.img_url') ?>" class="testimonial-img" alt="">
+                <img src="<?= lang('App.prns.' . $i . '.img_url') ?>" class="testimonial-img" alt="<?=lang('App.alt_testimonial')?>">
                 <h3><?= lang('App.prns.' . $i . '.footer1') ?></h3>
                 <h4><?= lang('App.prns.' . $i . '.footer2') ?></h4>
               </div>

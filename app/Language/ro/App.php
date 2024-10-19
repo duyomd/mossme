@@ -484,6 +484,21 @@ return [
     'users_label_created_at'        =>  'Created at',
 
     /*--------------------------------------------------------------
+    # Image Alts
+    --------------------------------------------------------------*/
+    'alt_image_modal'       =>  'Visualização detalhada da imagem selecionada.',
+    'alt_favicon'           =>  'Logo da Mossme',
+    'alt_earth'             =>  'Tornar o mundo mais verde',
+    'alt_eye'               =>  'Som do silêncio',
+    'alt_captcha'           =>  'CAPTCHA: Por favor, insira o texto mostrado na imagem.',
+    'alt_newfeed'           =>  'Ícone de novo feed',
+    'alt_legacy_read'       =>  'Jovem monge sentado nos degraus, lendo um livro com velas fornecendo luz suave.',
+    'alt_menu'              =>  'Imagem de capa pequena para esta coleção',
+    'alt_discussion'        =>  'Imagem de capa pequena para esta seção',
+    'alt_card'              =>  'Imagem deste cartão',
+    'alt_testimonial'       =>  'Imagem circular de depoimento',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',
