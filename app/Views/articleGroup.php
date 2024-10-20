@@ -126,7 +126,8 @@
                             js_trans[<?=$p?>][<?=$i?>] = <?=json_encode($item)?>;
                           </script>
                           <li><a class="dropdown-item text-truncate link-main-<?=$p?>
-                                <?php if ($tran->default) echo ' active'; ?>" href="javascript:void(0)"
+                                <?php if ($tran->default) echo ' active'; ?>" 
+                                href="javascript:void(0)" role="button"
                                 onclick="reloadContent(1, js_trans[<?=$p?>][<?=$i?>], <?=$p?>);
                                           selectDropdownItem(1, this, <?=$p?>);">
                             <?=$tran->author?></a>
@@ -186,7 +187,8 @@
                         <?php endif ?>
                       <?php else : ?>
                         <li><a class="dropdown-item text-truncate link-sub-<?=$p?>
-                              <?php if ($tran->default) echo ' active'; ?>" href="javascript:void(0)"
+                              <?php if ($tran->default) echo ' active'; ?>" 
+                              href="javascript:void(0)" role="button"
                               onclick="reloadContent(2, js_trans[<?=$p?>][<?=$i?>], <?=$p?>);
                                         selectDropdownItem(2, this, <?=$p?>);">
                           <?=$tran->author?></a>
@@ -213,7 +215,7 @@
               if ($parallelsCount > 0) :?>
               <div class="parallels row mt-5 text-center">
                 <div>
-                  <a href="javascript:void(0)" onclick="loadParallels('<?=$child->parallels?>', <?=$p?>)">
+                  <a role="button" href="javascript:void(0)" onclick="loadParallels('<?=$child->parallels?>', <?=$p?>)">
                     <i class="bi bi-search"></i><span class="parallels-title-<?=$p?>"><?=lang('App.article_parallels_search')?></span>
                   </a>
                 </div>

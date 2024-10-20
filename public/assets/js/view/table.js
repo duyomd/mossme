@@ -386,7 +386,7 @@ function htmlTableHeader(sort, newOrders, sortingHeader) {
     
       html +=
     '<th scope="col" class="' + css + '"' + '>' +
-      '<a href="javascript:void(0)" ' + 
+      '<a role="button" href="javascript:void(0)" ' + 
         'onclick="changePage(' + sort.currentPage + ',\'' + FIELDS_TABLE_ORDERBYS[i] + '\',\'' + newOrders.toString() + '\')">' + 
           FIELDS_TABLE_HEADER[i] + 
           (orderCol == text
@@ -414,11 +414,11 @@ function htmlTableMoveBtnsRow(sort) {
   if (!_noMove) {
     html +=
     '<td rowspan="' + (sort.rpp + 1) + '" class="align-middle text-center col-move">' +
-      '<a id="btn-move-up" onclick="clickBtn(\'#hdn-move-up\');" href="javascript:void(0)" ' + 
+      '<a id="btn-move-up" role="button" onclick="clickBtn(\'#hdn-move-up\');" href="javascript:void(0)" ' + 
         'class="btn-move animated fadeInUp disabled">' +
         '<i class="bi bi-chevron-double-up"></i>' +
       '</a>' +
-      '<a id="btn-move-down" onclick="clickBtn(\'#hdn-move-down\');" href="javascript:void(0)" ' + 
+      '<a id="btn-move-down" role="button" onclick="clickBtn(\'#hdn-move-down\');" href="javascript:void(0)" ' + 
         'class="btn-move mt-2 animated fadeInUp disabled">' +
         '<i class="bi bi-chevron-double-down"></i>' +
       '</a>';
@@ -602,7 +602,7 @@ function htmlTableFooterPagination(sort) {
 function htmlTableFooterPaginationPrevious(sort) {
   return (
     '<li class="page-item ' + (!sort.hasPrevious ? 'disabled' : '') + '">' +
-      '<a class="page-link" aria-label="Previous" href="javascript:void(0)" ' + 
+      '<a role="button" class="page-link" aria-label="Previous" href="javascript:void(0)" ' + 
         'onclick="changePage(' + (sort.currentPage - 1) +
                       ', \'' + sort.orderBys.toString() + '\'' +
                       ', \'' + sort.sortOrders.toString() + '\')">' +
@@ -614,7 +614,7 @@ function htmlTableFooterPaginationPrevious(sort) {
 function htmlTableFooterPaginationNext(sort) {
   return (
     '<li class="page-item ' + (!sort.hasNext ? 'disabled' : '') + '">' +
-      '<a class="page-link" aria-label="Next" href="javascript:void(0)" ' +
+      '<a role="button" class="page-link" aria-label="Next" href="javascript:void(0)" ' +
         'onclick="changePage(' + (sort.currentPage + 1) +
                       ', \'' + sort.orderBys.toString() + '\'' +
                       ', \'' + sort.sortOrders.toString() + '\')">' +
@@ -628,7 +628,7 @@ function htmlTableFooterPaginationLong(sort) {
   for (var i = 1; i <= sort.pageTotal; i++) {
     html +=
     '<li class="page-item">' +
-      '<a class="page-link ' + (sort.currentPage == i ? 'active' : '') + '" ' + 
+      '<a role="button" class="page-link ' + (sort.currentPage == i ? 'active' : '') + '" ' + 
         'href="javascript:void(0)"' +
         'onclick="changePage(' + i + 
                     ', \'' + sort.orderBys.toString() + '\'' +

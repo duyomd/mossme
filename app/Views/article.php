@@ -141,7 +141,8 @@
                           js_trans[0][<?=$i?>] = <?=json_encode($item)?>;
                         </script>
                         <li><a class="dropdown-item text-truncate link-main-0
-                              <?php if ($tran->default) echo ' active'; ?>" href="javascript:void(0)"
+                              <?php if ($tran->default) echo ' active'; ?>" 
+                              href="javascript:void(0)" role="button"
                               onclick="reloadContent(1, js_trans[0][<?=$i?>], 0);
                                        selectDropdownItem(1, this, 0);">
                           <?=$tran->author?></a>
@@ -198,7 +199,8 @@
                         <?php endif ?>
                       <?php else : ?>
                         <li><a class="dropdown-item text-truncate link-sub-0
-                              <?php if ($tran->default) echo ' active'; ?>" href="javascript:void(0)"
+                              <?php if ($tran->default) echo ' active'; ?>" 
+                              href="javascript:void(0)" role="button"
                               onclick="reloadContent(2, js_trans[0][<?=$i?>], 0);
                                        selectDropdownItem(2, this, 0);">
                           <?=$tran->author?></a>
@@ -226,7 +228,7 @@
             if ($parallelsCount > 0) :?>
             <div class="parallels row mt-5 text-center">
               <div>
-                <a href="javascript:void(0)" onclick="loadParallels('<?=$entry->parallels?>', 0)">
+                <a role="button" href="javascript:void(0)" onclick="loadParallels('<?=$entry->parallels?>', 0)">
                   <i class="bi bi-search"></i><span class="parallels-title-0"><?=lang('App.article_parallels_search')?></span>
                 </a>
               </div>
@@ -280,7 +282,8 @@
                     </script>
                     </script>
                     <li><a class="dropdown-item text-truncate link-comm-0
-                          <?php if ($comm->default) echo ' active'; ?>" href="javascript:void(0)"
+                          <?php if ($comm->default) echo ' active'; ?>" 
+                          href="javascript:void(0)" role="button"
                           onclick="reloadContent(3, js_comms[0][<?=$i?>], 0);
                                    selectDropdownItem(3, this, 0);">
                       <?=$comm->author?></a>

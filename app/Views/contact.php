@@ -98,7 +98,7 @@
                 <div class="row">
                   <div class="col-xl-4 col-md-5 text-md-start text-center" >
                     <img src="/captcha" alt="<?=lang('App.alt_captcha')?>" class="captcha-image">
-                    <a href="javascript:void(0)" class="bi bi-bootstrap-reboot d-inline-block ps-3 ps-md-2 refresh-captcha"></a>
+                    <a role="button" href="javascript:void(0)" class="bi bi-bootstrap-reboot d-inline-block ps-3 ps-md-2 refresh-captcha"></a>
                   </div>
                   <div class="col-xl-3 col-md-4 mt-md-0 mt-3">
                     <input type="text" class="form-control" id="captcha" name="captcha_challenge" pattern="[A-Z]{6}" 

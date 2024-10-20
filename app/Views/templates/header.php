@@ -184,7 +184,7 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li class="dropdown dropdown-language"><a href="javascript:void(0)"><span><?=lang('App.languages')?></span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown dropdown-language"><a role="button" href="javascript:void(0)"><span><?=lang('App.languages')?></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <?php if(isset($languages)) : ?>
                 <?php foreach($languages as $lang) : ?>
@@ -198,60 +198,61 @@
                 <?php endforeach ?>
               <?php else : ?>
                 <!-- for pages without fetching languages, just in case -->
-                <li><a href="javascript:void(0)" onclick="changeLanguage('en')"><?=lang('App.language_me', [], 'en')?></a></li>
+                <!-- TODO: extending Shield's Login/Register Controllers... -->
+                <li><a href="/?lang=en" onclick="changeLanguage('en'); return false;"><?=lang('App.language_me', [], 'en')?></a></li>
 
-                <li><a href="javascript:void(0)" onclick="changeLanguage('zh-Hans')"><?=lang('App.language_me', [], 'zh-Hans')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('zh-Hant')"><?=lang('App.language_me', [], 'zh-Hant')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('ja')"><?=lang('App.language_me', [], 'ja')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('ko')"><?=lang('App.language_me', [], 'ko')?></a></li>
+                <li><a href="/?lang=zh-Hans" onclick="changeLanguage('zh-Hans'); return false;"><?=lang('App.language_me', [], 'zh-Hans')?></a></li>
+                <li><a href="/?lang=zh-Hant" onclick="changeLanguage('zh-Hant'); return false;"><?=lang('App.language_me', [], 'zh-Hant')?></a></li>
+                <li><a href="/?lang=ja" onclick="changeLanguage('ja'); return false;"><?=lang('App.language_me', [], 'ja')?></a></li>
+                <li><a href="/?lang=ko" onclick="changeLanguage('ko'); return false;"><?=lang('App.language_me', [], 'ko')?></a></li>
 
-                <li><a href="javascript:void(0)" onclick="changeLanguage('fr')"><?=lang('App.language_me', [], 'fr')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('de')"><?=lang('App.language_me', [], 'de')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('it')"><?=lang('App.language_me', [], 'it')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('es')"><?=lang('App.language_me', [], 'es')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('ca')"><?=lang('App.language_me', [], 'ca')?></a></li>    
-                <li><a href="javascript:void(0)" onclick="changeLanguage('pt')"><?=lang('App.language_me', [], 'pt')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('ru')"><?=lang('App.language_me', [], 'ru')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('nl')"><?=lang('App.language_me', [], 'nl')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('no')"><?=lang('App.language_me', [], 'no')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('hu')"><?=lang('App.language_me', [], 'hu')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('sv')"><?=lang('App.language_me', [], 'sv')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('sr')"><?=lang('App.language_me', [], 'sr')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('cs')"><?=lang('App.language_me', [], 'cs')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('pl')"><?=lang('App.language_me', [], 'pl')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('ro')"><?=lang('App.language_me', [], 'ro')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('sl')"><?=lang('App.language_me', [], 'sl')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('fi')"><?=lang('App.language_me', [], 'fi')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('tr')"><?=lang('App.language_me', [], 'tr')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('lt')"><?=lang('App.language_me', [], 'lt')?></a></li>
+                <li><a href="/?lang=fr" onclick="changeLanguage('fr'); return false;"><?=lang('App.language_me', [], 'fr')?></a></li>
+                <li><a href="/?lang=de" onclick="changeLanguage('de'); return false;"><?=lang('App.language_me', [], 'de')?></a></li>
+                <li><a href="/?lang=it" onclick="changeLanguage('it'); return false;"><?=lang('App.language_me', [], 'it')?></a></li>
+                <li><a href="/?lang=es" onclick="changeLanguage('es'); return false;"><?=lang('App.language_me', [], 'es')?></a></li>
+                <li><a href="/?lang=ca" onclick="changeLanguage('ca'); return false;"><?=lang('App.language_me', [], 'ca')?></a></li>    
+                <li><a href="/?lang=pt" onclick="changeLanguage('pt'); return false;"><?=lang('App.language_me', [], 'pt')?></a></li>
+                <li><a href="/?lang=ru" onclick="changeLanguage('ru'); return false;"><?=lang('App.language_me', [], 'ru')?></a></li>
+                <li><a href="/?lang=nl" onclick="changeLanguage('nl'); return false;"><?=lang('App.language_me', [], 'nl')?></a></li>
+                <li><a href="/?lang=no" onclick="changeLanguage('no'); return false;"><?=lang('App.language_me', [], 'no')?></a></li>
+                <li><a href="/?lang=hu" onclick="changeLanguage('hu'); return false;"><?=lang('App.language_me', [], 'hu')?></a></li>
+                <li><a href="/?lang=sv" onclick="changeLanguage('sv'); return false;"><?=lang('App.language_me', [], 'sv')?></a></li>
+                <li><a href="/?lang=sr" onclick="changeLanguage('sr'); return false;"><?=lang('App.language_me', [], 'sr')?></a></li>
+                <li><a href="/?lang=cs" onclick="changeLanguage('cs'); return false;"><?=lang('App.language_me', [], 'cs')?></a></li>
+                <li><a href="/?lang=pl" onclick="changeLanguage('pl'); return false;"><?=lang('App.language_me', [], 'pl')?></a></li>
+                <li><a href="/?lang=ro" onclick="changeLanguage('ro'); return false;"><?=lang('App.language_me', [], 'ro')?></a></li>
+                <li><a href="/?lang=sl" onclick="changeLanguage('sl'); return false;"><?=lang('App.language_me', [], 'sl')?></a></li>
+                <li><a href="/?lang=fi" onclick="changeLanguage('fi'); return false;"><?=lang('App.language_me', [], 'fi')?></a></li>
+                <li><a href="/?lang=tr" onclick="changeLanguage('tr'); return false;"><?=lang('App.language_me', [], 'tr')?></a></li>
+                <li><a href="/?lang=lt" onclick="changeLanguage('lt'); return false;"><?=lang('App.language_me', [], 'lt')?></a></li>
 
-                <li><a href="javascript:void(0)" onclick="changeLanguage('he')"><?=lang('App.language_me', [], 'he')?></a></li>
+                <li><a href="/?lang=he" onclick="changeLanguage('he'); return false;"><?=lang('App.language_me', [], 'he')?></a></li>
 
-                <li><a href="javascript:void(0)" class="hidden" onclick="changeLanguage('ne')"><?=lang('App.language_me', [], 'ne')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('hi')"><?=lang('App.language_me', [], 'hi')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('gu')"><?=lang('App.language_me', [], 'gu')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('kn')"><?=lang('App.language_me', [], 'kn')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('mr')"><?=lang('App.language_me', [], 'mr')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('ta')"><?=lang('App.language_me', [], 'ta')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('bn')"><?=lang('App.language_me', [], 'bn')?></a></li>
+                <li><a href="/?lang=ne" class="hidden" onclick="changeLanguage('ne'); return false;"><?=lang('App.language_me', [], 'ne')?></a></li>
+                <li><a href="/?lang=hi" onclick="changeLanguage('hi'); return false;"><?=lang('App.language_me', [], 'hi')?></a></li>
+                <li><a href="/?lang=gu" onclick="changeLanguage('gu'); return false;"><?=lang('App.language_me', [], 'gu')?></a></li>
+                <li><a href="/?lang=kn" onclick="changeLanguage('kn'); return false;"><?=lang('App.language_me', [], 'kn')?></a></li>
+                <li><a href="/?lang=mr" onclick="changeLanguage('mr'); return false;"><?=lang('App.language_me', [], 'mr')?></a></li>
+                <li><a href="/?lang=ta" onclick="changeLanguage('ta'); return false;"><?=lang('App.language_me', [], 'ta')?></a></li>
+                <li><a href="/?lang=bn" onclick="changeLanguage('bn'); return false;"><?=lang('App.language_me', [], 'bn')?></a></li>
 
-                <li><a href="javascript:void(0)" class="hidden" onclick="changeLanguage('bo')"><?=lang('App.language_me', [], 'bo')?></a></li>
-                <li><a href="javascript:void(0)" class="hidden" onclick="changeLanguage('dz')"><?=lang('App.language_me', [], 'dz')?></a></li>
+                <li><a href="/?lang=bo" class="hidden" onclick="changeLanguage('bo'); return false;"><?=lang('App.language_me', [], 'bo')?></a></li>
+                <li><a href="/?lang=dz" class="hidden" onclick="changeLanguage('dz'); return false;"><?=lang('App.language_me', [], 'dz')?></a></li>
 
-                <li><a href="javascript:void(0)" onclick="changeLanguage('vi')"><?=lang('App.language_me', [], 'vi')?></a></li>             
-                <li><a href="javascript:void(0)" onclick="changeLanguage('id')"><?=lang('App.language_me', [], 'id')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('si')"><?=lang('App.language_me', [], 'si')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('my')"><?=lang('App.language_me', [], 'my')?></a></li>
-                <li><a href="javascript:void(0)" onclick="changeLanguage('th')"><?=lang('App.language_me', [], 'th')?></a></li>
-                <li><a href="javascript:void(0)" class="hidden" onclick="changeLanguage('lo')"><?=lang('App.language_me', [], 'lo')?></a></li>
-                <li><a href="javascript:void(0)" class="hidden" onclick="changeLanguage('km')"><?=lang('App.language_me', [], 'km')?></a></li>
+                <li><a href="/?lang=vi" onclick="changeLanguage('vi'); return false;"><?=lang('App.language_me', [], 'vi')?></a></li>             
+                <li><a href="/?lang=id" onclick="changeLanguage('id'); return false;"><?=lang('App.language_me', [], 'id')?></a></li>
+                <li><a href="/?lang=si" onclick="changeLanguage('si'); return false;"><?=lang('App.language_me', [], 'si')?></a></li>
+                <li><a href="/?lang=my" onclick="changeLanguage('my'); return false;"><?=lang('App.language_me', [], 'my')?></a></li>
+                <li><a href="/?lang=th" onclick="changeLanguage('th'); return false;"><?=lang('App.language_me', [], 'th')?></a></li>
+                <li><a href="/?lang=lo" class="hidden" onclick="changeLanguage('lo'); return false;"><?=lang('App.language_me', [], 'lo')?></a></li>
+                <li><a href="/?lang=km" class="hidden" onclick="changeLanguage('km'); return false;"><?=lang('App.language_me', [], 'km')?></a></li>
               <?php endif ?>
             </ul>
           </li>          
           
-          <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.tools')?> </span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a role="button" href="javascript:void(0)"><span><?=lang('App.tools')?> </span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a id="copy-link" href="javascript:void(0)" onclick="copyUrl(window.location.href, '<?=lang('App.msg_link_copied')?>')">
+              <li><a id="copy-link" role="button" href="javascript:void(0)" onclick="copyUrl(window.location.href, '<?=lang('App.msg_link_copied')?>')">
                 <?=lang('App.copy_link')?> <i class="bi bi-share"></i></a>
               </li>
               <li><a class="<?= (!auth()->loggedIn() ? 'disabled' : '') ?>" href="#bookmark-modal" data-bs-toggle="modal"
@@ -268,7 +269,7 @@
                 <?=lang('App.settings')?> <i class="bi bi-gear"></i></a>
               </li>
               <?php if (auth()->loggedIn() && auth()->user()->inGroup('dataoperator', 'admin', 'superadmin')) : ?>
-                <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.admin')?></span> <i class="bi bi-chevron-down"></i></a>
+                <li class="dropdown"><a role="button" href="javascript:void(0)"><span><?=lang('App.admin')?></span> <i class="bi bi-chevron-down"></i></a>
                   <ul>
                     <li><a href="/messages" class="<?= (!auth()->user()->inGroup('admin', 'superadmin') ? 'hidden' : '') ?>">
                       <?=lang('App.admin_messages')?><i class="bi bi-envelope-open"></i></a></li>
@@ -287,11 +288,12 @@
               <?php endif ?>
             </ul>
           </li>
-          <li><a class="nav-link" ></a></li>
+
+          <li><span class="ps-4"></a></li>
           
-          <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.ancient_path')?></span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a role="button" href="javascript:void(0)"><span><?=lang('App.ancient_path')?></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.dc_pi')?></span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a role="button" href="javascript:void(0)"><span><?=lang('App.dc_pi')?></span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="/article/dn"><?=lang('App.dc_pi_long')?></a></li>
                   <li><a href="/article/mn"><?=lang('App.dc_pi_middle')?></a></li>
@@ -300,7 +302,7 @@
                   <li><a href="/article/kn"><?=lang('App.dc_pi_minor')?></a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.dc_zh')?></span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a role="button" href="javascript:void(0)"><span><?=lang('App.dc_zh')?></span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="/article/da"><?=lang('App.dc_zh_long')?></a></li>
                   <li><a href="/article/ma"><?=lang('App.dc_zh_middle')?></a></li>
@@ -312,10 +314,10 @@
             </ul>
           </li>
           
-          <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.weed')?></span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a role="button" href="javascript:void(0)"><span><?=lang('App.weed')?></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/article/vin"><?=lang('App.law')?></a></li>
-              <li class="dropdown"><a href="javascript:void(0)"><span><?=lang('App.analysis')?></span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a role="button" href="javascript:void(0)"><span><?=lang('App.analysis')?></span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="/article/int"><?=lang('App.internal')?></a></li>
                   <li><a href="/article/ext"><?=lang('App.external')?></a></li>
@@ -327,7 +329,8 @@
             </ul>
           </li>
           
-          <li><a class="nav-link scrollto" ></a></li>
+          <li><span class="ps-4"></a></li>
+
           <li><a class="nav-link" href="/credits"><?=lang('App.credits', [])?></a></li>
           <li><a class="nav-link scrollto d-lg-none active" href="/"><?=strtoupper(lang('App.project_name'))?>
             <i class="bi bi-house-door"></i>
