@@ -15,6 +15,6 @@ class Credits extends BaseController
             'description'   => lang('App.description_credits'),
         ];
         
-        return view('templates/header', $data).view('credits');
+        return view('templates/header', array_merge($this->data, $data)).view('credits');
     }
 }

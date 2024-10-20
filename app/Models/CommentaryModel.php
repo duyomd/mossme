@@ -150,7 +150,7 @@ class CommentaryModel extends BaseModel
 
         $sql = 'SELECT l.language, c.id, c.entry_id, c.language_code, c.author, c.author_note, c.notation, c.status
                 FROM commentary c LEFT JOIN language l ON c.language_code = l.code
-                WHERE entry_id = ? AND status = ?
+                WHERE entry_id = ? AND c.status = ?
                 ORDER BY sequence DESC, author ASC';
         $query = $this->db->query($sql, [$entry_id, 1]);
         $commentaries = $query->getResult(Commentary::class);

@@ -21,7 +21,7 @@ class MessageManager extends BaseController
         $data['responseJsonList'] = $this->responseJsonList($data);
         helper('form');
         
-        return view('admin/messageManager', $data);
+        return view('admin/messageManager', array_merge($this->data, $data));
     }
 
     public function ajaxFind($id = null) 

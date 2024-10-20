@@ -29,10 +29,9 @@ class CardTranslationManager extends BaseController
         $data['cardMemo']           = $card->memo;
         $data['previousCardId']     = $card->previous_id;
         $data['nextCardId']         = $card->next_id;
-        $data['languages']          = model(LanguageModel::class)->getLanguages(); 
 
         helper('form');        
-        return view('admin/cardTranslationManager', $data);
+        return view('admin/cardTranslationManager', array_merge($this->data, $data));
     }
 
     public function ajaxFind($id = null) 

@@ -18,13 +18,16 @@ class LanguageModel extends BaseModel
     public const HEADER_LANGUAGE_ORDERBYS   = array('language');
     public const HEADER_LANGUAGE_SORTORDERS = array('ASC');
 
+    public const HEADER_STATUS_ORDERBYS     = array('status_name');
+    public const HEADER_STATUS_SORTORDERS   = array('ASC');
+
     public const HEADER_SEQUENCE_ORDERBYS   = self::DEFAULT_ORDERBYS;
     public const HEADER_SEQUENCE_SORTORDERS = self::DEFAULT_SORTORDERS;
 
     protected $table = 'language';
     protected $primaryKey = 'code';
     protected $allowedFields = [
-        'code', 'language', 'sequence',
+        'code', 'language', 'status', 'sequence',
     ];
     protected $returnType = Language::class;
 
@@ -121,8 +124,23 @@ class LanguageModel extends BaseModel
         for ($i = 0; $i < count($sort->getOrderBys()); $i++) {
             $this->orderBy($sort->getOrderBys()[$i], $sort->getSortOrders()[$i]);
         }
-        if ($sort->getRpp() < 0) return $this->findAll();
-        else return $this->findAll($sort->getRpp(), ($sort->getCurrentPage() - 1) * $sort->getRpp());
+
+        $sql = 
+        'SELECT l.*, 
+            CASE WHEN l.status = :status_inactive: THEN "' . lang('App.language_label_status_inactive') . '"' .
+                ' ELSE "' . lang('App.language_label_status_active') . '" END AS status_name
+        FROM language l' . 
+        $this->getOrderBySql($sort) .
+        $this->getLimitSql($sort);
+
+        $this->db->transStart();    
+        $query = $this->db->query($sql, ['status_inactive'  => Utilities::STATUS_INACTIVE]);
+                                
+        $results = $query->getResult();
+        $query->freeResult();
+
+        $this->db->transComplete();
+        return $results;
     }
 
     public function getLanguage($code) 
@@ -130,4 +148,5 @@ class LanguageModel extends BaseModel
         if (!isset($code)) return null;
         return $this->where('code', $code)->first();
     }
+
 }

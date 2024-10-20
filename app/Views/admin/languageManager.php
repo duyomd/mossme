@@ -30,22 +30,30 @@
 
               <div class="row">
 
-                <div class="col-md-4 form-group">
+                <div class="col-md-3 form-group">
                   <label for="code" class="form-label"><?=lang('App.label_code')?></label>
                   <input type="text" class="form-control" name="code" id="code"
                     value="<?= set_value('code') ?>">
                 </div>
 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <div class="col-md-3 form-group mt-3 mt-md-0">
                   <label for="language" class="form-label"><?=lang('App.label_language')?></label>
                   <input type="text" class="form-control" name="language" id="language"
                     value="<?= set_value('language') ?>">
                 </div>
 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <div class="col-md-3 form-group mt-3 mt-md-0">
                   <label for="sequence" class="form-label"><?=lang('App.label_sequence')?></label>
                   <input type="text" class="form-control" name="sequence" id="sequence"
                     value="<?= set_value('sequence') ?>">
+                </div>
+
+                <div class="col-md-3 form-group mt-3 mt-md-0">
+                  <label for="status" class="form-label"><?=lang('App.language_label_status')?></label>
+                  <select class="form-select" name="status" id="status">
+                    <option value="1"><?=lang('App.language_label_status_active')?></option>
+                    <option value="0"><?=lang('App.language_label_status_inactive')?></option>                    
+                  </select>
                 </div>
 
                 <?php include $path . 'templates/hiddenFormList.php';?>
@@ -89,19 +97,22 @@
   <!-- JS -->
   <script type="text/javascript">
     var option = {
-      FIELDS_FETCH:               new Array('code', 'language', 'sequence'),
+      FIELDS_FETCH:               new Array('code', 'language', 'status', 'status_name', 'sequence'),
       FIELDS_TABLE:               new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'code'}, 
                                     {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'code',
                                       CONTENT_FIELD_STICKY: 'true', }, 
                                     {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'language'}, 
+                                    {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'status_name'}, 
                                     {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'sequence'}, ),
       FIELDS_TABLE_HEADER:        new Array('',
                                     '<?=lang('App.label_code')?>', 
                                     '<?=lang('App.label_language')?>', 
+                                    '<?=lang('App.language_label_status')?>', 
                                     '<?=lang('App.label_sequence')?>'),
       FIELDS_TABLE_ORDERBYS:      new Array('',
                                        '<?=implode(",", LanguageModel::HEADER_CODE_ORDERBYS)?>',
                                        '<?=implode(",", LanguageModel::HEADER_LANGUAGE_ORDERBYS)?>',
+                                       '<?=implode(",", LanguageModel::HEADER_STATUS_ORDERBYS)?>',
                                        '<?=implode(",", LanguageModel::HEADER_SEQUENCE_ORDERBYS)?>'),
       RADIO_SHOW_BUTTON_IDS: new Array('btn-modify', 'btn-delete'),
       noMove: false,                                      

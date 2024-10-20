@@ -37,7 +37,7 @@ class Dhamma extends BaseController
             'newFeedTranslations'       => $newFeedTranslations,
             'hrefLangs'                 => $this->createHrefLangs(),
         ];
-        return view('templates/header', $data).view('dhamma');
+        return view('templates/header', array_merge($this->data, $data)).view('dhamma');
     }
 
     /**

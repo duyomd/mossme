@@ -61,7 +61,7 @@ class Article extends ArticleBase
 
         helper('form');
 
-        return view('templates/header', $data).view('article');
+        return view('templates/header', array_merge($this->data, $data)).view('article');
     }
 
     /**

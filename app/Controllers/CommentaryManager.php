@@ -29,11 +29,10 @@ class CommentaryManager extends BaseController
         $data['parentEntryId']      = $entry->parent_id;
         $data['previousEntryId']    = $entry->previous_id;
         $data['nextEntryId']        = $entry->next_id;
-        $data['languages']          = model(LanguageModel::class)->getLanguages(); 
 
         helper('form');
         
-        return view('admin/commentaryManager', $data);
+        return view('admin/commentaryManager', array_merge($this->data, $data));
     }
 
     public function ajaxFind($id = null) 

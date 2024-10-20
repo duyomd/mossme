@@ -334,6 +334,9 @@ return [
     'language_management'   =>  'Languages Management',
     'label_code'            =>  'Code',
     'label_language'        =>  'Language',
+    'language_label_status' =>  'Status',
+        'language_label_status_inactive'   =>  'Inactive',
+        'language_label_status_active'     =>  'Active',
     
     'label_sequence'        =>  'Sequence',
 

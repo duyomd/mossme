@@ -26,6 +26,25 @@ class MagicLink extends MagicLinkController
     use Viewable;
 
     /**
+     * Displays the view to enter their email address
+     * so an email can be sent to them.
+     *
+     * @return RedirectResponse|string
+     */
+    public function loginView()
+    {
+        if (! setting('Auth.allowMagicLinkLogins')) {
+            return redirect()->route('login')->with('error', lang('Auth.magicLinkDisabled'));
+        }
+
+        if (auth()->loggedIn()) {
+            return redirect()->to(config('Auth')->loginRedirect());
+        }
+
+        return $this->view(setting('Auth.views')['magic-link-login'], $this->data);
+    }
+
+    /**
      * Handles the GET request from the email
      */
     public function verify(): RedirectResponse
@@ -115,6 +134,14 @@ class MagicLink extends MagicLinkController
             (string) $this->request->getUserAgent(),
             $userId
         );
+    }
+
+    /**
+     * Display the "What's happening/next" message to the user.
+     */
+    protected function displayMessage(): string
+    {
+        return $this->view(setting('Auth.views')['magic-link-message'], $this->data);
     }
 
 }

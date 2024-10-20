@@ -52,7 +52,7 @@ class ChangePassword extends BaseController
                 return redirect()->route('auth-action-show');
             }
 
-            return $this->view(setting('Auth.views')['change_password']);
+            return $this->view(setting('Auth.views')['change_password'], $this->data);
         }
 
         // If not from magic link

@@ -20,7 +20,7 @@ class UserSettings extends BaseController
     $data = [
       'displayHeader' => lang('App.settings'),
       'description'   => lang('App.description_settings'),
-      'languages'     => $this->getLanguages(),
+      'languages'     => $this->filterLanguages($this->data['languages']),
       'userSettings'  => $this->getUserSettings(), 
     ];
     return view('userSettings', $data);
@@ -59,11 +59,16 @@ class UserSettings extends BaseController
     return redirect()->back()->withInput()->with('success', true);
   }
 
-  private function getLanguages()
+  private function filterLanguages($languages = null)
   {
-    // $sort = Sort::create(LanguageModel::DEFAULT_ORDERBYS, LanguageModel::DEFAULT_SORTORDERS, 1, -1, 0);
-    // return model(LanguageModel::class)->getLanguages($sort);
-    return model(LanguageModel::class)->getLanguages();
+    if (!isset($languages)) return null;
+    $filtereds = array();
+    foreach ($languages as $lang) {
+      if ($lang->status == Utilities::STATUS_ACTIVE) {
+        array_push($filtereds, $lang);
+      }
+    }
+    return $filtereds;
   }
 
   private function getUserSettings() {

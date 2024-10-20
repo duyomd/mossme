@@ -19,7 +19,7 @@ class BookmarkManager extends BaseController
     $data['responseJsonList'] = $this->responseJsonList($data);
     helper('form');
     
-    return view('bookmarkManager', $data);
+    return view('bookmarkManager', array_merge($this->data, $data));
   }    
 
   public function ajaxFind($id = null) 

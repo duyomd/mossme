@@ -21,7 +21,7 @@ class LanguageManager extends BaseController
         $data['responseJsonList'] = $this->responseJsonList($data);
         helper('form');
         
-        return view('admin/languageManager', $data);
+        return view('admin/languageManager', array_merge($this->data, $data));
     }
 
     public function ajaxFind($code = null) 
@@ -71,6 +71,7 @@ class LanguageManager extends BaseController
             $language = new Language([
                     'code'      => $code,
                     'language'  => $this->request->getVar('language'),
+                    'status'  => $this->request->getVar('status'),
                     'sequence'  => $this->request->getVar('sequence'),
             ]);
 
@@ -112,6 +113,7 @@ class LanguageManager extends BaseController
             return;
         }
         
+        $this->updateCache();
         return json_encode($this->showResult(true, $msg, $newSelectedIndex));
     }
 
@@ -127,6 +129,8 @@ class LanguageManager extends BaseController
             $jsonLang = new \stdClass;
             $jsonLang->code = $lang->code;
             $jsonLang->language = $lang->language;
+            $jsonLang->status = $lang->status;
+            $jsonLang->status_name = $lang->status_name;
             $jsonLang->sequence = $lang->sequence;
             array_push($jsonLangs, $jsonLang);
         }
@@ -201,6 +205,12 @@ class LanguageManager extends BaseController
             'sort'          => $sort,
         ];
         return $data;
+    }
+
+    private function updateCache() {
+        // Clear the languages cache
+        $cache = \Config\Services::cache();
+        $cache->delete('languages'); 
     }
 
 }

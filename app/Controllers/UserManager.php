@@ -19,7 +19,7 @@ class UserManager extends BaseController
       $data['responseJsonList'] = $this->responseJsonList($data);
       helper('form');
       
-      return view('admin/userManager', $data);
+      return view('admin/userManager', array_merge($this->data, $data));
     }
 
     public function ajaxFind($id = null) 

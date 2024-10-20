@@ -29,11 +29,10 @@ class TranslationManager extends BaseController
         $data['parentEntryId']      = $entry->parent_id;
         $data['previousEntryId']    = $entry->previous_id;
         $data['nextEntryId']        = $entry->next_id;
-        $data['languages']          = model(LanguageModel::class)->getLanguages(); 
 
         helper('form');
         
-        return view('admin/translationManager', $data);
+        return view('admin/translationManager', array_merge($this->data, $data));
     }
 
     public function ajaxFind($id = null) 

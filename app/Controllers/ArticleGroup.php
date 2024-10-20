@@ -39,7 +39,7 @@ class ArticleGroup extends ArticleBase
 
         helper('form');
 
-        return view('templates/header', $data).view('articleGroup');
+        return view('templates/header', array_merge($this->data, $data)).view('articleGroup');
     }
 
     /**

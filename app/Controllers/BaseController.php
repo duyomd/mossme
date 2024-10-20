@@ -11,6 +11,7 @@ use Psr\Log\LoggerInterface;
 
 use CodeIgniter\Exceptions\PageNotFoundException;
 use App\Helpers\Utilities;
+use App\Models\LanguageModel;
 
 /**
  * Class BaseController
@@ -41,6 +42,16 @@ abstract class BaseController extends Controller
     protected $helpers = [];
 
     /**
+     * Common data for child controllers to use
+     */
+    protected $data = [];
+
+    /**
+     * Supported languages (used for navi menu)
+     */
+    private $languages;
+
+    /**
      * Throws Page Not Found exception
      */
     protected function notFound()
@@ -66,7 +77,22 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
 
+        $this->initData($request);        
+    }
+
+    private function initData(RequestInterface $request) 
+    {
         // Implementing user-specified language
         $request->setLocale(Utilities::getSessionLocale());
+
+        // Supported languages data
+        $cache = \Config\Services::cache();
+        $this->languages = $cache->get('languages');
+        if ($this->languages === null) {
+            $this->languages = model(LanguageModel::class)->getLanguages();
+            // Store in cache for 24 hours (1440 minutes)
+            $cache->save('languages', $this->languages, 24 * 60 * 60);
+        }
+        $this->data['languages'] = $this->languages;
     }
 }

@@ -18,7 +18,7 @@ class Contact extends BaseController
             'error'         => $error,
         ];
         
-        return view('templates/header', $data).view('contact');
+        return view('templates/header', array_merge($this->data, $data)).view('contact');
     }
 
     public function save()

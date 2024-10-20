@@ -14,7 +14,7 @@ class Search extends BaseController
     $data['responseJsonList'] = $this->responseJsonList($data);
     helper('form');
     
-    return view('search', $data);
+    return view('search', array_merge($this->data, $data));
   }    
 
   public function changePage($pageNo = null, $orderBys = '-1', $sortOrders = '-1', $conditions = null) 

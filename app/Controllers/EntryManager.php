@@ -41,7 +41,7 @@ class EntryManager extends BaseController
         
         helper('form');
         
-        return view('admin/entryManager', $data);
+        return view('admin/entryManager', array_merge($this->data, $data));
     }
 
     public function ajaxFind($id = null) 

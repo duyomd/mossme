@@ -22,7 +22,7 @@ class CardManager extends BaseController
         $data['images'] = model(ImageUrlModel::class)->getImageUrls();
 
         helper('form');        
-        return view('admin/cardManager', $data);
+        return view('admin/cardManager', array_merge($this->data, $data));
     }
 
     public function ajaxFind($id = null) 

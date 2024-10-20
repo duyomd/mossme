@@ -20,7 +20,7 @@ class ImageUrlManager extends BaseController
         $data['responseJsonList'] = $this->responseJsonList($data);
         helper('form');
         
-        return view('admin/imageUrlManager', $data);
+        return view('admin/imageUrlManager', array_merge($this->data, $data));
     }
 
     public function ajaxFind($id = null) 
