@@ -36,7 +36,6 @@ $routes->get('contact', [Contact::class, 'index']);
 $routes->post('contact', [Contact::class, 'save']);
 
 $routes->get('article/(:segment)', [Article::class, 'show']);
-$routes->get('article/(:segment)/anchor=(:alpha)/(:segment)/', [Article::class, 'show']);
 $routes->get('article-group/(:segment)', [ArticleGroup::class, 'show']);
 $routes->get('parallels=(:segment)', [ArticleBase::class, 'loadParallels']);
 $routes->get('articleContent/type=(:segment)/id=(:segment)', [ArticleBase::class, 'loadArticleContent']);

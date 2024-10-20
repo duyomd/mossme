@@ -330,5 +330,12 @@
   <?php include 'templates/footer.php';?>
 
   <script type="text/javascript">
+    // chrome's hash bug workaround
     scrollToSectionWorkaround();
+    // for seo
+    addEvent(window, 'load', () => {
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('lang', '<?=Utilities::getSessionLocale()?>');
+      window.history.pushState(null, '', currentUrl);
+    });
   </script>

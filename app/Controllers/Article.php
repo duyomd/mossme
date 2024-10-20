@@ -13,7 +13,7 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 class Article extends ArticleBase
 {
 
-    public function show($id = null, $anchor = null, $a_id = null): string
+    public function show($id = null): string
     {
         $user_language_code = Utilities::getSessionLocale();
 
@@ -25,8 +25,13 @@ class Article extends ArticleBase
         if ($entry == null) return $this->notFound();
         Utilities::parallels($entry);
 
+        // get query parameters
+        $anchor = $this->request->getGet('anchor');
+        $a_id = $this->request->getGet('aid');
+
         // translation data by entry_id (for dropdown display also)        
-        $translations = $translationModel->getTranslations($entry, $user_language_code, $anchor == 'translation' ? $a_id : null);
+        $translations = $translationModel->getTranslations($entry, $user_language_code, 
+            $anchor == 'translation' ? $a_id : ($anchor == 'commentary' ? null : $this->request->getGet('tid')));
         if ($translations == null) return $this->notFound();
         $entry->translations = $translations;
 
@@ -45,12 +50,13 @@ class Article extends ArticleBase
         
         // check whether this entry can group all its children to display in one long page
         $entry->isChildrenGroupable = $translationModel->isChildrenGroupable($entry->id);
-
+        
         $data = [
             'displayHeader' => $entry->displayEnumTitle,
             'description'   => lang('App.description_article'),
             'entry'         => $entry,
             'anchor'        => $anchor,
+            'hrefLangs'     => $this->createHrefLangs($entry->translations),
         ];
 
         helper('form');
@@ -58,12 +64,23 @@ class Article extends ArticleBase
         return view('templates/header', $data).view('article');
     }
 
-    // article/(:segment)/(:num)?lang=(:alpha)&anchor=(:alpha)&aid=(:num)
-    public function test($id = null, $tid = null, $lang = null, $anchor = null, $aid = null)
+    /**
+     * create hreflang links for SEO purpose
+     */
+    private function createHrefLangs($translations) 
     {
-        var_dump([$id, $tid, $this->request->getGet('lang'), $this->request->getGet('anchor'), $this->request->getGet('aid')]);
-        
-        return $this->show($id);
+        if (!isset($translations)) return null;
+        $hrefLangs = array();
+        $baseUrl = base_url();
+        foreach($translations as $tran) {
+            if (!$tran->pseudo) {
+                $hrefLang = new \stdClass;
+                $hrefLang->lang = $tran->language_code;
+                $hrefLang->url  = $baseUrl . 'article/' . $tran->entry_id . '?tid=' . $tran->id . '&lang=' . $tran->language_code;
+                array_push($hrefLangs, $hrefLang);
+            }
+        }
+        return $hrefLangs;
     }
-
+    
 }

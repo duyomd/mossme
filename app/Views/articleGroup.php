@@ -119,7 +119,8 @@
                           <?php 
                             $item = (object)['id'       =>  $tran->id,
                                              'title'    =>  $tran->enum_title,
-                                             'author'   =>  $tran->author,];  
+                                             'author'   =>  $tran->author,
+                                             'lang'     =>  $tran->language_code];  
                           ?>
                           <script type="text/javascript">
                             js_trans[<?=$p?>][<?=$i?>] = <?=json_encode($item)?>;
@@ -260,6 +261,7 @@
                          'title'    =>  $defaultTran->enum_title,
                          'content'  =>  $defaultTran->content,
                          'author'   =>  $defaultTran->author,
+                         'lang'     =>  $defaultTran->language_code,
                         ];
         array_push($items, $item);
       }

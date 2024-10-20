@@ -133,6 +133,7 @@
                           $item = (object)['id'     => $tran->id,
                                            'title'  => $tran->title,
                                            'author' => $tran->author,
+                                           'lang'   => $tran->language_code,
                                             // 'content' =>  $tran->content,
                                           ];  
                         ?>
@@ -270,6 +271,7 @@
                     <?php 
                       $item = (object)['id'     => $comm->id,
                                        'author' => $comm->author,
+                                       'lang'   => $comm->language_code,
                                       //  'content' =>  $comm->content,
                                       ];  
                     ?>
@@ -404,13 +406,14 @@
           break;
         }
       }
-      $id = ''; $title = ''; $content = ''; $author = '';
+      $id = ''; $title = ''; $content = ''; $author = ''; $lang = 'und';
       if (isset($defaultTran)) {
         $id = $defaultTran->id;
         $title = $defaultTran->title;
         // $title = $defaultTran->enumTitle;
         $author = $defaultTran->author;
         $content = $defaultTran->content;
+        $lang = $defaultTran->language_code;
       }
 
       // commentaries
@@ -421,22 +424,25 @@
           break;
         }
       }
-      $id_comm = ''; $content_comm = ''; $author_comm = '';
+      $id_comm = ''; $content_comm = ''; $author_comm = ''; $lang_comm = 'und';
       
       if (isset($defaultComm)) {
         $id_comm = $defaultComm->id;          
         $author_comm = $defaultComm->author; 
         $content_comm = $defaultComm->content;
+        $lang_comm = $defaultTran->language_code;
       }
 
       $item_tran = (object)['id'      =>  $id,
                             'title'   =>  $title,                              
                             'author'  =>  $author,
                             'content' =>  $content,
+                            'lang'    =>  $lang,
                           ];
       $item_comm = (object)['id'      =>  $id_comm,
                             'author'  =>  $author_comm,
                             'content' =>  $content_comm,
+                            'lang'    =>  $lang_comm,
                           ];
 
       array_push($trans, $item_tran);

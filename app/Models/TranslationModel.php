@@ -687,7 +687,7 @@ class TranslationModel extends BaseModel
             }
         }
         
-        // if couldnt find matching language then pick the last language in dropdown
+        // if couldnt find matching language then pick the first language in dropdown
         if (!$firstDisplay) {
             $dropdown[1]->default = true;
         }

@@ -6,6 +6,7 @@ use App\Models\CardModel;
 use App\Models\CardTranslationModel;
 use App\Models\TranslationModel;
 use App\Helpers\Utilities;
+use App\Config\App;
 
 class Dhamma extends BaseController
 {
@@ -34,6 +35,7 @@ class Dhamma extends BaseController
             'nonSuttaMenuTranslations'  => $nonSuttaMenuTranslations,
             'cardTranslations'          => $cardTranslations,
             'newFeedTranslations'       => $newFeedTranslations,
+            'hrefLangs'                 => $this->createHrefLangs(),
         ];
         return view('templates/header', $data).view('dhamma');
     }
@@ -65,4 +67,24 @@ class Dhamma extends BaseController
         
         return $seqs;
     }
+
+    /**
+     * create hreflang links for SEO purpose
+     */
+    private function createHrefLangs() 
+    {        
+        $hrefLangs = array();
+        $baseUrl = base_url();
+        $locales = config(App::class)->supportedLocales;
+        foreach($locales as $lo) {
+            if ($lo != 'sa' && $lo != 'pi') {
+                $hrefLang = new \stdClass;
+                $hrefLang->lang = $lo;
+                $hrefLang->url  = $baseUrl . '?lang=' . $lo;
+                array_push($hrefLangs, $hrefLang);
+            }
+        }
+        return $hrefLangs;
+    }
+
 }

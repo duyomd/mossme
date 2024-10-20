@@ -64,7 +64,7 @@ class SearchModel extends BaseModel
   {
     $subSql = $this->preSql($conditions);    
     $sql = 
-      'SELECT found_in, language, t.id, entry_id, author, section_id, 
+      'SELECT found_in, language, t.language_code, t.id, entry_id, author, section_id, 
         CASE WHEN t.title IS NOT NULL THEN t.title ELSE 
               (SELECT tr.title
               FROM translation tr
@@ -164,11 +164,12 @@ class SearchModel extends BaseModel
         if (!isset($re->title) || empty($re->title)) {
           $re->title = lang('App.search_translation_unavailable', [$re->language]);
         }
+        $foundInContent = strpos($re->found_in, 'commentary') === false;
         // Title href
-        $re->title_link = '/article/' . $re->entry_id . 
-          '/anchor=' . (strpos($re->found_in, 'commentary') === false ? 'translation' : 'commentary') . 
-          '/' . $re->id;
-        $re->title_hash = (strpos($re->found_in, 'commentary') === false ? 'article' : '');
+        $re->title_link = '/article/' . $re->entry_id . '?tid=' . ($foundInContent ? $re->id : 'default') . '&lang=' . $re->language_code .
+          '&anchor=' . ($foundInContent ? 'translation' : 'commentary') . 
+          '&aid=' . $re->id;
+        $re->title_hash = ($foundInContent ? 'article' : '');
 
         // $re->encodedTitle = Utilities::encodeDataHtml($re->encodedTitle, $slash);
         // $re->encodedAuthor = Utilities::encodeDataHtml($re->author, $slash);

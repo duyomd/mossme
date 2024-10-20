@@ -22,6 +22,13 @@
   <meta name="description" content="<?=isset($description) ? $description : ''?>">
   <meta name="keywords" content="">
 
+  <!-- hreflang links -->
+  <?php if (isset($hrefLangs)) : ?>
+    <?php foreach ($hrefLangs as $href) : ?>
+      <link rel="alternate" hreflang="<?=$href->lang?>" href="<?=$href->url?>">
+    <?php endforeach; ?>
+  <?php endif; ?>
+  
   <!-- Favicons -->
   <link href="/assets/img/favicon.png" rel="icon">
   <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -179,8 +186,8 @@
             <ul>
               <li><a href="javascript:void(0)" onclick="changeLanguage('en')"><?=lang('App.language_me', [], 'en')?></a></li>
 
-              <li><a href="javascript:void(0)" onclick="changeLanguage('cn')"><?=lang('App.language_me', [], 'cn')?></a></li>
-              <li><a href="javascript:void(0)" onclick="changeLanguage('zh')"><?=lang('App.language_me', [], 'zh')?></a></li>
+              <li><a href="javascript:void(0)" onclick="changeLanguage('zh-Hans')"><?=lang('App.language_me', [], 'zh-Hans')?></a></li>
+              <li><a href="javascript:void(0)" onclick="changeLanguage('zh-Hant')"><?=lang('App.language_me', [], 'zh-Hant')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('ja')"><?=lang('App.language_me', [], 'ja')?></a></li>
               <li><a href="javascript:void(0)" onclick="changeLanguage('ko')"><?=lang('App.language_me', [], 'ko')?></a></li>
 

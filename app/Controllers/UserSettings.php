@@ -35,7 +35,7 @@ class UserSettings extends BaseController
     helper('form');
     
     $rules = [
-      'language_code' => ['label' => lang('App.setting_language'),          'rules' => 'max_length[5]'],
+      'language_code' => ['label' => lang('App.setting_language'),          'rules' => 'max_length[10]'],
       'rows_per_page' => ['label' => lang('App.setting_num_rows_per_page'), 'rules' => 'integer|greater_than[0]'],
       'num_of_cards'  => ['label' => lang('App.setting_num_of_cards'),      'rules' => 'integer|less_than[10]'],
       'num_of_feeds'  => ['label' => lang('App.setting_num_of_feeds'),      'rules' => 'integer|less_than[10]'],

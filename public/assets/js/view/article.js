@@ -40,6 +40,7 @@ function articleGlobal(params) {
   COMMENTARIES_ALL        = params.COMMENTARIES_ALL;
 }
 
+var _firstLoad = true;
 var _bilingual = false;
 
 var _parallelsOns = new Array(ENTRY_COUNT);
@@ -224,7 +225,29 @@ function reloadContent(type, item, i) {
       tempElement.remove();
   } else {
     loadContent(type, item.id, co, i);
-  }    
+  }
+
+  loadWindowLocation(type, item);
+}
+
+// change window href
+function loadWindowLocation(type, item) {
+  // only in single article mode
+  if (window.location.href.indexOf('article-group') > 0) return;
+
+  const currentUrl = new URL(window.location.href);
+  if (type == 1 || type == 2) {
+    currentUrl.searchParams.set('tid', item.id);
+    currentUrl.searchParams.set('lang', item.lang);
+  }
+  if ((!_firstLoad && type != 3)  // when calling ajax to reload commentary content, no need to update (bad for navi but good for seo)
+    || type == 1) {               // in initial page load, updating only for main dropdown event is enough
+    currentUrl.searchParams.delete('anchor');
+    currentUrl.searchParams.delete('aid');
+    currentUrl.hash = '';
+
+    window.history.pushState({tid: item.id}, '', currentUrl);
+  }  
 }
 
 function loadContent(type, id, contentEle, i) {
@@ -330,6 +353,7 @@ function initArticle() {
   initContent(TRANSLATIONS_DEFAULT, COMMENTARIES_DEFAULT);
   initDefaultState();
   dropdownOverflow();
+  _firstLoad = false;
 }
 
 /****** Article Tree ******/

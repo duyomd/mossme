@@ -99,7 +99,7 @@ class App extends BaseConfig
      * @var string[]
      */
     public array $supportedLocales = ['en', 
-        'cn', 'zh', 'ja', 'ko',         
+        'zh-Hans', 'zh-Hant', 'ja', 'ko',         
         'fr', 'de', 'it', 'es', 'ca', 'pt', 'ru', 'nl', 'no', 'hu', 
         'sv', 'sr', 'cs', 'pl', 'ro', 'sl', 'fi', 'tr', 'lt',
         'he',
