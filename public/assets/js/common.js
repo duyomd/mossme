@@ -172,6 +172,15 @@ function setBookmarkSuggestion() {
   document.querySelector('#bm-name').value = title;
 }
 
+// function outlawListener() {
+//   addEvent(outlaw, 'click', () => {
+//     let closeMobileNaviMenu = document.querySelector('.bi-x'); 
+//     if (closeMobileNaviMenu) {
+//       closeMobileNaviMenu.click();
+//     }
+//   });
+// }
+
 /**
  * Toast for header's items initialization
  */
@@ -179,6 +188,7 @@ function initMenu() {
   initUserDropdown();
   initToast(['copy-link']);
   initModal();
+  // outlawListener();
 }
 
 /**

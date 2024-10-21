@@ -31,16 +31,16 @@
               <div class="row">
 
                 <div class="col-md-2 mt-3 mt-md-0">
-                  <label for="card_id" class="form-label"><?=lang('App.card_translation_label_card_id')?></label>
-                  <input type="text" class="form-control" disabled
+                  <label for="card_id_display" class="form-label"><?=lang('App.card_translation_label_card_id')?></label>
+                  <input id="card_id_display" type="text" class="form-control" disabled
                     value="<?=$cardId?>">
                   <input type="hidden" class="form-control " name="card_id" id="card_id"
-                    value="<?=$cardId?>">  
+                    value="<?=$cardId?>">
                 </div>
 
                 <div class="col-md-3 mt-3 mt-md-0">
-                  <label for="card_id" class="form-label"><?=lang('App.card_label_memo')?></label>
-                  <input type="text" class="form-control" disabled value="<?=$cardMemo?>">
+                  <label for="memo" class="form-label"><?=lang('App.card_label_memo')?></label>
+                  <input id="memo" type="text" class="form-control" disabled value="<?=$cardMemo?>">
                 </div>
 
                 <div class="col-md-3 mt-3 mt-md-0">
@@ -149,45 +149,25 @@
   <?php $url = 'cardTranslations'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
+  <script src="/assets/js/view/cardTranslationManager.js"></script>
   <script type="text/javascript">
+    initCardTranslationManager({
+      MSG_CARD_ID     : '<?=lang('App.card_translation_label_card_id')?>', 
+      MSG_LANGUAGE    : '<?=lang('App.card_translation_label_language')?>',
+      MSG_AUTHOR      : '<?=lang('App.card_translation_label_author')?>', 
+      MSG_HEADER      : '<?=lang('App.card_translation_label_header')?>',
+      MSG_CONTENT     : '<?=lang('App.card_translation_label_content')?>',
+      MSG_FOOTER      : '<?=lang('App.card_translation_label_footer')?>',
+      MSG_STATUS      : '<?=lang('App.translation_label_status')?>',
 
-    window.onload = function() {
-      var option = {
-        FIELDS_FETCH:               new Array('id', 'card_id', 'title', 'author', 'language_code', 'language', 
-                                      'status', 'status_name', 'header_field', 'footer_field', 'content'),
-        FIELDS_TABLE:               new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'id'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'card_id'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'language'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'author'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'header_field',
-                                        CONTENT_FIELD_TRIM: 4},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'content',
-                                        CONTENT_FIELD_TRIM: 4},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'footer_field',
-                                        CONTENT_FIELD_TRIM: 4},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'status_name'},),
-        FIELDS_TABLE_HEADER:        new Array('',
-                                      '<?=lang('App.card_translation_label_card_id')?>', 
-                                      '<?=lang('App.card_translation_label_language')?>', 
-                                      '<?=lang('App.card_translation_label_author')?>', 
-                                      '<?=lang('App.card_translation_label_header')?>', 
-                                      '<?=lang('App.card_translation_label_content')?>',
-                                      '<?=lang('App.card_translation_label_footer')?>', 
-                                      '<?=lang('App.translation_label_status')?>',),
-        FIELDS_TABLE_ORDERBYS:      new Array('',
-                                        '<?=implode(",", CardTranslationModel::HEADER_CARD_ID_ORDERBYS)?>',
-                                        '<?=implode(",", CardTranslationModel::HEADER_LANGUAGE_ORDERBYS)?>',
-                                        '<?=implode(",", CardTranslationModel::HEADER_AUTHOR_ORDERBYS)?>',
-                                        '<?=implode(",", CardTranslationModel::HEADER_HEADER_ORDERBYS)?>',
-                                        '<?=implode(",", CardTranslationModel::HEADER_CONTENT_ORDERBYS)?>',                                        
-                                        '<?=implode(",", CardTranslationModel::HEADER_FOOTER_ORDERBYS)?>',
-                                        '<?=implode(",", CardTranslationModel::HEADER_STATUS_ORDERBYS)?>',),
-        RADIO_SHOW_BUTTON_IDS: new Array('btn-modify', 'btn-delete'),
-        noMove: true,                                      
-      };
-      initTable(option);
-    }
-
+      ORDER_CARD_ID   : '<?=implode(",", CardTranslationModel::HEADER_CARD_ID_ORDERBYS)?>',
+      ORDER_LANGUAGE  : '<?=implode(",", CardTranslationModel::HEADER_LANGUAGE_ORDERBYS)?>',
+      ORDER_AUTHOR    : '<?=implode(",", CardTranslationModel::HEADER_AUTHOR_ORDERBYS)?>',
+      ORDER_HEADER    : '<?=implode(",", CardTranslationModel::HEADER_HEADER_ORDERBYS)?>',
+      ORDER_CONTENT   : '<?=implode(",", CardTranslationModel::HEADER_CONTENT_ORDERBYS)?>',
+      ORDER_FOOTER    : '<?=implode(",", CardTranslationModel::HEADER_FOOTER_ORDERBYS)?>',
+      ORDER_STATUS    : '<?=implode(",", CardTranslationModel::HEADER_STATUS_ORDERBYS)?>',
+    });
   </script>
 
 <?php include $path . 'templates/footer.php';?>

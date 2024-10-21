@@ -150,71 +150,27 @@
   <?php $url = 'translations'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
+  <script src="/assets/js/view/translationManager.js"></script>
   <script type="text/javascript">
+    initTranslationManager({
+      MSG_ENTRY_ID      : '<?=lang('App.translation_label_entry_id')?>', 
+      MSG_LANGUAGE      : '<?=lang('App.translation_label_language')?>', 
+      MSG_AUTHOR        : '<?=lang('App.translation_label_author')?>', 
+      MSG_TITLE         : '<?=lang('App.translation_label_title')?>', 
+      MSG_CONTENT       : '<?=lang('App.translation_label_content')?>',
+      MSG_AUTHOR_NOTE   : '<?=lang('App.translation_label_author_note')?>', 
+      MSG_NOTATION      : '<?=lang('App.translation_label_notation')?>', 
+      MSG_STATUS        : '<?=lang('App.translation_label_status')?>',
 
-    window.onload = function() {
-      var option = {
-        FIELDS_FETCH:               new Array('id', 'entry_id', 'title', 'author', 'language_code', 'language', 
-                                      'status', 'status_name', 'author_note', 'notation', 'content'),
-        FIELDS_TABLE:               new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'id'},
-                                      // {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: ''},   
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'entry_id'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'language'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'author'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.LINK, CONTENT_FIELD: 'item.title',
-                                        CONTENT_FIELD_EXTRA: getArticleUrl('item.entry_id', 'item.id', 'item.language_code'),
-                                        CONTENT_FIELD_EXTRA_HASH: '"article"',
-                                        CONTENT_FIELD_STICKY: 'true'},                                       
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'content',
-                                        CONTENT_FIELD_TRIM: 2},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'author_note',
-                                        CONTENT_FIELD_TRIM: 2},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'notation',
-                                        CONTENT_FIELD_TRIM: 2},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'status_name'},),
-        FIELDS_TABLE_HEADER:        new Array('',
-                                      // '<a href="' + backToEntry(`\'<?=$parentEntryId?>\'`) + '"><i class="bi bi-reply"></i></a>',
-                                      '<?=lang('App.translation_label_entry_id')?>', 
-                                      '<?=lang('App.translation_label_language')?>', 
-                                      '<?=lang('App.translation_label_author')?>', 
-                                      '<?=lang('App.translation_label_title')?>', 
-                                      '<?=lang('App.translation_label_content')?>',
-                                      '<?=lang('App.translation_label_author_note')?>', 
-                                      '<?=lang('App.translation_label_notation')?>', 
-                                      '<?=lang('App.translation_label_status')?>',),
-        FIELDS_TABLE_ORDERBYS:      new Array('',
-                                        // '',  
-                                        '<?=implode(",", TranslationModel::HEADER_ENTRY_ID_ORDERBYS)?>',
-                                        '<?=implode(",", TranslationModel::HEADER_LANGUAGE_ORDERBYS)?>',
-                                        '<?=implode(",", TranslationModel::HEADER_AUTHOR_ORDERBYS)?>',
-                                        '<?=implode(",", TranslationModel::HEADER_TITLE_ORDERBYS)?>',
-                                        '<?=implode(",", TranslationModel::HEADER_CONTENT_ORDERBYS)?>',                                        
-                                        '<?=implode(",", TranslationModel::HEADER_AUTHOR_NOTE_ORDERBYS)?>',
-                                        '<?=implode(",", TranslationModel::HEADER_NOTATION_ORDERBYS)?>',
-                                        '<?=implode(",", TranslationModel::HEADER_STATUS_ORDERBYS)?>',),
-        RADIO_SHOW_BUTTON_IDS: new Array('btn-modify', 'btn-delete'),
-        noMove: true,                                      
-      };
-      initTable(option);
-    }
-
-    function backToEntry(parentId) {
-      var url = '/entries';
-      if (parentId && parentId != "''") {
-        url = eval(getFolderUrl(parentId)).replaceAll('&quot;', '"');
-      }
-      window.location = url;
-    }
-
-    function getFolderUrl(entryId) {
-      return "'/entries/conditions={&quot;parentId&quot;:&quot;' + " + entryId + " + '&quot;}'";
-    }
-
-    function getArticleUrl(entryId, translationId, lang) {
-      return "'/article/' + " + entryId + " + '?tid=' + " + translationId + 
-        " + '&lang=' + " + lang + " + '&anchor=translation&aid=' + " + translationId;
-    }
-
+      ORDER_ENTRY_ID    : '<?=implode(",", TranslationModel::HEADER_ENTRY_ID_ORDERBYS)?>',
+      ORDER_LANGUAGE    : '<?=implode(",", TranslationModel::HEADER_LANGUAGE_ORDERBYS)?>',
+      ORDER_AUTHOR      : '<?=implode(",", TranslationModel::HEADER_AUTHOR_ORDERBYS)?>',
+      ORDER_TITLE       : '<?=implode(",", TranslationModel::HEADER_TITLE_ORDERBYS)?>',
+      ORDER_CONTENT     : '<?=implode(",", TranslationModel::HEADER_CONTENT_ORDERBYS)?>',
+      ORDER_AUTHOR_NOTE : '<?=implode(",", TranslationModel::HEADER_AUTHOR_NOTE_ORDERBYS)?>',
+      ORDER_NOTATION    : '<?=implode(",", TranslationModel::HEADER_NOTATION_ORDERBYS)?>',
+      ORDER_STATUS      : '<?=implode(",", TranslationModel::HEADER_STATUS_ORDERBYS)?>',
+    });
   </script>
 
 <?php include $path . 'templates/footer.php';?>

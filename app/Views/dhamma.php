@@ -46,7 +46,7 @@
                         <img src="<?=$feed->image_url_header?>" class="d-lg-inline d-none feeds-img" alt="<?=lang('App.alt_newfeed')?>">
                         <img src="<?=$feed->image_url_header?>" class="d-lg-none feeds-img feeds-img-sm" alt="<?=lang('App.alt_newfeed')?>">
                       </a>  
-                      <a href="/article/<?=$feed->entry_id?>"><?=$feed->title?></a>
+                      <a href="/article/<?=$feed->entry_id?>"><span lang="<?=$feed->language_code?>"><?=$feed->title?></span></a>
                     </div>
                   </div>  
                 <?php endforeach ?>  
@@ -151,9 +151,9 @@
                 <img src="<?=$tran->image_url_header?>" class="menu-img" alt="<?=lang('App.alt_menu')?>">
               </a>
               <div class="menu-content">
-                <a href="/article/<?=$tran->entry_id?>"><?=$tran->title?></a><!--<span>152</span>-->
+                <a href="/article/<?=$tran->entry_id?>" lang="<?=$tran->language_code?>"><?=$tran->title?></a><!--<span>152</span>-->
               </div>
-              <div class="menu-description">
+              <div class="menu-description" lang="<?=$tran->language_code?>">
                 <?=nl2br($tran->author_note)?>
               </div>
             </div>  
@@ -182,7 +182,7 @@
                 <li class="nav-item">
                   <?php $css = $i == 1 ? ' active show' : ($tran->isOutlaw() ? ' nav-link-outlaw' : ''); ?>
                   <a class="nav-link<?=$css?>" data-bs-toggle="tab" href="#tab-<?=$i?>">
-                    <?= $tran->title ?>
+                    <span lang="<?=$tran->language_code?>"><?= $tran->title ?></span>
                   </a>
                 </li>
                 <?php $i++; ?>
@@ -199,11 +199,11 @@
                 <div class="tab-pane<?=$css?>" id="tab-<?=$i?>">
                   <div class="row">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3><?=$tran->author?></h3>
-                      <p class="fst-italic"><?=nl2br($tran->author_note)?></p>
-                      <p><?=nl2br($tran->notation)?>
+                      <h3 lang="<?=$tran->language_code?>"><?=$tran->author?></h3>
+                      <p class="fst-italic" lang="<?=$tran->language_code?>"><?=nl2br($tran->author_note)?></p>
+                      <p><span lang="<?=$tran->language_code?>"><?=nl2br($tran->notation)?></span>
                         <a href="/article/<?=$tran->entry_id?>" class="<?=$css?>">
-                          <?= $tran->isOutlaw() ? lang('App.samsara_link') : lang('App.detail_link') ?>
+                          <span><?= $tran->isOutlaw() ? lang('App.samsara_link') : lang('App.detail_link') ?></span>
                         </a>
                       </p>
                     </div>
@@ -242,17 +242,19 @@
                     <img src="<?=$cardTran->image_url?>" class="img-fluid" alt="<?=lang('App.alt_card')?>">
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
-                    <h3><?=$cardTran->author?></h3>
+                    <h3 lang="<?=$cardTran->language_code?>"><?=$cardTran->author?></h3>
                     <div class="sequence">
                       <p><span><?=lang('App.sequence', [$cardTran->id])?></span></p>
                     </div>
-                    <p class="fst-italic">
-                      <?=nl2br($cardTran->header)?>
-                    </p>
-                    <?=$cardTran->content?>
-                    <p>
-                      <?=nl2br($cardTran->footer)?>
-                    </p>
+                    <div lang="<?=$cardTran->language_code?>">
+                      <p class="fst-italic">
+                        <?=nl2br($cardTran->header)?>
+                      </p>
+                      <?=$cardTran->content?>
+                      <p>
+                        <?=nl2br($cardTran->footer)?>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>  
@@ -328,14 +330,4 @@
 
   <!-- ======= Footer ======= -->
   <?php include 'templates/footer.php';?>
-
-  <script type="text/javascript">
-    // chrome's hash bug workaround
-    scrollToSectionWorkaround();
-    // for seo
-    addEvent(window, 'load', () => {
-      const currentUrl = new URL(window.location.href);
-      currentUrl.searchParams.set('lang', '<?=Utilities::getSessionLocale()?>');
-      window.history.pushState(null, '', currentUrl);
-    });
-  </script>
+  <script src="/assets/js/view/dhamma.js"></script>

@@ -341,11 +341,3 @@
 
     </div>
   </header>
-  <script type="text/javascript">
-    document.querySelector('.dropdown-outlaw').addEventListener('click', () => {
-      let closeMobileNaviMenu = document.querySelector('.bi-x'); 
-      if (closeMobileNaviMenu) {
-        closeMobileNaviMenu.click();
-      }
-    });
-  </script>

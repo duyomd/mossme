@@ -573,7 +573,7 @@ class TranslationModel extends BaseModel
 
         /** Used for host with lower SQL version (T.T) */
         $sql = 
-            'SELECT entry_id, title, image_url AS image_url_header
+            'SELECT entry_id, title, image_url AS image_url_header, language_code
             FROM (
                 SELECT t.*, e.created_at, e.root_id,
                     CONCAT(CASE WHEN language_code = :user_lang: THEN 1 ELSE 2 END, LPAD(999 - l.sequence, 3, "0"), IF(author IS NULL, "", author)) AS sort_value

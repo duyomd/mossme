@@ -112,91 +112,30 @@
   <?php $url = 'messages'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
+  <script src="/assets/js/view/messageManager.js"></script>
   <script type="text/javascript">
-    window.onload = function() {
-      var option = {
-        FIELDS_FETCH:           new Array('id', 'read_state', 'sender', 'ip_address', 'user_language_code', 'language', 'name', 'email', 
-                                          'subject', 'content', 'content_str', 'status', 'status_str', 'sent_at', 'sent_at_str'),
-        FIELDS_TABLE:           new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'id'}, 
-                                  {CONTENT_TYPE: CONTENT_TYPES.IMAGE, CONTENT_FIELD: 'read_state', 
-                                    CONTENT_FIELD_EXTRA: 'item.read_state == 1 ? "" : "<i class=\'unread\'></i>";'}, 
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'sender'}, 
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'name'}, 
-                                  {CONTENT_TYPE: CONTENT_TYPES.LINK, CONTENT_FIELD: 'item.subject',
-                                    CONTENT_FIELD_STICKY: 'true', 
-                                    CONTENT_FIELD_EXTRA_HASH: '"content-modal"',
-                                    CONTENT_FIELD_EXTRA_END: 'data-bs-toggle="modal"',
-                                    CONTENT_FIELD_EXTRA_ONCLICK: '"setModalContent(`" + encodeURIComponent(item.subject) + "`,`" + encodeURIComponent(item.content) + "`,`" + item.read_state + "`,`" + item.id + "`)"'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'content', 
-                                    CONTENT_FIELD_EXTRA: 'item.content_str'}, 
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'email'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'ip_address'}, 
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'language'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'status', 
-                                    CONTENT_FIELD_EXTRA: 'item.status_str'}, 
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'sent_at',
-                                    CONTENT_FIELD_EXTRA: 'item.sent_at_str'}, ),
-        FIELDS_TABLE_HEADER:    new Array('',
-                                  '<i class="bi bi-eye"></i>', 
-                                  '<?=lang('App.message_label_sender')?>', 
-                                  '<?=lang('App.message_label_name')?>', 
-                                  '<?=lang('App.message_label_subject')?>',                                     
-                                  '<?=lang('App.message_label_content')?>', 
-                                  '<?=lang('App.message_label_email')?>',
-                                  '<?=lang('App.message_label_ip')?>', 
-                                  '<?=lang('App.message_label_ulc')?>', 
-                                  '<?=lang('App.message_label_status')?>', 
-                                  '<?=lang('App.message_label_sent_at')?>'),
-        FIELDS_TABLE_ORDERBYS:  new Array('',
-                                  '<?=implode(",", MessageModel::HEADER_READSTATE_ORDERBYS)?>',
-                                  '<?=implode(",", MessageModel::HEADER_SENDER_ORDERBYS)?>',
-                                  '<?=implode(",", MessageModel::HEADER_NAME_ORDERBYS)?>',
-                                  '<?=implode(",", MessageModel::HEADER_SUBJECT_ORDERBYS)?>',                                       
-                                  '<?=implode(",", MessageModel::HEADER_CONTENT_ORDERBYS)?>',
-                                  '<?=implode(",", MessageModel::HEADER_EMAIL_ORDERBYS)?>',
-                                  '<?=implode(",", MessageModel::HEADER_IPADDRESS_ORDERBYS)?>',
-                                  '<?=implode(",", MessageModel::HEADER_ULC_ORDERBYS)?>',
-                                  '<?=implode(",", MessageModel::HEADER_STATUS_ORDERBYS)?>',
-                                  '<?=implode(",", MessageModel::HEADER_SENTAT_ORDERBYS)?>'),
-        RADIO_SHOW_BUTTON_IDS: new Array('btn-modify', 'btn-delete'),
-        noMove: true,                                      
-      };
-      initTable(option);
-    }
+    initMessageManager({
+      MSG_SENDER        : '<?=lang('App.message_label_sender')?>', 
+      MSG_NAME          : '<?=lang('App.message_label_name')?>', 
+      MSG_SUBJECT       : '<?=lang('App.message_label_subject')?>',
+      MSG_CONTENT       : '<?=lang('App.message_label_content')?>', 
+      MSG_EMAIL         : '<?=lang('App.message_label_email')?>',
+      MSG_IP            : '<?=lang('App.message_label_ip')?>', 
+      MSG_ULC           : '<?=lang('App.message_label_ulc')?>', 
+      MSG_STATUS        : '<?=lang('App.message_label_status')?>', 
+      MSG_SENT_AT       : '<?=lang('App.message_label_sent_at')?>',
 
-    function setModalContent(title, content, readState, id) {
-      document.querySelector('#content-modal-header').innerHTML = decodeURIComponent(title);
-      document.querySelector('#content-modal-body').innerHTML = decodeURIComponent(content);
-      if (readState != '1') {
-        markAsRead(id);
-      }
-    }
-
-    function markAsRead(id) {
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        try {
-          if (this.readyState == 4) {
-            if (this.status == 200) {
-              loadTable(parseAjaxResponse(this.responseText));
-              callbackFunc(false);
-            } else {
-              // TODO
-            }
-            loading(false);
-          }
-        } catch(e) {
-          loading(false);
-        }
-      };
-      xmlhttp.open("GET", "/" + "<?=$url?>" + 
-        "/id=" + id +
-        "/p=" + _currentSort.currentPage + 
-        "/orderby=" + _currentSort.orderBys.toString() +
-        "/sortorder=" + _currentSort.sortOrders.toString() +
-        "/conditions=" + getConditions(), true);
-      xmlhttp.send();
-    }
+      ORDER_READ_STATE  : '<?=implode(",", MessageModel::HEADER_READSTATE_ORDERBYS)?>',
+      ORDER_SENDER      : '<?=implode(",", MessageModel::HEADER_SENDER_ORDERBYS)?>',
+      ORDER_NAME        : '<?=implode(",", MessageModel::HEADER_NAME_ORDERBYS)?>',
+      ORDER_SUBJECT     : '<?=implode(",", MessageModel::HEADER_SUBJECT_ORDERBYS)?>',
+      ORDER_CONTENT     : '<?=implode(",", MessageModel::HEADER_CONTENT_ORDERBYS)?>',
+      ORDER_EMAIL       : '<?=implode(",", MessageModel::HEADER_EMAIL_ORDERBYS)?>',
+      ORDER_IP          : '<?=implode(",", MessageModel::HEADER_IPADDRESS_ORDERBYS)?>',
+      ORDER_ULC         : '<?=implode(",", MessageModel::HEADER_ULC_ORDERBYS)?>',
+      ORDER_STATUS      : '<?=implode(",", MessageModel::HEADER_STATUS_ORDERBYS)?>',
+      ORDER_SENT_AT     : '<?=implode(",", MessageModel::HEADER_SENTAT_ORDERBYS)?>',
+    });
   </script>
 
 <?php include $path . 'templates/footer.php';?>

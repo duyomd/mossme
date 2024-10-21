@@ -104,70 +104,23 @@
   <?php $url = 'search'; include 'templates/table.php';?>
 
   <!-- JS -->
+  <script src="/assets/js/view/search.js"></script>
   <script type="text/javascript">
-    window.onload = function() {
-      eventCheckboxes();
-      
-      var option = {
-        FIELDS_FETCH:           new Array('id', 'found_in', 'matched_at', 'language', 'entry_id', 
-                                          'title', 'title_link', 'title_hash', 'author', 'section', 'section_id'),
-        FIELDS_TABLE:           new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'id'}, 
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'found_in', CONTENT_FIELD_EXTRA: 'item.matched_at'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'language'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'entry_id'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.LINK, CONTENT_FIELD: 'item.title',
-                                    CONTENT_FIELD_STICKY: 'true',  
-                                    CONTENT_FIELD_EXTRA: 'item.title_link', CONTENT_FIELD_EXTRA_HASH: 'item.title_hash'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'author'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'section_id', CONTENT_FIELD_EXTRA: 'item.section'}, ),
-        FIELDS_TABLE_HEADER:    new Array('',
-                                  '<?=lang('App.search_label_matched')?>',
-                                  '<?=lang('App.search_label_language')?>',
-                                  '<?=lang('App.search_label_serial')?>',
-                                  '<?=lang('App.search_label_title')?>',
-                                  '<?=lang('App.search_label_author')?>',
-                                  '<?=lang('App.search_label_section')?>',),
-        FIELDS_TABLE_ORDERBYS:  new Array('',
-                                  '<?=implode(",", SearchModel::HEADER_MATCHEDAT_ORDERBYS)?>',
-                                  '<?=implode(",", SearchModel::HEADER_LANGUAGE_ORDERBYS)?>',
-                                  '<?=implode(",", SearchModel::HEADER_SERIAL_ORDERBYS)?>',
-                                  '<?=implode(",", SearchModel::HEADER_TITLE_ORDERBYS)?>',
-                                  '<?=implode(",", SearchModel::HEADER_AUTHOR_ORDERBYS)?>',
-                                  '<?=implode(",", SearchModel::HEADER_SECTION_ORDERBYS)?>',),
-        noMove:                 true,
-        noRadio:                true,
-      };
-      initTable(option);
-    }
+    initSearch({
+      MSG_MATCHED     : '<?=lang('App.search_label_matched')?>',
+      MSG_LANGUAGE    : '<?=lang('App.search_label_language')?>',
+      MSG_CODE        : '<?=lang('App.search_label_serial')?>',
+      MSG_TITLE       : '<?=lang('App.search_label_title')?>',
+      MSG_AUTHOR      : '<?=lang('App.search_label_author')?>',
+      MSG_SECTION     : '<?=lang('App.search_label_section')?>',
 
-    const serialCkb   = document.getElementById('serial');
-    const contentCkb  = document.getElementById('content');
-    const authorCkb   = document.getElementById('author');
-    const commentCkb  = document.getElementById('commentary');
-
-    function eventCheckboxes() {
-      let ckbs = [serialCkb, contentCkb, authorCkb, commentCkb];
-      for (let i = 0; i < ckbs.length; i++) {
-        addEvent(ckbs[i], 'change', toggleCkbs);
-      }
-    }
-
-    function toggleCkbs(e) {
-      let target = e.target;
-      if (!target) return;
-      if (target == serialCkb) {
-        if (target.checked) {
-          contentCkb.checked = false;
-          authorCkb.checked = false;
-          commentCkb.checked = false;
-        }  
-      } else {
-        if (target.checked) {
-          serialCkb.checked = false;
-        }
-      }
-    }
-
+      ORDER_MATCHED   : '<?=implode(",", SearchModel::HEADER_MATCHEDAT_ORDERBYS)?>',
+      ORDER_LANGUAGE  : '<?=implode(",", SearchModel::HEADER_LANGUAGE_ORDERBYS)?>',
+      ORDER_CODE      : '<?=implode(",", SearchModel::HEADER_SERIAL_ORDERBYS)?>',
+      ORDER_TITLE     : '<?=implode(",", SearchModel::HEADER_TITLE_ORDERBYS)?>',
+      ORDER_AUTHOR    : '<?=implode(",", SearchModel::HEADER_AUTHOR_ORDERBYS)?>',
+      ORDER_SECTION   : '<?=implode(",", SearchModel::HEADER_SECTION_ORDERBYS)?>',
+    });
   </script>
 
 <?php include 'templates/footer.php';?>

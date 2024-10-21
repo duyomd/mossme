@@ -90,36 +90,17 @@
   <?php $url = 'imageUrls'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
+  <script src="/assets/js/view/imageUrlManager.js"></script>
   <script type="text/javascript">
-    window.onload = function() {
-      var option = {
-        FIELDS_FETCH:               new Array('id', 'image_name', 'image_url', 'sequence'),
-        FIELDS_TABLE:               new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'id'}, 
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'image_name',
-                                        CONTENT_FIELD_STICKY: 'true', }, 
-                                      {CONTENT_TYPE: CONTENT_TYPES.LINK, CONTENT_FIELD: 'item.image_url',
-                                        CONTENT_FIELD_EXTRA_HASH: '"content-modal"',
-                                        CONTENT_FIELD_EXTRA_END: 'data-bs-toggle="modal"',
-                                        CONTENT_FIELD_EXTRA_ONCLICK: '"setModalContent(`" + encodeURIComponent(item.image_name) + "`,`" + encodeURIComponent(item.image_url) + "`)"'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'sequence'}, ),
-        FIELDS_TABLE_HEADER:        new Array('',
-                                      '<?=lang('App.imageUrl_label_image_name')?>', 
-                                      '<?=lang('App.imageUrl_label_image_url')?>', 
-                                      '<?=lang('App.imageUrl_label_sequence')?>'),
-        FIELDS_TABLE_ORDERBYS:      new Array('',
-                                        '<?=implode(",", ImageUrlModel::HEADER_IMAGE_NAME_ORDERBYS)?>',
-                                        '<?=implode(",", ImageUrlModel::HEADER_IMAGE_URL_ORDERBYS)?>',
-                                        '<?=implode(",", ImageUrlModel::HEADER_SEQUENCE_ORDERBYS)?>'),
-        RADIO_SHOW_BUTTON_IDS: new Array('btn-modify', 'btn-delete'),
-        noMove: false,                                      
-      };
-      initTable(option);
-    }
+    initImageUrlManager({
+      MSG_NAME        : '<?=lang('App.imageUrl_label_image_name')?>', 
+      MSG_URL         : '<?=lang('App.imageUrl_label_image_url')?>', 
+      MSG_SEQUENCE    : '<?=lang('App.imageUrl_label_sequence')?>',
 
-    function setModalContent(title, url) {
-      document.querySelector('#content-modal-header').innerHTML = decodeURIComponent(title);
-      document.querySelector('#content-modal-body').src = decodeURIComponent(url);
-    }
+      ORDER_NAME      : '<?=implode(",", ImageUrlModel::HEADER_IMAGE_NAME_ORDERBYS)?>',
+      ORDER_URL       : '<?=implode(",", ImageUrlModel::HEADER_IMAGE_URL_ORDERBYS)?>',
+      ORDER_SEQUENCE  : '<?=implode(",", ImageUrlModel::HEADER_SEQUENCE_ORDERBYS)?>',
+    });
   </script>
 
 <?php include $path . 'templates/footer.php';?>

@@ -99,27 +99,17 @@
   <?php $url = 'bookmarks'; include 'templates/table.php';?>
 
   <!-- JS -->
+  <script src="/assets/js/view/bookmarkManager.js"></script>
   <script type="text/javascript">
-    var option = {
-      FIELDS_FETCH:               new Array('id', 'name', 'url', 'note', 'sequence'),
-      FIELDS_TABLE:               new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'id'}, 
-                                    {CONTENT_TYPE: CONTENT_TYPES.LINK, CONTENT_FIELD: 'item.name', 
-                                      CONTENT_FIELD_STICKY: 'true', 
-                                      CONTENT_FIELD_EXTRA: 'item.url'}, 
-                                    {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'note'}, 
-                                    {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'sequence'}, ),
-      FIELDS_TABLE_HEADER:        new Array('',
-                                    '<?=lang('App.bookmark_label_name')?>', 
-                                    '<?=lang('App.bookmark_label_note')?>', 
-                                    '<?=lang('App.bookmark_label_sequence')?>'),
-      FIELDS_TABLE_ORDERBYS:      new Array('',
-                                       '<?=implode(",", BookmarkModel::HEADER_NAME_ORDERBYS)?>',
-                                       '<?=implode(",", BookmarkModel::HEADER_NOTE_ORDERBYS)?>',
-                                       '<?=implode(",", BookmarkModel::HEADER_SEQUENCE_ORDERBYS)?>'),
-      RADIO_SHOW_BUTTON_IDS: new Array('btn-modify', 'btn-delete'),
-      noMove: false,                                      
-    };
-    initTable(option);
+    initBookmarkManager({
+      MSG_NAME        : '<?=lang('App.bookmark_label_name')?>', 
+      MSG_NOTE        : '<?=lang('App.bookmark_label_note')?>',
+      MSG_SEQUENCE    : '<?=lang('App.bookmark_label_sequence')?>',
+
+      ORDER_NAME      : '<?=implode(",", BookmarkModel::HEADER_NAME_ORDERBYS)?>',
+      ORDER_NOTE      : '<?=implode(",", BookmarkModel::HEADER_NOTE_ORDERBYS)?>',
+      ORDER_SEQUENCE  : '<?=implode(",", BookmarkModel::HEADER_SEQUENCE_ORDERBYS)?>',
+    });
   </script>
 
 <?php include 'templates/footer.php';?>

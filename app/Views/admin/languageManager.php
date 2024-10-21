@@ -95,29 +95,19 @@
   <?php $url = 'languages'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
+  <script src="/assets/js/view/languageManager.js"></script>
   <script type="text/javascript">
-    var option = {
-      FIELDS_FETCH:               new Array('code', 'language', 'status', 'status_name', 'sequence'),
-      FIELDS_TABLE:               new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'code'}, 
-                                    {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'code',
-                                      CONTENT_FIELD_STICKY: 'true', }, 
-                                    {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'language'}, 
-                                    {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'status_name'}, 
-                                    {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'sequence'}, ),
-      FIELDS_TABLE_HEADER:        new Array('',
-                                    '<?=lang('App.label_code')?>', 
-                                    '<?=lang('App.label_language')?>', 
-                                    '<?=lang('App.language_label_status')?>', 
-                                    '<?=lang('App.label_sequence')?>'),
-      FIELDS_TABLE_ORDERBYS:      new Array('',
-                                       '<?=implode(",", LanguageModel::HEADER_CODE_ORDERBYS)?>',
-                                       '<?=implode(",", LanguageModel::HEADER_LANGUAGE_ORDERBYS)?>',
-                                       '<?=implode(",", LanguageModel::HEADER_STATUS_ORDERBYS)?>',
-                                       '<?=implode(",", LanguageModel::HEADER_SEQUENCE_ORDERBYS)?>'),
-      RADIO_SHOW_BUTTON_IDS: new Array('btn-modify', 'btn-delete'),
-      noMove: false,                                      
-    };
-    initTable(option);
+    initLanguageManager({
+      MSG_CODE        : '<?=lang('App.label_code')?>',
+      MSG_LANGUAGE    : '<?=lang('App.label_language')?>', 
+      MSG_STATUS      : '<?=lang('App.language_label_status')?>',
+      MSG_SEQUENCE    : '<?=lang('App.label_sequence')?>',
+
+      ORDER_CODE      : '<?=implode(",", LanguageModel::HEADER_CODE_ORDERBYS)?>',
+      ORDER_LANGUAGE  : '<?=implode(",", LanguageModel::HEADER_LANGUAGE_ORDERBYS)?>',
+      ORDER_STATUS    : '<?=implode(",", LanguageModel::HEADER_STATUS_ORDERBYS)?>',
+      ORDER_SEQUENCE  : '<?=implode(",", LanguageModel::HEADER_SEQUENCE_ORDERBYS)?>',
+    });
   </script>
 
 <?php include $path . 'templates/footer.php';?>

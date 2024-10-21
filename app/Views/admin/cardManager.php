@@ -101,44 +101,19 @@
   <?php $url = 'cards'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
+  <script src="/assets/js/view/cardManager.js"></script>
   <script type="text/javascript">
-    window.onload = function() {
-      var option = {
-        FIELDS_FETCH:               new Array('id', 'memo', 'image_id', 'image_name', 'image_url', 'status', 'status_name', 'sequence'),
-        FIELDS_TABLE:               new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'id'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.LINK, CONTENT_FIELD: 'item.memo',
-                                        CONTENT_FIELD_STICKY: 'true',  
-                                        CONTENT_FIELD_EXTRA: getCardTranslationUrl('item.id')},
-                                      {CONTENT_TYPE: CONTENT_TYPES.LINK, CONTENT_FIELD: 'item.image_name',
-                                        CONTENT_FIELD_EXTRA_HASH: '"content-modal"',
-                                        CONTENT_FIELD_EXTRA_END: 'data-bs-toggle="modal"',
-                                        CONTENT_FIELD_EXTRA_ONCLICK: '"setModalContent(`" + encodeURIComponent(item.image_name) + "`,`" + encodeURIComponent(item.image_url) + "`)"'},
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'status_name'},  
-                                      {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'sequence'}, ),
-        FIELDS_TABLE_HEADER:        new Array('',
-                                      '<?=lang('App.card_label_memo')?>', 
-                                      '<?=lang('App.card_label_image')?>', 
-                                      '<?=lang('App.card_label_status')?>', 
-                                      '<?=lang('App.card_label_sequence')?>'),
-        FIELDS_TABLE_ORDERBYS:      new Array('',
-                                        '<?=implode(",", CardModel::HEADER_MEMO_ORDERBYS)?>',
-                                        '<?=implode(",", CardModel::HEADER_IMAGE_NAME_ORDERBYS)?>',
-                                        '<?=implode(",", CardModel::HEADER_STATUS_ORDERBYS)?>',
-                                        '<?=implode(",", CardModel::HEADER_SEQUENCE_ORDERBYS)?>'),
-        RADIO_SHOW_BUTTON_IDS: new Array('btn-modify', 'btn-delete'),
-        noMove: false,                                      
-      };
-      initTable(option);
-    }
+    initCardManager({
+      MSG_MEMO        : '<?=lang('App.card_label_memo')?>',
+      MSG_IMAGE       : '<?=lang('App.card_label_image')?>', 
+      MSG_STATUS      : '<?=lang('App.card_label_status')?>', 
+      MSG_SEQUENCE    : '<?=lang('App.card_label_sequence')?>',
 
-    function setModalContent(title, url) {
-      document.querySelector('#content-modal-header').innerHTML = decodeURIComponent(title);
-      document.querySelector('#content-modal-body').src = decodeURIComponent(url);
-    }
-
-    function getCardTranslationUrl(cardId) {
-      return "'/cardTranslations/conditions={&quot;cardId&quot;:&quot;' + " + cardId + " + '&quot;}'";
-    }
+      ORDER_MEMO      : '<?=implode(",", CardModel::HEADER_MEMO_ORDERBYS)?>',
+      ORDER_IMAGE     : '<?=implode(",", CardModel::HEADER_IMAGE_NAME_ORDERBYS)?>',
+      ORDER_STATUS    : '<?=implode(",", CardModel::HEADER_STATUS_ORDERBYS)?>',
+      ORDER_SEQUENCE  : '<?=implode(",", CardModel::HEADER_SEQUENCE_ORDERBYS)?>',
+    });
   </script>
 
 <?php include $path . 'templates/footer.php';?>

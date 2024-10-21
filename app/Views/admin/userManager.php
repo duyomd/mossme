@@ -154,89 +154,27 @@
   <?php $url = 'users'; include $path. 'templates/table.php';?>
 
   <!-- JS -->
+  <script src="/assets/js/view/userManager.js"></script>
   <script type="text/javascript">
-    window.onload = function() {
-      addEventBanMessage();
+    initUserManager({
+      MSG_USERNAME        : '<?=lang('App.users_label_username')?>',
+      MSG_EMAIL           : '<?=lang('App.users_label_email')?>',
+      MSG_ACTIVE_STATUS   : '<?=lang('App.users_label_active_status')?>',
+      MSG_BAN_STATUS      : '<?=lang('App.users_label_ban_status')?>',
+      MSG_BAN_MESSAGE     : '<?=lang('App.users_label_ban_message')?>',
+      MSG_GROUPS          : '<?=lang('App.users_label_groups')?>',
+      MSG_LAST_LOGIN      : '<?=lang('App.users_label_last_login')?>',
+      MSG_CREATED_AT      : '<?=lang('App.users_label_created_at')?>',
 
-      var option = {
-        FIELDS_FETCH:           new Array('id', 'username', 'email', 'active', 'status', 'status_message', 'groups', 'last_login', 'created_at'),
-        FIELDS_TABLE:           new Array({CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'id'}, 
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'username',
-                                    CONTENT_FIELD_STICKY: 'true', },
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'email'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'active'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'status'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'status_message'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'groups'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'last_login'},
-                                  {CONTENT_TYPE: CONTENT_TYPES.TEXT, CONTENT_FIELD: 'created_at'}, ),
-        FIELDS_TABLE_HEADER:    new Array('',
-                                  '<?=lang('App.users_label_username')?>',
-                                  '<?=lang('App.users_label_email')?>',
-                                  '<?=lang('App.users_label_active_status')?>',
-                                  '<?=lang('App.users_label_ban_status')?>',
-                                  '<?=lang('App.users_label_ban_message')?>',
-                                  '<?=lang('App.users_label_groups')?>',
-                                  '<?=lang('App.users_label_last_login')?>',
-                                  '<?=lang('App.users_label_created_at')?>',),
-        FIELDS_TABLE_ORDERBYS:  new Array('',
-                                  '<?=implode(",", UserModel::HEADER_USERNAME_ORDERBYS)?>',
-                                  '<?=implode(",", UserModel::HEADER_EMAIL_ORDERBYS)?>',
-                                  '<?=implode(",", UserModel::HEADER_ACTIVE_ORDERBYS)?>',
-                                  '<?=implode(",", UserModel::HEADER_STATUS_ORDERBYS)?>',
-                                  '<?=implode(",", UserModel::HEADER_STATUSMESSAGE_ORDERBYS)?>',
-                                  '<?=implode(",", UserModel::HEADER_GROUPS_ORDERBYS)?>',
-                                  '<?=implode(",", UserModel::HEADER_LASTLOGIN_ORDERBYS)?>',
-                                  '<?=implode(",", UserModel::HEADER_CREATEDAT_ORDERBYS)?>',),
-        RADIO_SHOW_BUTTON_IDS:  new Array('btn-modify', 'btn-delete'),
-        noMove:                 true,                                      
-      };
-      initTable(option);
-    }
-
-    function toggleBanMsg() { 
-      if (document.getElementById('status').value == '0') {
-        document.getElementById('ban_msg_container').classList.add('hidden');
-        document.getElementById('status_message').disabled = 'disabled';
-      } else {
-        document.getElementById('ban_msg_container').classList.remove('hidden');
-        document.getElementById('status_message').disabled = '';
-      } 
-    }
-
-    function addEventBanMessage() {
-      addEvent(document.getElementById('status'), 'change', function() {
-        toggleBanMsg();
-      });
-    }
-
-    function triggerEventBanMessage() {
-      let event = new Event('change');
-      document.getElementById('status').dispatchEvent(event);
-    }
-
-    function groupsCheck() {
-      let groupsEle = document.getElementById('groups');
-      if (!groupsEle || !groupsEle.value || groupsEle.value.length == 0) return;
-
-      let checkIds = new Array('superadmin', 'admin', 'developer', 'dataoperator', 'beta', 'user');
-      let groups = groupsEle.value.split(',');
-      for (let i = 0; i < checkIds.length; i++) {
-        let checkId = checkIds[i];
-        if (groups.includes(checkId)) {
-          document.getElementById(checkId).checked = true;
-        } else {
-          document.getElementById(checkId).checked = false;
-        }
-      }
-    }
-
-    function extraCallback(isLoadData) {
-      triggerEventBanMessage();
-      if (isLoadData) {
-        groupsCheck();
-      }
-    }
+      ORDER_USERNAME      : '<?=implode(",", UserModel::HEADER_USERNAME_ORDERBYS)?>',
+      ORDER_EMAIL         : '<?=implode(",", UserModel::HEADER_EMAIL_ORDERBYS)?>',
+      ORDER_ACTIVE_STATUS : '<?=implode(",", UserModel::HEADER_ACTIVE_ORDERBYS)?>',
+      ORDER_BAN_STATUS    : '<?=implode(",", UserModel::HEADER_STATUS_ORDERBYS)?>',
+      ORDER_BAN_MESSAGE   : '<?=implode(",", UserModel::HEADER_STATUSMESSAGE_ORDERBYS)?>',
+      ORDER_GROUPS        : '<?=implode(",", UserModel::HEADER_GROUPS_ORDERBYS)?>',
+      ORDER_LAST_LOGIN    : '<?=implode(",", UserModel::HEADER_LASTLOGIN_ORDERBYS)?>',
+      ORDER_CREATED_AT    : '<?=implode(",", UserModel::HEADER_CREATEDAT_ORDERBYS)?>',
+    });
   </script>
 
 <?php include $path . 'templates/footer.php';?>
