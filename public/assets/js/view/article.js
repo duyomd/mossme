@@ -10,6 +10,7 @@ let MSG_COMMENTARY_HIDDEN;
 let MSG_COMMENTARY_DISPLAY;
 let MSG_EXPAND_ALL;
 let MSG_COLLAPSE_ALL;
+let MSG_TOGGLE_NODE;
 
 let ENTRY_COUNT;
 let TRANSLATIONS_DEFAULT;
@@ -211,17 +212,21 @@ function reloadContent(type, item, i) {
   }
   if (ti) {
     ti.innerHTML = item.title;
+    ti.lang = item.lang;
   }
   au.innerHTML = item.author;
+  // au.lang = item.lang;
 
   var maps = TRANSLATIONS_ALL;
   if (type == 3) {
     maps = COMMENTARIES_ALL;
   }
-  if (maps[i].get(item.id) && maps[i].get(item.id).length > 0) {
+  let cached = maps[i].get(item.id);
+  if (cached && cached.content && cached.content.length > 0) {
       let tempElement = document.createElement('textarea');
-      tempElement.innerHTML = maps[i].get(item.id);
+      tempElement.innerHTML = cached.content;
       co.innerHTML = tempElement.value;
+      co.lang = cached.lang;
       tempElement.remove();
   } else {
     loadContent(type, item.id, co, i);
@@ -257,13 +262,16 @@ function loadContent(type, id, contentEle, i) {
       try {
         if (this.readyState == 4) {
           if (this.status == 200) {
-            var content = this.responseText;
-            if (type == 3) {
-              COMMENTARIES_ALL[i].set(id, content);
-            } else {
-              TRANSLATIONS_ALL[i].set(id, content);
+            var result = JSON.parse(this.responseText);
+            if (result) {
+              if (type == 3) {
+                COMMENTARIES_ALL[i].set(id, result);
+              } else {
+                TRANSLATIONS_ALL[i].set(id, result);
+              }
+              contentEle.innerHTML = result.content;
+              contentEle.lang = result.lang;
             }
-            contentEle.innerHTML = content;
           } else {}
           loading(false);
         }
@@ -500,7 +508,7 @@ function printChildNodes(parentEntryId, trans, isRecursive) {
     let isFolder = tran.type == 0;
     if (isFolder) {
       innerHTML += 
-      '<a href="javascript:void(0)" >' +  
+      '<a role="button" href="javascript:void(0)" aria-label="' + MSG_TOGGLE_NODE + '">' +  
         '<i id="' + tran.entry_id + SUFFIX_TOGGLE + '" data-bs-toggle="collapse" href="#' + tran.entry_id + SUFFIX_SUBTREE + '"' + 
           'class="d-inline bi ' + CSS_COLLAPSING + '" ' + 
           'onclick="toggleNode(`' + tran.entry_id + '`, false)"></i>' + 

@@ -498,6 +498,21 @@ return [
     'alt_testimonial'       =>  'Rundes Testimonial-Bild',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Video abspielen',
+    'aria_back_to_top'      =>  'Zurück nach oben',
+    'aria_edit'             =>  'Bearbeiten',
+    'aria_previous'         =>  'Vorherige',
+    'aria_next'             =>  'Nächste',
+    'aria_commentary'       =>  'Kommentarbereich umschalten',
+    'aria_bilingual'        =>  'Zweisprachigen Modus umschalten',
+    'aria_move_up'          =>  'Nach oben bewegen',
+    'aria_move_down'        =>  'Nach unten bewegen',
+    'aria_captcha_reload'   =>  'Captcha neu laden',
+    'aria_toggle_node'      =>  'Baumknoten umschalten',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

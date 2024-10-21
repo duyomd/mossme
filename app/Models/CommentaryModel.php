@@ -172,12 +172,12 @@ class CommentaryModel extends BaseModel
             foreach ($commentaries as $row) {
                 if (count($dropdown) == 0) {
                     array_push($dropdown, 
-                        (new Commentary())->makePseudo(true, $row->language));
+                        (new Commentary())->makePseudo(true, $row->language, $row->language_code));
                 } else {
                     $current_language = end($dropdown)->language;
                     if ($current_language !== $row->language) {
                         array_push($dropdown, 
-                            (new Commentary())->makePseudo(true, $row->language));
+                            (new Commentary())->makePseudo(true, $row->language, $row->language_code));
                     }
                 }
                 array_push($dropdown, $row);
@@ -198,7 +198,7 @@ class CommentaryModel extends BaseModel
             foreach ($dropdown as $row) {
                 // if still not selected for init load then compare with user language
                 if (!$firstDisplay) {
-                    if ($row->language_code === $user_language_code) {
+                    if (!$row->pseudo && $row->language_code === $user_language_code) {
                         $firstDisplay = true;
                         $row->default = true;
                         break;

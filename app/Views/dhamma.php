@@ -26,7 +26,7 @@
 
           <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" 
               data-aos="zoom-in" data-aos-delay="200">
-            <a href="<?=lang('App.video_url_home')?>" class="glightbox play-btn"></a> 
+            <a href="<?=lang('App.video_url_home')?>" class="glightbox play-btn" aria-label="<?=lang('App.aria_play_button')?>"></a> 
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@
 
         <div class="section-title">
           <h2><?=lang('App.sati')?></h2>
-          <p><?=lang('App.sati_caption')?></p>
+          <h3><p><?=lang('App.sati_caption')?></p></h3>
         </div>
 
         <div class="row">

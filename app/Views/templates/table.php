@@ -24,6 +24,8 @@
   function initTable(option) {
     MSG_RPP               = "<?=lang('App.num_rows_per_page')?>";
     MSG_FORWARD_SLASH     = "<?=lang('App.forward_slash')?>";
+    MSG_MOVE_UP           = "<?=lang('App.aria_move_up')?>";
+    MSG_MOVE_DOWN         = "<?=lang('App.aria_move_down')?>";
 
     PAGINATION_RPPS       = <?=json_encode(App\Helpers\Utilities::PAGINATION_RPPS)?>;
     PAGINATION_MAX_NUM    = <?=App\Helpers\Utilities::PAGINATION_MAX_NUM?>;

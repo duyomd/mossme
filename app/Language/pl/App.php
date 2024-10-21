@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Okrągły obrazek referencyjny',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Odtwórz wideo',
+    'aria_back_to_top'      =>  'Powrót na górę',
+    'aria_edit'             =>  'Edytuj',
+    'aria_previous'         =>  'Poprzedni',
+    'aria_next'             =>  'Następny',
+    'aria_commentary'       =>  'Przełącz sekcję komentarzy',
+    'aria_bilingual'        =>  'Przełącz tryb dwujęzyczny',
+    'aria_move_up'          =>  'Przesuń w górę',
+    'aria_move_down'        =>  'Przesuń w dół',
+    'aria_captcha_reload'   =>  'Przeładuj captcha',
+    'aria_toggle_node'      =>  'Przełącz węzeł drzewa',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

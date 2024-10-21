@@ -500,6 +500,21 @@ return [
     'alt_testimonial'       =>  'Cirkulär bild av vittnesmål',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Spela video',
+    'aria_back_to_top'      =>  'Tillbaka till toppen',
+    'aria_edit'             =>  'Redigera',
+    'aria_previous'         =>  'Föregående',
+    'aria_next'             =>  'Nästa',
+    'aria_commentary'       =>  'Växla kommentaravsnitt',
+    'aria_bilingual'        =>  'Växla tvåspråkigt läge',
+    'aria_move_up'          =>  'Flytta upp',
+    'aria_move_down'        =>  'Flytta ner',
+    'aria_captcha_reload'   =>  'Ladda om CAPTCHA',
+    'aria_toggle_node'      =>  'Växla trädnod',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

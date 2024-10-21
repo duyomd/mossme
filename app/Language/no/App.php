@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Sirkulær attestbilde',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Spill video',
+    'aria_back_to_top'      =>  'Tilbake til toppen',
+    'aria_edit'             =>  'Rediger',
+    'aria_previous'         =>  'Forrige',
+    'aria_next'             =>  'Neste',
+    'aria_commentary'       =>  'Bytt kommentarseksjon',
+    'aria_bilingual'        =>  'Bytt til tospråklig modus',
+    'aria_move_up'          =>  'Flytt opp',
+    'aria_move_down'        =>  'Flytt ned',
+    'aria_captcha_reload'   =>  'Last inn captcha på nytt',
+    'aria_toggle_node'      =>  'Bytt treknute',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

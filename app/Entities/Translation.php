@@ -44,7 +44,7 @@ class Translation extends Entity
     }
 
     // make dropdown header
-    public function makePseudo(bool $pseudo = false, string $author = null, string $notation = null) 
+    public function makePseudo(bool $pseudo = false, string $author = null, string $notation = null, string $language_code = null) 
     {
         $this->setPseudo($pseudo);
         if (isset($author)) {
@@ -52,6 +52,9 @@ class Translation extends Entity
         }
         if (isset($notation)) {
             $this->notation = $notation;
+        }
+        if (isset($language_code)) {
+            $this->language_code = $language_code;
         }
         return $this;
     }

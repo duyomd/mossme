@@ -502,6 +502,21 @@ return [
     'alt_testimonial'       =>  'Ảnh tròn cho mục hồi hướng',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Phát video',
+    'aria_back_to_top'      =>  'Trở về đầu trang',
+    'aria_edit'             =>  'Chỉnh sửa',
+    'aria_previous'         =>  'Trang trước',
+    'aria_next'             =>  'Trang tiếp theo',
+    'aria_commentary'       =>  'Bật / tắt phần bình luận',
+    'aria_bilingual'        =>  'Bật / tắt chế độ song ngữ',
+    'aria_move_up'          =>  'Di chuyển lên',
+    'aria_move_down'        =>  'Di chuyển xuống',
+    'aria_captcha_reload'   =>  'Tải lại mã xác nhận',
+    'aria_toggle_node'      =>  'Đóng / mở thư mục',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

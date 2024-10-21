@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Gambar testimoni melingkar',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Putar video',
+    'aria_back_to_top'      =>  'Kembali ke atas',
+    'aria_edit'             =>  'Sunting',
+    'aria_previous'         =>  'Sebelumnya',
+    'aria_next'             =>  'Selanjutnya',
+    'aria_commentary'       =>  'Alihkan bagian komentar',
+    'aria_bilingual'        =>  'Alihkan mode dwibahasa',
+    'aria_move_up'          =>  'Pindah ke atas',
+    'aria_move_down'        =>  'Pindah ke bawah',
+    'aria_captcha_reload'   =>  'Muat ulang captcha',
+    'aria_toggle_node'      =>  'Alihkan node pohon',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

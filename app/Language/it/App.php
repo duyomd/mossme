@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Immagine circolare della testimonianza',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Riproduci video',
+    'aria_back_to_top'      =>  'Torna in cima',
+    'aria_edit'             =>  'Modifica',
+    'aria_previous'         =>  'Precedente',
+    'aria_next'             =>  'Successivo',
+    'aria_commentary'       =>  'Attiva/disattiva sezione commenti',
+    'aria_bilingual'        =>  'Attiva/disattiva modalità bilingue',
+    'aria_move_up'          =>  'Sposta su',
+    'aria_move_down'        =>  'Sposta giù',
+    'aria_captcha_reload'   =>  'Ricarica captcha',
+    'aria_toggle_node'      =>  'Attiva/disattiva nodo ad albero',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

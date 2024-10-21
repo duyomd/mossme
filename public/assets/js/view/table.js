@@ -1,5 +1,7 @@
 let MSG_RPP;
 let MSG_FORWARD_SLASH;
+let MSG_MOVE_UP;
+let MSG_MOVE_DOWN;
 
 let PAGINATION_RPPS;
 let PAGINATION_MAX_NUM;
@@ -415,11 +417,11 @@ function htmlTableMoveBtnsRow(sort) {
     html +=
     '<td rowspan="' + (sort.rpp + 1) + '" class="align-middle text-center col-move">' +
       '<a id="btn-move-up" role="button" onclick="clickBtn(\'#hdn-move-up\');" href="javascript:void(0)" ' + 
-        'class="btn-move animated fadeInUp disabled">' +
+        'class="btn-move animated fadeInUp disabled" aria-label="' + MSG_MOVE_UP + '">' +
         '<i class="bi bi-chevron-double-up"></i>' +
       '</a>' +
       '<a id="btn-move-down" role="button" onclick="clickBtn(\'#hdn-move-down\');" href="javascript:void(0)" ' + 
-        'class="btn-move mt-2 animated fadeInUp disabled">' +
+        'class="btn-move mt-2 animated fadeInUp disabled" aria-label="' + MSG_MOVE_DOWN + '">' +
         '<i class="bi bi-chevron-double-down"></i>' +
       '</a>';
     } 
@@ -437,7 +439,7 @@ function htmlContentRows(items) {
       '<tr onclick="selectRow(this, ' + i + ')">'; 
       if (!_noRadio) {
         html += 
-        '<td><input type="radio" name="radioGroup"></td>';
+        '<td><input type="radio" name="radioGroup" aria-label="' + i +'"></td>';
       }
     for (let j = 0; j < FIELDS_TABLE.length; j++) {
       // sticky column

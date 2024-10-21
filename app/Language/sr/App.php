@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Kružna slika svedočenja',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Pusti video',
+    'aria_back_to_top'      =>  'Nazad na vrh',
+    'aria_edit'             =>  'Uredi',
+    'aria_previous'         =>  'Prethodni',
+    'aria_next'             =>  'Sledeći',
+    'aria_commentary'       =>  'Prebaci odeljak komentara',
+    'aria_bilingual'        =>  'Prebaci dvojezični režim',
+    'aria_move_up'          =>  'Pomeri nagore',
+    'aria_move_down'        =>  'Pomeri nadole',
+    'aria_captcha_reload'   =>  'Ponovo učitaj CAPTCHA',
+    'aria_toggle_node'      =>  'Prebaci čvor drveta',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

@@ -13,7 +13,7 @@
       <div class="row col-md-12 col-lg-8">
         <div id="input-form-container" class="mt-lg-0">
 
-          <form action="/userSettings" method="post" role="form" class="input-form" data-aos="fade-up" data-aos-delay="100">
+          <form action="/userSettings" method="post" class="input-form" data-aos="fade-up" data-aos-delay="100">
 
             <?= csrf_field() ?>  
 

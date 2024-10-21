@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Imagem circular de depoimento',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Redați videoclipul',
+    'aria_back_to_top'      =>  'Înapoi la început',
+    'aria_edit'             =>  'Editați',
+    'aria_previous'         =>  'Anterior',
+    'aria_next'             =>  'Următor',
+    'aria_commentary'       =>  'Comutare secțiune comentarii',
+    'aria_bilingual'        =>  'Comutare mod bilingv',
+    'aria_move_up'          =>  'Mutare în sus',
+    'aria_move_down'        =>  'Mutare în jos',
+    'aria_captcha_reload'   =>  'Reîncărcați captcha',
+    'aria_toggle_node'      =>  'Comutare nod arbore',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

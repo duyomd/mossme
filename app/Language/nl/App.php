@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Circulaire getuigenis afbeelding',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Speel video',
+    'aria_back_to_top'      =>  'Terug naar boven',
+    'aria_edit'             =>  'Bewerken',
+    'aria_previous'         =>  'Vorige',
+    'aria_next'             =>  'Volgende',
+    'aria_commentary'       =>  'Schakel commentaarsectie in/uit',
+    'aria_bilingual'        =>  'Schakel tweetalige modus in/uit',
+    'aria_move_up'          =>  'Omhoog bewegen',
+    'aria_move_down'        =>  'Omlaag bewegen',
+    'aria_captcha_reload'   =>  'Captcha vernieuwen',
+    'aria_toggle_node'      =>  'Schakel boomknoop in/uit',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

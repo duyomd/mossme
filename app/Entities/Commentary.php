@@ -41,11 +41,14 @@ class Commentary extends Entity
     }
 
     // make dropdown header
-    public function makePseudo(bool $pseudo = false, string $author) 
+    public function makePseudo(bool $pseudo = false, string $author, string $language_code = null) 
     {
         $this->setPseudo($pseudo);
         if (isset($author)) {
             $this->attributes['author'] = $author;
+        }
+        if (isset($language_code)) {
+            $this->language_code = $language_code;
         }
         return $this;
     }

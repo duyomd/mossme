@@ -17,7 +17,7 @@
       <div class="container d-md-flex justify-content-center" data-aos="fade-up">
         <div class="row col-lg-8 table-container">
           <div id="input-form-container" class="mt-lg-0">
-            <form action="/search" method="post" role="form" class="ajax-form" data-aos="fade-up" data-aos-delay="100">
+            <form action="/search" method="post" class="ajax-form" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="row">
                   <div class="col-md-6">
@@ -57,7 +57,7 @@
 
                 <div class="row mt-4">
                   <div class="col-md-3 mt-md-0">
-                    <label for="status" class="form-label"><?= lang('App.search_label_section') ?></label>
+                    <label for="section" class="form-label"><?= lang('App.search_label_section') ?></label>
                     <select class="form-select fs-6" name="section" id="section">
                       <option value="1,2,3,4,5,7,8"><?= lang('App.search_section_all') ?></option>
                       <option value="1,2,8"><?= lang('App.search_section_discourse') ?></option>

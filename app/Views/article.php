@@ -11,10 +11,14 @@
 
           <?php $count = count($entry->translationsParents); ?>
           <h1 class="text-lg-start <?php if ($count > 2) echo 'text-start'; else echo 'text-center'; ?>">
-            <span><a href="/article/<?= $entry->translationsParents[0]->entry_id ?>">
-            <?= $entry->translationsParents[0]->title ?></a></span>
+            <span lang="<?=$entry->translationsParents[0]->language_code?>">
+              <a href="/article/<?= $entry->translationsParents[0]->entry_id ?>">
+                <?= $entry->translationsParents[0]->title ?>
+              </a>
+            </span>
             <?php if ($count == 1) :?>
               <a class="<?= (auth()->loggedIn() && auth()->user()->inGroup('dataoperator', 'superadmin') ? '' : 'hidden') ?> ms-btns-navi"
+                aria-label="<?=lang('App.aria_edit')?>"
                 href='/translations/conditions={"entryId":"<?=$entry->id?>"}'>
                 <i id="icon-bilingual" class="bi bi-pencil-square small" ></i>
               </a>
@@ -26,7 +30,7 @@
                 <?php $parent = $entry->translationsParents[$i];
                   echo '<li><h2><a href="/article/' . $parent->entry_id . '" title="' . $parent->title . '">|';
                   for ($j = 0; $j < $i; $j++) echo '_';
-                  echo '<span>' . $parent->enum_title . '</span></a></h2></li>';
+                  echo '<span lang="' . $parent->language_code . '">' . $parent->enum_title . '</span></a></h2></li>';
                 ?>
               <?php endfor ?>
             </ul>
@@ -34,8 +38,9 @@
           
           <h2 class="article-name">
             <?php if ($count > 1) :?>
-              <?=$entry->displayEnumTitle?>
+              <span lang="<?=$entry->displayLang?>"><?=$entry->displayEnumTitle?></span>
               <a class="<?= (auth()->loggedIn() && auth()->user()->inGroup('dataoperator', 'superadmin') ? '' : 'hidden') ?> ms-btns-navi"
+                aria-label="<?=lang('App.aria_edit')?>"
                 href='/translations/conditions={"entryId":"<?=$entry->id?>"}'>
                 <i id="icon-bilingual" class="bi bi-pencil-square"></i>
               </a>
@@ -44,7 +49,7 @@
           
           <div class="btns">
             <a href="/article/<?=$entry->previous_id?>" class="btn-scroll animated fadeInUp scrollto
-              <?php if(!isset($entry->previous_id)) echo ' disabled'; ?>">
+              <?php if(!isset($entry->previous_id)) echo ' disabled'; ?>" aria-label="<?=lang('App.aria_previous')?>">
               <i class="bi bi-chevron-double-<?= Utilities::isRightToLeft() ? 'right' : 'left' ?>"></i>
             </a>
 
@@ -53,25 +58,26 @@
               <a id="btn-commentary" href="#commentary" class="btn-scroll animated fadeInUp ms-btns-navi inactive
                 <?php if(count($entry->commentaries) == 0) echo ' disabled'; ?>"
                 role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="commentary" 
-                onclick="commentary(this)">
+                aria-label="<?=lang('App.aria_commentary')?>" onclick="commentary(this)">
                 <i class="bi bi-zoom-in"></i></a>
 
               <a id="btn-bilingual" class="btn-scroll animated fadeInUp scrollto ms-btns-navi inactive"
-                href="javascript:void(0)" role="button" 
+                href="javascript:void(0)" role="button" aria-label="<?=lang('App.aria_bilingual')?>"
                 onclick="bilingual(this)">
                 <i id="icon-bilingual" class="bi bi-book-half"></i></a>
 
             <?php endif ?>  
               
             <a href="/article/<?=$entry->next_id?>" class="btn-scroll animated fadeInUp scrollto ms-btns-navi
-              <?php if(!isset($entry->next_id)) echo ' disabled'; ?>">
+              <?php if(!isset($entry->next_id)) echo ' disabled'; ?>" aria-label="<?=lang('App.aria_next')?>">
               <i class="bi bi-chevron-double-<?= Utilities::isRightToLeft() ? 'left' : 'right' ?>"></i>
             </a>
           </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
           <a href="<?php $video = $entry->video_url; echo (!Utilities::isNullOrBlank($video) ? $video : '#article'); ?>" 
-            class="<?= !Utilities::isNullOrBlank($video) ? 'glightbox ' : '' ?>play-btn"></a> 
+            class="<?= !Utilities::isNullOrBlank($video) ? 'glightbox ' : '' ?>play-btn"
+            aria-label="<?=lang('App.aria_play_button')?>"></a> 
         </div>
 
       </div>
@@ -98,11 +104,11 @@
               <div class="section-title">
                 <h2><?=lang('App.article_translation', [$entry->translationCount])?></h2>
 
-                <div id="dd-article" class="dropdown pt-2" lang="auto">
+                <div id="dd-article" class="dropdown pt-2">
 
                   <button class="btn dropdown-toggle text-truncate" type="button" id="dropdown-main" 
                     data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true">
-                    <span></span>
+                    <span lang="und"></span>
                   </button>
 
                   <ul class="dropdown-menu" aria-labelledby="dropdown-main">
@@ -119,14 +125,16 @@
                             <li>
                               <a class="dropdown-item text-truncate ref" href="<?=htmlspecialchars($tran->notation)?>" 
                                   target="_blank" rel="noreferrer noopener">
-                                  <?=$tran->author?>
+                                <span lang="und"><?=$tran->author?></span>
                                 <i class="bi bi-box-arrow-up-right float-end"></i>
                               </a>
                             </li>
                           <?php endif ?>    
                         <?php endif ?>
                         <?php if ($i < $count - 1) :?>
-                          <li><h6 class="dropdown-header"> <?=$tran->author?></h6></li>
+                          <li><h6 class="dropdown-header" <?=isset($tran->language_code) ? 'lang="'.$tran->language_code.'"' : ''?>>
+                            <?=$tran->author?>
+                          </h6></li>
                         <?php endif ?>
                       <?php else : ?>
                         <?php 
@@ -145,7 +153,7 @@
                               href="javascript:void(0)" role="button"
                               onclick="reloadContent(1, js_trans[0][<?=$i?>], 0);
                                        selectDropdownItem(1, this, 0);">
-                          <?=$tran->author?></a>
+                          <span lang="und"><?=$tran->author?></span></a>
                         </li>
                       <?php endif ?>
                       <?php $i++; ?>
@@ -170,11 +178,11 @@
               <div class="section-title">
                 <h2><?=lang('App.article_translation', [$entry->translationCount])?></h2>
                 
-                <div id="dd-article" class="dropdown pt-2" lang="auto">
+                <div id="dd-article" class="dropdown pt-2">
                   
                   <button class="btn dropdown-toggle text-truncate ref" type="button" id="dropdown-sub" 
                     data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true">
-                    <span></span>
+                    <span lang="und"></span>
                   </button>
 
                   <ul class="dropdown-menu" aria-labelledby="dropdown-sub">
@@ -188,14 +196,16 @@
                             <li>
                               <a class="dropdown-item text-truncate ref" href="<?=htmlspecialchars($tran->notation)?>" 
                                   target="_blank" rel="noreferrer noopener">
-                                  <?=$tran->author?>
+                                <span lang="und"><?=$tran->author?></span>
                                 <i class="bi bi-box-arrow-up-right float-end"></i>
                               </a>
                             </li>
                           <?php endif ?>    
                         <?php endif ?>
                         <?php if ($i < $count - 1) :?>
-                          <li><h6 class="dropdown-header"> <?=$tran->author?></h6></li>
+                          <li><h6 class="dropdown-header" <?=isset($tran->language_code) ? 'lang="'.$tran->language_code.'"' : ''?>>
+                            <?=$tran->author?>
+                          </h6></li>
                         <?php endif ?>
                       <?php else : ?>
                         <li><a class="dropdown-item text-truncate link-sub-0
@@ -203,7 +213,7 @@
                               href="javascript:void(0)" role="button"
                               onclick="reloadContent(2, js_trans[0][<?=$i?>], 0);
                                        selectDropdownItem(2, this, 0);">
-                          <?=$tran->author?></a>
+                          <span lang="und"><?=$tran->author?></span></a>
                         </li>
                       <?php endif ?>
                       <?php $i++; ?>
@@ -246,11 +256,11 @@
 
             <h2><?=lang('App.article_commentary', [$entry->commentaryCount])?></h2>
             
-            <div id="dd-commentary" class="dropdown pt-2" lang="auto">
+            <div id="dd-commentary" class="dropdown pt-2">
 
               <button class="btn dropdown-toggle text-truncate" type="button" id="dropdown-comm" 
                 data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true">
-                <span></span>
+                <span lang="und"></span>
               </button>
 
               <ul class="dropdown-menu" aria-labelledby="dropdown-comm">
@@ -267,7 +277,9 @@
                       <?php endif ?>    
                     <?php endif ?>
                     <?php if ($i < $count - 1) :?>
-                      <li><h6 class="dropdown-header"> <?=$comm->author?></h6></li>
+                      <li><h6 class="dropdown-header" <?=isset($comm->language_code) ? 'lang="'.$comm->language_code.'"' : ''?>>
+                        <?=$comm->author?>
+                      </h6></li>
                     <?php endif ?>
                   <?php else : ?>
                     <?php 
@@ -286,7 +298,7 @@
                           href="javascript:void(0)" role="button"
                           onclick="reloadContent(3, js_comms[0][<?=$i?>], 0);
                                    selectDropdownItem(3, this, 0);">
-                      <?=$comm->author?></a>
+                      <span lang="und"><?=$comm->author?></span></a>
                     </li>
                   <?php endif ?>
                   <?php $i++; ?>
@@ -313,12 +325,12 @@
           <div class="section-title">
               <h2><?=lang('App.article_content')?></h2>
               <div class="text-center">
-                <p id="title-main" class="mt-4"><?= $entry->displayEnumTitle ?></p>
+                <p id="title-main" class="mt-4" lang="<?=$entry->displayLang?>"><?=$entry->displayEnumTitle?></p>
               </div>
           </div>
           <?php if (!Utilities::isNullOrBlank($entry->displayContent)) : ?>
             <div class="mb-4 row justify-content-center">
-              <div class="ck-content"><?= $entry->displayContent ?></div>
+              <div class="ck-content" lang="<?=$entry->displayLang?>"><?=$entry->displayContent?></div>
             </div>
           <?php endif ?>
           <?php if ($entry->isFolder && count($entry->translationsChildren) > 0) : ?>
@@ -328,12 +340,12 @@
 
                     <?php if ($entry->translationsChildren[0]->type == Utilities::TYPE_FOLDER) : ?>
                       <li>
-                        <a href="javascript:void(0)" onclick="toggleAllNodes()">
+                        <a role="button" href="javascript:void(0)" onclick="toggleAllNodes()">
                           <i id="btn-toggle-all" class="d-inline bi bi-grid-3x3-gap-fill"></i>
                           <span class="tree-expand"><?=lang('App.article_expand_all')?></span>
                         </a>
                       </li>
-                      <br/>
+                      <li><br/></li>
                     <?php endif ?>
                       
                     <?php foreach ($entry->translationsChildren as $child) : ?>
@@ -341,14 +353,14 @@
                             $isFolder = $child->type == Utilities::TYPE_FOLDER; ?>
                       <li>
                         <?php if ($isFolder) : ?>
-                          <a href="javascript:void(0)">
+                          <a role="button" href="javascript:void(0)" aria-label="<?=lang('App.aria_toggle_node')?>">
                             <i id="<?=$eId?>-tree-i" data-bs-toggle="collapse" href="#<?=$eId?>-tree-ul" 
                               class="d-inline bi bi-plus-square-fill tree-folder-no-parent"
                               onclick="toggleNode('<?=$eId?>', false)"></i>
                           </a>
                         <?php endif ?>
                         <a href="/article/<?=$child->entry_id?>">
-                          <span class="<?=$isFolder ? 'tree-folder' : 'tree-leaf-no-parent'?>"><?=$child->enum_title?></span>
+                          <span lang="<?=$child->language_code?>" class="<?=$isFolder ? 'tree-folder' : 'tree-leaf-no-parent'?>"><?=$child->enum_title?></span>
                         </a>
                         <?php if ($isFolder) : ?>
                           <ul id="<?=$eId?>-tree-ul" class="content-list content-list-tree collapse"></ul>
@@ -358,7 +370,7 @@
                     
                     <!-- Group all items' content in 1 page -->
                     <?php if ($entry->isChildrenGroupable) : ?>
-                      <br/>
+                      <li><br/></li>
                       <li>
                         <a href="/article-group/<?=$entry->id?>">
                           <i class="d-inline bi bi-stack"></i>
@@ -458,7 +470,8 @@
       _translations[0] = new Map();      
       <?php foreach ($entry->translations as $tran) :?>
         if ('<?=$tran->id?>'.length > 0) {
-          _translations[0].set('<?=$tran->id?>', '<?=esc($tran->content)?>');
+          _translations[0].set('<?=$tran->id?>', {content  : '<?=esc($tran->content)?>', 
+                                                  lang     : '<?=$tran->language_code?>'});
         }
       <?php endforeach ?>
       var _commentaries = new Array(1);
@@ -495,6 +508,7 @@
       let params = {
         MSG_EXPAND_ALL          : "<?=lang('App.article_expand_all')?>",
         MSG_COLLAPSE_ALL        : "<?=lang('App.article_collapse_all')?>",
+        MSG_TOGGLE_NODE         : "<?=lang('App.aria_toggle_node')?>",
       }
       articleGlobal(params);
     </script>

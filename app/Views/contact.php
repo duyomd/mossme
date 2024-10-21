@@ -19,7 +19,7 @@
         
         <div id="title" class="section-title">
           <h2><?=lang('App.info')?></h2>
-          <p><?=lang('App.contact')?></p>
+          <h3><p><?=lang('App.contact')?></p></h3>
         </div>
 
         <div class="row">
@@ -48,7 +48,7 @@
 
           <div id="message-form" class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="/contact" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+            <form action="/contact" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
               <?= csrf_field() ?>
 
               <?php $success = session()->getFlashdata('success'); if (isset($error) || $success) : ?>  
@@ -98,7 +98,8 @@
                 <div class="row">
                   <div class="col-xl-4 col-md-5 text-md-start text-center" >
                     <img src="/captcha" alt="<?=lang('App.alt_captcha')?>" class="captcha-image">
-                    <a role="button" href="javascript:void(0)" class="bi bi-bootstrap-reboot d-inline-block ps-3 ps-md-2 refresh-captcha"></a>
+                    <a role="button" href="javascript:void(0)" aria-label="<?=lang('App.aria_captcha_reload')?>"
+                      class="bi bi-bootstrap-reboot d-inline-block ps-3 ps-md-2 refresh-captcha"></a>
                   </div>
                   <div class="col-xl-3 col-md-4 mt-md-0 mt-3">
                     <input type="text" class="form-control" id="captcha" name="captcha_challenge" pattern="[A-Z]{6}" 

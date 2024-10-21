@@ -47,7 +47,7 @@
 
           <div class="collapse mt-3" id="collapse-form">
             <div id="input-form-container" class="mt-lg-0">
-              <form action="/messages" method="post" role="form" class="ajax-form" data-aos="fade-up" data-aos-delay="100">
+              <form action="/messages" method="post" class="ajax-form" data-aos="fade-up" data-aos-delay="100">
 
                 <div>
                   <div class="error-message mb-3"></div>

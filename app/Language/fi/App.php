@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Pyöreä suosituskuva',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Toista video',
+    'aria_back_to_top'      =>  'Takaisin alkuun',
+    'aria_edit'             =>  'Muokkaa',
+    'aria_previous'         =>  'Edellinen',
+    'aria_next'             =>  'Seuraava',
+    'aria_commentary'       =>  'Vaihda kommenttiosio',
+    'aria_bilingual'        =>  'Vaihda kaksikielinen tila',
+    'aria_move_up'          =>  'Siirrä ylös',
+    'aria_move_down'        =>  'Siirrä alas',
+    'aria_captcha_reload'   =>  'Lataa captcha uudelleen',
+    'aria_toggle_node'      =>  'Vaihda puun solmu',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

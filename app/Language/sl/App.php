@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Krožna slika pričevanja',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Predvajaj video',
+    'aria_back_to_top'      =>  'Nazaj na vrh',
+    'aria_edit'             =>  'Uredi',
+    'aria_previous'         =>  'Prejšnji',
+    'aria_next'             =>  'Naslednji',
+    'aria_commentary'       =>  'Preklopi razdelek z razlagami',
+    'aria_bilingual'        =>  'Preklopi dvojezični način',
+    'aria_move_up'          =>  'Premakni gor',
+    'aria_move_down'        =>  'Premakni dol',
+    'aria_captcha_reload'   =>  'Ponovno naloži CAPTCHA',
+    'aria_toggle_node'      =>  'Preklopi vozlišče drevesa',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

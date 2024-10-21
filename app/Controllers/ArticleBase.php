@@ -33,11 +33,16 @@ class ArticleBase extends BaseController
 
   public function loadArticleContent($type = 1, $id = null)
   {
-    if (!isset($id)) return '';
+    if (!isset($id)) return null;
+    $result = null;
     if ($type == 3) {
-      return model(CommentaryModel::class)->findCommentary($id)->content;  
-    } 
-    return model(TranslationModel::class)->findTranslation($id)->content;
+      $result = model(CommentaryModel::class)->findCommentary($id);  
+    } else {
+      $result = model(TranslationModel::class)->findTranslation($id);
+    }
+    if ($result == null) return null;    
+    return json_encode((object)array('content'=> $result->content, 
+                                     'lang'   => $result->language_code));
   }
 
   public function fetchChildNodes($parentEntryId = null) {

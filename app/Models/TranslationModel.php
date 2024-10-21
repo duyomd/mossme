@@ -243,7 +243,7 @@ class TranslationModel extends BaseModel
 
         /** Used for host with lower SQL version (T.T) */ 
         $sql = 
-            'SELECT entry_id, author, author_note, title, status, enum_title, type
+            'SELECT entry_id, author, author_note, title, status, enum_title, type, language_code
             FROM (
                 SELECT translation.*, entry.sequence AS entry_seq, entry.type AS type,
                     CONCAT(IF(entry.enumeration IS NULL, "", CONCAT(entry.enumeration, SPACE(1))), translation.title) AS enum_title,
@@ -318,7 +318,7 @@ class TranslationModel extends BaseModel
         /** Used for host with lower SQL version (T.T), 
          * (Will this 100% guaranteedly return suitable result all the time in all environment?) */ 
         $sql = 
-        'SELECT entry_id, author, author_note, title, status, enum_title, content
+        'SELECT entry_id, title, enum_title, language_code
         FROM (
             SELECT t.*, el.lvl AS lvl,
                 CONCAT(IF(e.enumeration IS NULL, "", CONCAT(e.enumeration, SPACE(1))), t.title) AS enum_title,
@@ -627,12 +627,12 @@ class TranslationModel extends BaseModel
             foreach ($translations as $row) {
                 if (count($dropdown) == 0) {
                     array_push($dropdown, 
-                        (new Translation())->makePseudo(true, $row->language, ''));
+                        (new Translation())->makePseudo(true, $row->language, '', $row->language_code));
                 } else {
                     $current_language = end($dropdown)->language;
                     if ($current_language !== $row->language) {
                         array_push($dropdown, 
-                            (new Translation())->makePseudo(true, $row->language, ''));
+                            (new Translation())->makePseudo(true, $row->language, '', $row->language_code));
                     }
                 }
                 array_push($dropdown, $row);
@@ -669,7 +669,7 @@ class TranslationModel extends BaseModel
             foreach ($dropdown as $row) {
                 // if still not selected for init load then compare with user language
                 if (!$firstDisplay) {
-                    if ($row->language_code === $user_language_code) {
+                    if (!$row->pseudo && $row->language_code === $user_language_code) {
                         $firstDisplay = true;
                         $row->default = true;
                         break;
@@ -700,6 +700,7 @@ class TranslationModel extends BaseModel
                 $entry->displayTitle = $row->title;
                 $entry->displayEnumTitle = $row->enum_title;                
                 $entry->displayContent = $row->content;
+                $entry->displayLang = $row->language_code;
             }
         }
 

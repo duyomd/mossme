@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Kör alakú ajánlókép',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Videó lejátszása',
+    'aria_back_to_top'      =>  'Vissza a tetejére',
+    'aria_edit'             =>  'Szerkesztés',
+    'aria_previous'         =>  'Előző',
+    'aria_next'             =>  'Következő',
+    'aria_commentary'       =>  'Kommentár szakasz átkapcsolása',
+    'aria_bilingual'        =>  'Kétnyelvű mód átkapcsolása',
+    'aria_move_up'          =>  'Felfelé mozgatás',
+    'aria_move_down'        =>  'Lejebb mozgatás',
+    'aria_captcha_reload'   =>  'Captcha újratöltése',
+    'aria_toggle_node'      =>  'Fa elem átkapcsolása',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

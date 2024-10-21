@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Kulatý doporučující obrázek',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Přehrát video',
+    'aria_back_to_top'      =>  'Zpět na začátek',
+    'aria_edit'             =>  'Upravit',
+    'aria_previous'         =>  'Předchozí',
+    'aria_next'             =>  'Další',
+    'aria_commentary'       =>  'Přepnout komentářovou sekci',
+    'aria_bilingual'        =>  'Přepnout dvojjazyčný režim',
+    'aria_move_up'          =>  'Posunout nahoru',
+    'aria_move_down'        =>  'Posunout dolů',
+    'aria_captcha_reload'   =>  'Obnovit captcha',
+    'aria_toggle_node'      =>  'Přepnout uzel stromu',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

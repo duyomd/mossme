@@ -11,15 +11,19 @@
 
           <?php $count = count($entry->translationsParents); ?>
           <h1 class="text-lg-start <?php if ($count > 2) echo 'text-start'; else echo 'text-center'; ?>">
-            <span><a href="/article/<?= $entry->translationsParents[0]->entry_id ?>">
-            <?= $entry->translationsParents[0]->title ?></a></span></h1>
+            <span lang="<?=$entry->translationsParents[0]->language_code?>">
+              <a href="/article/<?= $entry->translationsParents[0]->entry_id ?>">
+                <?= $entry->translationsParents[0]->title ?>
+              </a>
+            </span>
+          </h1>
           <?php if ($count > 2) : ?>
             <ul class="content-list content-list-parents pt-3 ps-2 ps-lg-4">
               <?php for ($i = 1; $i < $count - 1; $i++) : ?>
                 <?php $parent = $entry->translationsParents[$i];
                   echo '<li><h2><a href="/article/' . $parent->entry_id . '" title="' . $parent->title . '">|';
                   for ($j = 0; $j < $i; $j++) echo '_';
-                  echo '<span>' . $parent->enum_title . '</span></a></h2></li>';
+                  echo '<span lang="' . $parent->language_code . '">' . $parent->enum_title . '</span></a></h2></li>';
                 ?>
               <?php endfor ?>
             </ul>
@@ -31,23 +35,24 @@
           
           <div class="btns">
             <a href="/article/<?=$entry->previous_id?>" class="btn-scroll animated fadeInUp scrollto
-              <?php if(!isset($entry->previous_id)) echo ' disabled'; ?>">
+              <?php if(!isset($entry->previous_id)) echo ' disabled'; ?>" aria-label="<?=lang('App.aria_previous')?>">
               <i class="bi bi-chevron-double-<?= Utilities::isRightToLeft() ? 'right' : 'left' ?>"></i>
             </a>
 
             <a id="btn-bilingual" class="btn-scroll animated fadeInUp scrollto ms-btns-navi inactive"
-              href="javascript:void(0)" role="button" onclick="bilingual(this)">
+              href="javascript:void(0)" role="button" onclick="bilingual(this)" aria-label="<?=lang('App.aria_bilingual')?>">
               <i id="icon-bilingual" class="bi bi-book-half"></i></a>
               
             <a href="/article/<?=$entry->next_id?>" class="btn-scroll animated fadeInUp scrollto ms-btns-navi
-              <?php if(!isset($entry->next_id)) echo ' disabled'; ?>">
+              <?php if(!isset($entry->next_id)) echo ' disabled'; ?>" aria-label="<?=lang('App.aria_next')?>">
               <i class="bi bi-chevron-double-<?= Utilities::isRightToLeft() ? 'left' : 'right' ?>"></i>
             </a>
           </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
           <a href="<?php $video = $entry->video_url; echo (!Utilities::isNullOrBlank($video) ? $video : '#article'); ?>" 
-            class="<?= !Utilities::isNullOrBlank($video) ? 'glightbox ' : '' ?>play-btn"></a> 
+            class="<?= !Utilities::isNullOrBlank($video) ? 'glightbox ' : '' ?>play-btn"
+            aria-label="<?=lang('App.aria_play_button')?>"></a> 
         </div>
 
       </div>
@@ -85,11 +90,11 @@
                 <div class="section-title">
                   <h2><?=lang('App.article_translation', [$child->translationCount])?></h2>
 
-                  <div id="dd-article" class="dropdown pt-2" lang="auto">
+                  <div id="dd-article" class="dropdown pt-2">
 
                     <button class="btn dropdown-toggle text-truncate" type="button" id="dropdown-main" 
                       data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true">
-                      <span></span>
+                      <span lang="und"></span>
                     </button>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdown-main">
@@ -106,14 +111,16 @@
                               <li>
                                 <a class="dropdown-item text-truncate ref" href="<?=htmlspecialchars($tran->notation)?>" 
                                     target="_blank" rel="noreferrer noopener">
-                                    <?=$tran->author?>
+                                  <span lang="und"><?=$tran->author?><span>
                                   <i class="bi bi-box-arrow-up-right float-end"></i>
                                 </a>
                               </li>
                             <?php endif ?>    
                           <?php endif ?>
                           <?php if ($i < $count - 1) :?>
-                            <li><h6 class="dropdown-header"> <?=$tran->author?></h6></li>
+                            <li><h6 class="dropdown-header" <?=isset($tran->language_code) ? 'lang="'.$tran->language_code.'"' : ''?>>
+                              <?=$tran->author?>
+                            </h6></li>
                           <?php endif ?>
                         <?php else : ?>
                           <?php 
@@ -130,7 +137,7 @@
                                 href="javascript:void(0)" role="button"
                                 onclick="reloadContent(1, js_trans[<?=$p?>][<?=$i?>], <?=$p?>);
                                           selectDropdownItem(1, this, <?=$p?>);">
-                            <?=$tran->author?></a>
+                            <span lang="und"><?=$tran->author?></span></a>
                           </li>
                         <?php endif ?>
                         <?php $i++; ?>
@@ -158,11 +165,11 @@
               <div class="section-title">
                 <h2><?=lang('App.article_translation', [$child->translationCount])?></h2>
 
-                <div id="dd-article" class="dropdown pt-2" lang="auto">
+                <div id="dd-article" class="dropdown pt-2">
 
                   <button class="btn dropdown-toggle text-truncate" type="button" id="dropdown-sub" 
                     data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true">
-                    <span></span>
+                    <span lang="und"></span>
                   </button>
 
                   <ul class="dropdown-menu" aria-labelledby="dropdown-sub">
@@ -176,14 +183,16 @@
                             <li>
                               <a class="dropdown-item text-truncate ref" href="<?=htmlspecialchars($tran->notation)?>" 
                                   target="_blank" rel="noreferrer noopener">
-                                  <?=$tran->author?>
+                                <span lang="und"><?=$tran->author?><span>
                                 <i class="bi bi-box-arrow-up-right float-end"></i>
                               </a>
                             </li>
                           <?php endif ?>
                         <?php endif ?>
                         <?php if ($i < $count - 1) :?>
-                          <li><h6 class="dropdown-header"> <?=$tran->author?></h6></li>
+                          <li><h6 class="dropdown-header" <?=isset($tran->language_code) ? 'lang="'.$tran->language_code.'"' : ''?>>
+                            <?=$tran->author?>
+                          </h6></li>
                         <?php endif ?>
                       <?php else : ?>
                         <li><a class="dropdown-item text-truncate link-sub-<?=$p?>
@@ -191,7 +200,7 @@
                               href="javascript:void(0)" role="button"
                               onclick="reloadContent(2, js_trans[<?=$p?>][<?=$i?>], <?=$p?>);
                                         selectDropdownItem(2, this, <?=$p?>);">
-                          <?=$tran->author?></a>
+                          <span lang="und"><?=$tran->author?></span></a>
                         </li>
                       <?php endif ?>
                       <?php $i++; ?>
@@ -281,7 +290,8 @@
       var map = new Map();      
       <?php foreach ($en->translations as $tran) :?>
         if ('<?=$tran->id?>'.length > 0) {
-          map.set('<?=$tran->id?>', '<?=esc($tran->content)?>');
+          map.set('<?=$tran->id?>', {content  : '<?=esc($tran->content)?>', 
+                                     lang     : '<?=$tran->language_code?>'});
         }
       <?php endforeach ?>
       _translations[p] = map;

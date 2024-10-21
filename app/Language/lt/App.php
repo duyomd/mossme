@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Apskritimo rekomendacijos nuotrauka',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Groti vaizdo įrašą',
+    'aria_back_to_top'      =>  'Grįžti į viršų',
+    'aria_edit'             =>  'Redaguoti',
+    'aria_previous'         =>  'Ankstesnis',
+    'aria_next'             =>  'Kitas',
+    'aria_commentary'       =>  'Perjungti komentarų skyrių',
+    'aria_bilingual'        =>  'Perjungti dvikalbį režimą',
+    'aria_move_up'          =>  'Perkelti aukštyn',
+    'aria_move_down'        =>  'Perkelti žemyn',
+    'aria_captcha_reload'   =>  'Atnaujinti CAPTCHA',
+    'aria_toggle_node'      =>  'Perjungti medžio mazgą',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

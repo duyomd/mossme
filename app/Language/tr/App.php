@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Dairesel referans resmi',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Videoyu oynat',
+    'aria_back_to_top'      =>  'En üste dön',
+    'aria_edit'             =>  'Düzenle',
+    'aria_previous'         =>  'Önceki',
+    'aria_next'             =>  'Sonraki',
+    'aria_commentary'       =>  'Açık/Kapalı yorum bölümünü',
+    'aria_bilingual'        =>  'Açık/Kapalı iki dilli mod',
+    'aria_move_up'          =>  'Yukarı taşı',
+    'aria_move_down'        =>  'Aşağı taşı',
+    'aria_captcha_reload'   =>  'CAPTCHA\'yı yeniden yükle',
+    'aria_toggle_node'      =>  'Ağaç düğümünü aç/kapa',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

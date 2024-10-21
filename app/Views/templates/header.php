@@ -1,11 +1,9 @@
 <?php use App\Helpers\Utilities; ?>
 
 <!DOCTYPE html>
-<html 
-      
-      data-bs-theme="<?= Utilities::getSessionTheme() ?? 'dark'; ?>"
-      dir="<?= Utilities::isRightToLeft() ? 'rtl' : 'auto'?>">
-      <!-- lang="<?= Utilities::getSessionLocale()?>"  -->
+<html data-bs-theme="<?= Utilities::getSessionTheme() ?? 'dark'; ?>"
+      dir="<?= Utilities::isRightToLeft() ? 'rtl' : 'auto'?>"
+      lang="<?= isset($description) ? Utilities::getSessionLocale() : 'und' ?>">
 
 <head>
   <meta charset="utf-8">
@@ -77,7 +75,7 @@
   <div class="modal fade" id="bookmark-modal" tabindex="-1" aria-labelledby="bookmark-title" aria-hidden="true"
     data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog">
-      <form action="/bookmarks/menu" method="post" role="form" class="ajax-form bookmark-form">
+      <form action="/bookmarks/menu" method="post" class="ajax-form bookmark-form">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="bookmark-title"><?= lang('App.bookmark_modal_title') ?></h1>

@@ -499,6 +499,21 @@ return [
     'alt_testimonial'       =>  'Imatge circular de testimoni',
 
     /*--------------------------------------------------------------
+    # Aria Labels
+    --------------------------------------------------------------*/
+    'aria_play_button'      =>  'Reprodueix el vídeo',
+    'aria_back_to_top'      =>  'Torna a l\'inici',
+    'aria_edit'             =>  'Edita',
+    'aria_previous'         =>  'Anterior',
+    'aria_next'             =>  'Següent',
+    'aria_commentary'       =>  'Activa/desactiva la secció de comentaris',
+    'aria_bilingual'        =>  'Activa/desactiva el mode bilingüe',
+    'aria_move_up'          =>  'Mou cap amunt',
+    'aria_move_down'        =>  'Mou cap avall',
+    'aria_captcha_reload'   =>  'Recàrrega el captcha',
+    'aria_toggle_node'      =>  'Activa/desactiva el node de l\'arbre',
+
+    /*--------------------------------------------------------------
     # Common
     --------------------------------------------------------------*/
     'project_name'      =>  'Mossme',

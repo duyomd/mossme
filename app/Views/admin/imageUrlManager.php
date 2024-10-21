@@ -23,7 +23,7 @@
         <div class="row col-lg-8 table-container">
 
           <div id="input-form-container" class="mt-lg-0">
-            <form action="/imageUrls" method="post" role="form" class="ajax-form" 
+            <form action="/imageUrls" method="post" class="ajax-form" 
                 data-aos="fade-up" data-aos-delay="100">
 
               <div>
