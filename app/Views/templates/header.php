@@ -30,8 +30,8 @@
   <?php endif; ?>
   
   <!-- Favicons -->
-  <link href="/assets/img/favicon.png" rel="icon">
-  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/assets/img/favicon.webp" rel="icon">
+  <link href="/assets/img/apple-touch-icon.webp" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" 
@@ -62,7 +62,7 @@
   <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
     <div class="toast text-bg-success bg-gradient border-0" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-        <img src="/assets/img/favicon.png" class="rounded" alt="<?=lang('App.alt_favicon')?>">
+        <img src="/assets/img/favicon.webp" class="rounded" alt="<?=lang('App.alt_favicon')?>">
         <strong><?=lang('App.project_name')?></strong>
         <small><?=lang('App.moments')?></small>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>

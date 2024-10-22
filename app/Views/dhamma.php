@@ -71,7 +71,7 @@
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
             <div class="legacy-img">
-              <img src="/assets/img/gallery/legacy.jpg" alt="<?=lang('App.alt_legacy_read')?>">
+              <img src="/assets/img/gallery/legacy.webp" alt="<?=lang('App.alt_legacy_read')?>">
             </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
