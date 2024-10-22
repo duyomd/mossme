@@ -39,8 +39,11 @@
               </div>
 
               <div class="phone">
-                <img id="earth" src="/assets/img/contact/earth.gif" alt="<?=lang('App.alt_earth')?>" onclick="toggleAnimation(this);">
-                <img id="eye" src="/assets/img/contact/eye.gif" alt="<?=lang('App.alt_eye')?>" onclick="toggleAnimation(this);" class=" hidden" aria-hidden="true">
+                <img id="earth" src="/assets/img/contact/earth.gif" alt="<?=lang('App.alt_earth')?>" 
+                  onclick="toggleAnimation(this);">
+                <img id="eye" src="/assets/img/contact/eye.gif" alt="<?=lang('App.alt_eye')?>" 
+                  onclick="toggleAnimation(this);" class=" hidden" aria-hidden="true"
+                  loading="lazy">
               </div>
 
             </div>  
