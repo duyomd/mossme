@@ -150,7 +150,7 @@
   <?php $url = 'translations'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
-  <script src="/assets/js/view/translationManager.js"></script>
+  <script src="/assets/js/view/translationManager.min.js"></script>
   <script type="text/javascript">
     initTranslationManager({
       MSG_ENTRY_ID      : '<?=lang('App.translation_label_entry_id')?>', 

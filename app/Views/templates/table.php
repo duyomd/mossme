@@ -19,7 +19,7 @@
   </div>
 </div>
 
-<script src="/assets/js/view/table.js"></script>
+<script src="/assets/js/view/table.min.js"></script>
 <script type="text/javascript">
   function initTable(option) {
     MSG_RPP               = "<?=lang('App.num_rows_per_page')?>";

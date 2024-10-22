@@ -90,7 +90,7 @@
   <?php $url = 'imageUrls'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
-  <script src="/assets/js/view/imageUrlManager.js"></script>
+  <script src="/assets/js/view/imageUrlManager.min.js"></script>
   <script type="text/javascript">
     initImageUrlManager({
       MSG_NAME        : '<?=lang('App.imageUrl_label_image_name')?>', 

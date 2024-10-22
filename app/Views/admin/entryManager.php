@@ -240,7 +240,7 @@
   <?php $url = 'entries'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
-  <script src="/assets/js/view/entryManager.js"></script>
+  <script src="/assets/js/view/entryManager.min.js"></script>
   <script type="text/javascript">
     initEntryManager({
       MSG_TRANSLATIONS          : '"<?=lang("App.entry_label_translations")?>"',

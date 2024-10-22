@@ -101,7 +101,7 @@
   <?php $url = 'cards'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
-  <script src="/assets/js/view/cardManager.js"></script>
+  <script src="/assets/js/view/cardManager.min.js"></script>
   <script type="text/javascript">
     initCardManager({
       MSG_MEMO        : '<?=lang('App.card_label_memo')?>',

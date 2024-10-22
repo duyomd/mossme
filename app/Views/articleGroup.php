@@ -270,7 +270,7 @@
   ?>
   
   <!-- JS -->
-  <script src="/assets/js/view/article.js"></script>
+  <script src="/assets/js/view/article.min.js"></script>
   <script type="text/javascript">
 
     const entryCount = <?=count($entry->entryChildren)?>;

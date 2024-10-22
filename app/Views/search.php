@@ -104,7 +104,7 @@
   <?php $url = 'search'; include 'templates/table.php';?>
 
   <!-- JS -->
-  <script src="/assets/js/view/search.js"></script>
+  <script src="/assets/js/view/search.min.js"></script>
   <script type="text/javascript">
     initSearch({
       MSG_MATCHED     : '<?=lang('App.search_label_matched')?>',

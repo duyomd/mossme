@@ -95,7 +95,7 @@
   <?php $url = 'languages'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
-  <script src="/assets/js/view/languageManager.js"></script>
+  <script src="/assets/js/view/languageManager.min.js"></script>
   <script type="text/javascript">
     initLanguageManager({
       MSG_CODE        : '<?=lang('App.label_code')?>',

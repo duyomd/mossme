@@ -112,7 +112,7 @@
   <?php $url = 'messages'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
-  <script src="/assets/js/view/messageManager.js"></script>
+  <script src="/assets/js/view/messageManager.min.js"></script>
   <script type="text/javascript">
     initMessageManager({
       MSG_SENDER        : '<?=lang('App.message_label_sender')?>', 

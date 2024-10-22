@@ -328,7 +328,7 @@
 
   </main><!-- End #main -->
 
-  <script src="/assets/js/view/dhamma.js"></script>
+  <script src="/assets/js/view/dhamma.min.js"></script>
   
   <!-- ======= Footer ======= -->
   <?php include 'templates/footer.php';?>

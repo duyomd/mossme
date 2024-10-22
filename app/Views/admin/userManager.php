@@ -154,7 +154,7 @@
   <?php $url = 'users'; include $path. 'templates/table.php';?>
 
   <!-- JS -->
-  <script src="/assets/js/view/userManager.js"></script>
+  <script src="/assets/js/view/userManager.min.js"></script>
   <script type="text/javascript">
     initUserManager({
       MSG_USERNAME        : '<?=lang('App.users_label_username')?>',

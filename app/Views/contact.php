@@ -123,7 +123,7 @@
   </main><!-- End #main -->
 
   <!-- Js -->
-  <script src="/assets/js/view/contact.js"></script>
+  <script src="/assets/js/view/contact.min.js"></script>
   
   <!-- ======= Footer ======= -->
   <?php $footer_text = 

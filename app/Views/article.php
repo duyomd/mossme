@@ -395,7 +395,7 @@
 
   </main><!-- End #main -->
 
-  <script src="/assets/js/view/article.js"></script>
+  <script src="/assets/js/view/article.min.js"></script>
   <!-- JS -->
   <?php if (!$entry->isFolder) : ?>
 

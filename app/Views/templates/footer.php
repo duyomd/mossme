@@ -28,9 +28,9 @@
     <script src="/assets/vendor/swiper/swiper-bundle.min.js" defer></script>
 
     <!-- Template Main JS File -->
-    <script src="/assets/js/main.js" defer></script>
-    <script src="/assets/js/common.js" defer></script>
-    <script src="/assets/js/validate.js" defer></script>
+    <script src="/assets/js/main.min.js" defer></script>
+    <script src="/assets/js/common.min.js" defer></script>
+    <script src="/assets/js/validate.min.js" defer></script>
 
     <!-- ajx -->
     <script type="text/javascript">      

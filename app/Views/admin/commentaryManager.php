@@ -144,7 +144,7 @@
   <?php $url = 'commentaries'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
-  <script src="/assets/js/view/commentaryManager.js"></script>
+  <script src="/assets/js/view/commentaryManager.min.js"></script>
   <script type="text/javascript">
     initCommentaryManager({
       MSG_ENTRY_ID      : '<?=lang('App.commentary_label_entry_id')?>', 

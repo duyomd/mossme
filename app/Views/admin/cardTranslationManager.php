@@ -149,7 +149,7 @@
   <?php $url = 'cardTranslations'; include $path . 'templates/table.php';?>
 
   <!-- JS -->
-  <script src="/assets/js/view/cardTranslationManager.js"></script>
+  <script src="/assets/js/view/cardTranslationManager.min.js"></script>
   <script type="text/javascript">
     initCardTranslationManager({
       MSG_CARD_ID     : '<?=lang('App.card_translation_label_card_id')?>', 

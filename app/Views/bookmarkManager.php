@@ -99,7 +99,7 @@
   <?php $url = 'bookmarks'; include 'templates/table.php';?>
 
   <!-- JS -->
-  <script src="/assets/js/view/bookmarkManager.js"></script>
+  <script src="/assets/js/view/bookmarkManager.min.js"></script>
   <script type="text/javascript">
     initBookmarkManager({
       MSG_NAME        : '<?=lang('App.bookmark_label_name')?>', 
