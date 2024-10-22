@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
   addEvent(window, 'load', () => {
     const currentUrl = new URL(window.location.href);
     currentUrl.searchParams.set('lang', document.documentElement.lang);
-    window.history.pushState(null, '', currentUrl);
+    window.history.replaceState(null, '', currentUrl);
   });
 });

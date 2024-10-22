@@ -251,7 +251,7 @@ function loadWindowLocation(type, item) {
     currentUrl.searchParams.delete('aid');
     currentUrl.hash = '';
 
-    window.history.pushState({tid: item.id}, '', currentUrl);
+    window.history.replaceState({tid: item.id}, '', currentUrl);
   }  
 }
 
