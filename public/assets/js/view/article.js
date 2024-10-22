@@ -568,5 +568,7 @@ function collapseAll() {
 
 /****** Page Onload ******/
 
-addEvent(window, "load", initArticle);
-scrollToSectionWorkaround();
+document.addEventListener('DOMContentLoaded', function() {
+  scrollToSectionWorkaround();
+  addEvent(window, "load", initArticle);
+});

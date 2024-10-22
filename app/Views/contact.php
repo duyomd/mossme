@@ -122,6 +122,9 @@
 
   </main><!-- End #main -->
 
+  <!-- Js -->
+  <script src="/assets/js/view/contact.js"></script>
+  
   <!-- ======= Footer ======= -->
   <?php $footer_text = 
     '<div class="copyright">'
@@ -132,5 +135,4 @@
     '</div>';
   include 'templates/footer.php';?>
 
-  <!-- Js -->
-  <script src="/assets/js/view/contact.js"></script>
+  

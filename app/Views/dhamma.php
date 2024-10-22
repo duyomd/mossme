@@ -328,6 +328,8 @@
 
   </main><!-- End #main -->
 
+  <script src="/assets/js/view/dhamma.js"></script>
+  
   <!-- ======= Footer ======= -->
   <?php include 'templates/footer.php';?>
-  <script src="/assets/js/view/dhamma.js"></script>
+  

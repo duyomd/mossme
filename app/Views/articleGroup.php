@@ -246,16 +246,6 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <?php $footer_text = 
-    '<div class="copyright">' .
-      lang('App.article_footer1') .
-    '</div>
-    <div class="design font-big">' .
-      lang('App.article_footer2') .
-    '</div>';
-  include 'templates/footer.php';?>
-
   <?php
     $items = [];
     foreach ($entry->entryChildren as $child) {
@@ -316,3 +306,13 @@
   </script>
   
   <link rel="stylesheet" href="/assets/js/ckeditor5-43.1.0/ckeditor5.css">
+
+  <!-- ======= Footer ======= -->
+  <?php $footer_text = 
+    '<div class="copyright">' .
+      lang('App.article_footer1') .
+    '</div>
+    <div class="design font-big">' .
+      lang('App.article_footer2') .
+    '</div>';
+  include 'templates/footer.php';?>
