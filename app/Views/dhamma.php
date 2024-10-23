@@ -43,8 +43,10 @@
                   <div class="swiper-slide">
                     <div class="feeds-item d-flex align-items-center justify-content-center">
                       <a href="/article/<?=$feed->entry_id?>">
-                        <img src="<?=$feed->image_url_header?>" class="d-lg-inline d-none feeds-img" alt="<?=lang('App.alt_newfeed')?>">
-                        <img src="<?=$feed->image_url_header?>" class="d-lg-none feeds-img feeds-img-sm" alt="<?=lang('App.alt_newfeed')?>">
+                        <img src="<?=$feed->image_url_header?>" class="d-lg-inline d-none feeds-img" 
+                          alt="<?=lang('App.alt_newfeed')?>" loading="lazy">
+                        <img src="<?=$feed->image_url_header?>" class="d-lg-none feeds-img feeds-img-sm" 
+                          alt="<?=lang('App.alt_newfeed')?>" loading="lazy">
                       </a>  
                       <a href="/article/<?=$feed->entry_id?>"><span lang="<?=$feed->language_code?>"><?=$feed->title?></span></a>
                     </div>
@@ -52,8 +54,7 @@
                 <?php endforeach ?>  
 
               </div>
-              <div class="swiper-pagination d-lg-block d-none mt-4"></div>
-              <div class="swiper-pagination swiper-pagination-sm d-lg-none mt-3"></div>
+              <div class="swiper-pagination mt-lg-3 mt-4"></div>
             </div>
         </section>
       <?php endif ?><!-- End Feeds -->
@@ -71,7 +72,7 @@
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
             <div class="legacy-img">
-              <img src="/assets/img/gallery/legacy.webp" alt="<?=lang('App.alt_legacy_read')?>">
+              <img src="/assets/img/gallery/legacy.webp" alt="<?=lang('App.alt_legacy_read')?>" loading="lazy">
             </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
@@ -123,7 +124,7 @@
     </section><!-- End Sati Section -->
 
     <!-- ======= Menu Section ======= -->
-    <section id="menu" class="menu">
+    <section id="menu" class="menu lazy-bg" data-bg="--bg-menu">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -148,7 +149,7 @@
             <div class="col-lg-6 menu-item <?=$tran->isPali() ? 'filter-pali' : 
                                              ($tran->isAgama() ? 'filter-agama' : 'filter-other')?>">
               <a href="/article/<?=$tran->entry_id?>">
-                <img src="<?=$tran->image_url_header?>" class="menu-img" alt="<?=lang('App.alt_menu')?>">
+                <img src="<?=$tran->image_url_header?>" class="menu-img" alt="<?=lang('App.alt_menu')?>" loading="lazy">
               </a>
               <div class="menu-content">
                 <a href="/article/<?=$tran->entry_id?>" lang="<?=$tran->language_code?>"><?=$tran->title?></a><!--<span>152</span>-->
@@ -208,7 +209,8 @@
                       </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="<?=$tran->image_url_header?>" alt="<?=lang('App.alt_discussion')?>" class="img-fluid">
+                      <img src="<?=$tran->image_url_header?>" alt="<?=lang('App.alt_discussion')?>" 
+                        class="img-fluid" loading="lazy">
                     </div>
                   </div>
                 </div>
@@ -224,7 +226,7 @@
 
     <!-- ======= Events Section ======= -->
     <?php if (count($cardTranslations) > 0) : ?>
-      <section id="events" class="events">
+      <section id="events" class="events lazy-bg" data-bg="--bg-events">
         <div class="container" data-aos="fade-up">
 
           <div class="section-title">
@@ -239,7 +241,8 @@
                 <div class="swiper-slide">
                 <div class="row event-item">
                   <div class="col-lg-6">
-                    <img src="<?=$cardTran->image_url?>" class="img-fluid" alt="<?=lang('App.alt_card')?>">
+                    <img src="<?=$cardTran->image_url?>" class="img-fluid" alt="<?=lang('App.alt_card')?>" loading="lazy">
+                    <div class="swiper-lazy-preloader"></div>
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
                     <h3 lang="<?=$cardTran->language_code?>"><?=$cardTran->author?></h3>
@@ -269,7 +272,7 @@
     <?php endif ?><!-- End Events Section -->
 
     <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
+    <section id="gallery" class="gallery lazy-bg" data-bg="--bg-gallery">
 
       <div class="container" data-aos="fade-up">
         <div class="section-title">
@@ -312,7 +315,9 @@
                     <?= lang('App.prns.' . $i . '.content') ?>
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="<?= lang('App.prns.' . $i . '.img_url') ?>" class="testimonial-img" alt="<?=lang('App.alt_testimonial')?>">
+                <img src="<?= lang('App.prns.' . $i . '.img_url') ?>" class="testimonial-img" 
+                  alt="<?=lang('App.alt_testimonial')?>" loading="lazy">
+                <div class="swiper-lazy-preloader"></div>  
                 <h3><?= lang('App.prns.' . $i . '.footer1') ?></h3>
                 <h4><?= lang('App.prns.' . $i . '.footer2') ?></h4>
               </div>

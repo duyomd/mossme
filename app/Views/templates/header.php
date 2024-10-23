@@ -44,7 +44,7 @@
   <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="none" onload="this.media='all'">
   <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" media="none" onload="this.media='all'">
   <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="none" onload="this.media='all'">
-  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="none" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="none" onload="this.media='all'"/>
   <!-- RTL CSS -->
   <?php if (Utilities::isRightToLeft()) : ?>
     <link href="/assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
@@ -53,6 +53,7 @@
   <?php endif ?>
 
   <!-- Template Main CSS File -->
+  <!-- <link href="/assets/css/style.min.css" rel="stylesheet"> -->
   <link href="/assets/css/style.min.css" rel="stylesheet">
 </head>
 

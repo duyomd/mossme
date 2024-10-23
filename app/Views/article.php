@@ -390,7 +390,7 @@
     <?php endif ?>                
 
     <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery" style="--bg-gallery: url(<?=$entry->image_url_footer?>);">
+    <section id="gallery" class="gallery lazy-bg" data-bg="url('<?=$entry->image_url_footer?>')">
     </section><!-- End Gallery Section -->
 
   </main><!-- End #main -->

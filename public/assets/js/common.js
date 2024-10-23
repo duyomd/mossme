@@ -238,3 +238,27 @@ function scrollToSectionWorkaround() {
 function startsWithAnyOfArr(str, arr) {
   return arr.some(prefix => str.startsWith(prefix));
 }
+
+function lazyloadBackgrounds() {
+  const lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+  if ("IntersectionObserver" in window) {
+    const lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const lazyBgElement = entry.target;
+          const dataBg = lazyBgElement.getAttribute("data-bg");
+          let bgImage = dataBg;
+          if (bgImage.startsWith('--')) {
+            // get image url from html/css
+            bgImage = getComputedStyle(lazyBgElement).getPropertyValue(dataBg).trim();
+          }
+          lazyBgElement.style.backgroundImage = bgImage;
+          lazyBackgroundObserver.unobserve(lazyBgElement);
+        }
+      });
+    });
+    lazyBackgrounds.forEach(function(lazyBackground) {
+      lazyBackgroundObserver.observe(lazyBackground);
+    });
+  }
+}

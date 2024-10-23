@@ -571,4 +571,5 @@ function collapseAll() {
 document.addEventListener('DOMContentLoaded', function() {
   scrollToSectionWorkaround();
   addEvent(window, "load", initArticle);
+  lazyloadBackgrounds();
 });
