@@ -225,6 +225,8 @@
       delay: 5000,
       disableOnInteraction: false
     },
+    effect: 'cube',
+    grabCursor: true,
     slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
@@ -243,6 +245,7 @@
       delay: 5000,
       disableOnInteraction: false
     },
+    grabCursor: true,
     slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
@@ -272,11 +275,12 @@
       delay: 1000,
       disableOnInteraction: false
     },
+    grabCursor: true,
     slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
-      clickable: true
+      clickable: false
     },
     breakpoints: {
       320: {

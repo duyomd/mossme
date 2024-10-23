@@ -34,22 +34,35 @@
   <link href="/assets/img/apple-touch-icon.webp" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" 
     rel="stylesheet" media="none" onload="this.media='all'">
 
   <!-- Vendor CSS Files -->
-  <link href="/assets/css/critical.min.css" rel="stylesheet">
-  <link href="/assets/vendor/animate.css/animate.min.css" rel="stylesheet" media="none" onload="this.media='all'">
+  <!-- <link href="/assets/vendor/animate.css/animate.min.css" rel="stylesheet" media="none" onload="this.media='all'">
   <link href="/assets/vendor/aos/aos.css" rel="stylesheet" media="none" onload="this.media='all'">  
   <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="none" onload="this.media='all'">
   <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" media="none" onload="this.media='all'">
-  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="none" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="none" onload="this.media='all'"/>
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="none" onload="this.media='all'"> -->
+
+  <link href="/assets/css/critical.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" media="none" onload="this.media='all'"
+    integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.css" media="none" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" media="none" onload="this.media='all'"
+    integrity="sha256-9kPW/n5nn53j4WMRYAxe9c1rCY96Oogo/MKSVdKzPmI=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" media="none" onload="this.media='all'" 
+    integrity="sha256-Yg7qJLDO4djMg5XIDylc8ue2+rliSTwmtJqNQrY6Tck=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" media="none" onload="this.media='all'"
+    integrity="sha256-bT9i1NF5afnHDpQ4z2cQBHJQGehoEj8uvClaAG+NXS0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.css" media="none" onload="this.media='all'"
+    integrity="sha256-izXGNk+6VnNiyNV3vJB6Bfad4O0HT8A4uCHJOS2RwhU=" crossorigin="anonymous">
   <!-- RTL CSS -->
   <?php if (Utilities::isRightToLeft()) : ?>
-    <link href="/assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" 
+      integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
   <?php else : ?>
-    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+      integrity="sha256-PI8n5gCcz9cQqQXm3PEtDuPG8qx9oFsFctPg0S5zb8g=" crossorigin="anonymous">
   <?php endif ?>
 
   <!-- Template Main CSS File -->
