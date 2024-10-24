@@ -34,8 +34,8 @@
       integrity="sha256-pDrSUa13vOne5uuB/pSUdT2vNTXsq1i4vtm/xpqJX9w=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js" defer
       integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.js" defer
-      integrity="sha256-JejyoPWTH4vQGeV0iK9egO/wdGB4IvgBRl/+Oo2KT/E=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.js" defer
+      integrity="sha256-9kWxLyfE6cEhDVclz6iUuGRkNy57G+y+RxJqX+gvmt4=" crossorigin="anonymous"></script>
 
     <!-- Template Main JS File -->
     <script src="/assets/js/main.min.js" defer></script>

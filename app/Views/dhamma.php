@@ -44,9 +44,9 @@
                     <div class="feeds-item d-flex align-items-center justify-content-center">
                       <a href="/article/<?=$feed->entry_id?>">
                         <img src="<?=$feed->image_url_header?>" class="d-lg-inline d-none feeds-img" 
-                          alt="<?=lang('App.alt_newfeed')?>" loading="lazy">
+                          alt="<?=lang('App.alt_newfeed')?>">
                         <img src="<?=$feed->image_url_header?>" class="d-lg-none feeds-img feeds-img-sm" 
-                          alt="<?=lang('App.alt_newfeed')?>" loading="lazy">
+                          alt="<?=lang('App.alt_newfeed')?>">
                       </a>  
                       <a href="/article/<?=$feed->entry_id?>"><span lang="<?=$feed->language_code?>"><?=$feed->title?></span></a>
                     </div>
@@ -241,7 +241,7 @@
                 <div class="swiper-slide">
                 <div class="row event-item">
                   <div class="col-lg-6">
-                    <img src="<?=$cardTran->image_url?>" class="img-fluid" alt="<?=lang('App.alt_card')?>" loading="lazy">
+                    <img data-src="<?=$cardTran->image_url?>" class="img-fluid swiper-lazy" alt="<?=lang('App.alt_card')?>">
                     <div class="swiper-lazy-preloader"></div>
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
@@ -315,8 +315,8 @@
                     <?= lang('App.prns.' . $i . '.content') ?>
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="<?= lang('App.prns.' . $i . '.img_url') ?>" class="testimonial-img" 
-                  alt="<?=lang('App.alt_testimonial')?>" loading="lazy">
+                <img data-src="<?= lang('App.prns.' . $i . '.img_url') ?>" class="testimonial-img swiper-lazy" 
+                  alt="<?=lang('App.alt_testimonial')?>">
                 <div class="swiper-lazy-preloader"></div>  
                 <h3><?= lang('App.prns.' . $i . '.footer1') ?></h3>
                 <h4><?= lang('App.prns.' . $i . '.footer2') ?></h4>

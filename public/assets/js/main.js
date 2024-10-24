@@ -225,14 +225,20 @@
       delay: 5000,
       disableOnInteraction: false
     },
-    effect: 'cube',
     grabCursor: true,
-    slidesPerView: 'auto',
+    effect: 'flip',
+    lazy: {
+      checkInView: true,
+      loadOnTransitionStart: true,
+      loadPrevNext: true,
+      loadPrevNextAmount: 1,
+    },
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true
-    }
+    },
+    slidesPerView: 'auto',
   });
 
   /**
@@ -246,12 +252,18 @@
       disableOnInteraction: false
     },
     grabCursor: true,
-    slidesPerView: 'auto',
+    lazy: {
+      checkInView: true,
+      loadOnTransitionStart: true,
+      loadPrevNext: true,
+      loadPrevNextAmount: 1,
+    },
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true
     },
+    slidesPerView: 'auto',
     breakpoints: {
       320: {
         slidesPerView: 1,
