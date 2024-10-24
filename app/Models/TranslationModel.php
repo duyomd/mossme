@@ -580,8 +580,9 @@ class TranslationModel extends BaseModel
                 FROM translation t 
                     JOIN language l ON language_code = code
                     JOIN (SELECT id, created_at, root_id
-                        FROM entry
+                        FROM entry 
                         WHERE status = :status: AND type = :type:
+                        AND section_id <> :section_outlaw:
                         ORDER BY created_at DESC 
                         LIMIT :nof:) AS e ON t.entry_id = e.id
                 WHERE t.status = :status:
@@ -595,6 +596,7 @@ class TranslationModel extends BaseModel
                     JOIN (SELECT id, created_at
                         FROM entry
                         WHERE status = :status: AND type = :type:
+                        AND section_id <> :section_outlaw:
                         ORDER BY created_at DESC 
                         LIMIT :nof:) AS e2 ON t2.entry_id = e2.id
                 WHERE t1.entry_id = t2.entry_id 
@@ -603,10 +605,11 @@ class TranslationModel extends BaseModel
             ORDER BY t1.created_at DESC';
 
         $query = $this->db->query($sql, [
-                                    'nof'       => $numOfFeeds,
-                                    'type'      => Utilities::TYPE_FILE,
-                                    'status'    => Utilities::STATUS_ACTIVE,
-                                    'user_lang' => $user_language_code,      
+                                    'nof'               => $numOfFeeds,
+                                    'type'              => Utilities::TYPE_FILE,
+                                    'status'            => Utilities::STATUS_ACTIVE,
+                                    'section_outlaw'    => Utilities::SECTION_ID_OUTLAW,
+                                    'user_lang'         => $user_language_code,      
                                 ]);
         $trans = $query->getResult(Translation::class);
         $query->freeResult();
