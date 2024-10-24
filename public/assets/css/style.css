@@ -2706,7 +2706,7 @@ div.tree span.tree-expand {
 }
 
 .modal-body-form {
-  background: var(--bg-settings) top center;
+  background-position: top center;
   background-size: cover;
   position: relative;
 }

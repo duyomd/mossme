@@ -94,7 +94,7 @@
             <h1 class="modal-title fs-5" id="bookmark-title"><?= lang('App.bookmark_modal_title') ?></h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body modal-body-form">
+          <div class="modal-body modal-body-form lazy-bg" data-bg="--bg-settings">
             <div>
               <div class="error-message mb-3"></div>
               <div class="success-message mb-3"></div>
